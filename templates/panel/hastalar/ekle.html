@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasta Ekle — Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            gap: 12px; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar a { color: var(--gray); text-decoration: none; font-size: 14px; }
+        .topbar a:hover { color: var(--blue); }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .content { padding: 32px; max-width: 900px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg { padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .card { background: white; border-radius: 20px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 24px; }
+        .card-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-light); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+        label .req { color: var(--red); }
+        label .opt { color: var(--gray); font-weight: 400; font-size: 12px; }
+        input, select, textarea {
+            width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-light);
+            border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif;
+            color: var(--text); background: #fafafa; outline: none; transition: border-color 0.2s;
+        }
+        input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); background: white; }
+        textarea { resize: vertical; min-height: 80px; }
+        .btn-row { display: flex; gap: 12px; justify-content: flex-end; }
+        .btn-cancel {
+            padding: 11px 24px; border: 1.5px solid var(--gray-light); border-radius: 10px;
+            font-size: 14px; font-weight: 500; color: var(--gray); background: white;
+            cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif;
+        }
+        .btn-save {
+            padding: 11px 28px; background: var(--blue); color: white; border: none;
+            border-radius: 10px; font-size: 14px; font-weight: 600;
+            font-family: 'DM Sans', sans-serif; cursor: pointer;
+        }
+        .btn-save:hover { background: var(--blue-dark); }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <a href="http://panel.localhost:8000/{{ clinic_id }}/hastalar/">← Hastalar</a>
+        <span style="color:var(--gray-light)">/</span>
+        <span class="topbar-title">Yeni Hasta Ekle</span>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- TEMEL BİLGİLER -->
+            <div class="card">
+                <div class="card-title">🧑‍🦷 Temel Bilgiler</div>
+                <div class="form-group">
+                    <label>Ad Soyad <span class="req">*</span></label>
+                    <input type="text" name="name" placeholder="Ahmet Yılmaz" required>
+                </div>
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Telefon <span class="req">*</span></label>
+                        <input type="tel" name="phone" placeholder="0532 000 00 00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-posta <span class="opt">(opsiyonel)</span></label>
+                        <input type="email" name="email" placeholder="hasta@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Doğum Tarihi <span class="opt">(opsiyonel)</span></label>
+                        <input type="date" name="dob">
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Cinsiyet</label>
+                        <select name="gender">
+                            {% for val, label in gender_choices %}
+                            <option value="{{ val }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Kan Grubu</label>
+                        <select name="blood_type">
+                            {% for val, label in blood_types %}
+                            <option value="{{ val }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Şehir</label>
+                        <input type="text" name="city" placeholder="İstanbul">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Adres</label>
+                    <textarea name="address" placeholder="Mahalle, cadde, bina no..."></textarea>
+                </div>
+            </div>
+
+            <!-- SAĞLIK BİLGİLERİ -->
+            <div class="card">
+                <div class="card-title">🏥 Sağlık Bilgileri</div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Alerjiler <span class="opt">(opsiyonel)</span></label>
+                        <textarea name="allergies" placeholder="Penisilin, lateks..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tıbbi Notlar <span class="opt">(opsiyonel)</span></label>
+                        <textarea name="medical_notes" placeholder="Kronik hastalıklar, ilaçlar..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACİL İLETİŞİM -->
+            <div class="card">
+                <div class="card-title">🚨 Acil İletişim <span style="color:var(--gray);font-weight:400;font-size:13px">(opsiyonel)</span></div>
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" name="emergency_name" placeholder="Ayşe Yılmaz">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" name="emergency_phone" placeholder="0532 000 00 00">
+                    </div>
+                    <div class="form-group">
+                        <label>Yakınlık</label>
+                        <input type="text" name="emergency_relation" placeholder="Eş, Anne, Kardeş...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SİGORTA -->
+            <div class="card">
+                <div class="card-title">🛡️ Sigorta Bilgileri <span style="color:var(--gray);font-weight:400;font-size:13px">(opsiyonel)</span></div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Sigorta Şirketi</label>
+                        <input type="text" name="insurance_company" placeholder="Anadolu Sigorta">
+                    </div>
+                    <div class="form-group">
+                        <label>Sigorta No</label>
+                        <input type="text" name="insurance_number" placeholder="SIG-123456">
+                    </div>
+                </div>
+            </div>
+
+            <!-- EK BİLGİLER -->
+            <div class="card">
+                <div class="card-title">📝 Genel Notlar</div>
+                <div class="form-group">
+                    <textarea name="notes" placeholder="Hasta hakkında genel notlar..."></textarea>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <a href="http://panel.localhost:8000/{{ clinic_id }}/hastalar/" class="btn-cancel">İptal</a>
+                <button type="submit" class="btn-save">Hastayı Kaydet →</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

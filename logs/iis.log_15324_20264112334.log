@@ -1,0 +1,132 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[01/Apr/2026 05:33:10] "GET / HTTP/1.1" 500 98092
+[01/Apr/2026 05:36:50] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 05:36:50] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:36:53] "GET /api/klinik-ara/?q=ac HTTP/1.1" 200 641
+[01/Apr/2026 05:36:54] "GET /api/klinik-ara/?q=aclni HTTP/1.1" 200 15
+[01/Apr/2026 05:37:00] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 05:37:06] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 05:37:06] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:10] "GET /?q= HTTP/1.1" 200 9688
+[01/Apr/2026 05:37:10] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:21] "GET /api/klinik-ara/?q=ac HTTP/1.1" 200 641
+[01/Apr/2026 05:37:23] "GET /api/klinik-ara/?q=aclini HTTP/1.1" 200 641
+[01/Apr/2026 05:37:26] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:26] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:26] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:32] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:32] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:32] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:42] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:43] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:43] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:44] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:44] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:44] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:45] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:45] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:45] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:50] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:50] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:51] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:37:51] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:37:51] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:37:52] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:38:22] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 05:38:23] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+Not Found: /favicon.ico
+[01/Apr/2026 05:38:23] "GET /favicon.ico HTTP/1.1" 404 2952
+[01/Apr/2026 05:38:50] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 05:38:50] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 05:38:57] "GET /api/klinik-ara/?q=aclinic HTTP/1.1" 200 641
+[01/Apr/2026 05:39:07] "GET / HTTP/1.1" 200 65997
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[01/Apr/2026 05:39:07] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+Not Found: /favicon.ico
+[01/Apr/2026 05:39:07] "GET /favicon.ico HTTP/1.1" 404 2364
+[01/Apr/2026 05:43:10] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:43:10] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:43:10] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:43:36] "GET /?q=aclini HTTP/1.1" 200 14141
+[01/Apr/2026 05:43:36] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10416
+[01/Apr/2026 05:43:37] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:46:09] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 05:47:55] "GET /?q=aclini HTTP/1.1" 200 13815
+[01/Apr/2026 05:47:55] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:47:55] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:48:02] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14633
+[01/Apr/2026 05:48:02] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:48:02] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:48:07] "GET /?q= HTTP/1.1" 200 9212
+[01/Apr/2026 05:48:07] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:48:11] "GET /api/klinik-ara/?q=istanvu HTTP/1.1" 200 15
+[01/Apr/2026 05:48:12] "GET /api/klinik-ara/?q=istanb HTTP/1.1" 200 15
+[01/Apr/2026 05:48:12] "GET /api/klinik-ara/?q=istanbu HTTP/1.1" 200 15
+[01/Apr/2026 05:48:13] "GET /?q=istanbul HTTP/1.1" 200 8443
+[01/Apr/2026 05:48:13] "GET /api/klinik-ara/?q=istanbul HTTP/1.1" 200 15
+[01/Apr/2026 05:48:13] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:48:18] "GET /api/klinik-ara/?q=Istanb HTTP/1.1" 200 15
+[01/Apr/2026 05:48:19] "GET /api/klinik-ara/?q=Istanbul HTTP/1.1" 200 15
+[01/Apr/2026 05:48:19] "GET /?q=Istanbul HTTP/1.1" 200 8443
+[01/Apr/2026 05:48:19] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:48:20] "GET /?q=Istanbul HTTP/1.1" 200 8443
+[01/Apr/2026 05:48:21] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:48:23] "GET /api/klinik-ara/?q=Ac HTTP/1.1" 200 641
+[01/Apr/2026 05:48:24] "GET /api/klinik-ara/?q=Acl HTTP/1.1" 200 641
+[01/Apr/2026 05:48:24] "GET /api/klinik-ara/?q=Aclini HTTP/1.1" 200 641
+[01/Apr/2026 05:48:25] "GET /api/klinik-ara/?q=Aclinic HTTP/1.1" 200 641
+[01/Apr/2026 05:48:27] "GET /api/klinik-ara/?q=%C4%B0n%C3%B6n%C3%BC HTTP/1.1" 200 15
+[01/Apr/2026 05:48:29] "GET /api/klinik-ara/?q=Ac HTTP/1.1" 200 641
+[01/Apr/2026 05:48:30] "GET /api/klinik-ara/?q=AcL%C4%B0N HTTP/1.1" 200 15
+[01/Apr/2026 05:48:31] "GET /api/klinik-ara/?q=aC HTTP/1.1" 200 641
+[01/Apr/2026 05:48:35] "GET /api/klinik-ara/?q=aClinic HTTP/1.1" 200 641
+[01/Apr/2026 05:48:36] "GET /api/klinik-ara/?q=aCliniC HTTP/1.1" 200 641
+[01/Apr/2026 05:48:47] "GET / HTTP/1.1" 200 46149
+[01/Apr/2026 05:48:47] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 05:48:47] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[01/Apr/2026 05:48:47] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+Not Found: /favicon.ico
+[01/Apr/2026 05:48:47] "GET /favicon.ico HTTP/1.1" 404 2364
+[01/Apr/2026 05:49:04] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 05:49:04] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 05:49:12] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14633
+[01/Apr/2026 05:49:12] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 05:49:12] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832

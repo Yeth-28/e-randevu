@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Randevu</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-left a { color: var(--gray); text-decoration: none; font-size: 14px; }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .content { padding: 32px; max-width: 700px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg { padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .card { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 20px; }
+        .card-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #f3f4f6; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-full { grid-column: 1/-1; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { font-size: 13px; font-weight: 500; color: #374151; }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 10px 14px; border: 1.5px solid var(--gray-light); border-radius: 10px;
+            font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; color: var(--text);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+        .btn-row { display: flex; gap: 12px; }
+        .btn-kaydet { padding: 12px 28px; background: var(--blue); color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+        .btn-kaydet:hover { background: var(--blue-dark); }
+        .btn-iptal { padding: 12px 24px; background: white; color: var(--gray); border: 1.5px solid var(--gray-light); border-radius: 12px; font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/randevular/">← Randevular</a>
+            <span style="color:var(--gray-light)">/</span>
+            <span class="topbar-title">Yeni Randevu</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-title">📅 Randevu Bilgileri</div>
+                <div class="form-grid">
+                    <div class="form-group form-full">
+                        <label>Hasta *</label>
+                        <select name="patient" required>
+                            <option value="">— Hasta Seç —</option>
+                            {% for h in hastalar %}
+                            <option value="{{ h.id }}" {% if selected_patient == h.id|stringformat:"s" %}selected{% endif %}>{{ h.name }} — {{ h.phone_number }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Doktor</label>
+                        <select name="doctor">
+                            <option value="">— Doktor Seç —</option>
+                            {% for d in doktorlar %}
+                            <option value="{{ d.id }}">{{ d.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>İşlem Türü</label>
+                        <select name="procedure">
+                            {% for val, label in procedure_choices %}
+                            <option value="{{ val }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tarih ve Saat *</label>
+                        <input type="datetime-local" name="date_time" required value="{{ default_dt }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Süre (dakika)</label>
+                        <select name="duration">
+                            <option value="15">15 dk</option>
+                            <option value="30" selected>30 dk</option>
+                            <option value="45">45 dk</option>
+                            <option value="60">1 saat</option>
+                            <option value="90">1.5 saat</option>
+                            <option value="120">2 saat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ücret (₺)</label>
+                        <input type="number" name="fee" min="0" step="0.01" value="0">
+                    </div>
+                    <div class="form-group form-full">
+                        <label>Notlar</label>
+                        <textarea name="notes" rows="3" placeholder="Randevu ile ilgili notlar..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button type="submit" class="btn-kaydet">💾 Randevu Oluştur</button>
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/randevular/" class="btn-iptal">İptal</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

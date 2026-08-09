@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — {{ doktor.name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{
+            --green:#059669;--green-dark:#065f46;--green-light:#dcfce7;
+            --blue:#2563eb;--blue-light:#eff6ff;
+            --bg:#f0fdf4;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+            --orange:#d97706;--red:#dc2626;
+        }
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+        .sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#065f46,#059669);z-index:100;display:flex;flex-direction:column;}
+        .sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .sidebar-brand .icon{font-size:28px;}
+        .sidebar-brand .name{font-family:'Playfair Display',serif;font-size:16px;color:white;margin-top:4px;}
+        .sidebar-brand .role{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;letter-spacing:1px;text-transform:uppercase;}
+        .sidebar-nav{padding:16px 0;flex:1;}
+        .nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+        .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+        .nav-item .icon{font-size:18px;width:24px;text-align:center;}
+        .sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+        .sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .topbar-right{display:flex;align-items:center;gap:12px;}
+        .doktor-badge{background:#f0fdf4;padding:7px 14px;border-radius:999px;font-size:13px;color:var(--green-dark);font-weight:500;}
+
+        /* ZİL */
+        .zil-btn{position:relative;background:#f3f4f6;border:none;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:background 0.2s;text-decoration:none;}
+        .zil-btn:hover{background:#e5e7eb;}
+        #bildirim-badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:white;border-radius:999px;font-size:10px;font-weight:700;min-width:18px;height:18px;display:none;align-items:center;justify-content:center;padding:0 4px;border:2px solid white;font-family:'DM Sans',sans-serif;}
+
+        .content{padding:32px;}
+
+        /* BANNER */
+        .welcome-banner{background:linear-gradient(135deg,#065f46,#059669,#10b981);border-radius:20px;padding:24px 32px;color:white;margin-bottom:24px;position:relative;overflow:hidden;}
+        .welcome-banner::before{content:'';position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.06);}
+        .welcome-banner h1{font-size:20px;font-weight:600;margin-bottom:4px;}
+        .welcome-banner p{font-size:13px;opacity:0.8;}
+
+        /* STATS */
+        .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+        .stat-card{background:white;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;align-items:center;gap:14px;}
+        .stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+        .stat-icon.green{background:var(--green-light);}
+        .stat-icon.blue{background:var(--blue-light);}
+        .stat-icon.orange{background:#fef3c7;}
+        .stat-label{font-size:12px;color:var(--gray);font-weight:500;margin-bottom:4px;}
+        .stat-value{font-size:26px;font-weight:700;color:var(--text);line-height:1;}
+
+        /* GRID */
+        .dash-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;}
+        .card{background:white;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+        .card-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:16px;}
+
+        /* TAKVİM */
+        .fc{font-family:'DM Sans',sans-serif!important;}
+        .fc .fc-button{font-family:'DM Sans',sans-serif!important;font-weight:500!important;font-size:12px!important;padding:5px 12px!important;}
+        .fc .fc-button-primary{background-color:var(--green)!important;border-color:var(--green)!important;}
+        .fc .fc-button-primary:hover{background-color:var(--green-dark)!important;}
+        .fc .fc-button-primary:not(:disabled).fc-button-active{background-color:var(--green-dark)!important;}
+        .fc .fc-event{border-radius:5px!important;border:none!important;font-size:11px!important;padding:1px 5px!important;cursor:pointer!important;}
+        .fc .fc-toolbar-title{font-size:15px!important;font-weight:600!important;}
+        .fc .fc-day-today{background:#f0fdf4!important;}
+        .fc .fc-timegrid-slot{height:36px!important;}
+        .fc .fc-col-header-cell-cushion{text-decoration:none!important;color:var(--gray)!important;font-size:11px!important;font-weight:600!important;text-transform:uppercase!important;}
+        .fc .fc-daygrid-day-number{text-decoration:none!important;color:var(--text)!important;font-size:12px!important;}
+
+        /* BUGÜN LİSTESİ */
+        .randevu-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--gray-light);}
+        .randevu-item:last-child{border-bottom:none;}
+        .randevu-saat{font-size:15px;font-weight:700;color:var(--green);min-width:48px;}
+        .randevu-hasta{font-size:14px;font-weight:500;color:var(--text);}
+        .randevu-islem{font-size:12px;color:var(--gray);margin-top:1px;}
+        .badge{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:500;}
+        .badge-bekliyor{background:#fef3c7;color:var(--orange);}
+        .badge-onaylandi{background:var(--blue-light);color:var(--blue);}
+        .badge-tamamlandi{background:var(--green-light);color:var(--green);}
+        .badge-iptal{background:#fef2f2;color:var(--red);}
+        .empty-state{text-align:center;padding:24px;color:var(--gray);font-size:13px;}
+
+        /* BİLDİRİM POPUP */
+        #bildirim-container{position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:10px;width:360px;pointer-events:none;}
+        .bildirim-popup{background:white;border-radius:14px;padding:14px 16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);border-left:4px solid var(--green);display:flex;align-items:flex-start;gap:10px;animation:bSlideIn 0.35s cubic-bezier(0.34,1.56,0.64,1);pointer-events:all;}
+        .bildirim-popup.iptal_randevu{border-left-color:var(--red);}
+        .bp-icon{font-size:20px;flex-shrink:0;}
+        .bp-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+        .bp-body{font-size:12px;color:var(--gray);}
+        .bp-kapat{margin-left:auto;background:none;border:none;font-size:16px;color:var(--gray);cursor:pointer;padding:0 0 0 6px;flex-shrink:0;}
+        @keyframes bSlideIn{from{transform:translateX(130%);opacity:0;}to{transform:translateX(0);opacity:1;}}
+        @keyframes bSlideOut{from{transform:translateX(0);opacity:1;}to{transform:translateX(130%);opacity:0;}}
+    </style>
+</head>
+<body>
+
+{% include "doktor/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-right">
+            <a href="#" class="zil-btn" title="Bildirimler" onclick="bildirimKontrol();return false;">
+                🔔 <span id="bildirim-badge"></span>
+            </a>
+            <div class="doktor-badge">👨‍⚕️ {{ doktor.name }}</div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="welcome-banner">
+            <h1>Hoş geldiniz, {{ doktor.name }}! 👋</h1>
+            <p>{{ bugun|date:"d F Y, l" }} — Bugün {{ bugun_randevular.count }} randevunuz var.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon green">📅</div>
+                <div><div class="stat-label">Bugünkü Randevu</div><div class="stat-value">{{ bugun_randevular.count }}</div></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue">📋</div>
+                <div><div class="stat-label">Bu Ay Ziyaret</div><div class="stat-value">{{ bu_ay_ziyaret }}</div></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange">⏳</div>
+                <div><div class="stat-label">Bekleyen Randevu</div><div class="stat-value">{{ bekleyen }}</div></div>
+            </div>
+        </div>
+
+        <div class="dash-grid">
+            <!-- TAKVİM -->
+            <div class="card">
+                <div class="card-title">📅 Randevu Takvimi</div>
+                <div id="takvim"></div>
+            </div>
+
+            <!-- BUGÜNKÜ RANDEVULAR -->
+            <div class="card">
+                <div class="card-title">☀️ Bugünkü Randevular</div>
+                {% if bugun_randevular %}
+                    {% for r in bugun_randevular %}
+                    <div class="randevu-item">
+                        <div class="randevu-saat">{{ r.date_time|date:"H:i" }}</div>
+                        <div style="flex:1;">
+                            <div class="randevu-hasta">
+                                <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/hastalar/{{ r.patient.id }}/"
+                                   style="color:var(--text);text-decoration:none;">{{ r.patient.name }}</a>
+                            </div>
+                            <div class="randevu-islem">{{ r.get_procedure_display }}</div>
+                        </div>
+                        <span class="badge badge-{{ r.status }}">{{ r.get_status_display }}</span>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-state">Bugün randevu yok.</div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="bildirim-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+<script>
+const CLINIC_ID  = "{{ clinic_id }}";
+const API_URL    = `{{ PANEL_URL }}/doktor/${CLINIC_ID}/api/bildirimler/`;
+const OKUNDU_URL = `{{ PANEL_URL }}/doktor/${CLINIC_ID}/api/bildirimler/okundu/`;
+
+// ─── TAKVİM ───────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+    const cal = new FullCalendar.Calendar(document.getElementById('takvim'), {
+        initialView: 'timeGridWeek',
+        locale: 'tr', firstDay: 1,
+        headerToolbar: { left:'prev,next today', center:'title', right:'dayGridMonth,timeGridWeek,timeGridDay' },
+        buttonText: { today:'Bugün', month:'Ay', week:'Hafta', day:'Gün' },
+        events: {{ takvim_json|safe }},
+        slotMinTime: '08:00:00', slotMaxTime: '20:00:00',
+        slotDuration: '00:30:00', height: 520, nowIndicator: true,
+        eventTimeFormat: { hour:'2-digit', minute:'2-digit', hour12:false },
+        eventClick: function(info) {
+            const p = info.event.extendedProps;
+            const hasta_id = p.hasta_id;
+            if (hasta_id) {
+                window.location.href = `{{ PANEL_URL }}/doktor/${CLINIC_ID}/hastalar/${hasta_id}/`;
+            }
+            
+        },
+        eventDidMount: function(info) {
+            const p = info.event.extendedProps;
+            info.el.title = `${p.hasta_adi} — ${p.procedure_label}`;
+        },
+        fc_day_today_background: '#f0fdf4',
+    });
+    cal.render();
+});
+
+// ─── BİLDİRİM SİSTEMİ ────────────────────────
+let gosterilmisIds = new Set(JSON.parse(localStorage.getItem('doktor_bildirim_'+CLINIC_ID)||'[]'));
+let audioCtx = null;
+
+function getCtx() {
+    if (!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    if (audioCtx.state==='suspended') audioCtx.resume();
+    return audioCtx;
+}
+document.addEventListener('click', ()=>{ try{getCtx();}catch(e){} }, {once:true});
+
+function sesOynat(type) {
+    try {
+        const ctx = getCtx();
+        if (ctx.state!=='running') return;
+        const now = ctx.currentTime;
+        const notlar = type==='yeni_randevu' ? [[880,0],[660,0.18]] : [[440,0],[330,0.2]];
+        notlar.forEach(([freq,delay])=>{
+            const osc=ctx.createOscillator(), gain=ctx.createGain();
+            osc.type='sine'; osc.frequency.value=freq;
+            gain.gain.setValueAtTime(0.22,now+delay);
+            gain.gain.exponentialRampToValueAtTime(0.001,now+delay+0.45);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(now+delay); osc.stop(now+delay+0.5);
+        });
+    } catch(e){}
+}
+
+function popupGoster(b) {
+    const c = document.getElementById('bildirim-container');
+    if (!c) return;
+    const icon = b.type==='yeni_randevu'?'📅':'❌';
+    const el = document.createElement('div');
+    el.className = 'bildirim-popup '+b.type;
+    el.innerHTML = `<div class="bp-icon">${icon}</div><div style="flex:1;"><div class="bp-title">${b.title}</div><div class="bp-body">${b.body}</div></div><button class="bp-kapat" onclick="this.closest('.bildirim-popup').remove()">✕</button>`;
+    c.appendChild(el);
+    setTimeout(()=>{ el.style.animation='bSlideOut 0.3s ease forwards'; setTimeout(()=>el.remove(),300); }, 6000);
+}
+
+function badgeGuncelle(n) {
+    const b = document.getElementById('bildirim-badge');
+    if (!b) return;
+    b.textContent = n>99?'99+':n;
+    b.style.display = n>0?'flex':'none';
+}
+
+function okunduIsaretle(ids) {
+    if (!ids.length) return;
+    fetch(OKUNDU_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','X-CSRFToken':getCookie('csrftoken')},
+        body:JSON.stringify({ids}), credentials:'include',
+    }).catch(()=>{});
+}
+
+async function bildirimKontrol() {
+    try {
+        const res = await fetch(API_URL, {credentials:'include'});
+        if (!res.ok) return;
+        const data = await res.json();
+        const yeniler = (data.notifications||[]).filter(b=>!gosterilmisIds.has(b.id));
+        badgeGuncelle(data.notifications.length);
+        yeniler.forEach(b=>{
+            gosterilmisIds.add(b.id);
+            sesOynat(b.type);
+            popupGoster(b);
+        });
+        localStorage.setItem('doktor_bildirim_'+CLINIC_ID, JSON.stringify([...gosterilmisIds].slice(-200)));
+    } catch(e){}
+}
+
+function getCookie(name) {
+    const parts = (`; ${document.cookie}`).split(`; ${name}=`);
+    return parts.length===2 ? parts.pop().split(';').shift() : '';
+}
+
+bildirimKontrol();
+setInterval(bildirimKontrol, 15000);
+</script>
+</body>
+</html>

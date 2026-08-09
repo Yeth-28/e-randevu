@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Patients</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Last Visit</th>
+            <th>Next Appointment</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+        <tr>
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.date_of_birth }}</td>
+            <td>
+                {% with last_visit=patient.visits.last %}
+                    {% if last_visit %}
+                        {{ last_visit.date_time|date }} with Dr. {{ last_visit.doctor.name }}
+                    {% else %}
+                        No visits yet
+                    {% endif %}
+                {% endwith %}
+            </td>
+            <td>
+                {% with next_appointment=patient.appointments.filter.first %}
+                    {% if next_appointment %}
+                        {{ next_appointment.date_time|date }} with Dr. {{ next_appointment.doctor.name }}
+                    {% else %}
+                        No upcoming appointments
+                    {% endif %}
+                {% endwith %}
+            </td>
+            <td>
+                <a href="{% url 'patient_detail' patient.id %}" class="btn btn-sm btn-info">View</a>
+                <a href="{% url 'patient_update' patient.id %}" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'patient_create' %}" class="btn btn-primary">Add New Patient</a>
+{% endblock %}

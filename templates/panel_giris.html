@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Girişi — e-Randevu</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;--green:#16a34a;--red:#dc2626;}
+body{font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,#1e3a8a,#2563eb);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:white;border-radius:24px;padding:40px;width:100%;max-width:420px;box-shadow:0 24px 64px rgba(0,0,0,0.2);}
+.logo{text-align:center;margin-bottom:32px;}
+.logo-icon{font-size:40px;margin-bottom:8px;}
+.logo-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);}
+.logo-sub{font-size:13px;color:var(--gray);margin-top:4px;}
+.section-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.section-sub{font-size:13px;color:var(--gray);margin-bottom:24px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:12px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:5px;}
+.fg input{width:100%;padding:12px 14px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
+.fg input:focus{border-color:var(--blue);}
+.btn-primary{width:100%;padding:14px;background:var(--blue);color:white;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;margin-top:4px;}
+.btn-primary:hover{background:var(--blue-dark);}
+.msg{padding:10px 14px;border-radius:10px;font-size:13px;margin-bottom:12px;}
+.msg-error{background:#fee2e2;color:var(--red);}
+.msg-success{background:#dcfce7;color:var(--green);}
+.link{color:var(--blue);text-decoration:none;font-size:13px;}
+.otp-wrap{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
+.otp-wrap input{width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--gray-light);border-radius:12px;outline:none;transition:border-color 0.2s;}
+.otp-wrap input:focus{border-color:var(--blue);}
+.info-box{background:var(--blue-light);border-radius:10px;padding:12px 16px;font-size:12px;color:#1e40af;margin-bottom:20px;line-height:1.6;}
+.divider{text-align:center;margin:20px 0;color:var(--gray);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="logo">
+        <div class="logo-icon">🦷</div>
+        <div class="logo-name">e-Randevu</div>
+        <div class="logo-sub">Klinik Yönetim Paneli</div>
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if step == 'otp' %}
+    <!-- OTP DOĞRULAMA -->
+    <div class="section-title">🔐 Doğrulama Kodu</div>
+    <div class="section-sub">E-postanıza gönderilen 6 haneli kodu girin</div>
+
+    <div class="info-box">
+        📧 <strong>{{ email }}</strong> adresine doğrulama kodu gönderildi.<br>
+        Kod 10 dakika geçerlidir.
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="step" value="otp">
+        <input type="hidden" name="clinic_id" value="{{ clinic_id }}">
+
+        <div class="otp-wrap" id="otp-inputs">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit" autofocus>
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+            <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+        </div>
+        <input type="hidden" name="otp" id="otp-hidden">
+
+        <button type="submit" class="btn-primary" onclick="combineOtp()">Doğrula →</button>
+    </form>
+    <div class="divider">
+        <a href="{{ PANEL_URL }}/giris/" class="link">← Geri dön</a>
+    </div>
+
+    {% else %}
+    <!-- GİRİŞ FORMU -->
+    <div class="section-title">Hoş Geldiniz</div>
+    <div class="section-sub">Klinik panelinize giriş yapın</div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="fg">
+            <label>Klinik ID</label>
+            <input type="text" name="clinic_id" placeholder="ABC123" style="text-transform:uppercase;letter-spacing:2px;font-weight:600;" autofocus required>
+        </div>
+        <div class="fg">
+            <label>E-posta</label>
+            <input type="email" name="email" placeholder="klinik@ornek.com" required>
+        </div>
+        <div class="fg">
+            <label>Şifre</label>
+            <input type="password" name="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary">Giriş Yap →</button>
+    </form>
+
+    <div class="divider">Hesabınız yok mu?</div>
+    <div style="text-align:center;">
+        <a href="{{ PANEL_URL }}/kayit/" class="link" style="font-weight:600;">Klinik Kaydı Oluştur →</a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+// OTP kutucuk navigasyonu
+document.querySelectorAll('.otp-digit').forEach((input, idx, all) => {
+    input.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g,'').slice(-1);
+        if (this.value && idx < all.length - 1) all[idx+1].focus();
+    });
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && !this.value && idx > 0) all[idx-1].focus();
+    });
+    input.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const paste = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g,'');
+        all.forEach((inp, i) => { inp.value = paste[i] || ''; });
+        all[Math.min(paste.length, all.length-1)].focus();
+    });
+});
+
+function combineOtp() {
+    const digits = [...document.querySelectorAll('.otp-digit')].map(i => i.value).join('');
+    document.getElementById('otp-hidden').value = digits;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ klinik.name }} — Düzenle</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', sans-serif; background: #0f172a; color: white; }
+        .main { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        .back { color: #64748b; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+        h1 { font-size: 22px; font-weight: 600; margin-bottom: 24px; }
+        .card { background: #1e293b; border-radius: 16px; padding: 28px; border: 1px solid #334155; margin-bottom: 20px; }
+        .card-title { font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; color: #94a3b8; margin-bottom: 6px; font-weight: 500; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 10px 14px; background: #0f172a; border: 1.5px solid #334155;
+            border-radius: 10px; font-size: 14px; color: white; font-family: 'DM Sans', sans-serif; outline: none;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: #2563eb; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #334155; }
+        .toggle-row label { font-size: 14px; color: #e2e8f0; }
+        .toggle-row input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+        .btn-row { display: flex; gap: 12px; margin-top: 24px; }
+        .btn-kaydet { flex: 1; padding: 13px; background: #2563eb; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+        .btn-iptal { padding: 13px 24px; background: #1e293b; color: #64748b; border: 1.5px solid #334155; border-radius: 12px; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; }
+        .msg-success { background: #14532d; color: #4ade80; padding: 12px 16px; border-radius: 10px; margin-bottom: 16px; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="main">
+    <a href="/superadmin/klinik/{{ klinik.clinic_id }}/" class="back">← {{ klinik.name }}</a>
+    <h1>✏️ Klinik Düzenle</h1>
+
+    {% if messages %}{% for msg in messages %}<div class="msg-success">✅ {{ msg }}</div>{% endfor %}{% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-title">Temel Bilgiler</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Klinik Adı</label>
+                    <input type="text" name="name" value="{{ klinik.name }}" required>
+                </div>
+                <div class="form-group">
+                    <label>E-posta</label>
+                    <input type="email" name="email" value="{{ klinik.email }}">
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" name="phone" value="{{ klinik.phone_number }}">
+                </div>
+                <div class="form-group">
+                    <label>Şehir</label>
+                    <input type="text" name="city" value="{{ klinik.city }}">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Abonelik</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Plan</label>
+                    <select name="plan">
+                        {% for val, label in plan_choices %}
+                        <option value="{{ val }}" {% if klinik.plan == val %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Plan Bitiş Tarihi</label>
+                    <input type="date" name="plan_end_date" value="{{ klinik.plan_end_date|date:'Y-m-d' }}">
+                </div>
+            </div>
+            <div class="toggle-row">
+                <label>Klinik Aktif</label>
+                <input type="checkbox" name="is_active" {% if klinik.is_active %}checked{% endif %}>
+            </div>
+        </div>
+        <div class="btn-row">
+            <button type="submit" class="btn-kaydet">💾 Kaydet</button>
+            <a href="/superadmin/klinik/{{ klinik.clinic_id }}/" class="btn-iptal">İptal</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

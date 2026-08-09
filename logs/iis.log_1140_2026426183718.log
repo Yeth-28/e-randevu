@@ -1,0 +1,9 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[26/Apr/2026 11:37:21] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[26/Apr/2026 11:45:12] "GET /?q= HTTP/1.1" 200 9312
+[26/Apr/2026 11:54:30] "GET / HTTP/1.1" 200 9312
+[26/Apr/2026 12:04:02] "GET /?sehir= HTTP/1.1" 200 9312

@@ -1,0 +1,48 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /robots.txt
+[03/May/2026 07:04:13] "GET /robots.txt HTTP/1.1" 404 2949
+[03/May/2026 07:04:13] "GET / HTTP/1.1" 200 9312
+[03/May/2026 07:04:17] "GET /?q HTTP/1.1" 200 9312
+[03/May/2026 07:04:20] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[03/May/2026 07:04:22] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[03/May/2026 07:04:25] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[03/May/2026 07:04:27] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[03/May/2026 07:04:29] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2363
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2365
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2360
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2362
+[03/May/2026 07:04:38] "GET /robots.txt HTTP/1.1" 404 2362
+[03/May/2026 07:04:41] "GET / HTTP/1.1" 200 35947
+[03/May/2026 07:04:43] "GET / HTTP/1.1" 200 54924
+[03/May/2026 07:04:44] "GET / HTTP/1.1" 200 54407
+[03/May/2026 07:04:45] "GET / HTTP/1.1" 200 20638
+[03/May/2026 07:04:47] "GET / HTTP/1.1" 200 54403
+[03/May/2026 07:04:48] "GET / HTTP/1.1" 200 54407
+[03/May/2026 07:04:49] "GET / HTTP/1.1" 200 39145
+[03/May/2026 07:04:49] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:50] "GET / HTTP/1.1" 200 54407
+[03/May/2026 07:04:50] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:51] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:51] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:52] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:52] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:52] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[03/May/2026 07:04:53] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+Not Found: /
+[03/May/2026 07:06:32] "GET / HTTP/1.1" 404 8848

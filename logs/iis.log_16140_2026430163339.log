@@ -1,0 +1,37 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[30/Apr/2026 09:33:43] "GET / HTTP/1.1" 404 8848
+Not Found: /robots.txt
+[30/Apr/2026 09:47:57] "GET /robots.txt HTTP/1.1" 404 2949
+[30/Apr/2026 09:47:58] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 09:48:02] "GET /?q HTTP/1.1" 200 9312
+[30/Apr/2026 09:48:05] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+Not Found: /robots.txt
+[30/Apr/2026 09:48:06] "GET /robots.txt HTTP/1.1" 404 2365
+Not Found: /robots.txt
+[30/Apr/2026 09:48:07] "GET /robots.txt HTTP/1.1" 404 2363
+[30/Apr/2026 09:48:07] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 09:48:09] "GET /robots.txt HTTP/1.1" 404 2362
+[30/Apr/2026 09:48:11] "GET / HTTP/1.1" 200 54924
+[30/Apr/2026 09:48:13] "GET / HTTP/1.1" 200 35947
+[30/Apr/2026 09:48:15] "GET / HTTP/1.1" 200 54407
+[30/Apr/2026 09:48:17] "GET / HTTP/1.1" 200 38803
+[30/Apr/2026 09:48:18] "GET / HTTP/1.1" 200 54407
+[30/Apr/2026 09:48:20] "GET / HTTP/1.1" 200 20962
+[30/Apr/2026 09:48:21] "GET / HTTP/1.1" 200 54407
+[30/Apr/2026 09:48:22] "GET / HTTP/1.1" 200 54403

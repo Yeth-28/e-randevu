@@ -1,0 +1,216 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[17/Apr/2026 18:17:15] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[17/Apr/2026 18:20:41] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /ws80.php
+[17/Apr/2026 18:20:42] "GET /ws80.php HTTP/1.1" 404 2942
+Not Found: /inputs.php
+[17/Apr/2026 18:20:42] "GET /inputs.php HTTP/1.1" 404 2948
+Not Found: /ioxi-o.php
+[17/Apr/2026 18:20:42] "GET /ioxi-o.php HTTP/1.1" 404 2948
+Not Found: /8.php
+[17/Apr/2026 18:20:42] "GET /8.php HTTP/1.1" 404 2933
+Not Found: /jga.php
+[17/Apr/2026 18:20:42] "GET /jga.php HTTP/1.1" 404 2939
+Not Found: /wp-admin/network/users.php
+[17/Apr/2026 18:20:43] "GET /wp-admin/network/users.php HTTP/1.1" 404 2996
+Not Found: /an.php
+[17/Apr/2026 18:20:43] "GET /an.php HTTP/1.1" 404 2936
+Not Found: /wp-blog-header.php
+[17/Apr/2026 18:20:43] "GET /wp-blog-header.php HTTP/1.1" 404 2972
+Not Found: /1.php
+[17/Apr/2026 18:20:43] "GET /1.php HTTP/1.1" 404 2933
+Not Found: /admlo.php
+[17/Apr/2026 18:20:43] "GET /admlo.php HTTP/1.1" 404 2945
+Not Found: /t.php
+[17/Apr/2026 18:20:43] "GET /t.php HTTP/1.1" 404 2933
+Not Found: /lib.php
+[17/Apr/2026 18:20:43] "GET /lib.php HTTP/1.1" 404 2939
+Not Found: /kj.php
+[17/Apr/2026 18:20:44] "GET /kj.php HTTP/1.1" 404 2936
+Not Found: /new.php
+[17/Apr/2026 18:20:44] "GET /new.php HTTP/1.1" 404 2939
+Not Found: /edit.php
+[17/Apr/2026 18:20:44] "GET /edit.php HTTP/1.1" 404 2942
+Not Found: /gettest.php
+[17/Apr/2026 18:20:45] "GET /gettest.php HTTP/1.1" 404 2951
+Not Found: /666.php
+[17/Apr/2026 18:20:45] "GET /666.php HTTP/1.1" 404 2939
+Not Found: /tool.php
+[17/Apr/2026 18:20:45] "GET /tool.php HTTP/1.1" 404 2942
+Not Found: /wp-blogs.php
+[17/Apr/2026 18:20:45] "GET /wp-blogs.php HTTP/1.1" 404 2954
+Not Found: /bgymj.php
+[17/Apr/2026 18:20:45] "GET /bgymj.php HTTP/1.1" 404 2945
+Not Found: /mini.php
+[17/Apr/2026 18:20:45] "GET /mini.php HTTP/1.1" 404 2942
+Not Found: /amax.php
+[17/Apr/2026 18:20:45] "GET /amax.php HTTP/1.1" 404 2942
+Not Found: /mh.php
+[17/Apr/2026 18:20:45] "GET /mh.php HTTP/1.1" 404 2936
+Not Found: /ms.php
+[17/Apr/2026 18:20:45] "GET /ms.php HTTP/1.1" 404 2936
+Not Found: /166.php
+[17/Apr/2026 18:20:45] "GET /166.php HTTP/1.1" 404 2939
+Not Found: /bmi.php
+[17/Apr/2026 18:20:45] "GET /bmi.php HTTP/1.1" 404 2939
+Not Found: /wp-good.php
+[17/Apr/2026 18:20:45] "GET /wp-good.php HTTP/1.1" 404 2951
+Not Found: /shell.php
+[17/Apr/2026 18:20:46] "GET /shell.php HTTP/1.1" 404 2945
+Not Found: /dass.php
+[17/Apr/2026 18:20:46] "GET /dass.php HTTP/1.1" 404 2942
+Not Found: /aboute.php
+[17/Apr/2026 18:20:46] "GET /aboute.php HTTP/1.1" 404 2948
+Not Found: /press.php
+[17/Apr/2026 18:20:46] "GET /press.php HTTP/1.1" 404 2945
+Not Found: /wp-png.php
+[17/Apr/2026 18:20:46] "GET /wp-png.php HTTP/1.1" 404 2948
+Not Found: /s.php
+[17/Apr/2026 18:20:46] "GET /s.php HTTP/1.1" 404 2933
+Not Found: /first.php
+[17/Apr/2026 18:20:46] "GET /first.php HTTP/1.1" 404 2945
+Not Found: /wp-links-opml.php
+[17/Apr/2026 18:20:46] "GET /wp-links-opml.php HTTP/1.1" 404 2969
+Not Found: /ms-edit.php
+[17/Apr/2026 18:20:46] "GET /ms-edit.php HTTP/1.1" 404 2951
+Not Found: /asd.php
+[17/Apr/2026 18:20:46] "GET /asd.php HTTP/1.1" 404 2939
+Not Found: /public/vx.php
+[17/Apr/2026 18:20:46] "GET /public/vx.php HTTP/1.1" 404 2957
+Not Found: /wp-content/radio.php
+[17/Apr/2026 18:20:46] "GET /wp-content/radio.php HTTP/1.1" 404 2978
+Not Found: /wp-access.php
+[17/Apr/2026 18:20:46] "GET /wp-access.php HTTP/1.1" 404 2957
+Not Found: /wp-admin/css/bolt.php
+[17/Apr/2026 18:20:46] "GET /wp-admin/css/bolt.php HTTP/1.1" 404 2981
+Not Found: /cu.php
+[17/Apr/2026 18:20:46] "GET /cu.php HTTP/1.1" 404 2936
+Not Found: /bolt.php
+[17/Apr/2026 18:20:47] "GET /bolt.php HTTP/1.1" 404 2942
+Not Found: /900.php
+[17/Apr/2026 18:20:47] "GET /900.php HTTP/1.1" 404 2939
+Not Found: /a5.php
+[17/Apr/2026 18:20:47] "GET /a5.php HTTP/1.1" 404 2936
+Not Found: /term.php
+[17/Apr/2026 18:20:47] "GET /term.php HTTP/1.1" 404 2942
+Not Found: /b.php
+[17/Apr/2026 18:20:47] "GET /b.php HTTP/1.1" 404 2933
+Not Found: /sid3.php
+[17/Apr/2026 18:20:47] "GET /sid3.php HTTP/1.1" 404 2942
+Not Found: /ccs.php
+[17/Apr/2026 18:20:47] "GET /ccs.php HTTP/1.1" 404 2939
+Not Found: /aboutc.php
+[17/Apr/2026 18:20:47] "GET /aboutc.php HTTP/1.1" 404 2948
+Not Found: /fs.php
+[17/Apr/2026 18:20:47] "GET /fs.php HTTP/1.1" 404 2936
+Not Found: /ws82.php
+[17/Apr/2026 18:20:47] "GET /ws82.php HTTP/1.1" 404 2942
+Not Found: /wp-admin/network/edit.php
+[17/Apr/2026 18:20:47] "GET /wp-admin/network/edit.php HTTP/1.1" 404 2993
+Not Found: /ws48.php
+[17/Apr/2026 18:20:47] "GET /ws48.php HTTP/1.1" 404 2942
+Not Found: /wp-the.php
+[17/Apr/2026 18:20:48] "GET /wp-the.php HTTP/1.1" 404 2948
+Not Found: /wp5.php
+[17/Apr/2026 18:20:48] "GET /wp5.php HTTP/1.1" 404 2939
+Not Found: /xxx.php
+[17/Apr/2026 18:20:48] "GET /xxx.php HTTP/1.1" 404 2939
+Not Found: /wen.php
+[17/Apr/2026 18:20:48] "GET /wen.php HTTP/1.1" 404 2939
+Not Found: /bnm.php
+[17/Apr/2026 18:20:48] "GET /bnm.php HTTP/1.1" 404 2939
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[17/Apr/2026 18:20:48] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /byypas.php
+[17/Apr/2026 18:20:49] "GET /byypas.php HTTP/1.1" 404 2948
+Not Found: /hplfuns.php
+[17/Apr/2026 18:20:49] "GET /hplfuns.php HTTP/1.1" 404 2951
+Not Found: /grsiuk.php
+[17/Apr/2026 18:20:49] "GET /grsiuk.php HTTP/1.1" 404 2948
+Not Found: /gifclass.php
+[17/Apr/2026 18:20:49] "GET /gifclass.php HTTP/1.1" 404 2954
+Not Found: /a4.php
+[17/Apr/2026 18:20:49] "GET /a4.php HTTP/1.1" 404 2936
+Not Found: /domains.php
+[17/Apr/2026 18:20:49] "GET /domains.php HTTP/1.1" 404 2951
+Not Found: /tt.php
+[17/Apr/2026 18:20:49] "GET /tt.php HTTP/1.1" 404 2936
+Not Found: /abc.php
+[17/Apr/2026 18:20:50] "GET /abc.php HTTP/1.1" 404 2939
+Not Found: /yw5bi63u.php
+[17/Apr/2026 18:20:50] "GET /yw5bi63u.php HTTP/1.1" 404 2954
+Not Found: /222.php
+[17/Apr/2026 18:20:50] "GET /222.php HTTP/1.1" 404 2939
+Not Found: /ws57.php
+[17/Apr/2026 18:20:50] "GET /ws57.php HTTP/1.1" 404 2942
+Not Found: /8573.php
+[17/Apr/2026 18:20:50] "GET /8573.php HTTP/1.1" 404 2942
+Not Found: /ws66.php
+[17/Apr/2026 18:20:50] "GET /ws66.php HTTP/1.1" 404 2942
+Not Found: /66.php
+[17/Apr/2026 18:20:50] "GET /66.php HTTP/1.1" 404 2936
+Not Found: /wp-p2r3q9c8k4.php
+[17/Apr/2026 18:20:50] "GET /wp-p2r3q9c8k4.php HTTP/1.1" 404 2969
+Not Found: /ws88.php
+[17/Apr/2026 18:20:50] "GET /ws88.php HTTP/1.1" 404 2942
+Not Found: /mode.php
+[17/Apr/2026 18:20:50] "GET /mode.php HTTP/1.1" 404 2942
+Not Found: /set.php
+[17/Apr/2026 18:20:50] "GET /set.php HTTP/1.1" 404 2939
+Not Found: /hroxw.php
+[17/Apr/2026 18:20:50] "GET /hroxw.php HTTP/1.1" 404 2945
+Not Found: /ok.php
+[17/Apr/2026 18:20:50] "GET /ok.php HTTP/1.1" 404 2936
+Not Found: /zoo.php
+[17/Apr/2026 18:20:50] "GET /zoo.php HTTP/1.1" 404 2939
+Not Found: /gaza.php
+[17/Apr/2026 18:20:50] "GET /gaza.php HTTP/1.1" 404 2942
+Not Found: /retu11.PhP7
+[17/Apr/2026 18:20:51] "GET /retu11.PhP7 HTTP/1.1" 404 2951
+Not Found: /ioxi001.PhP7
+[17/Apr/2026 18:20:51] "GET /ioxi001.PhP7 HTTP/1.1" 404 2954
+Not Found: /mk.php
+[17/Apr/2026 18:20:51] "GET /mk.php HTTP/1.1" 404 2936
+Not Found: /fm.php
+[17/Apr/2026 18:20:51] "GET /fm.php HTTP/1.1" 404 2936
+Not Found: /robots.txt
+[17/Apr/2026 18:26:39] "GET /robots.txt HTTP/1.1" 404 2356
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[17/Apr/2026 18:26:46] "GET / HTTP/1.1" 500 97281

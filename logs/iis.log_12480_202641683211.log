@@ -1,0 +1,54 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /xmlrpc.php
+[16/Apr/2026 01:32:16] "POST /xmlrpc.php HTTP/1.1" 404 2950
+[16/Apr/2026 01:42:36] "GET / HTTP/1.1" 200 9312
+[16/Apr/2026 01:42:37] "GET / HTTP/1.1" 200 9312
+[16/Apr/2026 01:42:39] "GET / HTTP/1.1" 200 9312
+[16/Apr/2026 01:42:39] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[16/Apr/2026 01:42:40] "GET /favicon.ico HTTP/1.1" 404 2952
+[16/Apr/2026 01:42:58] "GET / HTTP/1.1" 200 9312
+[16/Apr/2026 01:42:59] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[16/Apr/2026 01:42:59] "GET /favicon.ico HTTP/1.1" 404 2952
+[16/Apr/2026 01:50:37] "GET / HTTP/1.1" 200 9312
+[16/Apr/2026 01:52:30] "GET / HTTP/1.1" 200 9312
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[16/Apr/2026 02:05:58] "GET / HTTP/1.1" 500 98182
+[16/Apr/2026 02:12:27] "GET / HTTP/1.1" 200 9312

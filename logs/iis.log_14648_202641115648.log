@@ -1,0 +1,161 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[01/Apr/2026 04:56:52] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /q9IT6sbFnEt.php
+[01/Apr/2026 04:56:52] "GET /q9IT6sbFnEt.php HTTP/1.1" 404 2963
+Not Found: /too.php
+[01/Apr/2026 04:56:52] "GET /too.php HTTP/1.1" 404 2939
+Not Found: /ahda.php
+[01/Apr/2026 04:56:53] "GET /ahda.php HTTP/1.1" 404 2942
+Not Found: /css_compare.php
+[01/Apr/2026 04:56:53] "GET /css_compare.php HTTP/1.1" 404 2963
+Not Found: /EOew9G6oPtY.php
+[01/Apr/2026 04:56:53] "GET /EOew9G6oPtY.php HTTP/1.1" 404 2963
+Not Found: /wp-kaori.php
+[01/Apr/2026 04:56:53] "GET /wp-kaori.php HTTP/1.1" 404 2954
+Not Found: /treaq.php
+[01/Apr/2026 04:56:53] "GET /treaq.php HTTP/1.1" 404 2945
+Not Found: /Czf4bk9SmKW.php
+[01/Apr/2026 04:56:54] "GET /Czf4bk9SmKW.php HTTP/1.1" 404 2963
+Not Found: /Uckhvk.php
+[01/Apr/2026 04:56:54] "GET /Uckhvk.php HTTP/1.1" 404 2948
+Not Found: /wp-is.php
+[01/Apr/2026 04:56:54] "GET /wp-is.php HTTP/1.1" 404 2945
+Not Found: /izV8e3mKItR.php
+[01/Apr/2026 04:56:54] "GET /izV8e3mKItR.php HTTP/1.1" 404 2963
+Not Found: /acme.php
+[01/Apr/2026 04:56:54] "GET /acme.php HTTP/1.1" 404 2942
+Not Found: /AI5Tgo4CLPS.php
+[01/Apr/2026 04:56:55] "GET /AI5Tgo4CLPS.php HTTP/1.1" 404 2963
+Not Found: /upload2.php
+[01/Apr/2026 04:56:55] "GET /upload2.php HTTP/1.1" 404 2951
+Not Found: /pHhDvrG63XP.php
+[01/Apr/2026 04:56:55] "GET /pHhDvrG63XP.php HTTP/1.1" 404 2963
+Not Found: /LZrWgwWBX.php
+[01/Apr/2026 04:56:55] "GET /LZrWgwWBX.php HTTP/1.1" 404 2957
+Not Found: /bgvfAqSKr2E.php
+[01/Apr/2026 04:56:55] "GET /bgvfAqSKr2E.php HTTP/1.1" 404 2963
+Not Found: /kOns8dgHcTK.php
+[01/Apr/2026 04:56:55] "GET /kOns8dgHcTK.php HTTP/1.1" 404 2963
+Not Found: /HMsWbETGNfn.php
+[01/Apr/2026 04:56:56] "GET /HMsWbETGNfn.php HTTP/1.1" 404 2963
+Not Found: /wp-admin-block.php
+[01/Apr/2026 04:56:56] "GET /wp-admin-block.php HTTP/1.1" 404 2972
+Not Found: /LycUHwitWeX.php
+[01/Apr/2026 04:56:56] "GET /LycUHwitWeX.php HTTP/1.1" 404 2963
+Not Found: /webdb.php
+[01/Apr/2026 04:56:56] "GET /webdb.php HTTP/1.1" 404 2945
+Not Found: /FcqATnXEWD.php
+[01/Apr/2026 04:56:57] "GET /FcqATnXEWD.php HTTP/1.1" 404 2960
+Not Found: /6IhPpTqJ2g5.php
+[01/Apr/2026 04:56:57] "GET /6IhPpTqJ2g5.php HTTP/1.1" 404 2963
+Not Found: /kwfcrhudyln.php
+[01/Apr/2026 04:56:57] "GET /kwfcrhudyln.php HTTP/1.1" 404 2963
+Not Found: /ODdyeJxshcY.php
+[01/Apr/2026 04:56:57] "GET /ODdyeJxshcY.php HTTP/1.1" 404 2963
+Not Found: /qqkbfujk.php
+[01/Apr/2026 04:56:57] "GET /qqkbfujk.php HTTP/1.1" 404 2954
+Not Found: /bozjkosy.php
+[01/Apr/2026 04:56:58] "GET /bozjkosy.php HTTP/1.1" 404 2954
+Not Found: /DuavNF74ysB.php
+[01/Apr/2026 04:56:58] "GET /DuavNF74ysB.php HTTP/1.1" 404 2963
+Not Found: /1OHG2bNXlx7.php
+[01/Apr/2026 04:56:58] "GET /1OHG2bNXlx7.php HTTP/1.1" 404 2963
+Not Found: /ncljSH4JfCF.php
+[01/Apr/2026 04:56:58] "GET /ncljSH4JfCF.php HTTP/1.1" 404 2963
+Not Found: /IDNAEncoder-term.php
+[01/Apr/2026 04:56:58] "GET /IDNAEncoder-term.php HTTP/1.1" 404 2978
+Not Found: /dkSUq.php
+[01/Apr/2026 04:56:58] "GET /dkSUq.php HTTP/1.1" 404 2945
+Not Found: /Dx81KVJCHrZ.php
+[01/Apr/2026 04:56:59] "GET /Dx81KVJCHrZ.php HTTP/1.1" 404 2963
+Not Found: /moYleCH45qG.php
+[01/Apr/2026 04:56:59] "GET /moYleCH45qG.php HTTP/1.1" 404 2963
+Not Found: /eMci6j1sWd.php
+[01/Apr/2026 04:56:59] "GET /eMci6j1sWd.php HTTP/1.1" 404 2960
+Not Found: /htaccess.php
+[01/Apr/2026 04:56:59] "GET /htaccess.php HTTP/1.1" 404 2954
+Not Found: /Dfr9BWNK2wb.php
+[01/Apr/2026 04:56:59] "GET /Dfr9BWNK2wb.php HTTP/1.1" 404 2963
+Not Found: /cof.php
+[01/Apr/2026 04:56:59] "GET /cof.php HTTP/1.1" 404 2939
+Not Found: /f35.php
+[01/Apr/2026 04:57:00] "GET /f35.php HTTP/1.1" 404 2939
+Not Found: /nzJsmtkhO8u.php
+[01/Apr/2026 04:57:00] "GET /nzJsmtkhO8u.php HTTP/1.1" 404 2963
+Not Found: /uP6nVpTx3SA.php
+[01/Apr/2026 04:57:00] "GET /uP6nVpTx3SA.php HTTP/1.1" 404 2963
+Not Found: /hYdXrMgTbH.php
+[01/Apr/2026 04:57:00] "GET /hYdXrMgTbH.php HTTP/1.1" 404 2960
+Not Found: /2index.php
+[01/Apr/2026 04:57:00] "GET /2index.php HTTP/1.1" 404 2948
+Not Found: /last.php
+[01/Apr/2026 04:57:01] "GET /last.php HTTP/1.1" 404 2942
+Not Found: /ACKuJTcsdkq.php
+[01/Apr/2026 04:57:01] "GET /ACKuJTcsdkq.php HTTP/1.1" 404 2963
+Not Found: /go.php
+[01/Apr/2026 04:57:01] "GET /go.php HTTP/1.1" 404 2936
+Not Found: /wQdN5HnvEtR.php
+[01/Apr/2026 04:57:01] "GET /wQdN5HnvEtR.php HTTP/1.1" 404 2963
+Not Found: /MgyQbv9nwBO.php
+[01/Apr/2026 04:57:01] "GET /MgyQbv9nwBO.php HTTP/1.1" 404 2963
+Not Found: /dAXK4JbIiGa.php
+[01/Apr/2026 04:57:01] "GET /dAXK4JbIiGa.php HTTP/1.1" 404 2963
+Not Found: /KT9I4SqzZvb.php
+[01/Apr/2026 04:57:02] "GET /KT9I4SqzZvb.php HTTP/1.1" 404 2963
+Not Found: /files_uploader.php
+[01/Apr/2026 04:57:02] "GET /files_uploader.php HTTP/1.1" 404 2972
+Not Found: /oW9kdZl1UHy.php
+[01/Apr/2026 04:57:02] "GET /oW9kdZl1UHy.php HTTP/1.1" 404 2963
+Not Found: /media.php.INFECTED.php
+[01/Apr/2026 04:57:02] "GET /media.php.INFECTED.php HTTP/1.1" 404 2984
+Not Found: /vNgtH1KujJ.php
+[01/Apr/2026 04:57:02] "GET /vNgtH1KujJ.php HTTP/1.1" 404 2960
+Not Found: /E2WXOTZqGw8.php
+[01/Apr/2026 04:57:03] "GET /E2WXOTZqGw8.php HTTP/1.1" 404 2963
+Not Found: /Jfs3OZINpkh.php
+[01/Apr/2026 04:57:03] "GET /Jfs3OZINpkh.php HTTP/1.1" 404 2963
+Not Found: /dPOaGKcuVRb.php
+[01/Apr/2026 04:57:03] "GET /dPOaGKcuVRb.php HTTP/1.1" 404 2963
+Not Found: /wp-admin-css.php
+[01/Apr/2026 04:57:03] "GET /wp-admin-css.php HTTP/1.1" 404 2966
+Not Found: /ZPFuwpEVoSG.php
+[01/Apr/2026 04:57:03] "GET /ZPFuwpEVoSG.php HTTP/1.1" 404 2963
+Not Found: /trAvis_ot2q6wwb.php
+[01/Apr/2026 04:57:16] "GET /trAvis_ot2q6wwb.php HTTP/1.1" 404 2975
+Not Found: /ufztjgmy.php
+[01/Apr/2026 04:57:16] "GET /ufztjgmy.php HTTP/1.1" 404 2954
+Not Found: /cflsintdaf.php
+[01/Apr/2026 04:57:16] "GET /cflsintdaf.php HTTP/1.1" 404 2960
+Not Found: /lglqpxzb.php
+[01/Apr/2026 04:57:16] "GET /lglqpxzb.php HTTP/1.1" 404 2954
+Not Found: /3t8C1Grl8y.php
+[01/Apr/2026 04:57:16] "GET /3t8C1Grl8y.php HTTP/1.1" 404 2960
+Not Found: /Engine.php
+[01/Apr/2026 04:57:16] "GET /Engine.php HTTP/1.1" 404 2948
+Not Found: /GSTe4XfjrL5.php
+[01/Apr/2026 04:57:17] "GET /GSTe4XfjrL5.php HTTP/1.1" 404 2963
+Not Found: /entry-view.php
+[01/Apr/2026 04:57:17] "GET /entry-view.php HTTP/1.1" 404 2960
+Not Found: /2FpTObEIH9L.php
+[01/Apr/2026 04:57:17] "GET /2FpTObEIH9L.php HTTP/1.1" 404 2963
+Not Found: /EravVS.php
+[01/Apr/2026 04:57:17] "GET /EravVS.php HTTP/1.1" 404 2948
+Not Found: /Jq3USkrGVPW.php
+[01/Apr/2026 04:57:17] "GET /Jq3USkrGVPW.php HTTP/1.1" 404 2963
+Not Found: /rqsDmRzwC6I.php
+[01/Apr/2026 04:57:17] "GET /rqsDmRzwC6I.php HTTP/1.1" 404 2963
+Not Found: /a3xGcWr65LM.php
+[01/Apr/2026 04:57:17] "GET /a3xGcWr65LM.php HTTP/1.1" 404 2963
+Not Found: /spcA2qaMDHu.php
+[01/Apr/2026 04:57:18] "GET /spcA2qaMDHu.php HTTP/1.1" 404 2963
+Not Found: /wp-blog.php
+[01/Apr/2026 04:57:18] "GET /wp-blog.php HTTP/1.1" 404 2951
+Not Found: /jTweH3qMp7D.php
+[01/Apr/2026 04:57:18] "GET /jTweH3qMp7D.php HTTP/1.1" 404 2963
+Not Found: /rgcoR73PNkA.php
+[01/Apr/2026 04:57:18] "GET /rgcoR73PNkA.php HTTP/1.1" 404 2963

@@ -1,0 +1,42 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 04:50:00] "GET /5Q1QKL/randevular/ekle/?dt=2026-03-12T10:00 HTTP/1.1" 200 29844
+[05/Apr/2026 04:50:00] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 43622
+[05/Apr/2026 04:50:00,835] - Broken pipe from ('127.0.0.1', 64249)
+[05/Apr/2026 04:50:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:50:02] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 43622
+[05/Apr/2026 04:50:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:50:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:50:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:50:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:51:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:51:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:51:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:51:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:52:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:52:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:52:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /
+[05/Apr/2026 04:52:34] "GET / HTTP/1.1" 404 8848
+[05/Apr/2026 04:52:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:53:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:53:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:53:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:53:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:54:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:54:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 05, 2026 - 04:50:00
+Django version 5.0.9, using settings 'dental.settings'
+Starting development server at http://0.0.0.0:2085/
+Quit the server with CTRL-BREAK.
+
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader

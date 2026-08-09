@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor Girişi — e-Randevu</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{--green:#059669;--green-dark:#065f46;--green-light:#dcfce7;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;--red:#dc2626;}
+        body{font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,#065f46,#059669,#10b981);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+        .card{background:white;border-radius:24px;padding:44px 40px;width:100%;max-width:420px;box-shadow:0 24px 80px rgba(0,0,0,0.2);}
+        .logo{text-align:center;margin-bottom:32px;}
+        .logo .icon{font-size:44px;}
+        .logo h1{font-family:'Playfair Display',serif;font-size:22px;color:var(--text);margin-top:10px;}
+        .logo .subtitle{font-size:13px;color:var(--green);font-weight:500;background:var(--green-light);display:inline-block;padding:4px 14px;border-radius:999px;margin-top:8px;}
+        .fg{margin-bottom:18px;}
+        .fg label{display:block;font-size:13px;font-weight:500;color:var(--text);margin-bottom:7px;}
+        .fg input[type="email"]{width:100%;padding:13px 16px;border:1.5px solid var(--gray-light);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
+        .fg input:focus{border-color:var(--green);}
+        .kod-inputs{display:flex;gap:8px;justify-content:center;}
+        .kod-inputs input{width:48px;height:56px;text-align:center;font-size:22px;font-weight:700;border-radius:12px;border:2px solid var(--gray-light);padding:0;font-family:'DM Sans',monospace;transition:all 0.2s;background:#fafafa;color:var(--text);outline:none;}
+        .kod-inputs input:focus{border-color:var(--green);background:white;}
+        .kod-inputs input.filled{border-color:var(--green);background:var(--green-light);}
+        .remember-row{display:flex;align-items:center;gap:10px;margin:18px 0;}
+        .toggle-box{width:42px;height:24px;border-radius:999px;background:var(--gray-light);cursor:pointer;position:relative;transition:background 0.2s;flex-shrink:0;}
+        .toggle-box::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:white;top:3px;left:3px;transition:transform 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+        .toggle-box.on{background:var(--green);}
+        .toggle-box.on::before{transform:translateX(18px);}
+        .btn{width:100%;padding:14px;background:var(--green);color:white;border:none;border-radius:12px;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.2s;}
+        .btn:hover{background:var(--green-dark);}
+        .msg{padding:12px 16px;border-radius:10px;font-size:13px;margin-bottom:16px;}
+        .msg-error{background:#fee2e2;color:var(--red);}
+        .hint{font-size:12px;color:var(--gray);text-align:center;margin-top:16px;line-height:1.7;}
+        .info-box{background:var(--green-light);border-radius:10px;padding:12px 16px;font-size:12px;color:#065f46;margin-bottom:20px;line-height:1.6;}
+        .back-link{text-align:center;margin-top:12px;font-size:13px;color:var(--gray);}
+        .back-link a{color:var(--green);text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="logo">
+        <div class="icon">👨‍⚕️</div>
+        <h1>e-Randevu</h1>
+        <div class="subtitle">Doktor Paneli</div>
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if step == 'otp' %}
+    <!-- OTP ADIMI -->
+    <div class="info-box">
+        📧 <strong>{{ email }}</strong> adresine doğrulama kodu gönderildi.<br>
+        Kod 10 dakika geçerlidir.
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="step" value="otp">
+        <div class="fg">
+            <label>E-posta Doğrulama Kodu</label>
+            <div class="kod-inputs">
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box" autofocus>
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="otp-box">
+            </div>
+            <input type="hidden" name="otp" id="otp-hidden">
+        </div>
+        <button type="submit" class="btn" onclick="combineOtp()">Doğrula ve Giriş Yap →</button>
+    </form>
+    <div class="back-link"><a href="{{ PANEL_URL }}/doktor/giris/">← Geri dön</a></div>
+
+    {% else %}
+    <!-- GİRİŞ ADIMI -->
+    <form method="post" id="giris-form">
+        {% csrf_token %}
+        <input type="hidden" name="kod" id="kod-hidden">
+        <div class="fg">
+            <label>E-posta Adresiniz</label>
+            <input type="email" name="email" value="{{ email|default:'' }}" placeholder="doktor@klinik.com" required autofocus>
+        </div>
+        <div class="fg">
+            <label>Giriş Kodu <span style="color:var(--gray);font-size:11px;">(Klinik yöneticisinden alınan 6 haneli kod)</span></label>
+            <div class="kod-inputs">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+                <input type="text" maxlength="1" inputmode="numeric" class="kod-box">
+            </div>
+        </div>
+        <div class="remember-row">
+            <input type="checkbox" name="remember_me" id="remember_me" style="display:none;">
+            <div class="toggle-box" id="toggle-box" onclick="toggleRemember()"></div>
+            <div>
+                <div style="font-size:13px;font-weight:500;cursor:pointer;" onclick="toggleRemember()">Beni hatırla</div>
+                <div style="font-size:11px;color:var(--gray);">30 gün boyunca otomatik giriş</div>
+            </div>
+        </div>
+        <button type="submit" class="btn" onclick="document.getElementById('kod-hidden').value=[...document.querySelectorAll('.kod-box')].map(b=>b.value).join('')">
+            Giriş Yap →
+        </button>
+    </form>
+    <div class="hint">Doğrulama kodunuzu kliniğinizin yöneticisinden alabilirsiniz.</div>
+    {% endif %}
+</div>
+
+<script>
+// OTP kutucukları
+document.querySelectorAll('.otp-box, .kod-box').forEach((box, i, all) => {
+    box.addEventListener('input', () => {
+        box.value = box.value.replace(/\D/g,'').slice(-1);
+        box.classList.toggle('filled', !!box.value);
+        if (box.value && i < all.length - 1) all[i+1].focus();
+    });
+    box.addEventListener('keydown', e => {
+        if (e.key === 'Backspace' && !box.value && i > 0) {
+            all[i-1].focus(); all[i-1].value = '';
+            all[i-1].classList.remove('filled');
+        }
+    });
+    box.addEventListener('paste', e => {
+        e.preventDefault();
+        const p = (e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'');
+        all.forEach((inp,j) => { inp.value = p[j]||''; inp.classList.toggle('filled',!!inp.value); });
+        all[Math.min(p.length, all.length-1)].focus();
+    });
+});
+
+function combineOtp() {
+    document.getElementById('otp-hidden').value = [...document.querySelectorAll('.otp-box')].map(b=>b.value).join('');
+}
+
+function toggleRemember() {
+    const cb = document.getElementById('remember_me');
+    cb.checked = !cb.checked;
+    document.getElementById('toggle-box').classList.toggle('on', cb.checked);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[06/Apr/2026 09:35:50] "GET / HTTP/1.1" 500 98183
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[06/Apr/2026 09:51:16] "GET / HTTP/1.1" 500 98183
+[06/Apr/2026 09:51:37] "GET / HTTP/1.1" 200 9312
+[06/Apr/2026 09:59:49] "GET / HTTP/1.1" 200 9312
+Not Found: /
+[06/Apr/2026 10:12:42] "GET / HTTP/1.1" 404 8848
+Not Found: /robots.txt
+[06/Apr/2026 10:27:57] "GET /robots.txt HTTP/1.1" 404 2948
+[06/Apr/2026 10:28:10] "GET / HTTP/1.1" 200 9312
+[06/Apr/2026 10:44:27] "GET / HTTP/1.1" 200 9312
+Not Found: /config/.env.production
+[06/Apr/2026 10:45:58] "GET /config/.env.production HTTP/1.1" 404 2985
+Not Found: /secrets/.env
+[06/Apr/2026 10:45:58] "GET /secrets/.env HTTP/1.1" 404 2955
+Not Found: /.env.production
+[06/Apr/2026 10:45:58] "GET /.env.production HTTP/1.1" 404 2964
+Not Found: /.env
+[06/Apr/2026 10:46:03] "GET /.env HTTP/1.1" 404 2930
+Not Found: /production/.env
+[06/Apr/2026 10:46:03] "GET /production/.env HTTP/1.1" 404 2963
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[06/Apr/2026 11:03:09] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /simple.php
+[06/Apr/2026 11:03:09] "GET /simple.php HTTP/1.1" 404 2948
+Not Found: /8.php
+[06/Apr/2026 11:03:09] "GET /8.php HTTP/1.1" 404 2933
+Not Found: /bthil.php
+[06/Apr/2026 11:03:09] "GET /bthil.php HTTP/1.1" 404 2945
+Not Found: /.well-known/index.php
+[06/Apr/2026 11:03:09] "GET /.well-known/index.php HTTP/1.1" 404 2981
+Not Found: /100.php
+[06/Apr/2026 11:03:09] "GET /100.php HTTP/1.1" 404 2939
+Not Found: /co.php
+[06/Apr/2026 11:03:10] "GET /co.php HTTP/1.1" 404 2936
+Not Found: /database.php
+[06/Apr/2026 11:03:10] "GET /database.php HTTP/1.1" 404 2954
+Not Found: /css/database.php
+[06/Apr/2026 11:03:10] "GET /css/database.php HTTP/1.1" 404 2966
+Not Found: /x123.php
+[06/Apr/2026 11:03:10] "GET /x123.php HTTP/1.1" 404 2942
+Not Found: /inputs.php
+[06/Apr/2026 11:03:10] "GET /inputs.php HTTP/1.1" 404 2948
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[06/Apr/2026 11:15:25] "GET / HTTP/1.1" 500 97433

@@ -1,0 +1,253 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[06/Apr/2026 00:16:35] "GET / HTTP/1.1" 200 9312
+[06/Apr/2026 00:16:35] "GET / HTTP/1.1" 200 9312
+[06/Apr/2026 00:16:41] "GET / HTTP/1.1" 200 9312
+[06/Apr/2026 00:16:41] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[06/Apr/2026 00:16:41] "GET / HTTP/1.1" 200 9312
+Not Found: /favicon.ico
+[06/Apr/2026 00:16:41] "GET /favicon.ico HTTP/1.1" 404 2952
+[06/Apr/2026 00:16:41] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[06/Apr/2026 00:16:44] "GET /favicon.ico HTTP/1.1" 404 2952
+Not Found: /wp-content/uploads/e-randevu.online.sql
+[06/Apr/2026 00:33:27] "GET /wp-content/uploads/e-randevu.online.sql HTTP/1.1" 404 3035
+Not Found: /c/router
+[06/Apr/2026 00:33:27] "POST /c/router HTTP/1.1" 404 2943
+Not Found: /e-randevu.online.sql
+[06/Apr/2026 00:33:27] "GET /e-randevu.online.sql HTTP/1.1" 404 2978
+Not Found: /backups/database.sql
+[06/Apr/2026 00:33:27] "GET /backups/database.sql HTTP/1.1" 404 2978
+Not Found: /database.sql
+[06/Apr/2026 00:33:27] "GET /database.sql HTTP/1.1" 404 2954
+Not Found: /wp-content/uploads/backup.sql
+Not Found: /wp-content/uploads/database.sql
+[06/Apr/2026 00:33:27] "GET /wp-content/uploads/database.sql HTTP/1.1" 404 3011
+Not Found: /c/router
+[06/Apr/2026 00:33:27] "GET /wp-content/uploads/backup.sql HTTP/1.1" 404 3005
+Not Found: /api/setup/backup
+Not Found: /form2saveConf.cgi
+[06/Apr/2026 00:33:27] "POST /c/router HTTP/1.1" 404 2943
+[06/Apr/2026 00:33:27] "POST /api/setup/backup HTTP/1.1" 404 2967
+Not Found: /wp-content/database.sql
+Not Found: /db.sql
+[06/Apr/2026 00:33:27] "POST /form2saveConf.cgi HTTP/1.1" 404 2970
+Not Found: /dump.sql
+[06/Apr/2026 00:33:27] "GET /wp-content/database.sql HTTP/1.1" 404 2987
+Not Found: /wp-content/uploads/dump.sql
+[06/Apr/2026 00:33:27] "GET /db.sql HTTP/1.1" 404 2936
+[06/Apr/2026 00:33:27] "GET /dump.sql HTTP/1.1" 404 2942
+[06/Apr/2026 00:33:27] "GET /wp-content/uploads/dump.sql HTTP/1.1" 404 2999
+Not Found: /mysql.sql
+[06/Apr/2026 00:33:27] "GET /mysql.sql HTTP/1.1" 404 2945
+Not Found: /backup.sql
+[06/Apr/2026 00:33:27] "GET /backup.sql HTTP/1.1" 404 2948
+Not Found: /wp-content/mysql.bak
+[06/Apr/2026 00:33:33] "GET /wp-content/mysql.bak HTTP/1.1" 404 2978
+Not Found: /wwwroot.bak
+[06/Apr/2026 00:33:33] "GET /wwwroot.bak HTTP/1.1" 404 2951
+Not Found: /backup.bak
+Not Found: /db_backup.bak
+Not Found: /dbdump.bak
+Not Found: /data.bak
+[06/Apr/2026 00:33:33] "GET /db_backup.bak HTTP/1.1" 404 2957
+Not Found: /db.bak
+[06/Apr/2026 00:33:33] "GET /backup.bak HTTP/1.1" 404 2948
+Not Found: /sa.bak
+[06/Apr/2026 00:33:33] "GET /dbdump.bak HTTP/1.1" 404 2948
+Not Found: /database.bak
+[06/Apr/2026 00:33:33] "GET /data.bak HTTP/1.1" 404 2942
+[06/Apr/2026 00:33:33] "GET /db.bak HTTP/1.1" 404 2936
+[06/Apr/2026 00:33:33] "GET /sa.bak HTTP/1.1" 404 2936
+[06/Apr/2026 00:33:33] "GET /database.bak HTTP/1.1" 404 2954
+Not Found: /localhost.bak
+Not Found: /dump.bak
+[06/Apr/2026 00:33:34] "GET /localhost.bak HTTP/1.1" 404 2957
+Not Found: /sql.bak
+[06/Apr/2026 00:33:34] "GET /dump.bak HTTP/1.1" 404 2942
+Not Found: /translate.bak
+[06/Apr/2026 00:33:34] "GET /sql.bak HTTP/1.1" 404 2939
+Not Found: /e-randevu.online.bak
+[06/Apr/2026 00:33:34] "GET /translate.bak HTTP/1.1" 404 2957
+Not Found: /site.bak
+Not Found: /e-randevu.online_db.bak
+Not Found: /mysqldump.bak
+[06/Apr/2026 00:33:34] "GET /e-randevu.online.bak HTTP/1.1" 404 2978
+Not Found: /users.bak
+[06/Apr/2026 00:33:34] "GET /e-randevu.online_db.bak HTTP/1.1" 404 2987
+[06/Apr/2026 00:33:34] "GET /site.bak HTTP/1.1" 404 2942
+Not Found: /www.bak
+Not Found: /temp.bak
+[06/Apr/2026 00:33:34] "GET /mysqldump.bak HTTP/1.1" 404 2957
+Not Found: /mysql.bak
+[06/Apr/2026 00:33:34] "GET /users.bak HTTP/1.1" 404 2945
+Not Found: /wp-content/uploads/dump.bak
+[06/Apr/2026 00:33:34] "GET /www.bak HTTP/1.1" 404 2939
+[06/Apr/2026 00:33:34] "GET /temp.bak HTTP/1.1" 404 2942
+[06/Apr/2026 00:33:34] "GET /mysql.bak HTTP/1.1" 404 2945
+[06/Apr/2026 00:33:34] "GET /wp-content/uploads/dump.bak HTTP/1.1" 404 2999
+Not Found: /dbdump.sql
+[06/Apr/2026 00:33:35] "GET /dbdump.sql HTTP/1.1" 404 2948
+Not Found: /e-randevu.online.sql
+Not Found: /database.sql
+Not Found: /data.sql
+[06/Apr/2026 00:33:35] "GET /e-randevu.online.sql HTTP/1.1" 404 2978
+Not Found: /dump.sql
+Not Found: /1.sql
+[06/Apr/2026 00:33:35] "GET /database.sql HTTP/1.1" 404 2954
+Not Found: /db.sql
+[06/Apr/2026 00:33:35] "GET /data.sql HTTP/1.1" 404 2942
+Not Found: /db_backup.sql
+[06/Apr/2026 00:33:35] "GET /dump.sql HTTP/1.1" 404 2942
+[06/Apr/2026 00:33:35] "GET /1.sql HTTP/1.1" 404 2933
+Not Found: /backup.sql
+[06/Apr/2026 00:33:35] "GET /db.sql HTTP/1.1" 404 2936
+[06/Apr/2026 00:33:35] "GET /db_backup.sql HTTP/1.1" 404 2957
+[06/Apr/2026 00:33:35] "GET /backup.sql HTTP/1.1" 404 2948
+Not Found: /users.sql
+[06/Apr/2026 00:33:36] "GET /users.sql HTTP/1.1" 404 2945
+Not Found: /translate.sql
+Not Found: /e-randevu.online_db.sql
+[06/Apr/2026 00:33:36] "GET /translate.sql HTTP/1.1" 404 2957
+Not Found: /temp.sql
+[06/Apr/2026 00:33:36] "GET /e-randevu.online_db.sql HTTP/1.1" 404 2987
+Not Found: /localhost.sql
+Not Found: /sql.sql
+Not Found: /mysql.sql
+[06/Apr/2026 00:33:36] "GET /temp.sql HTTP/1.1" 404 2942
+Not Found: /wp-content/uploads/dump.sql
+Not Found: /wp-content/mysql.sql
+[06/Apr/2026 00:33:36] "GET /sql.sql HTTP/1.1" 404 2939
+Not Found: /site.sql
+[06/Apr/2026 00:33:36] "GET /localhost.sql HTTP/1.1" 404 2957
+Not Found: /www.sql
+[06/Apr/2026 00:33:36] "GET /mysql.sql HTTP/1.1" 404 2945
+Not Found: /mysqldump.sql
+[06/Apr/2026 00:33:36] "GET /wp-content/uploads/dump.sql HTTP/1.1" 404 2999
+[06/Apr/2026 00:33:36] "GET /wp-content/mysql.sql HTTP/1.1" 404 2978
+[06/Apr/2026 00:33:36] "GET /site.sql HTTP/1.1" 404 2942
+[06/Apr/2026 00:33:36] "GET /www.sql HTTP/1.1" 404 2939
+[06/Apr/2026 00:33:36] "GET /mysqldump.sql HTTP/1.1" 404 2957
+Not Found: /inc/mysql_backup/
+[06/Apr/2026 00:40:23] "GET /inc/mysql_backup/ HTTP/1.1" 404 2969
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[06/Apr/2026 00:41:04] "GET / HTTP/1.1" 500 98182
+Not Found: /robots.txt
+[06/Apr/2026 00:48:28] "GET /robots.txt HTTP/1.1" 404 2949
+[06/Apr/2026 00:48:30] "GET / HTTP/1.1" 200 9312
+Not Found: /api/v1/serverinfo
+[06/Apr/2026 01:06:31] "GET /api/v1/serverinfo HTTP/1.1" 404 2969
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 01:06:33] "GET /wp-admin/admin-ajax.php?jvfrm_spot_get_json&fn=../../wp-config.php&callback=jQuery HTTP/1.1" 404 3054
+Not Found: /inc/data/database.sdb
+[06/Apr/2026 01:06:36] "GET /inc/data/database.sdb HTTP/1.1" 404 2981
+[06/Apr/2026 01:06:37] "GET / HTTP/1.1" 200 9312
+Not Found: /web/database/manager
+[06/Apr/2026 01:07:09] "GET /web/database/manager HTTP/1.1" 404 2978
+Not Found: /wp-config-sample.php
+[06/Apr/2026 01:08:01] "GET /wp-config-sample.php HTTP/1.1" 404 2978
+Not Found: /wp-config.php.inc
+[06/Apr/2026 01:08:01] "GET /wp-config.php.inc HTTP/1.1" 404 2969
+Not Found: /wp-config.old
+Not Found: /wp-config.php.OLD
+[06/Apr/2026 01:08:01] "GET /wp-config.php.OLD HTTP/1.1" 404 2969
+[06/Apr/2026 01:08:01] "GET /wp-config.old HTTP/1.1" 404 2957
+Not Found: /wp-config.php.BAK
+Not Found: /wp-config.php
+Not Found: /wp-config.php.bak
+[06/Apr/2026 01:08:01] "GET /wp-config.php.BAK HTTP/1.1" 404 2969
+Not Found: /wp-config.php.old
+[06/Apr/2026 01:08:01] "GET /wp-config.php.bak HTTP/1.1" 404 2969
+[06/Apr/2026 01:08:01] "GET /wp-config.php HTTP/1.1" 404 2957
+Not Found: /.wp-config.php.swp
+Not Found: /wp-config.txt
+[06/Apr/2026 01:08:01] "GET /wp-config.php.old HTTP/1.1" 404 2969
+Not Found: /wp-config.inc
+[06/Apr/2026 01:08:01] "GET /.wp-config.php.swp HTTP/1.1" 404 2972
+[06/Apr/2026 01:08:01] "GET /wp-config.inc HTTP/1.1" 404 2957
+[06/Apr/2026 01:08:01] "GET /wp-config.txt HTTP/1.1" 404 2957
+Not Found: /wp-config.php.txt
+[06/Apr/2026 01:08:01] "GET /wp-config.php.txt HTTP/1.1" 404 2969
+Not Found: /wp-config.php.SAVE
+[06/Apr/2026 01:08:02] "GET /wp-config.php.SAVE HTTP/1.1" 404 2972
+Not Found: /wp-config.php.original
+[06/Apr/2026 01:08:02] "GET /wp-config.php.original HTTP/1.1" 404 2984
+Not Found: /wp-config.php~
+[06/Apr/2026 01:08:02] "GET /wp-config.php~ HTTP/1.1" 404 2960
+Not Found: /wp-config.php.orig
+[06/Apr/2026 01:08:02] "GET /wp-config.php.orig HTTP/1.1" 404 2972
+Not Found: /wp-config.php.html
+Not Found: /wp-config.php.dist
+Not Found: /wp-config.php_orig
+Not Found: /wp-config.php.save
+[06/Apr/2026 01:08:02] "GET /wp-config.php.dist HTTP/1.1" 404 2972
+Not Found: /_wpeprivate/config.json
+Not Found: /wp-config-backup.txt
+[06/Apr/2026 01:08:02] "GET /wp-config.php.html HTTP/1.1" 404 2972
+Not Found: /wp-config.backup
+Not Found: /wp-config.php.swp
+[06/Apr/2026 01:08:02] "GET /wp-config.php_orig HTTP/1.1" 404 2972
+Not Found: /wp-config.php-backup
+[06/Apr/2026 01:08:02] "GET /wp-config.php.save HTTP/1.1" 404 2972
+[06/Apr/2026 01:08:02] "GET /_wpeprivate/config.json HTTP/1.1" 404 2987
+[06/Apr/2026 01:08:02] "GET /wp-config-backup.txt HTTP/1.1" 404 2978
+[06/Apr/2026 01:08:02] "GET /wp-config.backup HTTP/1.1" 404 2966
+[06/Apr/2026 01:08:02] "GET /wp-config.php.swp HTTP/1.1" 404 2969
+[06/Apr/2026 01:08:02] "GET /wp-config.php-backup HTTP/1.1" 404 2978
+Not Found: /home/e-randevu-WORDPRESS.txt
+[06/Apr/2026 01:08:12] "GET /home/e-randevu-WORDPRESS.txt HTTP/1.1" 404 3002
+Not Found: /config.php.zip
+[06/Apr/2026 01:08:12] "GET /config.php.zip HTTP/1.1" 404 2960
+Not Found: /config.php.tar.gz
+[06/Apr/2026 01:08:12] "GET /config.php.tar.gz HTTP/1.1" 404 2969
+Not Found: /wp-config.php.bk
+Not Found: /common/config.php.new
+Not Found: /config.php.new
+[06/Apr/2026 01:08:12] "GET /wp-config.php.bk HTTP/1.1" 404 2966
+[06/Apr/2026 01:08:12] "GET /common/config.php.new HTTP/1.1" 404 2981
+[06/Apr/2026 01:08:12] "GET /config.php.new HTTP/1.1" 404 2960
+Not Found: /home/e-randevuWORDPRESS.txt
+[06/Apr/2026 01:08:12] "GET /home/e-randevuWORDPRESS.txt HTTP/1.1" 404 2999
+Not Found: /db/schema.rb
+[06/Apr/2026 01:13:00] "GET /db/schema.rb HTTP/1.1" 404 2954
+Not Found: /database/schema.rb
+[06/Apr/2026 01:13:09] "GET /database/schema.rb HTTP/1.1" 404 2972
+Not Found: /schema.rb
+[06/Apr/2026 01:13:20] "GET /schema.rb HTTP/1.1" 404 2945
+Not Found: /
+[06/Apr/2026 01:18:02] "GET / HTTP/1.1" 404 8848

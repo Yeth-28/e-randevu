@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktorlar — Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            display: flex; flex-direction: column; z-index: 100;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; letter-spacing: 1px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .sidebar-footer a:hover { color: white; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .btn-ekle {
+            display: flex; align-items: center; gap: 8px;
+            background: var(--blue); color: white; padding: 10px 20px;
+            border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn-ekle:hover { background: var(--blue-dark); transform: translateY(-1px); }
+        .content { padding: 32px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg {
+            padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .empty-state {
+            text-align: center; padding: 80px 20px; background: white;
+            border-radius: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .empty-state .emoji { font-size: 64px; margin-bottom: 16px; }
+        .empty-state h3 { font-size: 20px; color: var(--text); margin-bottom: 8px; }
+        .empty-state p { color: var(--gray); font-size: 14px; margin-bottom: 24px; }
+        .doktor-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;
+        }
+        .doktor-kart {
+            background: white; border-radius: 20px; padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .doktor-kart:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+        .doktor-kart-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .doktor-foto {
+            width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+            background: var(--blue-light); display: flex; align-items: center;
+            justify-content: center; font-size: 28px; flex-shrink: 0;
+            border: 3px solid var(--blue-light);
+        }
+        .doktor-foto img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .doktor-isim { font-size: 16px; font-weight: 600; color: var(--text); }
+        .doktor-npi { font-size: 11px; color: var(--gray); margin-top: 2px; letter-spacing: 1px; }
+        .doktor-iletisim { font-size: 13px; color: var(--gray); margin-bottom: 12px; line-height: 1.8; }
+        .doktor-iletisim span { display: block; }
+        .uzmanlik-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+        .uzmanlik-badge { background: var(--blue-light); color: var(--blue); padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+        .doktor-about {
+            font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 16px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .doktor-aksiyonlar {
+            display: flex; gap: 8px; padding-top: 16px; border-top: 1px solid var(--gray-light);
+        }
+        .btn-duzenle, .btn-sil {
+            flex: 1; padding: 8px; border-radius: 8px; font-size: 13px; font-weight: 500;
+            text-decoration: none; text-align: center; transition: all 0.2s;
+            border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+        }
+        .btn-duzenle { background: var(--blue-light); color: var(--blue); }
+        .btn-duzenle:hover { background: #dbeafe; }
+        .btn-sil { background: #fee2e2; color: var(--red); }
+        .btn-sil:hover { background: #fecaca; }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">👨‍⚕️ Doktorlar</div>
+        {% include "panel/bildirim_zil.html" %}
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/ekle/" class="btn-ekle">+ Doktor Ekle</a>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if doktorlar %}
+        <div class="doktor-grid">
+            {% for doktor in doktorlar %}
+            <div class="doktor-kart">
+                <div class="doktor-kart-header">
+                    <div class="doktor-foto">
+                        {% if doktor.photo %}<img src="{{ doktor.photo.url }}" alt="{{ doktor.name }}">{% else %}👨‍⚕️{% endif %}
+                    </div>
+                    <div>
+                        <div class="doktor-isim">{{ doktor.name }}</div>
+                        <div class="doktor-npi">{{ doktor.npi }}</div>
+                        <div style="margin-top:4px;display:flex;align-items:center;gap:6px;">
+                            <span style="font-size:11px;color:var(--gray);">Giriş Kodu:</span>
+                            <span style="font-family:monospace;font-size:14px;font-weight:700;color:var(--blue);letter-spacing:3px;background:var(--blue-light);padding:2px 8px;border-radius:6px;">{{ doktor.login_code }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doktor-iletisim">
+                    {% if doktor.email %}<span>✉️ {{ doktor.email }}</span>{% endif %}
+                    {% if doktor.phone_number %}<span>📞 {{ doktor.phone_number }}</span>{% endif %}
+                </div>
+                <div class="uzmanlik-list">
+                    {% for uzmanlik in doktor.get_specialties_display_list %}
+                    <span class="uzmanlik-badge">{{ uzmanlik }}</span>
+                    {% endfor %}
+                </div>
+                {% if doktor.about %}
+                <div class="doktor-about">{{ doktor.about }}</div>
+                {% endif %}
+                <div class="doktor-aksiyonlar">
+                    <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/{{ doktor.id }}/duzenle/" class="btn-duzenle">✏️ Düzenle</a>
+                    <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/{{ doktor.id }}/sil/" class="btn-sil">🗑️ Sil</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="emoji">👨‍⚕️</div>
+            <h3>Henüz doktor eklenmemiş</h3>
+            <p>Kliniğinize doktor ekleyerek başlayın.</p>
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/ekle/" class="btn-ekle" style="display:inline-flex;">+ İlk Doktoru Ekle</a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>

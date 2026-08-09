@@ -1,0 +1,173 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[01/Apr/2026 06:22:11] "GET / HTTP/1.1" 200 46149
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[01/Apr/2026 06:22:11] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+[01/Apr/2026 06:22:11] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 06:22:11] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 06:22:17] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:22:17] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 06:22:23] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:22:23] "GET /static/css/auth.css HTTP/1.1" 200 4432
+[01/Apr/2026 06:22:29] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:22:29] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 06:22:35] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:22:35] "GET /static/css/auth.css HTTP/1.1" 200 4432
+[01/Apr/2026 06:23:09] "POST /hasta/giris/ HTTP/1.1" 200 3649
+[01/Apr/2026 06:23:09] "GET /static/css/auth.css HTTP/1.1" 200 4432
+[01/Apr/2026 06:23:14] "GET /hasta/kayit/ HTTP/1.1" 200 14454
+[01/Apr/2026 06:23:54] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:23:54] "GET /static/css/auth.css HTTP/1.1" 200 4432
+[01/Apr/2026 06:24:02] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:24:02] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 06:24:07] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:24:07] "GET /static/css/auth.css HTTP/1.1" 200 4432
+[01/Apr/2026 06:24:20] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:24:20] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 06:26:27] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:26:27] "GET /static/css/auth.css HTTP/1.1" 200 4436
+[01/Apr/2026 06:26:51] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:26:51] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 06:27:04] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14633
+[01/Apr/2026 06:27:10] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:27:14] "GET /kayit/ HTTP/1.1" 200 10166
+[01/Apr/2026 06:27:14] "GET /favicon.ico HTTP/1.1" 301 0
+[01/Apr/2026 06:27:14] "GET /favicon.ico/ HTTP/1.1" 302 0
+[01/Apr/2026 06:27:14] "GET /giris/ HTTP/1.1" 200 5067
+[01/Apr/2026 06:27:19] "GET /hasta/kayit/ HTTP/1.1" 200 14454
+[01/Apr/2026 06:27:23] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[01/Apr/2026 06:27:23] "GET /static/css/auth.css HTTP/1.1" 200 4436
+[01/Apr/2026 06:27:26] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:27:28] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:27:29] "GET /?q= HTTP/1.1" 200 9212
+[01/Apr/2026 06:27:37] "GET /kayit/ HTTP/1.1" 200 10166
+[01/Apr/2026 06:27:38] "GET /favicon.ico/ HTTP/1.1" 302 0
+[01/Apr/2026 06:27:38] "GET /giris/ HTTP/1.1" 200 5067
+[01/Apr/2026 06:30:24] "GET /hasta/kayit/ HTTP/1.1" 200 14454
+[01/Apr/2026 06:37:15] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[01/Apr/2026 06:37:16] "GET /static/css/auth.css HTTP/1.1" 200 4436
+[01/Apr/2026 06:41:45] "GET /hasta/kayit/ HTTP/1.1" 200 14212
+[01/Apr/2026 06:41:45] "GET /static/css/auth.css HTTP/1.1" 200 4436
+[01/Apr/2026 06:43:30] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 06:43:30] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 06:43:33] "GET /kayit/ HTTP/1.1" 200 10166
+[01/Apr/2026 06:49:59] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 06:50:04] "GET /api/klinik-ara/?q=aclini HTTP/1.1" 200 641
+[01/Apr/2026 06:50:05] "GET /api/klinik-ara/?q=aclinic HTTP/1.1" 200 641
+[01/Apr/2026 06:50:05,979] - Broken pipe from ('127.0.0.1', 54205)
+[01/Apr/2026 06:50:06] "GET / HTTP/1.1" 200 59469
+[01/Apr/2026 06:50:06] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10804
+[01/Apr/2026 06:51:11] "GET / HTTP/1.1" 200 59469
+[01/Apr/2026 06:51:11] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10804
+[01/Apr/2026 06:57:31] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 06:57:31] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[01/Apr/2026 07:00:52] "GET / HTTP/1.1" 500 98106
+[01/Apr/2026 07:11:20] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:11:20] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:11:21] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:11:21] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:11:56] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:11:56] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:11:57] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:11:57] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:12:02] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:12:02] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+Not Found: /robots.txt
+[01/Apr/2026 07:12:12] "GET /robots.txt HTTP/1.1" 404 2949
+[01/Apr/2026 07:12:15] "GET / HTTP/1.1" 200 9212
+Not Found: /robots.txt
+[01/Apr/2026 07:12:16] "GET /robots.txt HTTP/1.1" 404 2949
+[01/Apr/2026 07:12:18] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 07:14:14] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[01/Apr/2026 07:20:08] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:20:08] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:25:15] "GET /kayit/ HTTP/1.1" 200 27328
+[01/Apr/2026 07:25:15] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+Not Found: /
+[01/Apr/2026 07:28:27] "GET / HTTP/1.1" 404 8848
+[01/Apr/2026 07:36:23] "GET /kayit/ HTTP/1.1" 200 23382
+[01/Apr/2026 07:36:23] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:38:27] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:38:27] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[01/Apr/2026 07:38:34] "GET /kayit/ HTTP/1.1" 200 20818
+[01/Apr/2026 07:38:34] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+Forbidden (Referer checking failed - no Referer.): /
+[01/Apr/2026 07:45:42] "POST / HTTP/1.1" 403 3565
+Not Found: /index.php
+[01/Apr/2026 07:45:42] "POST /index.php HTTP/1.1" 404 2951
+Not Found: /admin
+[01/Apr/2026 07:45:42] "POST /admin HTTP/1.1" 404 2939
+Not Found: /api
+[01/Apr/2026 07:45:43] "POST /api HTTP/1.1" 404 2933
+[01/Apr/2026 07:58:52] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 08:01:28] "GET / HTTP/1.1" 200 9212
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[01/Apr/2026 08:04:36] "GET / HTTP/1.1" 500 98107

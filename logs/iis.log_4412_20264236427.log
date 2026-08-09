@@ -1,0 +1,50 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[22/Apr/2026 23:04:31] "GET / HTTP/1.1" 404 8849
+[22/Apr/2026 23:13:16] "GET /robots.txt HTTP/1.1" 301 0
+[22/Apr/2026 23:13:16] "GET /robots.txt/ HTTP/1.1" 302 0
+[22/Apr/2026 23:13:16] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 23:13:16] "GET /sitemap.xml HTTP/1.1" 301 0
+[22/Apr/2026 23:13:17] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[22/Apr/2026 23:13:17] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 23:16:17] "GET / HTTP/1.1" 200 9312
+[22/Apr/2026 23:16:17] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:17] "GET /wp-includes/wlwmanifest.xml HTTP/1.1" 404 2999
+Not Found: /xmlrpc.php
+[22/Apr/2026 23:16:17] "GET /xmlrpc.php?rsd HTTP/1.1" 404 2952
+[22/Apr/2026 23:16:18] "GET / HTTP/1.1" 200 9312
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:18] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /web/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:18] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:18] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3029
+Not Found: /website/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:18] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3023
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:18] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3008
+Not Found: /news/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /2020/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /2020/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /test/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:19] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:20] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /site/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:20] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:20] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[22/Apr/2026 23:16:20] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014

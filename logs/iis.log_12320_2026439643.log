@@ -1,0 +1,378 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[03/Apr/2026 02:06:48] "GET / HTTP/1.1" 200 9212
+[03/Apr/2026 02:07:06] "GET /kayit/ HTTP/1.1" 200 27508
+[03/Apr/2026 02:07:06] "GET /static/css/kayit.css HTTP/1.1" 304 0
+[03/Apr/2026 02:09:21] "GET /kayit/ HTTP/1.1" 200 27238
+[03/Apr/2026 02:11:49] "GET /kayit/ HTTP/1.1" 200 27238
+[03/Apr/2026 02:12:07] "GET /kayit/ HTTP/1.1" 200 27238
+[03/Apr/2026 02:13:21] "GET /giris/ HTTP/1.1" 200 5067
+[03/Apr/2026 02:14:35] "POST /kayit/ HTTP/1.1" 200 27446
+[03/Apr/2026 02:15:04] "POST /kayit/ HTTP/1.1" 200 27450
+[03/Apr/2026 02:15:16] "POST /kayit/ HTTP/1.1" 200 21088
+[03/Apr/2026 02:15:22] "GET /kayit/ HTTP/1.1" 200 27238
+[03/Apr/2026 02:15:42] "POST /kayit/ HTTP/1.1" 200 21088
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 03, 2026 - 02:06:47
+Django version 5.0.9, using settings 'dental.settings'
+Starting development server at http://0.0.0.0:28408/
+Quit the server with CTRL-BREAK.
+
+=== Starting migration
+Operations to perform:
+  Apply all migrations: admin, auth, clinics, contenttypes, doctors, patients, sessions, tenants, users
+Running migrations:
+  Applying contenttypes.0001_initial...
+ OK
+  Applying contenttypes.0002_remove_content_type_name...
+ OK
+  Applying auth.0001_initial...
+ OK
+  Applying auth.0002_alter_permission_name_max_length...
+ OK
+  Applying auth.0003_alter_user_email_max_length...
+ OK
+  Applying auth.0004_alter_user_username_opts...
+ OK
+  Applying auth.0005_alter_user_last_login_null...
+ OK
+  Applying auth.0006_require_contenttypes_0002...
+ OK
+  Applying auth.0007_alter_validators_add_error_messages...
+ OK
+  Applying auth.0008_alter_user_username_max_length...
+ OK
+  Applying auth.0009_alter_user_last_name_max_length...
+ OK
+  Applying auth.0010_alter_group_name_max_length...
+ OK
+  Applying auth.0011_update_proxy_permissions...
+ OK
+  Applying auth.0012_alter_user_first_name_max_length...
+ OK
+  Applying users.0001_initial...
+ OK
+  Applying admin.0001_initial...
+ OK
+  Applying admin.0002_logentry_remove_auto_add...
+ OK
+  Applying admin.0003_logentry_add_action_flag_choices...
+ OK
+  Applying doctors.0001_initial...
+ OK
+  Applying clinics.0001_initial...
+ OK
+  Applying tenants.0001_initial...
+ OK
+  Applying tenants.0002_alter_clinic_options_clinic_clinic_id_clinic_is_paid_and_more...
+ OK
+  Applying doctors.0002_doctor_about_doctor_photo_alter_doctor_specialties...
+ OK
+  Applying doctors.0003_doctor_clinic...
+ OK
+  Applying doctors.0004_doctorlogincode_doctorsession...
+ OK
+  Applying doctors.0005_doctor_login_code...
+ OK
+  Applying doctors.0006_populate_login_codes...
+ OK
+  Applying doctors.0007_alter_doctor_login_code_delete_doctorlogincode...
+ OK
+  Applying doctors.0008_doctor_login_otp_doctor_login_otp_exp...
+ OK
+  Applying patients.0001_initial...
+ OK
+  Applying patients.0002_alter_patient_options_alter_visit_options_and_more...
+ OK
+  Applying patients.0003_patienttoothmodel...
+ OK
+  Applying patients.0004_appointment...
+ OK
+  Applying patients.0005_remove_patient_photo_appointment_clinic_and_more...
+ OK
+  Applying patients.0006_notification...
+ OK
+  Applying patients.0007_hastaotp_hastauser_hastasession...
+ OK
+  Applying patients.0008_delete_hastaotp_remove_hastauser_name_and_more...
+ OK
+  Applying patients.0009_hastauser_blood_type_hastauser_insurance_company_and_more...
+ OK
+  Applying patients.0010_toothsnapshot_alter_toothrecord_unique_together_and_more...
+ OK
+  Applying sessions.0001_initial...
+ OK
+  Applying tenants.0003_subscription...
+ OK
+  Applying tenants.0004_clinicholiday_clinicworkinghours_doctorworkinghours...
+ OK
+  Applying tenants.0005_clinic_about_clinic_appointment_advance_days_and_more...
+=== Starting migration
+ OK
+  Applying tenants.0006_clinic_appointments_open...
+ OK
+  Applying tenants.0007_clinic_billing_address_clinic_billing_city_and_more...
+ OK
+  Applying tenants.0008_cliniccard...
+ OK
+  Applying tenants.0009_clinic_email_verified_clinic_is_visible_and_more...
+ OK
+Operations to perform:
+  Apply all migrations: admin, auth, clinics, contenttypes, doctors, patients, sessions, tenants, users
+Running migrations:
+  Applying contenttypes.0001_initial...
+ OK
+  Applying contenttypes.0002_remove_content_type_name...
+ OK
+  Applying auth.0001_initial...
+ OK
+  Applying auth.0002_alter_permission_name_max_length...
+ OK
+  Applying auth.0003_alter_user_email_max_length...
+ OK
+  Applying auth.0004_alter_user_username_opts...
+ OK
+  Applying auth.0005_alter_user_last_login_null...
+ OK
+  Applying auth.0006_require_contenttypes_0002...
+ OK
+  Applying auth.0007_alter_validators_add_error_messages...
+ OK
+  Applying auth.0008_alter_user_username_max_length...
+ OK
+  Applying auth.0009_alter_user_last_name_max_length...
+ OK
+  Applying auth.0010_alter_group_name_max_length...
+ OK
+  Applying auth.0011_update_proxy_permissions...
+ OK
+  Applying auth.0012_alter_user_first_name_max_length...
+ OK
+  Applying users.0001_initial...
+ OK
+  Applying admin.0001_initial...
+ OK
+  Applying admin.0002_logentry_remove_auto_add...
+ OK
+  Applying admin.0003_logentry_add_action_flag_choices...
+ OK
+  Applying doctors.0001_initial...
+ OK
+  Applying clinics.0001_initial...
+ OK
+  Applying tenants.0001_initial...
+ OK
+  Applying tenants.0002_alter_clinic_options_clinic_clinic_id_clinic_is_paid_and_more...
+ OK
+  Applying doctors.0002_doctor_about_doctor_photo_alter_doctor_specialties...
+ OK
+  Applying doctors.0003_doctor_clinic...
+ OK
+  Applying doctors.0004_doctorlogincode_doctorsession...
+ OK
+  Applying doctors.0005_doctor_login_code...
+ OK
+  Applying doctors.0006_populate_login_codes...
+ OK
+  Applying doctors.0007_alter_doctor_login_code_delete_doctorlogincode...
+ OK
+  Applying doctors.0008_doctor_login_otp_doctor_login_otp_exp...
+ OK
+  Applying patients.0001_initial...
+ OK
+  Applying patients.0002_alter_patient_options_alter_visit_options_and_more...
+ OK
+  Applying patients.0003_patienttoothmodel...
+ OK
+  Applying patients.0004_appointment...
+ OK
+  Applying patients.0005_remove_patient_photo_appointment_clinic_and_more...
+ OK
+  Applying patients.0006_notification...
+ OK
+  Applying patients.0007_hastaotp_hastauser_hastasession...
+ OK
+  Applying patients.0008_delete_hastaotp_remove_hastauser_name_and_more...
+ OK
+  Applying patients.0009_hastauser_blood_type_hastauser_insurance_company_and_more...
+ OK
+  Applying patients.0010_toothsnapshot_alter_toothrecord_unique_together_and_more...
+ OK
+  Applying sessions.0001_initial...
+ OK
+  Applying tenants.0003_subscription...
+ OK
+  Applying tenants.0004_clinicholiday_clinicworkinghours_doctorworkinghours...
+ OK
+  Applying tenants.0005_clinic_about_clinic_appointment_advance_days_and_more...
+ OK
+  Applying tenants.0006_clinic_appointments_open...
+ OK
+  Applying tenants.0007_clinic_billing_address_clinic_billing_city_and_more...
+ OK
+  Applying tenants.0008_cliniccard...
+[03/Apr/2026 02:16:23,306] - Broken pipe from ('127.0.0.1', 52292)
+ OK
+  Applying tenants.0009_clinic_email_verified_clinic_is_visible_and_more...
+ OK
+[03/Apr/2026 02:16:24] "POST /kayit/ HTTP/1.1" 302 0
+[03/Apr/2026 02:16:25] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[03/Apr/2026 02:16:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:16:40] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:16:55] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:16:57] "GET /kayit/ HTTP/1.1" 200 27417
+[03/Apr/2026 02:17:11] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[03/Apr/2026 02:17:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:17:16] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 41910
+[03/Apr/2026 02:17:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:17:18] "GET /5Q1QKL/hastalar/ HTTP/1.1" 200 33657
+[03/Apr/2026 02:17:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:17:28] "GET / HTTP/1.1" 200 9312
+[03/Apr/2026 02:17:28] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[03/Apr/2026 02:17:32] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[03/Apr/2026 02:17:32] "GET /media/clinics/logos/download.jpg HTTP/1.1" 304 0
+[03/Apr/2026 02:17:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:17:33] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[03/Apr/2026 02:17:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:17:51] "GET / HTTP/1.1" 200 60077
+[03/Apr/2026 02:17:51] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10804
+Not Found: /favicon.ico
+[03/Apr/2026 02:17:51] "GET /favicon.ico HTTP/1.1" 404 2367
+[03/Apr/2026 02:18:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:18:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:18:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:18:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:19:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:19:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:20:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:21:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:22:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:23:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:24:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:25:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:26:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:27:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:28:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:28:31] "GET / HTTP/1.1" 200 60366
+[03/Apr/2026 02:29:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:30:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:31:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:32:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:32:27] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[03/Apr/2026 02:32:37] "GET / HTTP/1.1" 200 39804
+[03/Apr/2026 02:32:37] "GET /media/clinics/logos/download.jpg HTTP/1.1" 304 0
+[03/Apr/2026 02:32:37] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10804
+[03/Apr/2026 02:32:38] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 304 0
+[03/Apr/2026 02:32:46] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[03/Apr/2026 02:32:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:32:55] "GET / HTTP/1.1" 200 60077
+[03/Apr/2026 02:33:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:33:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:33:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:33:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:34:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:35:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:36:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:37:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:38:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:39:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:40:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:41:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:42:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:43:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:44:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:45:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:46:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:47:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:48:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:49:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:50:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:51:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:52:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:53:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:54:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:55:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:56:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:57:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 02:58:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Forbidden (Referer checking failed - no Referer.): /
+[03/Apr/2026 02:58:35] "POST / HTTP/1.1" 403 3565
+Not Found: /index.php
+[03/Apr/2026 02:58:35] "POST /index.php HTTP/1.1" 404 2951
+Not Found: /admin
+[03/Apr/2026 02:58:35] "POST /admin HTTP/1.1" 404 2939
+Not Found: /api
+[03/Apr/2026 02:58:36] "POST /api HTTP/1.1" 404 2933
+[03/Apr/2026 02:59:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:00:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:01:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:02:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:03:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:04:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:05:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:06:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:07:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:08:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:09:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:10:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:11:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:12:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:13:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:14:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[03/Apr/2026 03:15:12] "GET / HTTP/1.1" 500 98167
+[03/Apr/2026 03:15:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:16:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:17:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:18:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:19:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:20:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:21:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:22:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:23:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:24:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:25:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:26:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:27:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:28:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:29:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:30:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:31:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[03/Apr/2026 03:32:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21

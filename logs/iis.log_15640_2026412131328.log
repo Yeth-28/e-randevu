@@ -1,0 +1,15 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /.git/HEAD
+[12/Apr/2026 06:13:32] "GET /.git/HEAD HTTP/1.1" 404 8894
+Not Found: /.git/config
+[12/Apr/2026 06:13:32] "GET /.git/config HTTP/1.1" 404 8900
+Not Found: /.git/HEAD
+[12/Apr/2026 06:13:34] "GET /.git/HEAD HTTP/1.1" 404 8893
+Not Found: /.git/config
+[12/Apr/2026 06:13:34] "GET /.git/config HTTP/1.1" 404 8899
+Not Found: /robots.txt
+[12/Apr/2026 06:18:27] "GET /robots.txt HTTP/1.1" 404 2356

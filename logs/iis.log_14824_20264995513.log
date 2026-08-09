@@ -1,0 +1,614 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 02:55:18] "GET / HTTP/1.1" 500 98183
+[09/Apr/2026 03:04:22] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[09/Apr/2026 03:04:22] "GET /robots.txt HTTP/1.1" 404 2949
+[09/Apr/2026 03:04:24] "GET /?q HTTP/1.1" 200 9312
+[09/Apr/2026 03:04:27] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[09/Apr/2026 03:04:29] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2362
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2362
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[09/Apr/2026 03:04:31] "GET /robots.txt HTTP/1.1" 404 2362
+[09/Apr/2026 03:04:33] "GET / HTTP/1.1" 200 54407
+[09/Apr/2026 03:04:35] "GET / HTTP/1.1" 200 54403
+[09/Apr/2026 03:04:37] "GET / HTTP/1.1" 200 38794
+[09/Apr/2026 03:04:38] "GET / HTTP/1.1" 200 54407
+[09/Apr/2026 03:04:40] "GET / HTTP/1.1" 200 20962
+[09/Apr/2026 03:04:41] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[09/Apr/2026 03:04:42] "GET / HTTP/1.1" 200 54407
+[09/Apr/2026 03:04:43] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[09/Apr/2026 03:04:44] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[09/Apr/2026 03:04:45] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[09/Apr/2026 03:04:45] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[09/Apr/2026 03:04:46] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[09/Apr/2026 03:04:47] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+Not Found: /robots.txt
+Not Found: /robots.txt
+[09/Apr/2026 03:04:47] "GET /robots.txt HTTP/1.1" 404 2365
+[09/Apr/2026 03:04:47] "GET /robots.txt HTTP/1.1" 404 2363
+[09/Apr/2026 03:04:47] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+[09/Apr/2026 03:04:48] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[09/Apr/2026 03:04:48] "GET /static/css/auth.css HTTP/1.1" 200 4436
+[09/Apr/2026 03:04:49] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[09/Apr/2026 03:04:50] "GET / HTTP/1.1" 200 35938
+[09/Apr/2026 03:04:51] "GET / HTTP/1.1" 200 54924
+[09/Apr/2026 03:16:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:17:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:17:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:17:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:17:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:18:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:18:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:18:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:18:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:19:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:19:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:19:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:19:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:20:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:20:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:20:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:20:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:21:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /
+[09/Apr/2026 03:21:14] "GET / HTTP/1.1" 404 8848
+[09/Apr/2026 03:21:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:21:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:21:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:22:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:22:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:22:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:22:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:23:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:23:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:23:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:23:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:24:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:24:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:24:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:24:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:25:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:25:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 03:25:19] "GET / HTTP/1.1" 500 98182
+[09/Apr/2026 03:25:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:25:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:26:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:26:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:26:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:26:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:27:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:27:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:27:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:27:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:28:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:28:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:28:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:28:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:29:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:29:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:29:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:29:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:30:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:30:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:30:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:30:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:31:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:31:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:31:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:31:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:32:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:32:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:32:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:32:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:33:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:33:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:33:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:33:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:34:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:34:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:34:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:34:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:35:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:35:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:35:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:35:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:36:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:36:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:36:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:36:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:37:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:37:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:37:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:37:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:38:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:38:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:38:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:38:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:39:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:39:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:39:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:39:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:40:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:40:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:40:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:40:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:41:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:41:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:41:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:41:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:42:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:42:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:42:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:42:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:43:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:43:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:43:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:43:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:44:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:44:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:44:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:44:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:45:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:45:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:45:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:45:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:46:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:46:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:46:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:46:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:47:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:47:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:47:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:47:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:48:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:48:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:48:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:48:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:49:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:49:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:49:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:49:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:50:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:50:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:50:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:50:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:51:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:51:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:51:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:51:38] "GET / HTTP/1.1" 200 9312
+[09/Apr/2026 03:51:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:52:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:52:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:52:26] "GET / HTTP/1.1" 200 9312
+[09/Apr/2026 03:52:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:52:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:53:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:53:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 03:53:23] "GET / HTTP/1.1" 500 97475
+[09/Apr/2026 03:53:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:53:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:54:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:54:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:54:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:54:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:55:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:55:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:55:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:55:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:56:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:56:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:56:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:56:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:57:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:57:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:57:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:57:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:58:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:58:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:58:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:58:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:59:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:59:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:59:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 03:59:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:00:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:00:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:00:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:00:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:01:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:01:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:01:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:01:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:02:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:02:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:02:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:02:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:03:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:03:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:03:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:03:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:04:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:04:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:04:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:04:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:05:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:05:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:05:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:05:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:06:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:06:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:06:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:06:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:07:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:07:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:07:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:07:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:08:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:08:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:08:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:08:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:09:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:09:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:09:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:09:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:10:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:10:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:10:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:10:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:11:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:11:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:11:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:11:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:11:59] "GET / HTTP/1.1" 200 9312
+[09/Apr/2026 04:12:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:12:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:12:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:12:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:13:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:13:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:13:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:13:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:14:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:14:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:14:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:14:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:15:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:15:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:15:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:15:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:16:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:16:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:16:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:16:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:17:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:17:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:17:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:17:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:18:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:18:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:18:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:18:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:19:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:19:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:19:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:19:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:20:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:20:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:20:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:20:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:21:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:21:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:21:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:21:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:22:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:22:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:22:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:22:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:23:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:23:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:23:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:23:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:24:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:24:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:24:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:24:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:25:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:25:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:25:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:25:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:26:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:26:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:26:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:26:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:27:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:27:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:27:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:27:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:28:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:28:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:28:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:28:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:29:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:29:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:30:20] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:31:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:32:22] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:33:23] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:34:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:35:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:36:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:37:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:38:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:39:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:40:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:41:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:42:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:43:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:44:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:45:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:46:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:47:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:48:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:49:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:50:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:51:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:52:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:53:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:54:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:55:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:56:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:57:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:58:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 04:59:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:00:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:01:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:02:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:03:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:04:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:05:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:06:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:07:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:08:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:09:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:10:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:11:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:12:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:13:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:14:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:15:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:16:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:17:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:18:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:19:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:20:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:21:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:22:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:23:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /robots.txt
+[09/Apr/2026 05:24:08] "GET /robots.txt HTTP/1.1" 404 2355
+[09/Apr/2026 05:24:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:25:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:26:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[09/Apr/2026 05:27:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /robots.txt
+[09/Apr/2026 05:40:22] "GET /robots.txt HTTP/1.1" 404 2356
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 05:40:22] "GET / HTTP/1.1" 500 97725
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 05:45:50] "GET / HTTP/1.1" 500 97400
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[09/Apr/2026 05:53:03] "GET / HTTP/1.1" 500 98164
+Not Found: /robots.txt
+[09/Apr/2026 06:07:07] "GET /robots.txt HTTP/1.1" 404 2948
+[09/Apr/2026 06:09:15] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[09/Apr/2026 06:22:09] "GET / HTTP/1.1" 200 9312
+[09/Apr/2026 06:22:10] "GET / HTTP/1.1" 200 9312
+[09/Apr/2026 06:39:14] "GET / HTTP/1.1" 200 9312

@@ -1,0 +1,75 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+    --blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;
+    --gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+    --red:#dc2626;--red-light:#fee2e2;
+    --green:#059669;--green-light:#dcfce7;
+}
+html{height:100%;}
+body{
+    font-family:'DM Sans',sans-serif;
+    background:linear-gradient(135deg,#1e40af,#2563eb,#3b82f6);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    gap:16px;
+}
+
+.auth-card{background:white;border-radius:24px;padding:40px 36px;width:100%;max-width:420px;box-shadow:0 24px 80px rgba(0,0,0,0.2);}
+.auth-logo{text-align:center;margin-bottom:24px;}
+.auth-logo-icon{font-size:40px;display:block;margin-bottom:8px;}
+.auth-logo-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);}
+.auth-logo-text span{color:var(--blue);}
+.auth-subtitle{font-size:13px;color:var(--gray);margin-top:4px;}
+.auth-title{font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.auth-desc{font-size:13px;color:var(--gray);margin-bottom:24px;}
+
+.form-group{margin-bottom:16px;}
+.form-label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;}
+.form-input{width:100%;padding:12px 16px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s,box-shadow 0.2s;color:var(--text);}
+.form-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.12);}
+.form-input::placeholder{color:#9ca3af;}
+
+.pass-wrap{position:relative;}
+.pass-wrap .form-input{padding-right:44px;}
+.eye-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--gray);padding:4px;line-height:1;}
+.eye-btn:hover{color:var(--text);}
+
+.btn-primary{width:100%;padding:13px;background:var(--blue);color:white;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s,transform 0.1s;margin-top:4px;}
+.btn-primary:hover{background:var(--blue-dark);}
+.btn-primary:active{transform:scale(0.98);}
+.btn-outline{width:100%;padding:13px;background:white;color:var(--blue);border:1.5px solid var(--blue);border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-align:center;display:block;text-decoration:none;}
+.btn-outline:hover{background:var(--blue-light);}
+
+.divider{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--gray);font-size:13px;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gray-light);}
+
+.alert{padding:12px 16px;border-radius:10px;font-size:13px;margin-bottom:16px;}
+.alert-error{background:var(--red-light);color:var(--red);}
+.alert-success{background:var(--green-light);color:var(--green);}
+.alert-info{background:var(--blue-light);color:var(--blue);}
+
+.phone-badge{background:var(--blue-light);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--blue);font-weight:500;text-align:center;margin-bottom:20px;}
+.kod-inputs{display:flex;gap:10px;justify-content:center;margin-bottom:20px;}
+.kod-box{width:50px;height:58px;text-align:center;font-size:24px;font-weight:700;border-radius:12px;border:2px solid var(--gray-light);font-family:'DM Sans',monospace;transition:border-color 0.2s;outline:none;}
+.kod-box:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.12);}
+.kod-box.filled{border-color:var(--blue);background:var(--blue-light);}
+
+.auth-hint{font-size:13px;color:var(--gray);text-align:center;margin-top:16px;}
+.auth-hint a{color:var(--blue);font-weight:500;text-decoration:none;}
+.auth-hint a:hover{text-decoration:underline;}
+
+/* Auth back - card ile aynı genişlikte, body flex sayesinde hizalı */
+.auth-back{width:100%;max-width:420px;text-align:center;}
+.auth-back a{font-size:13px;color:rgba(255,255,255,0.8);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s;}
+.auth-back a:hover{color:white;}
+
+@media(max-width:480px){
+    body{padding:16px;justify-content:flex-start;padding-top:32px;}
+    .auth-card{padding:28px 20px;}
+    .kod-box{width:44px;height:52px;font-size:20px;}
+    .kod-inputs{gap:8px;}
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ klinik.name }} — Süper Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', sans-serif; background: #0f172a; color: white; }
+        .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 220px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid #334155; }
+        .sidebar-brand .icon { font-size: 24px; }
+        .sidebar-brand .name { font-size: 16px; color: white; margin-top: 4px; font-weight: 600; }
+        .sidebar-brand .sub { font-size: 11px; color: #ef4444; margin-top: 2px; font-weight: 600; letter-spacing: 1px; }
+        .nav-item { display: flex; align-items: center; gap: 10px; padding: 11px 20px; color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent; }
+        .nav-item:hover { background: rgba(255,255,255,0.05); color: white; border-left-color: #2563eb; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid #334155; margin-top: auto; }
+        .sidebar-footer a { color: #64748b; text-decoration: none; font-size: 13px; }
+        .main { margin-left: 220px; min-height: 100vh; }
+        .topbar { background: #1e293b; padding: 16px 32px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-left a { color: #64748b; text-decoration: none; font-size: 14px; }
+        .content { padding: 32px; }
+        .grid { display: grid; grid-template-columns: 300px 1fr; gap: 24px; }
+        .card { background: #1e293b; border-radius: 16px; padding: 24px; border: 1px solid #334155; margin-bottom: 20px; }
+        .card-title { font-size: 14px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+        .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e293b; font-size: 13px; }
+        .info-row .label { color: #64748b; }
+        .info-row .val { color: #e2e8f0; font-weight: 500; }
+        .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+        .badge-aktif { background: #14532d; color: #4ade80; }
+        .badge-pasif { background: #1c1917; color: #78716c; }
+        .badge-free { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+        .badge-basic { background: #1e3a5f; color: #60a5fa; }
+        .badge-pro { background: #3b0764; color: #c084fc; }
+        .btn-duzenle { padding: 8px 16px; background: #1e3a5f; color: #60a5fa; border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; }
+        th { padding: 11px 16px; text-align: left; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; background: #0f172a; }
+        td { padding: 12px 16px; border-top: 1px solid #334155; font-size: 13px; color: #e2e8f0; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        .tabs { display: flex; gap: 4px; background: #0f172a; border-radius: 10px; padding: 4px; margin-bottom: 16px; }
+        .tab { flex: 1; padding: 9px; text-align: center; border-radius: 7px; font-size: 13px; font-weight: 500; color: #64748b; cursor: pointer; border: none; background: transparent; font-family: 'DM Sans', sans-serif; }
+        .tab.active { background: #1e293b; color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .empty { text-align: center; padding: 40px; color: #475569; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <div class="icon">🔐</div>
+        <div class="name">DentalReserv</div>
+        <div class="sub">⚠ Süper Admin</div>
+    </div>
+    <nav style="padding:12px 0;flex:1;">
+        <a href="/superadmin/" class="nav-item">📊 Dashboard</a>
+    </nav>
+    <div class="sidebar-footer"><a href="/accounts/logout/">🚪 Çıkış</a></div>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="/superadmin/">← Klinikler</a>
+            <span style="color:#334155">/</span>
+            <span style="font-weight:600;">{{ klinik.name }}</span>
+        </div>
+        <a href="/superadmin/klinik/{{ klinik.clinic_id }}/duzenle/" class="btn-duzenle">✏️ Düzenle</a>
+    </div>
+
+    <div class="content">
+        <div class="grid">
+            <!-- SOL: KLİNİK BİLGİLERİ -->
+            <div>
+                <div class="card">
+                    <div class="card-title">🏥 Klinik Bilgileri</div>
+                    <div class="info-row"><span class="label">Adı</span><span class="val">{{ klinik.name }}</span></div>
+                    <div class="info-row"><span class="label">ID</span><span class="val" style="font-family:monospace;color:#60a5fa;">{{ klinik.clinic_id }}</span></div>
+                    <div class="info-row"><span class="label">E-posta</span><span class="val">{{ klinik.email }}</span></div>
+                    <div class="info-row"><span class="label">Telefon</span><span class="val">{{ klinik.phone_number|default:"—" }}</span></div>
+                    <div class="info-row"><span class="label">Şehir</span><span class="val">{{ klinik.city|default:"—" }}</span></div>
+                    <div class="info-row"><span class="label">Plan</span>
+                        <span class="badge badge-{{ klinik.plan }}">{{ klinik.get_plan_display }}</span>
+                    </div>
+                    <div class="info-row"><span class="label">Plan Bitiş</span>
+                        <span class="val">{% if klinik.plan_end_date %}{{ klinik.plan_end_date|date:"d M Y" }}{% else %}—{% endif %}</span>
+                    </div>
+                    <div class="info-row"><span class="label">Durum</span>
+                        <span class="badge {% if klinik.is_active %}badge-aktif{% else %}badge-pasif{% endif %}">
+                            {% if klinik.is_active %}Aktif{% else %}Pasif{% endif %}
+                        </span>
+                    </div>
+                    <div class="info-row"><span class="label">Kayıt</span><span class="val">{{ klinik.created_at|date:"d M Y" }}</span></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">📊 İstatistikler</div>
+                    <div class="info-row"><span class="label">Toplam Hasta</span><span class="val">{{ hastalar.count }}</span></div>
+                    <div class="info-row"><span class="label">Aktif Hasta</span><span class="val">{{ hastalar.filter.count }}</span></div>
+                    <div class="info-row"><span class="label">Doktor</span><span class="val">{{ doktorlar.count }}</span></div>
+                    <div class="info-row"><span class="label">Ziyaret</span><span class="val">{{ ziyaretler.count }}</span></div>
+                </div>
+            </div>
+
+            <!-- SAĞ: TABS -->
+            <div>
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('hastalar', event)">🧑‍🦷 Hastalar ({{ hastalar.count }})</button>
+                    <button class="tab" onclick="showTab('doktorlar', event)">👨‍⚕️ Doktorlar ({{ doktorlar.count }})</button>
+                    <button class="tab" onclick="showTab('ziyaretler', event)">📋 Son Ziyaretler</button>
+                </div>
+
+                <!-- HASTALAR -->
+                <div id="tab-hastalar" class="tab-content active card" style="padding:0;overflow:hidden;">
+                    {% if hastalar %}
+                    <table>
+                        <thead><tr><th>Ad</th><th>Telefon</th><th>Şehir</th><th>Durum</th><th>Kayıt</th></tr></thead>
+                        <tbody>
+                            {% for h in hastalar %}
+                            <tr>
+                                <td style="font-weight:500;">{{ h.name }}</td>
+                                <td style="color:#64748b;">{{ h.phone_number }}</td>
+                                <td>{{ h.city|default:"—" }}</td>
+                                <td><span class="badge {% if h.status == 'aktif' %}badge-aktif{% else %}badge-pasif{% endif %}">{{ h.get_status_display }}</span></td>
+                                <td style="color:#64748b;">{{ h.created_at|date:"d M Y" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}<div class="empty">Hasta yok.</div>{% endif %}
+                </div>
+
+                <!-- DOKTORLAR -->
+                <div id="tab-doktorlar" class="tab-content card" style="padding:0;overflow:hidden;">
+                    {% if doktorlar %}
+                    <table>
+                        <thead><tr><th>Ad</th><th>Uzmanlık</th><th>Telefon</th><th>Durum</th></tr></thead>
+                        <tbody>
+                            {% for d in doktorlar %}
+                            <tr>
+                                <td style="font-weight:500;">{{ d.name }}</td>
+                                <td style="color:#64748b;">{{ d.specialization|default:"—" }}</td>
+                                <td>{{ d.phone|default:"—" }}</td>
+                                <td><span class="badge {% if d.is_active %}badge-aktif{% else %}badge-pasif{% endif %}">{% if d.is_active %}Aktif{% else %}Pasif{% endif %}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}<div class="empty">Doktor yok.</div>{% endif %}
+                </div>
+
+                <!-- ZİYARETLER -->
+                <div id="tab-ziyaretler" class="tab-content card" style="padding:0;overflow:hidden;">
+                    {% if ziyaretler %}
+                    <table>
+                        <thead><tr><th>Hasta</th><th>Doktor</th><th>Tarih</th><th>Ücret</th><th>Ödeme</th></tr></thead>
+                        <tbody>
+                            {% for z in ziyaretler %}
+                            <tr>
+                                <td style="font-weight:500;">{{ z.patient.name }}</td>
+                                <td style="color:#64748b;">{{ z.doctor.name|default:"—" }}</td>
+                                <td>{{ z.date_time|date:"d M Y, H:i" }}</td>
+                                <td style="color:#60a5fa;font-weight:600;">₺{{ z.fee }}</td>
+                                <td><span class="badge {% if z.is_paid %}badge-aktif{% else %}badge-pasif{% endif %}">{% if z.is_paid %}Ödendi{% else %}Bekliyor{% endif %}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}<div class="empty">Ziyaret yok.</div>{% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function showTab(name, e) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    e.target.classList.add('active');
+}
+</script>
+</body>
+</html>

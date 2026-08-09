@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Süper Admin — Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', sans-serif; background: #0f172a; color: white; }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 220px;
+            background: #1e293b; border-right: 1px solid #334155;
+            display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid #334155; }
+        .sidebar-brand .icon { font-size: 24px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 16px; color: white; margin-top: 4px; }
+        .sidebar-brand .sub { font-size: 11px; color: #ef4444; margin-top: 2px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-item {
+            display: flex; align-items: center; gap: 10px; padding: 11px 20px;
+            color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500;
+            transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.05); color: white; border-left-color: #2563eb; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid #334155; margin-top: auto; }
+        .sidebar-footer a { color: #64748b; text-decoration: none; font-size: 13px; }
+        .main { margin-left: 220px; min-height: 100vh; }
+        .topbar { background: #1e293b; padding: 16px 32px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .topbar-title { font-size: 20px; font-weight: 600; }
+        .topbar-badge { background: #ef4444; color: white; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+        .content { padding: 32px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+        .stat-card { background: #1e293b; border-radius: 16px; padding: 24px; border: 1px solid #334155; }
+        .stat-value { font-size: 36px; font-weight: 700; color: white; }
+        .stat-label { font-size: 14px; color: #64748b; margin-top: 4px; }
+        .stat-icon { font-size: 28px; margin-bottom: 12px; }
+        .table-card { background: #1e293b; border-radius: 16px; border: 1px solid #334155; overflow: hidden; }
+        .table-header { padding: 20px 24px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+        .table-header h2 { font-size: 16px; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; }
+        th { padding: 12px 20px; text-align: left; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; background: #0f172a; }
+        td { padding: 14px 20px; border-top: 1px solid #1e293b; font-size: 14px; color: #e2e8f0; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+        .badge-aktif { background: #14532d; color: #4ade80; }
+        .badge-pasif { background: #1c1917; color: #78716c; }
+        .badge-free { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+        .badge-basic { background: #1e3a5f; color: #60a5fa; }
+        .badge-pro { background: #3b0764; color: #c084fc; }
+        .btn-detay { padding: 5px 14px; background: #1e3a5f; color: #60a5fa; border-radius: 8px; font-size: 12px; font-weight: 500; text-decoration: none; }
+        .btn-detay:hover { background: #2563eb; color: white; }
+        .empty { text-align: center; padding: 48px; color: #475569; }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <div class="icon">🔐</div>
+        <div class="name">DentalReserv</div>
+        <div class="sub">⚠ Süper Admin</div>
+    </div>
+    <nav style="padding:12px 0;flex:1;">
+        <a href="/superadmin/" class="nav-item active">📊 Dashboard</a>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="/accounts/logout/">🚪 Çıkış</a>
+    </div>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">Süper Admin Paneli</div>
+        <span class="topbar-badge">🔒 Sadece Localhost</span>
+    </div>
+    <div class="content">
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🏥</div>
+                <div class="stat-value">{{ toplam.klinik }}</div>
+                <div class="stat-label">Toplam Klinik</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🧑‍🦷</div>
+                <div class="stat-value">{{ toplam.hasta }}</div>
+                <div class="stat-label">Toplam Hasta</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👨‍⚕️</div>
+                <div class="stat-value">{{ toplam.doktor }}</div>
+                <div class="stat-label">Toplam Doktor</div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-header">
+                <h2>🏥 Tüm Klinikler</h2>
+            </div>
+            {% if stats %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Klinik</th>
+                        <th>ID</th>
+                        <th>Plan</th>
+                        <th>Hasta</th>
+                        <th>Doktor</th>
+                        <th>Plan Bitiş</th>
+                        <th>Durum</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in stats %}
+                    <tr>
+                        <td>
+                            <div style="font-weight:500;">{{ s.klinik.name }}</div>
+                            <div style="font-size:12px;color:#64748b;">{{ s.klinik.email }}</div>
+                        </td>
+                        <td style="font-family:monospace;color:#60a5fa;">{{ s.klinik.clinic_id }}</td>
+                        <td>
+                            <span class="badge badge-{{ s.klinik.plan }}">{{ s.klinik.get_plan_display }}</span>
+                        </td>
+                        <td>{{ s.hasta_sayisi }}</td>
+                        <td>{{ s.doktor_sayisi }}</td>
+                        <td style="font-size:13px;color:#64748b;">
+                            {% if s.klinik.plan_end_date %}{{ s.klinik.plan_end_date|date:"d M Y" }}{% else %}—{% endif %}
+                        </td>
+                        <td>
+                            <span class="badge {% if s.klinik.is_active %}badge-aktif{% else %}badge-pasif{% endif %}">
+                                {% if s.klinik.is_active %}Aktif{% else %}Pasif{% endif %}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="/superadmin/klinik/{{ s.klinik.clinic_id }}/" class="btn-detay">Detay →</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty">Henüz klinik kaydı yok.</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Kayıt Ol — e-Randevu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <style>
+        /* Kayıt sayfasına özel */
+        body{justify-content:flex-start;padding-top:32px;padding-bottom:32px;}
+        .auth-card{max-width:500px;}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+        .phone-wrap{display:flex;gap:8px;}
+        .phone-wrap .country-select{width:130px;flex-shrink:0;}
+        .phone-wrap .form-input{flex:1;min-width:0;}
+        .strength-wrap{margin-top:6px;}
+        .strength-bars{display:flex;gap:4px;margin-bottom:4px;}
+        .sbar{flex:1;height:4px;border-radius:2px;background:var(--gray-light);transition:background 0.3s;}
+        .sbar.weak{background:#ef4444;}
+        .sbar.medium{background:#f59e0b;}
+        .sbar.strong{background:#22c55e;}
+        .strength-text{font-size:11px;color:var(--gray);}
+        .rules{background:#f0f9ff;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:#374151;}
+        .rules ul{list-style:none;padding:0;}
+        .rules li{padding:2px 0;display:flex;align-items:center;gap:6px;}
+        .rules li.ok{color:#16a34a;}
+        .rules li.fail{color:var(--gray);}
+        .rules li::before{content:'○';font-size:10px;}
+        .rules li.ok::before{content:'✓';color:#16a34a;}
+        .pass-match-msg{font-size:12px;margin-top:4px;}
+        @media(max-width:480px){
+            .row2{grid-template-columns:1fr;}
+            .phone-wrap{flex-direction:column;}
+            .phone-wrap .country-select{width:100%;}
+        }
+    </style>
+</head>
+<body>
+<div class="auth-card">
+    <div class="auth-logo">
+        <span class="auth-logo-icon">🦷</span>
+        <div class="auth-logo-text">e-<span>Randevu</span></div>
+        <div class="auth-subtitle">Hasta Portalı</div>
+    </div>
+
+    <h1 class="auth-title">Hesap Oluştur</h1>
+    <p class="auth-desc">Randevularınızı takip etmek için kayıt olun</p>
+
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="alert alert-error" role="alert">{{ msg }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="POST" id="kayitForm" novalidate>
+        {% csrf_token %}
+
+        <div class="row2">
+            <div class="form-group">
+                <label class="form-label" for="first_name">Ad *</label>
+                <input type="text" name="first_name" id="first_name" class="form-input"
+                       placeholder="Adınız" value="{{ form_data.first_name|default:'' }}"
+                       required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="last_name">Soyad *</label>
+                <input type="text" name="last_name" id="last_name" class="form-input"
+                       placeholder="Soyadınız" value="{{ form_data.last_name|default:'' }}"
+                       required autocomplete="family-name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="gender">Cinsiyet *</label>
+            <select name="gender" id="gender" class="form-input" required>
+                <option value="">Seçiniz</option>
+                <option value="E" {% if form_data.gender == 'E' %}selected{% endif %}>Erkek</option>
+                <option value="K" {% if form_data.gender == 'K' %}selected{% endif %}>Kadın</option>
+                <option value="D" {% if form_data.gender == 'D' %}selected{% endif %}>Belirtmek istemiyorum</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="phone_input">Telefon *</label>
+            <div class="phone-wrap">
+                <select id="country_code" name="country_code" class="form-input country-select">
+                    <!-- JS ile doldurulacak -->
+                </select>
+                <input type="tel" name="phone_number" id="phone_input" class="form-input"
+                       placeholder="5XX XXX XX XX"
+                       value="{{ form_data.phone_number|default:'' }}"
+                       required autocomplete="tel-national">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="email">E-posta *</label>
+            <input type="email" name="email" id="email" class="form-input"
+                   placeholder="ornek@mail.com"
+                   value="{{ form_data.email|default:'' }}"
+                   required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="password">Şifre *</label>
+            <div class="pass-wrap">
+                <input type="password" name="password" id="password" class="form-input"
+                       placeholder="Şifreniz" required autocomplete="new-password">
+                <button type="button" class="eye-btn" onclick="togglePass('password','eye1')" aria-label="Şifreyi göster/gizle">
+                    <svg id="eye1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="strength-wrap">
+                <div class="strength-bars">
+                    <div class="sbar" id="s1"></div><div class="sbar" id="s2"></div>
+                    <div class="sbar" id="s3"></div><div class="sbar" id="s4"></div>
+                </div>
+                <div class="strength-text" id="strength-text">Şifre gücü</div>
+            </div>
+        </div>
+
+        <div class="rules" id="rules" aria-live="polite">
+            <ul>
+                <li id="r-len" class="fail">En az 8 karakter</li>
+                <li id="r-upper" class="fail">En az 1 büyük harf</li>
+                <li id="r-lower" class="fail">En az 1 küçük harf</li>
+                <li id="r-num" class="fail">En az 1 rakam</li>
+                <li id="r-special" class="fail">En az 1 özel karakter (!@#$%)</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="password2">Şifre Tekrar *</label>
+            <div class="pass-wrap">
+                <input type="password" name="password2" id="password2" class="form-input"
+                       placeholder="Şifrenizi tekrar girin" required autocomplete="new-password">
+                <button type="button" class="eye-btn" onclick="togglePass('password2','eye2')" aria-label="Şifreyi göster/gizle">
+                    <svg id="eye2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="pass-match" class="pass-match-msg" aria-live="polite"></div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">Kayıt Ol</button>
+    </form>
+
+    <div class="auth-hint" style="margin-top:16px;">
+        Zaten hesabın var mı? <a href="{{ SITE_URL }}/hasta/giris/">Giriş Yap</a>
+    </div>
+</div>
+
+<div class="auth-back">
+    <a href="{{ SITE_URL }}/">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Ana Sayfaya Dön
+    </a>
+</div>
+
+<script>
+// Ülke kodlarını REST Countries API'den çek
+async function loadCountries(){
+    const sel = document.getElementById('country_code');
+    // Önce Türkiye'yi ekle
+    const tr = document.createElement('option');
+    tr.value = '+90'; tr.textContent = '🇹🇷 Türkiye (+90)'; tr.selected = true;
+    sel.appendChild(tr);
+
+    try {
+        const res = await fetch('https://restcountries.com/v3.1/all?fields=name,idd,flag,cca2');
+        const data = await res.json();
+        // Sırala
+        data.sort((a,b) => a.name.common.localeCompare(b.name.common));
+        data.forEach(c => {
+            if (!c.idd?.root || c.cca2 === 'TR') return;
+            const suffix = c.idd.suffixes?.length === 1 ? c.idd.suffixes[0] : '';
+            if (!suffix) return;
+            const code = c.idd.root + suffix;
+            const opt = document.createElement('option');
+            opt.value = code;
+            opt.textContent = `${c.flag} ${c.name.common} (${code})`;
+            sel.appendChild(opt);
+        });
+    } catch(e) {
+        // API başarısız olursa fallback
+        const fallback = [
+            ['+1','🇺🇸','ABD'],['+44','🇬🇧','Birleşik Krallık'],['+49','🇩🇪','Almanya'],
+            ['+33','🇫🇷','Fransa'],['+39','🇮🇹','İtalya'],['+34','🇪🇸','İspanya'],
+            ['+31','🇳🇱','Hollanda'],['+32','🇧🇪','Belçika'],['+41','🇨🇭','İsviçre'],
+            ['+43','🇦🇹','Avusturya'],['+46','🇸🇪','İsveç'],['+47','🇳🇴','Norveç'],
+            ['+45','🇩🇰','Danimarka'],['+358','🇫🇮','Finlandiya'],['+7','🇷🇺','Rusya'],
+            ['+380','🇺🇦','Ukrayna'],['+48','🇵🇱','Polonya'],['+30','🇬🇷','Yunanistan'],
+            ['+966','🇸🇦','S. Arabistan'],['+971','🇦🇪','BAE'],['+974','🇶🇦','Katar'],
+            ['+965','🇰🇼','Kuveyt'],['+20','🇪🇬','Mısır'],['+91','🇮🇳','Hindistan'],
+            ['+86','🇨🇳','Çin'],['+81','🇯🇵','Japonya'],['+82','🇰🇷','G. Kore'],
+            ['+61','🇦🇺','Avustralya'],['+55','🇧🇷','Brezilya'],['+1','🇨🇦','Kanada'],
+        ];
+        fallback.forEach(([code,flag,name]) => {
+            const opt = document.createElement('option');
+            opt.value = code; opt.textContent = `${flag} ${name} (${code})`;
+            sel.appendChild(opt);
+        });
+    }
+}
+loadCountries();
+
+// Telefon format
+document.getElementById('phone_input').addEventListener('input', function(){
+    let v = this.value.replace(/\D/g,'').substring(0,15);
+    let f = '';
+    if(v.length>0) f = v.substring(0,Math.min(3,v.length));
+    if(v.length>3) f += ' '+v.substring(3,Math.min(6,v.length));
+    if(v.length>6) f += ' '+v.substring(6,Math.min(8,v.length));
+    if(v.length>8) f += ' '+v.substring(8);
+    this.value = f;
+});
+
+// Göz ikonu
+const eyeSvgs = {
+    open:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>',
+    closed:'<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>'
+};
+const passStates = {};
+function togglePass(id, svgId){
+    passStates[id] = !passStates[id];
+    const inp = document.getElementById(id);
+    const svg = document.getElementById(svgId);
+    inp.type = passStates[id] ? 'text' : 'password';
+    svg.innerHTML = passStates[id] ? eyeSvgs.closed : eyeSvgs.open;
+}
+
+// Şifre güç
+document.getElementById('password').addEventListener('input', function(){
+    const v = this.value;
+    const r = {len:v.length>=8,upper:/[A-Z]/.test(v),lower:/[a-z]/.test(v),num:/[0-9]/.test(v),special:/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(v)};
+    document.getElementById('r-len').className   = r.len     ? 'ok':'fail';
+    document.getElementById('r-upper').className = r.upper   ? 'ok':'fail';
+    document.getElementById('r-lower').className = r.lower   ? 'ok':'fail';
+    document.getElementById('r-num').className   = r.num     ? 'ok':'fail';
+    document.getElementById('r-special').className = r.special ? 'ok':'fail';
+    const score = Object.values(r).filter(Boolean).length;
+    const colors=['','weak','weak','medium','strong'];
+    const texts=['','Zayıf','Orta','İyi','Güçlü'];
+    ['s1','s2','s3','s4'].forEach((id,i)=>{
+        document.getElementById(id).className = 'sbar '+(i<score?colors[score]:'');
+    });
+    document.getElementById('strength-text').textContent = score>0?texts[score]:'Şifre gücü';
+});
+
+// Şifre eşleşme
+document.getElementById('password2').addEventListener('input', function(){
+    const p1 = document.getElementById('password').value;
+    const el = document.getElementById('pass-match');
+    if(!this.value){el.textContent='';return;}
+    if(this.value===p1){el.style.color='#16a34a';el.textContent='✓ Şifreler eşleşiyor';}
+    else{el.style.color='#dc2626';el.textContent='✗ Şifreler eşleşmiyor';}
+});
+
+// Form submit
+document.getElementById('kayitForm').addEventListener('submit', function(e){
+    const p = document.getElementById('password').value;
+    const p2 = document.getElementById('password2').value;
+    const rules = [p.length>=8,/[A-Z]/.test(p),/[a-z]/.test(p),/[0-9]/.test(p),/[!@#$%^&*]/.test(p)];
+    if(!rules.every(Boolean)){
+        e.preventDefault();
+        alert('Lütfen şifre kurallarının tamamını karşılayın.');
+        return;
+    }
+    if(p!==p2){e.preventDefault();alert('Şifreler eşleşmiyor.');return;}
+    const phoneInp = document.getElementById('phone_input');
+    const cc = document.getElementById('country_code').value;
+    phoneInp.value = cc + phoneInp.value.replace(/\s/g,'');
+    document.getElementById('country_code').disabled = true;
+});
+</script>
+</body>
+</html>

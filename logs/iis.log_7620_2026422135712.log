@@ -1,0 +1,57 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[22/Apr/2026 06:57:16] "GET / HTTP/1.1" 404 8848
+Not Found: /
+[22/Apr/2026 07:14:29] "GET / HTTP/1.1" 404 8848
+Not Found: /
+[22/Apr/2026 07:14:29] "GET / HTTP/1.1" 404 8849
+[22/Apr/2026 07:14:29] "GET /secrets.json HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /.env HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /.env.production HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /.env.local HTTP/1.1" 301 0
+Not Found: /api/.env
+[22/Apr/2026 07:14:29] "GET /.env.bak HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /api/.env HTTP/1.1" 404 8891
+[22/Apr/2026 07:14:29] "GET /.env.backup HTTP/1.1" 301 0
+Not Found: /backend/.env
+Not Found: /app/.env
+Not Found: /.cursor/mcp.json
+[22/Apr/2026 07:14:29] "GET /backend/.env HTTP/1.1" 404 8903
+[22/Apr/2026 07:14:29] "GET /secrets.json/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /app/.env HTTP/1.1" 404 8891
+[22/Apr/2026 07:14:29] "GET /.cursor/mcp.json HTTP/1.1" 404 8915
+Not Found: /.anthropic/config.json
+Not Found: /laravel/.env
+Not Found: /.openai/config.json
+[22/Apr/2026 07:14:29] "GET /.anthropic/config.json HTTP/1.1" 404 8933
+[22/Apr/2026 07:14:29] "GET /laravel/.env HTTP/1.1" 404 8903
+[22/Apr/2026 07:14:29] "GET /.openai/config.json HTTP/1.1" 404 8924
+[22/Apr/2026 07:14:29] "GET /serviceAccountKey.json HTTP/1.1" 301 0
+Not Found: /.aws/credentials
+[22/Apr/2026 07:14:29] "GET /.aws/credentials HTTP/1.1" 404 8915
+[22/Apr/2026 07:14:29] "GET /config.json HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /credentials.json HTTP/1.1" 301 0
+[22/Apr/2026 07:14:29] "GET /.env.production/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /.env.local/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /.env/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /.env.backup/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /.env.bak/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /config.json/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /credentials.json/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /serviceAccountKey.json/ HTTP/1.1" 302 0
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 07:14:29] "GET /giris/ HTTP/1.1" 200 5067
+Not Found: /
+[22/Apr/2026 07:14:30] "GET / HTTP/1.1" 404 8849
+[22/Apr/2026 07:20:56] "GET / HTTP/1.1" 200 9312

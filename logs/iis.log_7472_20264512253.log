@@ -1,0 +1,338 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 05:25:08] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:25:16] "GET / HTTP/1.1" 200 35936
+[05/Apr/2026 05:25:16] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 05:25:17] "GET / HTTP/1.1" 200 35938
+[05/Apr/2026 05:25:17] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+Not Found: /favicon.ico
+[05/Apr/2026 05:25:17] "GET /favicon.ico HTTP/1.1" 404 2368
+[05/Apr/2026 05:25:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:25:18] "GET / HTTP/1.1" 200 35938
+[05/Apr/2026 05:25:19] "GET / HTTP/1.1" 200 35938
+[05/Apr/2026 05:25:22] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[05/Apr/2026 05:25:24] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:25:27] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[05/Apr/2026 05:25:29] "GET / HTTP/1.1" 200 39136
+[05/Apr/2026 05:25:29] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[05/Apr/2026 05:25:29] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[05/Apr/2026 05:25:29] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+Not Found: /favicon.ico
+[05/Apr/2026 05:25:29] "GET /favicon.ico HTTP/1.1" 404 2365
+[05/Apr/2026 05:25:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:25:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:26:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:26:11] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:26:11] "GET / HTTP/1.1" 200 9312
+Not Found: /console/
+[05/Apr/2026 05:26:12] "GET /console/ HTTP/1.1" 404 2942
+Not Found: /console/
+[05/Apr/2026 05:26:12] "GET /console/ HTTP/1.1" 404 2943
+Not Found: /server
+[05/Apr/2026 05:26:13] "GET /server HTTP/1.1" 404 2936
+Not Found: /server
+[05/Apr/2026 05:26:13] "GET /server HTTP/1.1" 404 2937
+Not Found: /server-status
+[05/Apr/2026 05:26:14] "GET /server-status HTTP/1.1" 404 2957
+Not Found: /server-status
+[05/Apr/2026 05:26:14] "GET /server-status HTTP/1.1" 404 2958
+Not Found: /about
+Not Found: /about
+[05/Apr/2026 05:26:16] "GET /about HTTP/1.1" 404 2933
+[05/Apr/2026 05:26:16] "GET /about HTTP/1.1" 404 2934
+Not Found: /login.action
+[05/Apr/2026 05:26:17] "GET /login.action HTTP/1.1" 404 2954
+Not Found: /login.action
+[05/Apr/2026 05:26:17] "GET /login.action HTTP/1.1" 404 2955
+[05/Apr/2026 05:26:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /v2/_catalog
+[05/Apr/2026 05:26:18] "GET /v2/_catalog HTTP/1.1" 404 2951
+Not Found: /v2/_catalog
+[05/Apr/2026 05:26:18] "GET /v2/_catalog HTTP/1.1" 404 2952
+Not Found: /.DS_Store
+[05/Apr/2026 05:26:18] "GET /.DS_Store HTTP/1.1" 404 2945
+Not Found: /.DS_Store
+[05/Apr/2026 05:26:18] "GET /.DS_Store HTTP/1.1" 404 2946
+Not Found: /.env
+[05/Apr/2026 05:26:19] "GET /.env HTTP/1.1" 404 2930
+Not Found: /.env
+[05/Apr/2026 05:26:19] "GET /.env HTTP/1.1" 404 2931
+[05/Apr/2026 05:26:21] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:26:21] "GET / HTTP/1.1" 200 9312
+Not Found: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+[05/Apr/2026 05:26:21] "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1" 404 3143
+Not Found: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+[05/Apr/2026 05:26:21] "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1" 404 3144
+Not Found: /favicon.ico
+[05/Apr/2026 05:26:22] "GET /favicon.ico HTTP/1.1" 404 2952
+Not Found: /.git/config
+[05/Apr/2026 05:26:23] "GET /.git/config HTTP/1.1" 404 2951
+Not Found: /.git/config
+[05/Apr/2026 05:26:23] "GET /.git/config HTTP/1.1" 404 2952
+Not Found: /graphql
+[05/Apr/2026 05:26:24] "POST /graphql HTTP/1.1" 404 2940
+Not Found: /graphql
+[05/Apr/2026 05:26:24] "POST /graphql HTTP/1.1" 404 2941
+Not Found: /api
+[05/Apr/2026 05:26:24] "POST /api HTTP/1.1" 404 2928
+Not Found: /api
+[05/Apr/2026 05:26:25] "POST /api HTTP/1.1" 404 2929
+Not Found: /api/graphql
+[05/Apr/2026 05:26:25] "POST /api/graphql HTTP/1.1" 404 2952
+Not Found: /graphql/api
+[05/Apr/2026 05:26:25] "POST /graphql/api HTTP/1.1" 404 2952
+Not Found: /api/graphql
+[05/Apr/2026 05:26:25] "POST /api/graphql HTTP/1.1" 404 2953
+Not Found: /api/gql
+[05/Apr/2026 05:26:25] "POST /api/gql HTTP/1.1" 404 2940
+Not Found: /graphql/api
+[05/Apr/2026 05:26:25] "POST /graphql/api HTTP/1.1" 404 2953
+Not Found: /api/gql
+[05/Apr/2026 05:26:25] "POST /api/gql HTTP/1.1" 404 2941
+Not Found: /s/634323e26333e2634313e2439313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+[05/Apr/2026 05:26:25] "GET /s/634323e26333e2634313e2439313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties HTTP/1.1" 404 3220
+Not Found: /s/634323e26333e2634313e2439313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+[05/Apr/2026 05:26:25] "GET /s/634323e26333e2634313e2439313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties HTTP/1.1" 404 3221
+Not Found: /config.json
+[05/Apr/2026 05:26:26] "GET /config.json HTTP/1.1" 404 2951
+Not Found: /config.json
+[05/Apr/2026 05:26:26] "GET /config.json HTTP/1.1" 404 2952
+Not Found: /telescope/requests
+[05/Apr/2026 05:26:28] "GET /telescope/requests HTTP/1.1" 404 2972
+Not Found: /telescope/requests
+[05/Apr/2026 05:26:28] "GET /telescope/requests HTTP/1.1" 404 2973
+Not Found: /info.php
+[05/Apr/2026 05:26:28] "GET /info.php HTTP/1.1" 404 2942
+Not Found: /info.php
+[05/Apr/2026 05:26:29] "GET /info.php HTTP/1.1" 404 2943
+Not Found: /.well-known/security.txt
+[05/Apr/2026 05:26:29] "GET /.well-known/security.txt HTTP/1.1" 404 2990
+Not Found: /.well-known/security.txt
+[05/Apr/2026 05:26:30] "GET /.well-known/security.txt HTTP/1.1" 404 2991
+Not Found: /actuator/env
+[05/Apr/2026 05:26:30] "GET /actuator/env HTTP/1.1" 404 2954
+Not Found: /actuator/env
+[05/Apr/2026 05:26:31] "GET /actuator/env HTTP/1.1" 404 2955
+[05/Apr/2026 05:26:31] "GET / HTTP/1.1" 200 9312
+Not Found: /swagger-ui.html
+[05/Apr/2026 05:26:32] "GET /swagger-ui.html HTTP/1.1" 404 2963
+Not Found: /swagger-ui.html
+[05/Apr/2026 05:26:33] "GET /swagger-ui.html HTTP/1.1" 404 2964
+[05/Apr/2026 05:26:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /swagger/index.html
+[05/Apr/2026 05:26:33] "GET /swagger/index.html HTTP/1.1" 404 2972
+Not Found: /swagger/index.html
+[05/Apr/2026 05:26:34] "GET /swagger/index.html HTTP/1.1" 404 2973
+Not Found: /swagger/swagger-ui.html
+[05/Apr/2026 05:26:34] "GET /swagger/swagger-ui.html HTTP/1.1" 404 2987
+Not Found: /swagger/swagger-ui.html
+[05/Apr/2026 05:26:35] "GET /swagger/swagger-ui.html HTTP/1.1" 404 2988
+Not Found: /webjars/swagger-ui/index.html
+[05/Apr/2026 05:26:35] "GET /webjars/swagger-ui/index.html HTTP/1.1" 404 3005
+Not Found: /webjars/swagger-ui/index.html
+[05/Apr/2026 05:26:36] "GET /webjars/swagger-ui/index.html HTTP/1.1" 404 3006
+Not Found: /swagger.json
+[05/Apr/2026 05:26:36] "GET /swagger.json HTTP/1.1" 404 2954
+Not Found: /swagger.json
+[05/Apr/2026 05:26:37] "GET /swagger.json HTTP/1.1" 404 2955
+Not Found: /swagger/v1/swagger.json
+[05/Apr/2026 05:26:37] "GET /swagger/v1/swagger.json HTTP/1.1" 404 2987
+Not Found: /swagger/v1/swagger.json
+[05/Apr/2026 05:26:38] "GET /swagger/v1/swagger.json HTTP/1.1" 404 2988
+Not Found: /v2/api-docs
+[05/Apr/2026 05:26:38] "GET /v2/api-docs HTTP/1.1" 404 2951
+Not Found: /v2/api-docs
+[05/Apr/2026 05:26:39] "GET /v2/api-docs HTTP/1.1" 404 2952
+Not Found: /v3/api-docs
+[05/Apr/2026 05:26:39] "GET /v3/api-docs HTTP/1.1" 404 2951
+Not Found: /v3/api-docs
+[05/Apr/2026 05:26:40] "GET /v3/api-docs HTTP/1.1" 404 2952
+Not Found: /api-docs/swagger.json
+[05/Apr/2026 05:26:40] "GET /api-docs/swagger.json HTTP/1.1" 404 2981
+Not Found: /api-docs/swagger.json
+[05/Apr/2026 05:26:41] "GET /api-docs/swagger.json HTTP/1.1" 404 2982
+Not Found: /api/swagger.json
+[05/Apr/2026 05:26:41] "GET /api/swagger.json HTTP/1.1" 404 2966
+Not Found: /api/swagger.json
+[05/Apr/2026 05:26:42] "GET /api/swagger.json HTTP/1.1" 404 2967
+Not Found: /trace.axd
+[05/Apr/2026 05:26:42] "GET /trace.axd HTTP/1.1" 404 2945
+Not Found: /trace.axd
+[05/Apr/2026 05:26:43] "GET /trace.axd HTTP/1.1" 404 2946
+Not Found: /@vite/env
+[05/Apr/2026 05:26:43] "GET /@vite/env HTTP/1.1" 404 2945
+Not Found: /@vite/env
+[05/Apr/2026 05:26:44] "GET /@vite/env HTTP/1.1" 404 2946
+Not Found: /.vscode/sftp.json
+[05/Apr/2026 05:26:44] "GET /.vscode/sftp.json HTTP/1.1" 404 2969
+Not Found: /.vscode/sftp.json
+[05/Apr/2026 05:26:45] "GET /.vscode/sftp.json HTTP/1.1" 404 2970
+[05/Apr/2026 05:26:46] "OPTIONS / HTTP/1.1" 200 9312
+[05/Apr/2026 05:26:46] "OPTIONS / HTTP/1.1" 200 9312
+[05/Apr/2026 05:26:47] "GET /?rest_route=/wp/v2/users/ HTTP/1.1" 200 9312
+[05/Apr/2026 05:26:47] "GET /?rest_route=/wp/v2/users/ HTTP/1.1" 200 9312
+Not Found: /debug/default/view
+[05/Apr/2026 05:26:47] "GET /debug/default/view?panel=config HTTP/1.1" 404 2985
+Not Found: /debug/default/view
+[05/Apr/2026 05:26:48] "GET /debug/default/view?panel=config HTTP/1.1" 404 2986
+[05/Apr/2026 05:26:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:26:55] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:27:20] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:27:20] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:27:20] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[05/Apr/2026 05:27:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:27:27] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:27:56] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:28:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:29:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:29:28] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:30:01] "GET / HTTP/1.1" 200 9312
+Not Found: /@vite/env
+[05/Apr/2026 05:30:01] "GET /@vite/env HTTP/1.1" 404 2946
+Not Found: /.vscode/sftp.json
+[05/Apr/2026 05:30:02] "GET /.vscode/sftp.json HTTP/1.1" 404 2970
+Not Found: /.env
+[05/Apr/2026 05:30:02] "GET /.env HTTP/1.1" 404 2931
+Not Found: /.git/config
+[05/Apr/2026 05:30:02] "GET /.git/config HTTP/1.1" 404 2952
+[05/Apr/2026 05:30:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:31:07] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:31:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:32:09] "GET / HTTP/1.1" 200 9312
+Not Found: /favicon.ico
+[05/Apr/2026 05:32:11] "GET /favicon.ico HTTP/1.1" 404 2952
+[05/Apr/2026 05:32:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:33:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:33:55] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:33:57] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[05/Apr/2026 05:34:00] "GET /favicon.ico HTTP/1.1" 404 2951
+[05/Apr/2026 05:34:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:35:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:36:12] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:36:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:36:26] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:36:26] "GET / HTTP/1.1" 200 9312
+Not Found: /https:/e-randevu.online/
+[05/Apr/2026 05:36:38] "GET /https:/e-randevu.online/ HTTP/1.1" 404 2991
+Not Found: /https:/e-randevu.online/
+[05/Apr/2026 05:36:39] "GET /https:/e-randevu.online/?q= HTTP/1.1" 404 2994
+Not Found: /https:/e-randevu.online/hasta/giris/
+[05/Apr/2026 05:36:39] "GET /https:/e-randevu.online/hasta/giris/ HTTP/1.1" 404 3027
+Not Found: /https:/e-randevu.online/hasta/kayit/
+[05/Apr/2026 05:36:39] "GET /https:/e-randevu.online/hasta/kayit/ HTTP/1.1" 404 3027
+Not Found: /https:/panel.e-randevu.online/kayit/
+[05/Apr/2026 05:36:39] "GET /https:/panel.e-randevu.online/kayit/ HTTP/1.1" 404 3027
+Not Found: /https:/e-randevu.online/
+[05/Apr/2026 05:36:40] "GET /https:/e-randevu.online/ HTTP/1.1" 404 2991
+[05/Apr/2026 05:37:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:38:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:38:36] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:39:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:40:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:41:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:42:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:43:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:44:01] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 05:44:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:45:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:46:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:47:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:48:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:49:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:50:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:51:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:52:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /robots.txt
+[05/Apr/2026 05:52:50] "GET /robots.txt HTTP/1.1" 404 2949
+[05/Apr/2026 05:53:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:54:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:55:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:56:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:57:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:58:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 05:59:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:00:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:01:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:02:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:03:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:04:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:05:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:06:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:07:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:08:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:09:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:10:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:11:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:12:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:13:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:14:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:15:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:16:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:17:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:18:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:19:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:20:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:21:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:21:36] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:21:36] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:37] "GET /wp-includes/wlwmanifest.xml HTTP/1.1" 404 2999
+Not Found: /xmlrpc.php
+[05/Apr/2026 06:21:37] "GET /xmlrpc.php?rsd HTTP/1.1" 404 2952
+[05/Apr/2026 06:21:37] "GET / HTTP/1.1" 200 9312
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:37] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /web/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:38] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:38] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3029
+Not Found: /website/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:38] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3023
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:38] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3008
+Not Found: /news/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:38] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:39] "GET /2018/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:39] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:39] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:39] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /test/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:39] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /media/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:40] "GET /media/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3253
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:40] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /site/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:40] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:40] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3011
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[05/Apr/2026 06:21:41] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.1" 404 3014
+[05/Apr/2026 06:22:04] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:22:05] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:22:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:23:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:24:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:25:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 06:34:14] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[05/Apr/2026 06:35:02] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /prosell2.php
+[05/Apr/2026 06:35:02] "GET /prosell2.php HTTP/1.1" 404 2954
+Not Found: /zt2.php
+[05/Apr/2026 06:35:02] "GET /zt2.php HTTP/1.1" 404 2939
+[05/Apr/2026 06:43:40] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:46:59] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:48:27] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 06:53:04] "HEAD / HTTP/1.1" 200 0
+Not Found: /favicon.ico
+[05/Apr/2026 06:53:04] "GET /favicon.ico HTTP/1.1" 404 2952
+[05/Apr/2026 06:53:05] "GET / HTTP/1.1" 200 9312

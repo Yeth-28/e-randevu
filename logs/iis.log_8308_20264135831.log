@@ -1,0 +1,16 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /ads.txt
+[31/Mar/2026 20:58:35] "GET /ads.txt HTTP/1.1" 404 2346
+[31/Mar/2026 21:07:29] "GET / HTTP/1.1" 200 16347
+[31/Mar/2026 21:07:29] "GET / HTTP/1.1" 200 16347
+[31/Mar/2026 21:07:31] "GET / HTTP/1.1" 200 16347
+Not Found: /favicon.ico
+[31/Mar/2026 21:07:32] "GET /favicon.ico HTTP/1.1" 404 2952
+[31/Mar/2026 21:07:33] "GET / HTTP/1.1" 200 16347
+Not Found: /
+[31/Mar/2026 21:14:23] "GET / HTTP/1.1" 404 8849
+[31/Mar/2026 21:19:33] "GET / HTTP/1.1" 200 16347

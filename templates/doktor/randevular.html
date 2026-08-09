@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevularım — Doktor Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{--green:#059669;--green-dark:#065f46;--green-light:#dcfce7;--blue:#2563eb;--blue-light:#eff6ff;--bg:#f0fdf4;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;--orange:#d97706;--red:#dc2626;}
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+        .sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#065f46,#059669);z-index:100;display:flex;flex-direction:column;}
+        .sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .sidebar-brand .icon{font-size:28px;}
+        .sidebar-brand .name{font-family:'Playfair Display',serif;font-size:16px;color:white;margin-top:4px;}
+        .sidebar-brand .role{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+        .sidebar-nav{padding:16px 0;flex:1;}
+        .nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+        .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+        .nav-item .icon{font-size:18px;width:24px;text-align:center;}
+        .sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+        .sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .doktor-badge{background:#f0fdf4;padding:7px 14px;border-radius:999px;font-size:13px;color:var(--green-dark);font-weight:500;}
+        .content{padding:32px;}
+        .messages{margin-bottom:20px;}
+        .msg{padding:12px 16px;border-radius:10px;font-size:14px;margin-bottom:8px;}
+        .msg-success{background:var(--green-light);color:var(--green-dark);}
+        .msg-error{background:#fee2e2;color:var(--red);}
+        .table-card{background:white;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.06);overflow:hidden;}
+        table{width:100%;border-collapse:collapse;}
+        th{padding:13px 20px;text-align:left;font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;background:#f9fafb;}
+        td{padding:13px 20px;border-top:1px solid var(--gray-light);font-size:14px;color:var(--text);}
+        tr:hover td{background:#f9fafb;}
+        .badge{padding:3px 10px;border-radius:999px;font-size:12px;font-weight:500;}
+        .badge-bekliyor{background:#fef3c7;color:var(--orange);}
+        .badge-onaylandi{background:var(--blue-light);color:var(--blue);}
+        .badge-tamamlandi{background:var(--green-light);color:var(--green);}
+        .badge-tamamlanamadi{background:#fed7aa;color:#c2410c;}
+        .badge-iptal{background:#fef2f2;color:var(--red);}
+        .status-select{padding:5px 10px;border:1.5px solid var(--gray-light);border-radius:8px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none;background:white;cursor:pointer;}
+        .btn-kaydet{padding:5px 12px;background:var(--green);color:white;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+        .btn-sil{padding:5px 10px;background:#fef2f2;color:var(--red);border:1px solid #fecaca;border-radius:8px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+        .empty-state{text-align:center;padding:60px;color:var(--gray);}
+    </style>
+</head>
+<body>
+{% include "doktor/sidebar.html" %}
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">📅 Randevularım</div>
+        <div class="doktor-badge">👨‍⚕️ {{ doktor.name }}</div>
+    </div>
+    <div class="content">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="table-card">
+            {% if randevular %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hasta</th>
+                        <th>Tarih / Saat</th>
+                        <th>İşlem</th>
+                        <th>Süre</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for r in randevular %}
+                <tr>
+                    <td style="font-weight:500;">
+                        <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/hastalar/{{ r.patient.id }}/" style="color:var(--text);text-decoration:none;">{{ r.patient.name }}</a>
+                    </td>
+                    <td>{{ r.date_time|date:"d M Y, H:i" }}</td>
+                    <td>{{ r.get_procedure_display }}</td>
+                    <td style="color:var(--gray);">{{ r.duration }} dk</td>
+                    <td><span class="badge badge-{{ r.status }}">{{ r.get_status_display }}</span></td>
+                    <td>
+                        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+                            <!-- Durum güncelle -->
+                            <form method="post" style="display:flex;gap:4px;align-items:center;">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="guncelle">
+                                <input type="hidden" name="randevu_id" value="{{ r.id }}">
+                                <select name="status" class="status-select">
+                                    {% for val, label in status_choices %}
+                                    <option value="{{ val }}" {% if r.status == val %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button type="submit" class="btn-kaydet">Kaydet</button>
+                            </form>
+                            <!-- Sil -->
+                            <form method="post" onsubmit="return confirm('Bu randevuyu silmek istiyor musunuz?')">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="sil">
+                                <input type="hidden" name="randevu_id" value="{{ r.id }}">
+                                <button type="submit" class="btn-sil">🗑</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div style="font-size:48px;margin-bottom:12px;">📅</div>
+                <p>Henüz randevunuz yok.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

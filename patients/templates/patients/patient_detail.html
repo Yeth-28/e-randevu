@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ patient.name }}</h1>
+<p>Date of Birth: {{ patient.date_of_birth }}</p>
+<p>Phone: {{ patient.phone_number }}</p>
+<p>Address: {{ patient.address }}</p>
+<p>SSN Last 4: {{ patient.ssn_last_4 }}</p>
+<p>Gender: {{ patient.get_gender_display }}</p>
+
+<h2>Last Visit</h2>
+{% if last_visit_info %}
+<p>Date: {{ last_visit_info.date_time }}</p>
+<p>Doctor: {{ last_visit_info.doctor.name }}</p>
+<p>Procedures: {{ last_visit_info.procedures|join:", " }}</p>
+{% else %}
+<p>No visits yet.</p>
+{% endif %}
+
+<h2>Next Appointment</h2>
+{% if next_appointment_info %}
+<p>Date: {{ next_appointment_info.date_time }}</p>
+<p>Doctor: {{ next_appointment_info.doctor.name }}</p>
+<p>Procedure: {{ next_appointment_info.procedure }}</p>
+{% else %}
+<p>No upcoming appointments.</p>
+{% endif %}
+
+<h2>Visits</h2>
+<table class="table">
+  <thead>
+      <tr>
+          <th>Date & Time</th>
+          <th>Doctor</th>
+          <th>Clinic</th>
+          <th>Procedures</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for visit in visits %}
+      <tr>
+          <td>{{ visit.date_time }}</td>
+          <td>{{ visit.doctor.name }}</td>
+          <td>{{ visit.clinic.name }}</td>
+          <td>{{ visit.procedures|join:", " }}</td>
+          <td>{{ visit.notes }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+<a href="{% url 'add_visit' patient.id %}" class="btn btn-success">Add New Visit</a>
+
+<a href="{% url 'schedule_appointment' patient.id %}" class="btn btn-primary">Schedule Appointment</a>
+
+<a href="{% url 'patient_update' patient.id %}" class="btn btn-warning">Edit Patient</a>
+
+<a href="{% url 'patient_list' %}" class="btn btn-secondary">Back to List</a>
+
+{% endblock %}

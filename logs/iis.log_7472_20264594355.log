@@ -1,0 +1,348 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 02:43:59] "GET / HTTP/1.1" 200 39116
+[05/Apr/2026 02:43:59] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:44:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:44:30] "GET / HTTP/1.1" 200 39116
+[05/Apr/2026 02:44:37] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 02:44:39] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[05/Apr/2026 02:44:41] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[05/Apr/2026 02:45:08] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:09] "GET /5Q1QKL/hastalar/ HTTP/1.1" 200 33657
+[05/Apr/2026 02:45:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:10] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:11] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 41910
+[05/Apr/2026 02:45:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:14] "POST /5Q1QKL/klinik-ayarlar-kod-gonder/ HTTP/1.1" 200 39
+[05/Apr/2026 02:45:26] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:27] "POST /5Q1QKL/klinik-ayarlar-dogrula/ HTTP/1.1" 200 17
+[05/Apr/2026 02:45:29] "GET /5Q1QKL/doktorlar/ HTTP/1.1" 200 28713
+[05/Apr/2026 02:45:29] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:30] "GET /5Q1QKL/doktorlar/ekle/ HTTP/1.1" 200 34926
+[05/Apr/2026 02:45:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:45:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:05] "POST /5Q1QKL/doktorlar/ekle/ HTTP/1.1" 302 0
+[05/Apr/2026 02:46:05] "GET /5Q1QKL/doktorlar/ HTTP/1.1" 200 30725
+[05/Apr/2026 02:46:05] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:08] "GET /5Q1QKL/abonelik/ HTTP/1.1" 200 36765
+[05/Apr/2026 02:46:08] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:09] "GET /5Q1QKL/raporlar/ HTTP/1.1" 200 31778
+[05/Apr/2026 02:46:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:11] "GET /5Q1QKL/ayarlar/ HTTP/1.1" 200 75577
+[05/Apr/2026 02:46:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:26] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:41] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:46:56] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:47:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:47:26] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:47:41] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:47:56] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:48:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:48:26] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:48:41] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:48:56] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /5Q1QKL/ayarlar/saatler/
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\patients\ayarlar_views.py", line 83, in ayarlar_calisma_saatleri
+    wh.save()
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 1040, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 1105, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 1278, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 1007, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2606, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2601, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2585, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“” de\u011feri geçersiz bir biçime sahip. HH:MM[:ss[.uuuuuu]] biçiminde olmak zorundad\u0131r.']
+[05/Apr/2026 02:49:00] "POST /5Q1QKL/ayarlar/saatler/ HTTP/1.1" 500 137445
+Internal Server Error: /5Q1QKL/ayarlar/saatler/
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\patients\ayarlar_views.py", line 83, in ayarlar_calisma_saatleri
+    wh.save()
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 1040, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py", line 1105, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 1278, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 1007, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2606, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2601, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2585, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“” de\u011feri geçersiz bir biçime sahip. HH:MM[:ss[.uuuuuu]] biçiminde olmak zorundad\u0131r.']
+[05/Apr/2026 02:49:04] "POST /5Q1QKL/ayarlar/saatler/ HTTP/1.1" 500 137445
+[05/Apr/2026 02:49:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:49:18] "POST /5Q1QKL/ayarlar/randevu/ HTTP/1.1" 302 0
+[05/Apr/2026 02:49:18] "GET /5Q1QKL/ayarlar/?tab=randevu HTTP/1.1" 200 75885
+[05/Apr/2026 02:49:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:49:26] "GET / HTTP/1.1" 200 37736
+[05/Apr/2026 02:49:27] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[05/Apr/2026 02:49:34] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:49:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:50:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:50:07] "POST / HTTP/1.1" 302 0
+[05/Apr/2026 02:50:07] "GET /basarili/ HTTP/1.1" 200 2918
+[05/Apr/2026 02:50:10] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[05/Apr/2026 02:50:10] "GET /static/css/auth.css HTTP/1.1" 304 0
+[05/Apr/2026 02:50:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 193
+[05/Apr/2026 02:50:19] "GET /favicon.ico HTTP/1.1" 301 0
+[05/Apr/2026 02:50:19] "POST /5Q1QKL/api/bildirimler/okundu/ HTTP/1.1" 200 12
+[05/Apr/2026 02:50:19] "GET /favicon.ico/ HTTP/1.1" 302 0
+[05/Apr/2026 02:50:19] "GET /giris/ HTTP/1.1" 200 5139
+[05/Apr/2026 02:50:23] "POST /hasta/giris/ HTTP/1.1" 200 3649
+[05/Apr/2026 02:50:29] "POST /hasta/giris/ HTTP/1.1" 200 3649
+[05/Apr/2026 02:50:33] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:50:37] "POST /hasta/giris/ HTTP/1.1" 200 3649
+[05/Apr/2026 02:50:45] "GET /5Q1QKL/bildirimler/ HTTP/1.1" 200 25775
+[05/Apr/2026 02:50:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:50:47] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 02:50:48] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:50:49] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 02:50:49] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:51:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:51:04] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 02:51:04] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:51:09] "GET /5Q1QKL/bildirimler/ HTTP/1.1" 200 25775
+[05/Apr/2026 02:51:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[05/Apr/2026 02:51:12] "GET / HTTP/1.1" 500 98165
+[05/Apr/2026 02:51:20] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:51:21] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[05/Apr/2026 02:51:26] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[05/Apr/2026 02:51:35] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:51:50] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:52:05] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:52:20] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:52:26] "POST /hasta/kayit/ HTTP/1.1" 200 13674
+[05/Apr/2026 02:52:35] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:52:40] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[05/Apr/2026 02:52:50] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:53:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:53:38] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:53:42] "GET /5Q1QKL/hastalar/ HTTP/1.1" 200 33657
+[05/Apr/2026 02:53:42] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:53:57] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:54:12] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:54:28] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:54:29] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 02:54:40] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[05/Apr/2026 02:54:41] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[05/Apr/2026 02:54:43] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:54:49] "GET / HTTP/1.1" 200 39107
+[05/Apr/2026 02:54:49] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:54:58] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:01] "GET /5Q1QKL/raporlar/ HTTP/1.1" 200 31778
+[05/Apr/2026 02:55:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:03] "GET /5Q1QKL/ayarlar/ HTTP/1.1" 200 75717
+[05/Apr/2026 02:55:03] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:18] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:20] "POST /5Q1QKL/ayarlar/randevu/ HTTP/1.1" 302 0
+[05/Apr/2026 02:55:20] "GET /5Q1QKL/ayarlar/?tab=randevu HTTP/1.1" 200 75878
+[05/Apr/2026 02:55:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:26] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 02:55:28] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[05/Apr/2026 02:55:34] "GET / HTTP/1.1" 200 35945
+[05/Apr/2026 02:55:34] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:55:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:55:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:56:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:56:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:56:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:56:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:57:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:57:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:58:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:59:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:00:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:01:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:02:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:03:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:04:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:05:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:06:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:07:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:08:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:09:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:10:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:11:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:19] "GET /5Q1QKL/ayarlar/?tab=randevu HTTP/1.1" 200 75710
+[05/Apr/2026 03:12:19] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:20] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 03:12:20] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:21] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 03:12:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:22] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 03:12:22] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:37] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:12:52] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:13:07] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:13:22] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:13:37] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:13:52] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:14:07] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:14:22] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:14:37] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:14:52] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:05] "GET /5Q1QKL/hastalar/ HTTP/1.1" 200 33657
+[05/Apr/2026 03:15:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:06] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 03:15:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:08] "GET /5Q1QKL/doktorlar/ HTTP/1.1" 200 30567
+[05/Apr/2026 03:15:08] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:11] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 03:15:11] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:14] "GET /5Q1QKL/doktorlar/ HTTP/1.1" 200 30567
+[05/Apr/2026 03:15:14] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:17] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 03:15:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:15:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:16:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:16:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:16:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:16:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:17:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:17:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:17:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:17:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:18:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:18:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:18:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:18:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:19:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:19:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:19:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:19:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:20:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:20:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:20:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:20:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:21:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:21:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:21:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:21:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:22:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:22:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:22:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:22:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:23:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:23:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:23:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:23:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 05, 2026 - 02:43:59
+Django version 5.0.9, using settings 'dental.settings'
+Starting development server at http://0.0.0.0:10165/
+Quit the server with CTRL-BREAK.
+
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader

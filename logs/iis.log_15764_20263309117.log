@@ -1,0 +1,147 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-login.php
+[30/Mar/2026 02:01:21] "GET /wp-login.php HTTP/1.1" 404 2955
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[30/Mar/2026 02:09:22] "GET / HTTP/1.1" 500 98109
+[30/Mar/2026 02:16:09] "GET /robots.txt HTTP/1.1" 301 0
+[30/Mar/2026 02:16:09] "GET /robots.txt/ HTTP/1.1" 302 0
+[30/Mar/2026 02:16:10] "GET /giris/ HTTP/1.1" 200 5064
+Not Found: /
+[30/Mar/2026 02:16:10] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[30/Mar/2026 02:20:38] "GET / HTTP/1.1" 404 8848
+Not Found: /
+[30/Mar/2026 02:20:39] "GET / HTTP/1.1" 404 8848
+Not Found: /wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:39] "GET /wp-includes/wlwmanifest.xml HTTP/1.1" 404 8947
+[30/Mar/2026 02:20:39] "GET /xmlrpc.php?rsd HTTP/1.1" 301 0
+Not Found: /
+[30/Mar/2026 02:20:39] "GET / HTTP/1.1" 404 8848
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:39] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /web/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:39] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8959
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8977
+Not Found: /website/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8971
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8956
+Not Found: /news/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /2018/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:40] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:41] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:41] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8959
+Not Found: /test/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:41] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /media/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:41] "GET /media/wp-includes/wlwmanifest.xml HTTP/1.1" 404 9201
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:41] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8959
+Not Found: /site/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:42] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:42] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8959
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[30/Mar/2026 02:20:42] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.1" 404 8962
+[30/Mar/2026 02:35:05] "GET / HTTP/1.1" 200 16347
+Not Found: /
+[30/Mar/2026 02:37:29] "GET / HTTP/1.1" 404 8848
+Not Found: /robots.txt
+[30/Mar/2026 02:45:23] "GET /robots.txt HTTP/1.1" 404 2949
+[30/Mar/2026 02:45:23] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 02:45:27] "GET /?q HTTP/1.1" 200 16347
+[30/Mar/2026 02:45:30] "GET /hasta/giris/ HTTP/1.1" 200 3789
+[30/Mar/2026 02:45:33] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 21118
+Not Found: /robots.txt
+[30/Mar/2026 02:45:34] "GET /robots.txt HTTP/1.1" 404 2361
+Not Found: /robots.txt
+[30/Mar/2026 02:45:35] "GET /robots.txt HTTP/1.1" 404 2359
+Not Found: /robots.txt
+[30/Mar/2026 02:45:35] "GET /robots.txt HTTP/1.1" 404 2361
+Not Found: /robots.txt
+[30/Mar/2026 02:45:35] "GET /robots.txt HTTP/1.1" 404 2359
+Not Found: /robots.txt
+[30/Mar/2026 02:45:35] "GET /robots.txt HTTP/1.1" 404 2361
+Not Found: /robots.txt
+[30/Mar/2026 02:45:35] "GET /robots.txt HTTP/1.1" 404 2361
+[30/Mar/2026 02:45:35] "GET /hasta/kayit/ HTTP/1.1" 200 14454
+[30/Mar/2026 02:45:39] "GET / HTTP/1.1" 200 65994
+[30/Mar/2026 02:45:40] "GET / HTTP/1.1" 200 65992
+[30/Mar/2026 02:45:42] "GET / HTTP/1.1" 200 65994
+[30/Mar/2026 02:45:44] "GET / HTTP/1.1" 200 68104
+[30/Mar/2026 02:45:45] "GET / HTTP/1.1" 200 65994
+[30/Mar/2026 02:45:47] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[30/Mar/2026 02:45:47] "GET / HTTP/1.1" 200 46830
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:48] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:49] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2407
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:49] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:50] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2407
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:51] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2409
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:51] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:52] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2515
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:52] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2409
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:53] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2409
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:53] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2515
+Not Found: /cdn-cgi/l/email-protection
+[30/Mar/2026 02:45:54] "GET /cdn-cgi/l/email-protection HTTP/1.1" 404 2409
+[30/Mar/2026 02:45:54] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+[30/Mar/2026 02:45:56] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[30/Mar/2026 02:45:59] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+[30/Mar/2026 03:00:20] "GET / HTTP/1.1" 200 16347
+Not Found: /
+[30/Mar/2026 03:12:34] "GET / HTTP/1.1" 404 8849
+Not Found: /wp-login.php
+[30/Mar/2026 03:14:25] "GET /wp-login.php HTTP/1.1" 404 2954

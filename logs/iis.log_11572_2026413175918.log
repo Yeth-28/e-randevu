@@ -1,0 +1,936 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[13/Apr/2026 10:59:22] "GET / HTTP/1.1" 500 98182
+[13/Apr/2026 11:13:26] "GET / HTTP/1.1" 200 9312
+Not Found: /.git/config
+[13/Apr/2026 11:13:26] "GET /.git/config HTTP/1.1" 404 2951
+Not Found: /backend/.env
+[13/Apr/2026 11:13:26] "GET /backend/.env HTTP/1.1" 404 2954
+Not Found: /.env
+[13/Apr/2026 11:13:26] "GET /.env HTTP/1.1" 404 2930
+Not Found: /.env
+[13/Apr/2026 11:13:26] "GET /.env HTTP/1.1" 404 2930
+Not Found: /.env
+[13/Apr/2026 11:13:26] "GET /.env HTTP/1.1" 404 2930
+Not Found: /.git/config
+[13/Apr/2026 11:13:26] "GET /.git/config HTTP/1.1" 404 2951
+Not Found: /backend/.env
+[13/Apr/2026 11:13:26] "GET /backend/.env HTTP/1.1" 404 2954
+Not Found: /backend/.env
+[13/Apr/2026 11:13:26] "GET /backend/.env HTTP/1.1" 404 2954
+Not Found: /.aws/credentials
+[13/Apr/2026 11:13:26] "GET /.aws/credentials HTTP/1.1" 404 2966
+Not Found: /info.php
+[13/Apr/2026 11:13:26] "GET /info.php HTTP/1.1" 404 2942
+Not Found: /error/
+[13/Apr/2026 11:13:26] "GET /error/ HTTP/1.1" 404 2936
+Not Found: /api/user
+[13/Apr/2026 11:13:26] "GET /api/user HTTP/1.1" 404 2942
+Not Found: /var/task/next.config.js
+[13/Apr/2026 11:13:26] "GET /var/task/next.config.js HTTP/1.1" 404 2987
+Not Found: /var/task/next.config.mjs
+[13/Apr/2026 11:13:27] "GET /var/task/next.config.mjs HTTP/1.1" 404 2990
+Not Found: /var/task/next.config.ts
+[13/Apr/2026 11:13:27] "GET /var/task/next.config.ts HTTP/1.1" 404 2987
+Not Found: /app/next.config.js
+[13/Apr/2026 11:13:27] "GET /app/next.config.js HTTP/1.1" 404 2972
+Not Found: /app/next.config.mjs
+[13/Apr/2026 11:13:27] "GET /app/next.config.mjs HTTP/1.1" 404 2975
+Not Found: /$(pwd)/next.config.js
+[13/Apr/2026 11:13:27] "GET /$(pwd)/next.config.js HTTP/1.1" 404 2981
+Not Found: /$(pwd)/next.config.mjs
+[13/Apr/2026 11:13:27] "GET /$(pwd)/next.config.mjs HTTP/1.1" 404 2984
+Not Found: /var/task/nuxt.config.js
+[13/Apr/2026 11:13:27] "GET /var/task/nuxt.config.js HTTP/1.1" 404 2987
+Not Found: /var/task/nuxt.config.ts
+[13/Apr/2026 11:13:27] "GET /var/task/nuxt.config.ts HTTP/1.1" 404 2987
+Not Found: /app/nuxt.config.js
+[13/Apr/2026 11:13:27] "GET /app/nuxt.config.js HTTP/1.1" 404 2972
+Not Found: /var/task/serverless.yml
+[13/Apr/2026 11:13:27] "GET /var/task/serverless.yml HTTP/1.1" 404 2987
+Not Found: /var/task/serverless.yaml
+[13/Apr/2026 11:13:27] "GET /var/task/serverless.yaml HTTP/1.1" 404 2990
+Not Found: /var/task/serverless.json
+[13/Apr/2026 11:13:27] "GET /var/task/serverless.json HTTP/1.1" 404 2990
+Not Found: /app/serverless.yml
+[13/Apr/2026 11:13:27] "GET /app/serverless.yml HTTP/1.1" 404 2972
+Not Found: /app/serverless.yaml
+[13/Apr/2026 11:13:27] "GET /app/serverless.yaml HTTP/1.1" 404 2975
+Not Found: /$(pwd)/serverless.yml
+[13/Apr/2026 11:13:27] "GET /$(pwd)/serverless.yml HTTP/1.1" 404 2981
+Not Found: /$(pwd)/serverless.yaml
+[13/Apr/2026 11:13:27] "GET /$(pwd)/serverless.yaml HTTP/1.1" 404 2984
+Not Found: /var/task/package.json
+[13/Apr/2026 11:13:27] "GET /var/task/package.json HTTP/1.1" 404 2981
+Not Found: /app/package.json
+[13/Apr/2026 11:13:28] "GET /app/package.json HTTP/1.1" 404 2966
+Not Found: /$(pwd)/package.json
+[13/Apr/2026 11:13:28] "GET /$(pwd)/package.json HTTP/1.1" 404 2975
+Not Found: /var/task/vercel.json
+[13/Apr/2026 11:13:28] "GET /var/task/vercel.json HTTP/1.1" 404 2978
+Not Found: /app/vercel.json
+[13/Apr/2026 11:13:28] "GET /app/vercel.json HTTP/1.1" 404 2963
+Not Found: /$(pwd)/vercel.json
+[13/Apr/2026 11:13:28] "GET /$(pwd)/vercel.json HTTP/1.1" 404 2972
+Not Found: /var/task/netlify.toml
+[13/Apr/2026 11:13:28] "GET /var/task/netlify.toml HTTP/1.1" 404 2981
+Not Found: /app/netlify.toml
+[13/Apr/2026 11:13:28] "GET /app/netlify.toml HTTP/1.1" 404 2966
+Not Found: /$(pwd)/netlify.toml
+[13/Apr/2026 11:13:28] "GET /$(pwd)/netlify.toml HTTP/1.1" 404 2975
+Not Found: /var/task/docker-compose.yml
+[13/Apr/2026 11:13:28] "GET /var/task/docker-compose.yml HTTP/1.1" 404 2999
+Not Found: /var/task/docker-compose.yaml
+[13/Apr/2026 11:13:28] "GET /var/task/docker-compose.yaml HTTP/1.1" 404 3002
+Not Found: /app/docker-compose.yml
+[13/Apr/2026 11:13:28] "GET /app/docker-compose.yml HTTP/1.1" 404 2984
+Not Found: /$(pwd)/docker-compose.yml
+[13/Apr/2026 11:13:28] "GET /$(pwd)/docker-compose.yml HTTP/1.1" 404 2993
+Not Found: /.dockerignore
+[13/Apr/2026 11:13:28] "GET /.dockerignore HTTP/1.1" 404 2957
+Not Found: /docker/overlay/config.json
+[13/Apr/2026 11:13:28] "GET /docker/overlay/config.json HTTP/1.1" 404 2996
+Not Found: /opt/mailcow-dockerized/mailcow.conf
+[13/Apr/2026 11:13:28] "GET /opt/mailcow-dockerized/mailcow.conf HTTP/1.1" 404 3023
+Not Found: /Dockerfile
+[13/Apr/2026 11:13:28] "GET /Dockerfile HTTP/1.1" 404 2948
+Not Found: /docker/registry/config.yml
+[13/Apr/2026 11:13:29] "GET /docker/registry/config.yml HTTP/1.1" 404 2996
+Not Found: /docker-compose.yml
+[13/Apr/2026 11:13:29] "GET /docker-compose.yml HTTP/1.1" 404 2972
+Not Found: /.docker/config.json
+[13/Apr/2026 11:13:29] "GET /.docker/config.json HTTP/1.1" 404 2975
+Not Found: /.docker/secrets.json
+[13/Apr/2026 11:13:29] "GET /.docker/secrets.json HTTP/1.1" 404 2978
+Not Found: /attacker/docker-compose.yml
+[13/Apr/2026 11:13:29] "GET /attacker/docker-compose.yml HTTP/1.1" 404 2999
+Not Found: /_vercel/insights
+[13/Apr/2026 11:13:29] "GET /_vercel/insights HTTP/1.1" 404 2966
+Not Found: /vercel.json
+[13/Apr/2026 11:13:29] "GET /vercel.json HTTP/1.1" 404 2951
+Not Found: /aws/bucket
+[13/Apr/2026 11:13:29] "GET /aws/bucket HTTP/1.1" 404 2948
+Not Found: /aws/buckets
+[13/Apr/2026 11:13:29] "GET /aws/buckets HTTP/1.1" 404 2951
+Not Found: /aws/config/s3.json
+[13/Apr/2026 11:13:29] "GET /aws/config/s3.json HTTP/1.1" 404 2972
+Not Found: /aws/s3/credentials
+[13/Apr/2026 11:13:29] "GET /aws/s3/credentials HTTP/1.1" 404 2972
+Not Found: /aws/s3/env.env
+[13/Apr/2026 11:13:29] "GET /aws/s3/env.env HTTP/1.1" 404 2960
+Not Found: /aws_s3_bucket
+[13/Apr/2026 11:13:29] "GET /aws_s3_bucket HTTP/1.1" 404 2957
+Not Found: /aws_s3_config.json
+[13/Apr/2026 11:13:29] "GET /aws_s3_config.json HTTP/1.1" 404 2972
+Not Found: /s3/.aws/config
+[13/Apr/2026 11:13:29] "GET /s3/.aws/config HTTP/1.1" 404 2960
+Not Found: /config/aws.php
+[13/Apr/2026 11:13:29] "GET /config/aws.php HTTP/1.1" 404 2960
+Not Found: /.aws/config
+[13/Apr/2026 11:13:29] "GET /.aws/config HTTP/1.1" 404 2951
+Not Found: /aws-codecommit/
+[13/Apr/2026 11:13:30] "GET /aws-codecommit/ HTTP/1.1" 404 2963
+Not Found: /aws.yaml
+[13/Apr/2026 11:13:30] "GET /aws.yaml HTTP/1.1" 404 2942
+Not Found: /old/aws_config
+[13/Apr/2026 11:13:30] "GET /old/aws_config HTTP/1.1" 404 2960
+Not Found: /aws.env.json
+[13/Apr/2026 11:13:30] "GET /aws.env.json HTTP/1.1" 404 2954
+Not Found: /aws.env
+[13/Apr/2026 11:13:30] "GET /aws.env HTTP/1.1" 404 2939
+Not Found: /aws-ses.json
+[13/Apr/2026 11:13:30] "GET /aws-ses.json HTTP/1.1" 404 2954
+Not Found: /aws/ses/smtp.env
+[13/Apr/2026 11:13:30] "GET /aws/ses/smtp.env HTTP/1.1" 404 2966
+Not Found: /aws/metadata
+[13/Apr/2026 11:13:30] "GET /aws/metadata HTTP/1.1" 404 2954
+Not Found: /aws.json
+[13/Apr/2026 11:13:30] "GET /aws.json HTTP/1.1" 404 2942
+Not Found: /aws.yml
+[13/Apr/2026 11:13:30] "GET /aws.yml HTTP/1.1" 404 2939
+Not Found: /.aws/credentials
+[13/Apr/2026 11:13:30] "GET /.aws/credentials HTTP/1.1" 404 2966
+Not Found: /.env.aws
+[13/Apr/2026 11:13:30] "GET /.env.aws HTTP/1.1" 404 2942
+Not Found: /s3/credentials
+[13/Apr/2026 11:13:30] "GET /s3/credentials HTTP/1.1" 404 2960
+Not Found: /s3/bucket.env
+[13/Apr/2026 11:13:30] "GET /s3/bucket.env HTTP/1.1" 404 2957
+Not Found: /s3/bucket
+[13/Apr/2026 11:13:30] "GET /s3/bucket HTTP/1.1" 404 2945
+Not Found: /s3/buckets
+[13/Apr/2026 11:13:30] "GET /s3/buckets HTTP/1.1" 404 2948
+Not Found: /s3/backup
+[13/Apr/2026 11:13:30] "GET /s3/backup HTTP/1.1" 404 2945
+Not Found: /s3.yml
+[13/Apr/2026 11:13:31] "GET /s3.yml HTTP/1.1" 404 2936
+Not Found: /s3.yaml
+[13/Apr/2026 11:13:31] "GET /s3.yaml HTTP/1.1" 404 2939
+Not Found: /s3.properties
+[13/Apr/2026 11:13:31] "GET /s3.properties HTTP/1.1" 404 2957
+Not Found: /s3.key
+[13/Apr/2026 11:13:31] "GET /s3.key HTTP/1.1" 404 2936
+Not Found: /s3.secret
+[13/Apr/2026 11:13:31] "GET /s3.secret HTTP/1.1" 404 2945
+Not Found: /s3/.env.bak
+[13/Apr/2026 11:13:31] "GET /s3/.env.bak HTTP/1.1" 404 2951
+Not Found: /root/.aws/credentials
+[13/Apr/2026 11:13:31] "GET /root/.aws/credentials HTTP/1.1" 404 2981
+Not Found: /root/.aws/config
+[13/Apr/2026 11:13:31] "GET /root/.aws/config HTTP/1.1" 404 2966
+Not Found: /home/*/.aws/credentials
+[13/Apr/2026 11:13:31] "GET /home/*/.aws/credentials HTTP/1.1" 404 2987
+Not Found: /.boto
+[13/Apr/2026 11:13:31] "GET /.boto HTTP/1.1" 404 2933
+Not Found: /root/.boto
+[13/Apr/2026 11:13:31] "GET /root/.boto HTTP/1.1" 404 2948
+Not Found: /.s3cfg
+[13/Apr/2026 11:13:31] "GET /.s3cfg HTTP/1.1" 404 2936
+Not Found: /root/.s3cfg
+[13/Apr/2026 11:13:31] "GET /root/.s3cfg HTTP/1.1" 404 2951
+Not Found: /etc/boto.cfg
+[13/Apr/2026 11:13:31] "GET /etc/boto.cfg HTTP/1.1" 404 2954
+Not Found: /.terraform/credentials.tfrc.json
+[13/Apr/2026 11:13:31] "GET /.terraform/credentials.tfrc.json HTTP/1.1" 404 3014
+Not Found: /terraform.tfstate
+[13/Apr/2026 11:13:31] "GET /terraform.tfstate HTTP/1.1" 404 2969
+Not Found: /terraform.tfstate.backup
+[13/Apr/2026 11:13:31] "GET /terraform.tfstate.backup HTTP/1.1" 404 2990
+Not Found: /.terraform.tfstate
+[13/Apr/2026 11:13:32] "GET /.terraform.tfstate HTTP/1.1" 404 2972
+Not Found: /serverless.yml
+[13/Apr/2026 11:13:32] "GET /serverless.yml HTTP/1.1" 404 2960
+Not Found: /serverless.yaml
+[13/Apr/2026 11:13:32] "GET /serverless.yaml HTTP/1.1" 404 2963
+Not Found: /sam-template.yaml
+[13/Apr/2026 11:13:32] "GET /sam-template.yaml HTTP/1.1" 404 2969
+Not Found: /template.yaml
+[13/Apr/2026 11:13:32] "GET /template.yaml HTTP/1.1" 404 2957
+Not Found: /amplify/team-provider-info.json
+[13/Apr/2026 11:13:32] "GET /amplify/team-provider-info.json HTTP/1.1" 404 3011
+Not Found: /.amplifyrc
+[13/Apr/2026 11:13:32] "GET /.amplifyrc HTTP/1.1" 404 2948
+Not Found: /$(pwd)/terraform.tfstate
+[13/Apr/2026 11:13:32] "GET /$(pwd)/terraform.tfstate HTTP/1.1" 404 2990
+Not Found: /$(pwd)/.terraform/terraform.tfstate
+[13/Apr/2026 11:13:32] "GET /$(pwd)/.terraform/terraform.tfstate HTTP/1.1" 404 3023
+Not Found: /$(pwd)/terraform.tfvars
+[13/Apr/2026 11:13:32] "GET /$(pwd)/terraform.tfvars HTTP/1.1" 404 2987
+Not Found: /$(pwd)/*.auto.tfvars
+[13/Apr/2026 11:13:32] "GET /$(pwd)/*.auto.tfvars HTTP/1.1" 404 2978
+Not Found: /app/terraform.tfstate
+[13/Apr/2026 11:13:32] "GET /app/terraform.tfstate HTTP/1.1" 404 2981
+Not Found: /app/.terraform/terraform.tfstate
+[13/Apr/2026 11:13:32] "GET /app/.terraform/terraform.tfstate HTTP/1.1" 404 3014
+Not Found: /~/.aws/credentials
+[13/Apr/2026 11:13:32] "GET /~/.aws/credentials HTTP/1.1" 404 2972
+Not Found: /~/.aws/config
+[13/Apr/2026 11:13:32] "GET /~/.aws/config HTTP/1.1" 404 2957
+Not Found: /~/.boto
+[13/Apr/2026 11:13:32] "GET /~/.boto HTTP/1.1" 404 2939
+Not Found: /~/.s3cfg
+[13/Apr/2026 11:13:32] "GET /~/.s3cfg HTTP/1.1" 404 2942
+Not Found: /.terraform.lock.hcl
+[13/Apr/2026 11:13:33] "GET /.terraform.lock.hcl HTTP/1.1" 404 2975
+Not Found: /terraform.tfvars
+[13/Apr/2026 11:13:33] "GET /terraform.tfvars HTTP/1.1" 404 2966
+Not Found: /terraform/terraform.tfvars.json
+[13/Apr/2026 11:13:33] "GET /terraform/terraform.tfvars.json HTTP/1.1" 404 3011
+Not Found: /var/task/amplify.yml
+[13/Apr/2026 11:13:33] "GET /var/task/amplify.yml HTTP/1.1" 404 2978
+Not Found: /var/task/amplify.yaml
+[13/Apr/2026 11:13:33] "GET /var/task/amplify.yaml HTTP/1.1" 404 2981
+Not Found: /app/amplify.yml
+[13/Apr/2026 11:13:33] "GET /app/amplify.yml HTTP/1.1" 404 2963
+Not Found: /app/amplify.yaml
+[13/Apr/2026 11:13:33] "GET /app/amplify.yaml HTTP/1.1" 404 2966
+Not Found: /var/task/amplify/backend/function/*/src/index.js
+[13/Apr/2026 11:13:33] "GET /var/task/amplify/backend/function/*/src/index.js HTTP/1.1" 404 3062
+Not Found: /$(pwd)/.env
+[13/Apr/2026 11:13:33] "GET /$(pwd)/.env HTTP/1.1" 404 2951
+Not Found: /$(pwd)/.env.local
+[13/Apr/2026 11:13:33] "GET /$(pwd)/.env.local HTTP/1.1" 404 2969
+Not Found: /$(pwd)/.env.production
+[13/Apr/2026 11:13:33] "GET /$(pwd)/.env.production HTTP/1.1" 404 2984
+Not Found: /$(pwd)/.env.development
+[13/Apr/2026 11:13:33] "GET /$(pwd)/.env.development HTTP/1.1" 404 2987
+Not Found: /$(pwd)/.env.staging
+[13/Apr/2026 11:13:33] "GET /$(pwd)/.env.staging HTTP/1.1" 404 2975
+Not Found: /app/.env
+[13/Apr/2026 11:13:33] "GET /app/.env HTTP/1.1" 404 2942
+Not Found: /app/.env.local
+[13/Apr/2026 11:13:33] "GET /app/.env.local HTTP/1.1" 404 2960
+Not Found: /app/.env.production
+[13/Apr/2026 11:13:33] "GET /app/.env.production HTTP/1.1" 404 2975
+Not Found: /var/www/.env
+[13/Apr/2026 11:13:33] "GET /var/www/.env HTTP/1.1" 404 2954
+Not Found: /var/www/html/.env
+[13/Apr/2026 11:13:34] "GET /var/www/html/.env HTTP/1.1" 404 2969
+Not Found: /opt/.env
+[13/Apr/2026 11:13:34] "GET /opt/.env HTTP/1.1" 404 2942
+Not Found: /srv/.env
+[13/Apr/2026 11:13:34] "GET /srv/.env HTTP/1.1" 404 2942
+Not Found: /.env.example
+[13/Apr/2026 11:13:34] "GET /.env.example HTTP/1.1" 404 2954
+Not Found: /api/.env
+[13/Apr/2026 11:13:34] "GET /api/.env HTTP/1.1" 404 2942
+Not Found: /laravel/.env
+[13/Apr/2026 11:13:34] "GET /laravel/.env HTTP/1.1" 404 2954
+Not Found: /env
+[13/Apr/2026 11:13:34] "GET /env HTTP/1.1" 404 2927
+Not Found: /.git
+[13/Apr/2026 11:13:34] "GET /.git HTTP/1.1" 404 2930
+Not Found: /.git/HEAD
+[13/Apr/2026 11:13:34] "GET /.git/HEAD HTTP/1.1" 404 2945
+Not Found: /.git/index
+[13/Apr/2026 11:13:34] "GET /.git/index HTTP/1.1" 404 2948
+Not Found: /.git/logs/HEAD
+[13/Apr/2026 11:13:34] "GET /.git/logs/HEAD HTTP/1.1" 404 2960
+Not Found: /.git/logs/refs/heads/master
+[13/Apr/2026 11:13:34] "GET /.git/logs/refs/heads/master HTTP/1.1" 404 2999
+Not Found: /.git/logs/refs/heads/main
+[13/Apr/2026 11:13:34] "GET /.git/logs/refs/heads/main HTTP/1.1" 404 2993
+Not Found: /.git/logs/refs/remotes/origin/master
+[13/Apr/2026 11:13:34] "GET /.git/logs/refs/remotes/origin/master HTTP/1.1" 404 3026
+Not Found: /.git/logs/refs/remotes/origin/main
+[13/Apr/2026 11:13:34] "GET /.git/logs/refs/remotes/origin/main HTTP/1.1" 404 3020
+Not Found: /.git/hooks
+[13/Apr/2026 11:13:34] "GET /.git/hooks HTTP/1.1" 404 2948
+Not Found: /.git/info/exclude
+[13/Apr/2026 11:13:34] "GET /.git/info/exclude HTTP/1.1" 404 2969
+Not Found: /.git/refs/heads/master
+[13/Apr/2026 11:13:35] "GET /.git/refs/heads/master HTTP/1.1" 404 2984
+Not Found: /.git/refs/heads/main
+[13/Apr/2026 11:13:35] "GET /.git/refs/heads/main HTTP/1.1" 404 2978
+Not Found: /.git/refs/remotes/origin/HEAD
+[13/Apr/2026 11:13:35] "GET /.git/refs/remotes/origin/HEAD HTTP/1.1" 404 3005
+Not Found: /.git/packed-refs
+[13/Apr/2026 11:13:35] "GET /.git/packed-refs HTTP/1.1" 404 2966
+Not Found: /.git/objects
+[13/Apr/2026 11:13:35] "GET /.git/objects HTTP/1.1" 404 2954
+Not Found: /.git/COMMIT_EDITMSG
+[13/Apr/2026 11:13:35] "GET /.git/COMMIT_EDITMSG HTTP/1.1" 404 2975
+Not Found: /.git/description
+[13/Apr/2026 11:13:35] "GET /.git/description HTTP/1.1" 404 2966
+Not Found: /.git/FETCH_HEAD
+[13/Apr/2026 11:13:35] "GET /.git/FETCH_HEAD HTTP/1.1" 404 2963
+Not Found: /.git/ORIG_HEAD
+[13/Apr/2026 11:13:35] "GET /.git/ORIG_HEAD HTTP/1.1" 404 2960
+Not Found: /.github
+[13/Apr/2026 11:13:35] "GET /.github HTTP/1.1" 404 2939
+Not Found: /.github/workflows
+[13/Apr/2026 11:13:35] "GET /.github/workflows HTTP/1.1" 404 2969
+Not Found: /.github/workflows/main.yml
+[13/Apr/2026 11:13:35] "GET /.github/workflows/main.yml HTTP/1.1" 404 2996
+Not Found: /.github/workflows/ci.yml
+[13/Apr/2026 11:13:35] "GET /.github/workflows/ci.yml HTTP/1.1" 404 2990
+Not Found: /.github/dependabot.yml
+[13/Apr/2026 11:13:35] "GET /.github/dependabot.yml HTTP/1.1" 404 2984
+Not Found: /.github/CODEOWNERS
+[13/Apr/2026 11:13:35] "GET /.github/CODEOWNERS HTTP/1.1" 404 2972
+Not Found: /.github/ISSUE_TEMPLATE
+[13/Apr/2026 11:13:35] "GET /.github/ISSUE_TEMPLATE HTTP/1.1" 404 2984
+Not Found: /.github/PULL_REQUEST_TEMPLATE.md
+[13/Apr/2026 11:13:35] "GET /.github/PULL_REQUEST_TEMPLATE.md HTTP/1.1" 404 3014
+Not Found: /.github/funding.yml
+[13/Apr/2026 11:13:36] "GET /.github/funding.yml HTTP/1.1" 404 2975
+Not Found: /.github/stale.yml
+[13/Apr/2026 11:13:36] "GET /.github/stale.yml HTTP/1.1" 404 2969
+Not Found: /.gitlab-ci.yml
+[13/Apr/2026 11:13:36] "GET /.gitlab-ci.yml HTTP/1.1" 404 2960
+Not Found: /.gitlab
+[13/Apr/2026 11:13:36] "GET /.gitlab HTTP/1.1" 404 2939
+Not Found: /.gitlab/issue_templates
+[13/Apr/2026 11:13:36] "GET /.gitlab/issue_templates HTTP/1.1" 404 2987
+Not Found: /.gitlab/merge_request_templates
+[13/Apr/2026 11:13:36] "GET /.gitlab/merge_request_templates HTTP/1.1" 404 3011
+Not Found: /.gitlab-ci
+[13/Apr/2026 11:13:36] "GET /.gitlab-ci HTTP/1.1" 404 2948
+Not Found: /.gitignore
+[13/Apr/2026 11:13:36] "GET /.gitignore HTTP/1.1" 404 2948
+Not Found: /.gitattributes
+[13/Apr/2026 11:13:36] "GET /.gitattributes HTTP/1.1" 404 2960
+Not Found: /.gitmodules
+[13/Apr/2026 11:13:36] "GET /.gitmodules HTTP/1.1" 404 2951
+Not Found: /.git-credentials
+[13/Apr/2026 11:13:36] "GET /.git-credentials HTTP/1.1" 404 2966
+Not Found: /.git-askpass.sh
+[13/Apr/2026 11:13:36] "GET /.git-askpass.sh HTTP/1.1" 404 2963
+Not Found: /.git-secret
+[13/Apr/2026 11:13:36] "GET /.git-secret HTTP/1.1" 404 2951
+Not Found: /.git/hooks/pre-commit
+[13/Apr/2026 11:13:36] "GET /.git/hooks/pre-commit HTTP/1.1" 404 2981
+Not Found: /.git/hooks/post-commit
+[13/Apr/2026 11:13:36] "GET /.git/hooks/post-commit HTTP/1.1" 404 2984
+Not Found: /.git/info
+[13/Apr/2026 11:13:36] "GET /.git/info HTTP/1.1" 404 2945
+Not Found: /.git/objects/info
+[13/Apr/2026 11:13:37] "GET /.git/objects/info HTTP/1.1" 404 2969
+Not Found: /.git/objects/pack
+[13/Apr/2026 11:13:37] "GET /.git/objects/pack HTTP/1.1" 404 2969
+Not Found: /.git/config.bak
+[13/Apr/2026 11:13:37] "GET /.git/config.bak HTTP/1.1" 404 2963
+Not Found: /.git/config.old
+[13/Apr/2026 11:13:37] "GET /.git/config.old HTTP/1.1" 404 2963
+Not Found: /.git/config~
+[13/Apr/2026 11:13:37] "GET /.git/config~ HTTP/1.1" 404 2954
+Not Found: /.git/
+[13/Apr/2026 11:13:37] "GET /.git/ HTTP/1.1" 404 2933
+Not Found: /root/.git-credentials
+[13/Apr/2026 11:13:37] "GET /root/.git-credentials HTTP/1.1" 404 2981
+Not Found: /root/.gitconfig
+[13/Apr/2026 11:13:37] "GET /root/.gitconfig HTTP/1.1" 404 2963
+Not Found: /root/.netrc
+[13/Apr/2026 11:13:37] "GET /root/.netrc HTTP/1.1" 404 2951
+Not Found: /home/*/.git-credentials
+[13/Apr/2026 11:13:37] "GET /home/*/.git-credentials HTTP/1.1" 404 2987
+Not Found: /home/*/.gitconfig
+[13/Apr/2026 11:13:37] "GET /home/*/.gitconfig HTTP/1.1" 404 2969
+Not Found: /home/*/.netrc
+[13/Apr/2026 11:13:37] "GET /home/*/.netrc HTTP/1.1" 404 2957
+Not Found: /~/.git-credentials
+[13/Apr/2026 11:13:37] "GET /~/.git-credentials HTTP/1.1" 404 2972
+Not Found: /~/.gitconfig
+[13/Apr/2026 11:13:37] "GET /~/.gitconfig HTTP/1.1" 404 2954
+Not Found: /~/.netrc
+[13/Apr/2026 11:13:37] "GET /~/.netrc HTTP/1.1" 404 2942
+Not Found: /app/.git/config
+[13/Apr/2026 11:13:37] "GET /app/.git/config HTTP/1.1" 404 2963
+Not Found: /$(pwd)/.git/config
+[13/Apr/2026 11:13:37] "GET /$(pwd)/.git/config HTTP/1.1" 404 2972
+Not Found: /wp-json/wp/v2/users
+[13/Apr/2026 11:13:38] "GET /wp-json/wp/v2/users HTTP/1.1" 404 2975
+Not Found: /wp-content/debug.log
+[13/Apr/2026 11:13:38] "GET /wp-content/debug.log HTTP/1.1" 404 2978
+Not Found: /_profiler/phpinfo
+[13/Apr/2026 11:13:38] "GET /_profiler/phpinfo HTTP/1.1" 404 2969
+Not Found: /phpinfo.php
+[13/Apr/2026 11:13:38] "GET /phpinfo.php HTTP/1.1" 404 2951
+Not Found: /etc/apache2/apache2.conf
+[13/Apr/2026 11:13:38] "GET /etc/apache2/apache2.conf HTTP/1.1" 404 2990
+Not Found: /package-updates/*.cgi
+[13/Apr/2026 11:13:38] "GET /package-updates/*.cgi HTTP/1.1" 404 2981
+Not Found: /software/*.cgi
+[13/Apr/2026 11:13:38] "GET /software/*.cgi?*u=* HTTP/1.1" 404 2965
+Not Found: /package-updates/*
+[13/Apr/2026 11:13:38] "GET /package-updates/*?*update* HTTP/1.1" 404 2978
+Not Found: /webhook/*
+[13/Apr/2026 11:13:38] "GET /webhook/* HTTP/1.1" 404 2945
+Not Found: /webhook-test/*
+[13/Apr/2026 11:13:38] "GET /webhook-test/* HTTP/1.1" 404 2960
+Not Found: /form/*
+[13/Apr/2026 11:13:38] "GET /form/* HTTP/1.1" 404 2936
+Not Found: /form-test/*
+[13/Apr/2026 11:13:38] "GET /form-test/* HTTP/1.1" 404 2951
+Not Found: /webhook
+[13/Apr/2026 11:13:38] "GET /webhook HTTP/1.1" 404 2939
+Not Found: /form
+[13/Apr/2026 11:13:38] "GET /form HTTP/1.1" 404 2930
+Not Found: /rest/oauth1-credential/auth
+[13/Apr/2026 11:13:38] "GET /rest/oauth1-credential/auth HTTP/1.1" 404 2999
+Not Found: /rest/oauth2-credential/auth
+[13/Apr/2026 11:13:38] "GET /rest/oauth2-credential/auth HTTP/1.1" 404 2999
+Not Found: /rest/workflows
+[13/Apr/2026 11:13:39] "GET /rest/workflows HTTP/1.1" 404 2960
+Not Found: /rest/executions
+[13/Apr/2026 11:13:39] "GET /rest/executions HTTP/1.1" 404 2963
+Not Found: /rest/workflows/run
+[13/Apr/2026 11:13:39] "GET /rest/workflows/run HTTP/1.1" 404 2972
+Not Found: /api/v1/*
+[13/Apr/2026 11:13:39] "GET /api/v1/* HTTP/1.1" 404 2942
+Not Found: /api/v1/workflows
+[13/Apr/2026 11:13:39] "GET /api/v1/workflows HTTP/1.1" 404 2966
+Not Found: /api/v1/executions
+[13/Apr/2026 11:13:39] "GET /api/v1/executions HTTP/1.1" 404 2969
+Not Found: /api/v1/credentials
+[13/Apr/2026 11:13:39] "GET /api/v1/credentials HTTP/1.1" 404 2972
+Not Found: /__debug
+[13/Apr/2026 11:13:39] "GET /__debug HTTP/1.1" 404 2939
+Not Found: /.well-known/*
+[13/Apr/2026 11:13:39] "GET /.well-known/* HTTP/1.1" 404 2957
+Not Found: /healthz
+[13/Apr/2026 11:13:39] "GET /healthz HTTP/1.1" 404 2939
+Not Found: /metrics
+[13/Apr/2026 11:13:39] "GET /metrics HTTP/1.1" 404 2939
+Not Found: /rest/*
+[13/Apr/2026 11:13:39] "GET /rest/* HTTP/1.1" 404 2936
+Not Found: /rest/settings
+[13/Apr/2026 11:13:39] "GET /rest/settings HTTP/1.1" 404 2957
+Not Found: /rest/login
+[13/Apr/2026 11:13:39] "GET /rest/login HTTP/1.1" 404 2948
+Not Found: /rest/logout
+[13/Apr/2026 11:13:39] "GET /rest/logout HTTP/1.1" 404 2951
+Not Found: /rest/users
+[13/Apr/2026 11:13:39] "GET /rest/users HTTP/1.1" 404 2948
+Not Found: /rest/node-types
+[13/Apr/2026 11:13:39] "GET /rest/node-types HTTP/1.1" 404 2963
+Not Found: /rest/credentials-for-node
+[13/Apr/2026 11:13:40] "GET /rest/credentials-for-node HTTP/1.1" 404 2993
+Not Found: /rest/credential-translation
+[13/Apr/2026 11:13:40] "GET /rest/credential-translation HTTP/1.1" 404 2999
+Not Found: /rest/tags
+[13/Apr/2026 11:13:40] "GET /rest/tags HTTP/1.1" 404 2945
+Not Found: /rest/variables
+[13/Apr/2026 11:13:40] "GET /rest/variables HTTP/1.1" 404 2960
+Not Found: /rest/license
+[13/Apr/2026 11:13:40] "GET /rest/license HTTP/1.1" 404 2954
+Not Found: /webhook-waiting/*
+[13/Apr/2026 11:13:40] "GET /webhook-waiting/* HTTP/1.1" 404 2969
+Not Found: /chat/*
+[13/Apr/2026 11:13:40] "GET /chat/* HTTP/1.1" 404 2936
+Not Found: /chat
+[13/Apr/2026 11:13:40] "GET /chat HTTP/1.1" 404 2930
+Not Found: /*update.cgi*
+[13/Apr/2026 11:13:40] "GET /*update.cgi* HTTP/1.1" 404 2954
+Not Found: /sysinfo.cgi
+[13/Apr/2026 11:13:40] "GET /sysinfo.cgi HTTP/1.1" 404 2951
+Not Found: /proc/index.cgi
+[13/Apr/2026 11:13:40] "GET /proc/index.cgi HTTP/1.1" 404 2960
+Not Found: /servers/link.cgi
+[13/Apr/2026 11:13:40] "GET /servers/link.cgi HTTP/1.1" 404 2966
+Not Found: /servers/save.cgi
+[13/Apr/2026 11:13:40] "GET /servers/save.cgi HTTP/1.1" 404 2966
+Not Found: /package-updates/apt.cgi
+[13/Apr/2026 11:13:40] "GET /package-updates/apt.cgi HTTP/1.1" 404 2987
+Not Found: /package-updates/yum.cgi
+[13/Apr/2026 11:13:40] "GET /package-updates/yum.cgi HTTP/1.1" 404 2987
+Not Found: /package-updates/save.cgi
+[13/Apr/2026 11:13:40] "GET /package-updates/save.cgi HTTP/1.1" 404 2990
+Not Found: /package-updates/refresh.cgi
+[13/Apr/2026 11:13:40] "GET /package-updates/refresh.cgi HTTP/1.1" 404 2999
+Not Found: /package-updates/perform.cgi
+[13/Apr/2026 11:13:41] "GET /package-updates/perform.cgi HTTP/1.1" 404 2999
+Not Found: /package-updates/download.cgi
+[13/Apr/2026 11:13:41] "GET /package-updates/download.cgi HTTP/1.1" 404 3002
+Not Found: /package-updates/install.cgi
+[13/Apr/2026 11:13:41] "GET /package-updates/install.cgi HTTP/1.1" 404 2999
+Not Found: /package-updates/update.cgi
+[13/Apr/2026 11:13:41] "GET /package-updates/update.cgi HTTP/1.1" 404 2996
+Not Found: /package-updates/index.cgi
+[13/Apr/2026 11:13:41] "GET /package-updates/index.cgi HTTP/1.1" 404 2993
+Not Found: /software/update.cgi
+[13/Apr/2026 11:13:41] "GET /software/update.cgi HTTP/1.1" 404 2975
+Not Found: /software/install-updates.cgi
+[13/Apr/2026 11:13:41] "GET /software/install-updates.cgi HTTP/1.1" 404 3002
+Not Found: /package-updates/
+[13/Apr/2026 11:13:41] "GET /package-updates/ HTTP/1.1" 404 2966
+Not Found: /webmin/package-updates/update.cgi
+[13/Apr/2026 11:13:41] "GET /webmin/package-updates/update.cgi HTTP/1.1" 404 3017
+Not Found: /_next/data/*/index.json
+[13/Apr/2026 11:13:41] "GET /_next/data/*/index.json HTTP/1.1" 404 2987
+Not Found: /_next/data/*/about.json
+[13/Apr/2026 11:13:41] "GET /_next/data/*/about.json HTTP/1.1" 404 2987
+Not Found: /_next/data/*/*.json
+[13/Apr/2026 11:13:41] "GET /_next/data/*/*.json HTTP/1.1" 404 2975
+Not Found: /_next/static/*
+[13/Apr/2026 11:13:41] "GET /_next/static/* HTTP/1.1" 404 2960
+Not Found: /api/*
+[13/Apr/2026 11:13:41] "GET /api/* HTTP/1.1" 404 2933
+Not Found: /api/auth/*
+[13/Apr/2026 11:13:41] "GET /api/auth/* HTTP/1.1" 404 2948
+Not Found: /api/users/*
+[13/Apr/2026 11:13:41] "GET /api/users/* HTTP/1.1" 404 2951
+Not Found: /api/data/*
+[13/Apr/2026 11:13:41] "GET /api/data/* HTTP/1.1" 404 2948
+Not Found: /api/webhook/*
+[13/Apr/2026 11:13:42] "GET /api/webhook/* HTTP/1.1" 404 2957
+Not Found: /__nextjs_action
+[13/Apr/2026 11:13:42] "GET /__nextjs_action HTTP/1.1" 404 2963
+Not Found: /__nextjs_action/*
+[13/Apr/2026 11:13:42] "GET /__nextjs_action/* HTTP/1.1" 404 2969
+Not Found: /app/*
+[13/Apr/2026 11:13:42] "GET /app/* HTTP/1.1" 404 2933
+Not Found: /dashboard/*
+[13/Apr/2026 11:13:42] "GET /dashboard/* HTTP/1.1" 404 2951
+[13/Apr/2026 11:13:42] "GET /admin/* HTTP/1.1" 302 0
+[13/Apr/2026 11:13:42] "GET /admin/login/?next=/admin/%2A HTTP/1.1" 200 4191
+Not Found: /user/*
+[13/Apr/2026 11:13:42] "GET /user/* HTTP/1.1" 404 2936
+Not Found: /profile/*
+[13/Apr/2026 11:13:42] "GET /profile/* HTTP/1.1" 404 2945
+Not Found: /settings/*
+[13/Apr/2026 11:13:42] "GET /settings/* HTTP/1.1" 404 2948
+Not Found: /[slug]
+[13/Apr/2026 11:13:42] "GET /%5Bslug%5D HTTP/1.1" 404 2940
+Not Found: /[id]
+[13/Apr/2026 11:13:42] "GET /%5Bid%5D HTTP/1.1" 404 2934
+Not Found: /[...catchAll]
+[13/Apr/2026 11:13:42] "GET /%5B...catchAll%5D HTTP/1.1" 404 2961
+Not Found: /[[...optional]]
+[13/Apr/2026 11:13:42] "GET /%5B%5B...optional%5D%5D HTTP/1.1" 404 2971
+Not Found: /about
+[13/Apr/2026 11:13:42] "GET /about HTTP/1.1" 404 2933
+Not Found: /contact
+[13/Apr/2026 11:13:42] "GET /contact HTTP/1.1" 404 2939
+Not Found: /products
+[13/Apr/2026 11:13:43] "GET /products HTTP/1.1" 404 2942
+Not Found: /blog
+[13/Apr/2026 11:13:43] "GET /blog HTTP/1.1" 404 2930
+Not Found: /docs
+[13/Apr/2026 11:13:43] "GET /docs HTTP/1.1" 404 2930
+Not Found: /_react/action/*
+[13/Apr/2026 11:13:43] "GET /_react/action/* HTTP/1.1" 404 2963
+Not Found: /_react/data/*
+[13/Apr/2026 11:13:43] "GET /_react/data/* HTTP/1.1" 404 2957
+Not Found: /actions/*
+[13/Apr/2026 11:13:43] "GET /actions/* HTTP/1.1" 404 2945
+Not Found: /loaders/*
+[13/Apr/2026 11:13:43] "GET /loaders/* HTTP/1.1" 404 2945
+Not Found: /waku/*
+[13/Apr/2026 11:13:43] "GET /waku/* HTTP/1.1" 404 2936
+Not Found: /_waku/*
+[13/Apr/2026 11:13:43] "GET /_waku/* HTTP/1.1" 404 2939
+Not Found: /*
+[13/Apr/2026 11:13:43] "GET /* HTTP/1.1" 404 2921
+Not Found: /*/[id]
+[13/Apr/2026 11:13:43] "GET /*/%5Bid%5D HTTP/1.1" 404 2940
+Not Found: /*/[slug]
+[13/Apr/2026 11:13:43] "GET /*/%5Bslug%5D HTTP/1.1" 404 2946
+Not Found: /v1/*
+[13/Apr/2026 11:13:43] "GET /v1/* HTTP/1.1" 404 2930
+Not Found: /v2/*
+[13/Apr/2026 11:13:43] "GET /v2/* HTTP/1.1" 404 2930
+Not Found: /graphql
+[13/Apr/2026 11:13:43] "GET /graphql HTTP/1.1" 404 2939
+Not Found: /trpc/*
+[13/Apr/2026 11:13:43] "GET /trpc/* HTTP/1.1" 404 2936
+Not Found: /auth/*
+[13/Apr/2026 11:13:44] "GET /auth/* HTTP/1.1" 404 2936
+Not Found: /login
+[13/Apr/2026 11:13:44] "GET /login HTTP/1.1" 404 2933
+Not Found: /register
+[13/Apr/2026 11:13:44] "GET /register HTTP/1.1" 404 2942
+Not Found: /signup
+[13/Apr/2026 11:13:44] "GET /signup HTTP/1.1" 404 2936
+Not Found: /oauth/*
+[13/Apr/2026 11:13:44] "GET /oauth/* HTTP/1.1" 404 2939
+Not Found: /console/*
+[13/Apr/2026 11:13:44] "GET /console/* HTTP/1.1" 404 2945
+Not Found: /manage/*
+[13/Apr/2026 11:13:44] "GET /manage/* HTTP/1.1" 404 2942
+Not Found: /posts/*
+[13/Apr/2026 11:13:44] "GET /posts/* HTTP/1.1" 404 2939
+Not Found: /articles/*
+[13/Apr/2026 11:13:44] "GET /articles/* HTTP/1.1" 404 2948
+Not Found: /pages/*
+[13/Apr/2026 11:13:44] "GET /pages/* HTTP/1.1" 404 2939
+Not Found: /content/*
+[13/Apr/2026 11:13:44] "GET /content/* HTTP/1.1" 404 2945
+Not Found: /cart
+[13/Apr/2026 11:13:44] "GET /cart HTTP/1.1" 404 2930
+Not Found: /checkout
+[13/Apr/2026 11:13:44] "GET /checkout HTTP/1.1" 404 2942
+Not Found: /orders/*
+[13/Apr/2026 11:13:44] "GET /orders/* HTTP/1.1" 404 2942
+Not Found: /payment/*
+[13/Apr/2026 11:13:44] "GET /payment/* HTTP/1.1" 404 2945
+Not Found: /workspaces/*
+[13/Apr/2026 11:13:44] "GET /workspaces/* HTTP/1.1" 404 2954
+Not Found: /projects/*
+[13/Apr/2026 11:13:44] "GET /projects/* HTTP/1.1" 404 2948
+Not Found: /teams/*
+[13/Apr/2026 11:13:45] "GET /teams/* HTTP/1.1" 404 2939
+Not Found: /billing/*
+[13/Apr/2026 11:13:45] "GET /billing/* HTTP/1.1" 404 2945
+Not Found: /integrations/*
+[13/Apr/2026 11:13:45] "GET /integrations/* HTTP/1.1" 404 2960
+Not Found: /cms/*
+[13/Apr/2026 11:13:45] "GET /cms/* HTTP/1.1" 404 2933
+Not Found: /editor/*
+[13/Apr/2026 11:13:45] "GET /editor/* HTTP/1.1" 404 2942
+Not Found: /media/*
+[13/Apr/2026 11:13:45] "GET /media/* HTTP/1.1" 404 3149
+Not Found: /publish/*
+[13/Apr/2026 11:13:45] "GET /publish/* HTTP/1.1" 404 2945
+Not Found: /threads/*
+[13/Apr/2026 11:13:45] "GET /threads/* HTTP/1.1" 404 2945
+Not Found: /messages/*
+[13/Apr/2026 11:13:45] "GET /messages/* HTTP/1.1" 404 2948
+Not Found: /notifications/*
+[13/Apr/2026 11:13:45] "GET /notifications/* HTTP/1.1" 404 2963
+Not Found: /.netlify/functions/*
+[13/Apr/2026 11:13:45] "GET /.netlify/functions/* HTTP/1.1" 404 2978
+Not Found: /.vercel/functions/*
+[13/Apr/2026 11:13:45] "GET /.vercel/functions/* HTTP/1.1" 404 2975
+Not Found: /api/serverless/*
+[13/Apr/2026 11:13:45] "GET /api/serverless/* HTTP/1.1" 404 2966
+Not Found: /[locale]/*
+[13/Apr/2026 11:13:45] "GET /%5Blocale%5D/* HTTP/1.1" 404 2952
+Not Found: /en/*
+[13/Apr/2026 11:13:45] "GET /en/* HTTP/1.1" 404 2930
+Not Found: /fr/*
+[13/Apr/2026 11:13:45] "GET /fr/* HTTP/1.1" 404 2930
+Not Found: /[tenant]/*
+[13/Apr/2026 11:13:45] "GET /%5Btenant%5D/* HTTP/1.1" 404 2952
+Not Found: /[workspace]/*
+[13/Apr/2026 11:13:46] "GET /%5Bworkspace%5D/* HTTP/1.1" 404 2961
+Not Found: /shop/[category]/*
+[13/Apr/2026 11:13:46] "GET /shop/%5Bcategory%5D/* HTTP/1.1" 404 2973
+Not Found: /blog/[year]/[month]/[slug]
+[13/Apr/2026 11:13:46] "GET /blog/%5Byear%5D/%5Bmonth%5D/%5Bslug%5D HTTP/1.1" 404 3008
+Not Found: /:27017
+[13/Apr/2026 11:13:46] "GET /:27017 HTTP/1.1" 404 2936
+Not Found: /:27018
+[13/Apr/2026 11:13:46] "GET /:27018 HTTP/1.1" 404 2936
+Not Found: /:27019
+[13/Apr/2026 11:13:46] "GET /:27019 HTTP/1.1" 404 2936
+Not Found: /:28017
+[13/Apr/2026 11:13:46] "GET /:28017 HTTP/1.1" 404 2936
+Not Found: /.well-known/acme-challenge/*
+[13/Apr/2026 11:13:46] "GET /.well-known/acme-challenge/* HTTP/1.1" 404 3002
+Not Found: /.well-known/acme-challenge/
+[13/Apr/2026 11:13:46] "GET /.well-known/acme-challenge/ HTTP/1.1" 404 2999
+Not Found: /dnscfg.cgi
+[13/Apr/2026 11:13:46] "GET /dnscfg.cgi HTTP/1.1" 404 2948
+Not Found: /_layouts/*
+[13/Apr/2026 11:13:46] "GET /_layouts/* HTTP/1.1" 404 2948
+Not Found: /_layouts/15/*
+[13/Apr/2026 11:13:46] "GET /_layouts/15/* HTTP/1.1" 404 2957
+Not Found: /_api/*
+[13/Apr/2026 11:13:46] "GET /_api/* HTTP/1.1" 404 2936
+Not Found: /_vti_bin/*
+[13/Apr/2026 11:13:46] "GET /_vti_bin/* HTTP/1.1" 404 2948
+Not Found: /sendgrid.env
+[13/Apr/2026 11:13:46] "GET /sendgrid.env HTTP/1.1" 404 2954
+Not Found: /.env.testing
+[13/Apr/2026 11:13:46] "GET /.env.testing HTTP/1.1" 404 2954
+Not Found: /admin.html
+[13/Apr/2026 11:13:46] "GET /admin.html HTTP/1.1" 404 2948
+Not Found: /.env.development
+[13/Apr/2026 11:13:47] "GET /.env.development HTTP/1.1" 404 2966
+Not Found: /test
+[13/Apr/2026 11:13:47] "GET /test HTTP/1.1" 404 2930
+Not Found: /.env.production
+[13/Apr/2026 11:13:47] "GET /.env.production HTTP/1.1" 404 2963
+Not Found: /oauth/authorize
+[13/Apr/2026 11:13:47] "GET /oauth/authorize HTTP/1.1" 404 2963
+Not Found: /.env.test
+[13/Apr/2026 11:13:47] "GET /.env.test HTTP/1.1" 404 2945
+Not Found: /api/login
+[13/Apr/2026 11:13:47] "GET /api/login HTTP/1.1" 404 2945
+Not Found: /config/secrets.yml
+[13/Apr/2026 11:13:47] "GET /config/secrets.yml HTTP/1.1" 404 2972
+Not Found: /api/credentials
+[13/Apr/2026 11:13:47] "GET /api/credentials HTTP/1.1" 404 2963
+Not Found: /.env.local
+[13/Apr/2026 11:13:47] "GET /.env.local HTTP/1.1" 404 2948
+Not Found: /.env.prod
+[13/Apr/2026 11:13:47] "GET /.env.prod HTTP/1.1" 404 2945
+Not Found: /wp-config.php
+[13/Apr/2026 11:13:47] "GET /wp-config.php HTTP/1.1" 404 2957
+Not Found: /controlpanel
+[13/Apr/2026 11:13:47] "GET /controlpanel HTTP/1.1" 404 2954
+Not Found: /.cache
+[13/Apr/2026 11:13:47] "GET /.cache HTTP/1.1" 404 2936
+Not Found: /config/stripe.yaml
+[13/Apr/2026 11:13:47] "GET /config/stripe.yaml HTTP/1.1" 404 2972
+Not Found: /.well-known/stripe.txt
+[13/Apr/2026 11:13:47] "GET /.well-known/stripe.txt HTTP/1.1" 404 2984
+Not Found: /payment/stripe.json
+[13/Apr/2026 11:13:47] "GET /payment/stripe.json HTTP/1.1" 404 2975
+Not Found: /stripe.yaml
+[13/Apr/2026 11:13:47] "GET /stripe.yaml HTTP/1.1" 404 2951
+Not Found: /payment_gateways/stripe.yaml
+[13/Apr/2026 11:13:48] "GET /payment_gateways/stripe.yaml HTTP/1.1" 404 3002
+Not Found: /stripe/config.json
+[13/Apr/2026 11:13:48] "GET /stripe/config.json HTTP/1.1" 404 2972
+Not Found: /src/config/stripe.ts
+[13/Apr/2026 11:13:48] "GET /src/config/stripe.ts HTTP/1.1" 404 2978
+Not Found: /client/stripe.config.js
+[13/Apr/2026 11:13:48] "GET /client/stripe.config.js HTTP/1.1" 404 2987
+Not Found: /stripe.env
+[13/Apr/2026 11:13:48] "GET /stripe.env HTTP/1.1" 404 2948
+Not Found: /stripe.config.js
+[13/Apr/2026 11:13:48] "GET /stripe.config.js HTTP/1.1" 404 2966
+Not Found: /stripe/webhook_secret.env
+[13/Apr/2026 11:13:48] "GET /stripe/webhook_secret.env HTTP/1.1" 404 2993
+Not Found: /public/stripe.js
+[13/Apr/2026 11:13:48] "GET /public/stripe.js HTTP/1.1" 404 2966
+Not Found: /config/stripe.php
+[13/Apr/2026 11:13:48] "GET /config/stripe.php HTTP/1.1" 404 2969
+Not Found: /webhooks/incoming/stripe.json
+[13/Apr/2026 11:13:48] "GET /webhooks/incoming/stripe.json HTTP/1.1" 404 3005
+Not Found: /stripe-keys.json
+[13/Apr/2026 11:13:48] "GET /stripe-keys.json HTTP/1.1" 404 2966
+Not Found: /src/config/stripe.js
+[13/Apr/2026 11:13:48] "GET /src/config/stripe.js HTTP/1.1" 404 2978
+Not Found: /stripe.json
+[13/Apr/2026 11:13:48] "GET /stripe.json HTTP/1.1" 404 2951
+Not Found: /stripe-credentials.json
+[13/Apr/2026 11:13:48] "GET /stripe-credentials.json HTTP/1.1" 404 2987
+Not Found: /.well-known/stripe/
+[13/Apr/2026 11:13:48] "GET /.well-known/stripe/ HTTP/1.1" 404 2975
+Not Found: /.stripe/
+[13/Apr/2026 11:13:48] "GET /.stripe/ HTTP/1.1" 404 2942
+Not Found: /stripe/.env
+[13/Apr/2026 11:13:48] "GET /stripe/.env HTTP/1.1" 404 2951
+Not Found: /config/stripe.json
+[13/Apr/2026 11:13:49] "GET /config/stripe.json HTTP/1.1" 404 2972
+Not Found: /plugins/payments/stripe.json
+[13/Apr/2026 11:13:49] "GET /plugins/payments/stripe.json HTTP/1.1" 404 3002
+[13/Apr/2026 11:13:49] "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+[13/Apr/2026 11:13:49] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:49] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:49] "POST / HTTP/1.1" 403 3005
+Not Found: /_next
+[13/Apr/2026 11:13:49] "POST /_next HTTP/1.1" 404 2934
+Not Found: /api
+[13/Apr/2026 11:13:49] "POST /api HTTP/1.1" 404 2928
+Not Found: /api/auth
+[13/Apr/2026 11:13:49] "POST /api/auth HTTP/1.1" 404 2943
+Not Found: /api/auth/callback
+[13/Apr/2026 11:13:49] "POST /api/auth/callback HTTP/1.1" 404 2970
+Not Found: /api/auth/session
+[13/Apr/2026 11:13:49] "POST /api/auth/session HTTP/1.1" 404 2967
+Not Found: /_rsc
+[13/Apr/2026 11:13:50] "POST /_rsc HTTP/1.1" 404 2931
+Not Found: /__rsc
+[13/Apr/2026 11:13:50] "POST /__rsc HTTP/1.1" 404 2934
+Not Found: /.action
+[13/Apr/2026 11:13:50] "POST /.action HTTP/1.1" 404 2940
+Not Found: /__nextjs_action
+[13/Apr/2026 11:13:50] "POST /__nextjs_action HTTP/1.1" 404 2964
+Not Found: /_middleware
+[13/Apr/2026 11:13:50] "POST /_middleware HTTP/1.1" 404 2952
+Not Found: /_next/image
+[13/Apr/2026 11:13:50] "POST /_next/image HTTP/1.1" 404 2952
+Not Found: /RSC/5fwtoimssyx9rat.txt
+[13/Apr/2026 11:13:50] "POST /RSC/5fwtoimssyx9rat.txt HTTP/1.1" 404 2988
+Not Found: /RSC/R/6or5tyzyogmbu1r.txt
+[13/Apr/2026 11:13:50] "POST /RSC/R/6or5tyzyogmbu1r.txt HTTP/1.1" 404 2994
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:50] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:51] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:51] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:51] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:51] "POST / HTTP/1.1" 403 3005
+Forbidden (CSRF cookie not set.): /
+[13/Apr/2026 11:13:51] "POST / HTTP/1.1" 403 3005
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:51] "POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 3069
+Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:51] "POST /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php HTTP/1.1" 404 3057
+Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:51] "POST /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 3093
+Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:52] "POST /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 3081
+Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:52] "POST /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 3084
+Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+[13/Apr/2026 11:13:52] "POST /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 3081
+Not Found: /robots.txt
+[13/Apr/2026 11:20:52] "GET /robots.txt HTTP/1.1" 404 2949
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[13/Apr/2026 11:22:32] "GET / HTTP/1.1" 500 98180
+Not Found: /.env
+Not Found: /.env
+[13/Apr/2026 11:40:07] "GET /.env HTTP/1.1" 404 2340
+[13/Apr/2026 11:40:07] "GET /.env HTTP/1.1" 404 2338
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[13/Apr/2026 11:47:18] "GET / HTTP/1.1" 500 98181

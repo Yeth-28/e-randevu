@@ -1,0 +1,771 @@
+{% load static %}
+{% load dict_extras %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar — {{ clinic.name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{
+            --blue:#2563eb;--blue-light:#eff6ff;--bg:#f8faff;
+            --gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+            --green:#059669;--green-light:#dcfce7;--red:#dc2626;--orange:#d97706;
+        }
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+        .sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#1e40af,#2563eb);z-index:100;display:flex;flex-direction:column;}
+        .sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .sidebar-brand .icon{font-size:28px;}
+        .sidebar-brand .name{font-family:'Playfair Display',serif;font-size:18px;color:white;margin-top:4px;}
+        .sidebar-brand .clinic-id{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;}
+        .sidebar-nav{padding:16px 0;flex:1;}
+        .nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+        .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+        .nav-item .icon{font-size:18px;width:24px;text-align:center;}
+        .sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+        .sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .content{padding:32px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;}
+
+        /* MESAJLAR */
+        .messages-bar{grid-column:1/-1;margin-bottom:0;}
+        .msg{padding:12px 16px;border-radius:10px;font-size:14px;margin-bottom:8px;}
+        .msg-success{background:var(--green-light);color:var(--green);}
+        .msg-error{background:#fee2e2;color:var(--red);}
+
+        /* SOL NAV */
+        .settings-nav{background:white;border-radius:16px;padding:8px;box-shadow:0 2px 12px rgba(0,0,0,0.06);position:sticky;top:80px;}
+        .snav-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;font-size:14px;font-weight:500;color:var(--gray);cursor:pointer;transition:all 0.2s;border:none;background:none;width:100%;text-align:left;font-family:'DM Sans',sans-serif;}
+        .snav-item:hover{background:#f3f4f6;color:var(--text);}
+        .snav-item.active{background:var(--blue-light);color:var(--blue);}
+        .snav-item .sicon{font-size:17px;width:22px;text-align:center;}
+
+        /* PANEL */
+        .settings-panel{display:none;}
+        .settings-panel.active{display:block;}
+        .card{background:white;border-radius:20px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:20px;}
+        .card-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--gray-light);display:flex;align-items:center;gap:8px;}
+
+        /* FORM */
+        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+        .form-full{grid-column:1/-1;}
+        .fg{display:flex;flex-direction:column;gap:6px;}
+        .fg label{font-size:13px;font-weight:500;color:#374151;}
+        .fg input,.fg select,.fg textarea{padding:10px 14px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+        .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);}
+        .btn-save{padding:11px 28px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+        .btn-save:hover{background:#1d4ed8;}
+        .btn-red{padding:8px 16px;background:#fef2f2;color:var(--red);border:1px solid #fecaca;border-radius:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+
+        /* LOGO */
+        .logo-preview{width:80px;height:80px;border-radius:14px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:32px;border:2px dashed var(--gray-light);overflow:hidden;}
+        .logo-preview img{width:100%;height:100%;object-fit:cover;}
+
+        /* ÇALIŞMA SAATLERİ */
+        .day-row{display:grid;grid-template-columns:120px 40px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-light);}
+        .day-row:last-child{border-bottom:none;}
+        .day-name{font-size:14px;font-weight:500;color:var(--text);}
+        .time-inputs{display:flex;align-items:center;gap:10px;}
+        .time-input{padding:8px 12px;border:1.5px solid var(--gray-light);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;width:100px;}
+        .time-input:focus{border-color:var(--blue);}
+        .time-sep{color:var(--gray);font-size:13px;}
+        .closed-label{font-size:13px;color:var(--gray);font-style:italic;}
+
+        /* TOGGLE */
+        .toggle-sw{position:relative;width:44px;height:24px;flex-shrink:0;}
+        .toggle-sw input{display:none;}
+        .toggle-sl{position:absolute;inset:0;border-radius:999px;background:var(--gray-light);cursor:pointer;transition:0.2s;}
+        .toggle-sl::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;left:3px;top:3px;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.2);transition:0.2s;}
+        .toggle-sw input:checked+.toggle-sl{background:var(--green);}
+        .toggle-sw input:checked+.toggle-sl::before{transform:translateX(20px);}
+        .toggle-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--gray-light);}
+        .toggle-row:last-child{border-bottom:none;}
+        .toggle-text .title{font-size:14px;font-weight:500;color:var(--text);}
+        .toggle-text .sub{font-size:12px;color:var(--gray);margin-top:2px;}
+
+        /* TATİL */
+        .holiday-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-light);}
+        .holiday-item:last-child{border-bottom:none;}
+        .holiday-date{font-weight:600;font-size:14px;color:var(--text);}
+        .holiday-desc{font-size:13px;color:var(--gray);}
+        .holiday-recurring{font-size:11px;background:#fef3c7;color:var(--orange);padding:2px 8px;border-radius:999px;}
+
+        /* RANDEVU */
+        .randevu-option{display:flex;align-items:center;gap:6px;padding:5px 12px;border:1.5px solid var(--gray-light);border-radius:8px;cursor:pointer;font-size:13px;transition:all 0.2s;}
+        .randevu-option:hover{border-color:var(--blue);}
+        .randevu-option.selected{border-color:var(--blue);background:var(--blue-light);color:var(--blue);font-weight:500;}
+        .randevu-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+
+        /* DOKTOR SAATLERİ */
+        .doktor-tab-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+        .doktor-tab{padding:8px 16px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;background:white;color:var(--gray);font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+        .doktor-tab.active{background:var(--blue-light);border-color:var(--blue);color:var(--blue);}
+        .doktor-panel{display:none;}
+        .doktor-panel.active{display:block;}
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">⚙️ Ayarlar</div>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages-bar">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- SOL NAV -->
+        <div class="settings-nav">
+            <button class="snav-item active" onclick="showTab('klinik',this)"><span class="sicon">🏥</span> Klinik Bilgileri</button>
+            <button class="snav-item" onclick="showTab('saatler',this)"><span class="sicon">🕐</span> Çalışma Saatleri</button>
+            <button class="snav-item" onclick="showTab('tatil',this)"><span class="sicon">📅</span> Tatil Günleri</button>
+            <button class="snav-item" onclick="showTab('randevu',this)"><span class="sicon">⏱️</span> Randevu Ayarları</button>
+            <button class="snav-item" onclick="showTab('bildirim',this)"><span class="sicon">🔔</span> Bildirimler</button>
+            <button class="snav-item" onclick="showTab('doktor',this)"><span class="sicon">👨‍⚕️</span> Doktor Saatleri</button>
+            <button class="snav-item" onclick="showTab('kartlar',this)"><span class="sicon">💳</span> Kartlarım</button>
+        </div>
+
+        <!-- PANELLER -->
+        <div>
+
+        <!-- KLİNİK BİLGİLERİ -->
+        <div id="tab-klinik" class="settings-panel active">
+            <div class="card">
+                <div class="card-title">🏥 Klinik Bilgileri</div>
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/klinik/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;">
+                        <div class="logo-preview" id="logo-preview">
+                            {% if clinic.logo %}
+                            <img src="{{ clinic.logo.url }}" id="logo-img" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+                            {% else %}
+                            <span id="logo-placeholder">🏥</span>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <label style="display:block;font-size:13px;font-weight:500;margin-bottom:6px;">Klinik Logosu</label>
+                            <input type="file" name="logo" accept="image/*" onchange="previewLogo(this)"
+                                   style="font-size:13px;">
+                            <div style="font-size:11px;color:var(--gray);margin-top:4px;">PNG, JPG — Max 2MB</div>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="fg">
+                            <label>Klinik Adı *</label>
+                            <input type="text" name="name" value="{{ clinic.name }}" required>
+                        </div>
+                        <div class="fg">
+                            <label>Telefon</label>
+                            <div style="display:flex;align-items:center;border:1.5px solid var(--gray-light);border-radius:10px;overflow:hidden;background:white;" id="phone-wrap">
+                                <select id="phone-code" name="phone_code" onchange="updatePhoneWrap()"
+                                        style="border:none;outline:none;padding:10px 8px;font-size:13px;font-family:'DM Sans',sans-serif;background:#f9fafb;border-right:1.5px solid var(--gray-light);cursor:pointer;max-width:110px;">
+                                    <option value="+90" selected>🇹🇷 +90</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                    <option value="+49">🇩🇪 +49</option>
+                                    <option value="+33">🇫🇷 +33</option>
+                                    <option value="+31">🇳🇱 +31</option>
+                                    <option value="+32">🇧🇪 +32</option>
+                                    <option value="+41">🇨🇭 +41</option>
+                                    <option value="+43">🇦🇹 +43</option>
+                                    <option value="+46">🇸🇪 +46</option>
+                                    <option value="+47">🇳🇴 +47</option>
+                                    <option value="+45">🇩🇰 +45</option>
+                                    <option value="+358">🇫🇮 +358</option>
+                                    <option value="+39">🇮🇹 +39</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+351">🇵🇹 +351</option>
+                                    <option value="+30">🇬🇷 +30</option>
+                                    <option value="+7">🇷🇺 +7</option>
+                                    <option value="+380">🇺🇦 +380</option>
+                                    <option value="+48">🇵🇱 +48</option>
+                                    <option value="+40">🇷🇴 +40</option>
+                                    <option value="+36">🇭🇺 +36</option>
+                                    <option value="+420">🇨🇿 +420</option>
+                                    <option value="+966">🇸🇦 +966</option>
+                                    <option value="+971">🇦🇪 +971</option>
+                                    <option value="+972">🇮🇱 +972</option>
+                                    <option value="+98">🇮🇷 +98</option>
+                                    <option value="+964">🇮🇶 +964</option>
+                                    <option value="+20">🇪🇬 +20</option>
+                                    <option value="+212">🇲🇦 +212</option>
+                                    <option value="+91">🇮🇳 +91</option>
+                                    <option value="+86">🇨🇳 +86</option>
+                                    <option value="+81">🇯🇵 +81</option>
+                                    <option value="+82">🇰🇷 +82</option>
+                                    <option value="+61">🇦🇺 +61</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                </select>
+                                <input type="text" name="phone" id="phone-input"
+                                       value="{{ clinic.phone|default:'' }}"
+                                       placeholder="5XX XXX XX XX" maxlength="13"
+                                       style="border:none;outline:none;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;flex:1;min-width:0;">
+                            </div>
+                            <div style="font-size:11px;color:var(--gray);margin-top:4px;">0 ile başlamayan numara girin (örn: 532 123 45 67)</div>
+                        </div>
+                        <div class="fg">
+                            <label>E-posta</label>
+                            <input type="email" name="email" value="{{ clinic.email|default:'' }}" placeholder="klinik@ornek.com">
+                        </div>
+                        <div class="fg form-full">
+                            <label>Adres</label>
+                            <textarea name="address" rows="2" placeholder="Klinik adresi...">{{ clinic.address|default:'' }}</textarea>
+                        </div>
+                        <div class="fg form-full">
+                            <label>Hakkında</label>
+                            <textarea name="about" rows="3" placeholder="Kliniğiniz hakkında kısa bilgi...">{{ clinic.about|default:'' }}</textarea>
+                        </div>
+                    </div>
+                    <div style="margin-top:8px;">
+                        <button type="submit" class="btn-save">💾 Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ÇALIŞMA SAATLERİ -->
+        <div id="tab-saatler" class="settings-panel">
+            <div class="card">
+                <div class="card-title">🕐 Çalışma Saatleri</div>
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/saatler/">
+                    {% csrf_token %}
+                    {% for day_num, day_name in days %}
+                    {% with wh=working_hours|get_item:day_num %}
+                    <div class="day-row">
+                        <div class="day-name">{{ day_name }}</div>
+                        <label class="toggle-sw">
+                            <input type="checkbox" name="day_{{ day_num }}_open"
+                                   {% if wh.is_open %}checked{% endif %}
+                                   onchange="toggleDayRow(this, {{ day_num }})">
+                            <span class="toggle-sl"></span>
+                        </label>
+                        <div id="day-times-{{ day_num }}" class="time-inputs"
+                             {% if not wh.is_open %}style="opacity:0.3;pointer-events:none;"{% endif %}>
+                            <input type="time" name="day_{{ day_num }}_start"
+                                   value="{{ wh.open_time|time:'H:i' }}" class="time-input">
+                            <span class="time-sep">—</span>
+                            <input type="time" name="day_{{ day_num }}_end"
+                                   value="{{ wh.close_time|time:'H:i' }}" class="time-input">
+                        </div>
+                    </div>
+                    {% endwith %}
+                    {% endfor %}
+                    <div style="margin-top:20px;">
+                        <button type="submit" class="btn-save">💾 Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- TATİL GÜNLERİ -->
+        <div id="tab-tatil" class="settings-panel">
+            <div class="card">
+                <div class="card-title">➕ Tatil Günü Ekle</div>
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/tatil/ekle/">
+                    {% csrf_token %}
+                    <div class="form-grid">
+                        <div class="fg">
+                            <label>Tarih</label>
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="fg">
+                            <label>Açıklama</label>
+                            <input type="text" name="description" placeholder="Kurban Bayramı, İzin günü...">
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;margin:12px 0;">
+                        <label class="toggle-sw">
+                            <input type="checkbox" name="is_recurring">
+                            <span class="toggle-sl"></span>
+                        </label>
+                        <span style="font-size:13px;color:var(--gray);">Her yıl tekrar et (resmi tatiller için)</span>
+                    </div>
+                    <button type="submit" class="btn-save">+ Tatil Ekle</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📅 Tatil Günleri</div>
+                {% if holidays %}
+                {% for holiday in holidays %}
+                <div class="holiday-item">
+                    <div>
+                        <div class="holiday-date">{{ holiday.date|date:"d M Y, l" }}</div>
+                        {% if holiday.description %}
+                        <div class="holiday-desc">{{ holiday.description }}</div>
+                        {% endif %}
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        {% if holiday.is_recurring %}
+                        <span class="holiday-recurring">🔄 Her yıl</span>
+                        {% endif %}
+                        <a href="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/tatil/{{ holiday.id }}/sil/"
+                           onclick="return confirm('Bu tatil günü silinsin mi?')"
+                           style="color:var(--red);font-size:13px;text-decoration:none;">🗑️ Sil</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div style="text-align:center;padding:28px;color:var(--gray);font-size:14px;">
+                    Henüz tatil günü eklenmemiş.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- RANDEVU AYARLARI -->
+        <div id="tab-randevu" class="settings-panel">
+            <div class="card">
+                <div class="card-title">⏱️ Randevu Ayarları</div>
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/randevu/">
+                    {% csrf_token %}
+
+                    <div style="margin-bottom:24px;">
+                        <div style="font-size:13px;font-weight:500;margin-bottom:10px;">Varsayılan Randevu Süresi</div>
+                        <div class="randevu-options" id="duration-options">
+                            {% for mins in "15,20,30,45,60"|split:"," %}
+                            <div class="randevu-option {% if clinic.appointment_duration == mins|add:0 %}selected{% endif %}"
+                                 onclick="selectOption(this,'duration-options','appointment_duration','{{ mins }}')">
+                                {{ mins }} dk
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="appointment_duration" id="appointment_duration"
+                               value="{{ clinic.appointment_duration|default:30 }}">
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <div style="font-size:13px;font-weight:500;margin-bottom:10px;">Randevu Aralığı (Slot Süresi)</div>
+                        <div class="randevu-options" id="interval-options">
+                            {% for mins in "10,15,20,30"|split:"," %}
+                            <div class="randevu-option {% if clinic.appointment_interval == mins|add:0 %}selected{% endif %}"
+                                 onclick="selectOption(this,'interval-options','appointment_interval','{{ mins }}')">
+                                {{ mins }} dk
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="appointment_interval" id="appointment_interval"
+                               value="{{ clinic.appointment_interval|default:15 }}">
+                    </div>
+
+                    <div style="margin-bottom:24px;">
+                        <div style="font-size:13px;font-weight:500;margin-bottom:10px;">En Fazla Kaç Gün İlerisine Randevu Alınabilir?</div>
+                        <div class="randevu-options" id="advance-options">
+                            {% for days in "7,14,30,60,90"|split:"," %}
+                            <div class="randevu-option {% if clinic.appointment_advance_days == days|add:0 %}selected{% endif %}"
+                                 onclick="selectOption(this,'advance-options','appointment_advance_days','{{ days }}')">
+                                {{ days }} gün
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="appointment_advance_days" id="appointment_advance_days"
+                               value="{{ clinic.appointment_advance_days|default:60 }}">
+                    </div>
+
+                    <div style="margin-bottom:24px;padding:16px;background:#f9fafb;border-radius:12px;border:1.5px solid var(--gray-light);">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <label class="toggle-sw">
+                                <input type="checkbox" name="appointments_open" {% if clinic.appointments_open %}checked{% endif %}>
+                                <span class="toggle-sl"></span>
+                            </label>
+                            <div>
+                                <div style="font-size:14px;font-weight:500;color:var(--text);">Online Randevu Al</div>
+                                <div style="font-size:12px;color:var(--gray);margin-top:2px;">Kapatırsanız hastalar klinik sayfanızdan randevu alamaz, sadece telefon ile ulaşabilir</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-save">💾 Kaydet</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BİLDİRİM AYARLARI -->
+        <div id="tab-bildirim" class="settings-panel">
+            <div class="card">
+                <div class="card-title">🔔 Bildirim Ayarları</div>
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/bildirim/">
+                    {% csrf_token %}
+
+                    <div class="toggle-row">
+                        <label class="toggle-sw">
+                            <input type="checkbox" name="email_notifications"
+                                   {% if clinic.email_notifications %}checked{% endif %}>
+                            <span class="toggle-sl"></span>
+                        </label>
+                        <div class="toggle-text">
+                            <div class="title">📧 E-posta Bildirimleri</div>
+                            <div class="sub">Yeni randevu ve iptal bildirimlerini e-posta ile al</div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <label class="toggle-sw">
+                            <input type="checkbox" name="sms_notifications"
+                                   {% if clinic.sms_notifications %}checked{% endif %}>
+                            <span class="toggle-sl"></span>
+                        </label>
+                        <div class="toggle-text">
+                            <div class="title">📱 SMS Bildirimleri</div>
+                            <div class="sub">Hastalara randevu hatırlatma SMS'i gönder</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:20px;">
+                        <div style="font-size:13px;font-weight:500;margin-bottom:10px;">Randevu Hatırlatma Zamanı</div>
+                        <div class="randevu-options" id="reminder-options">
+                            {% for h in "1,2,6,12,24,48"|split:"," %}
+                            <div class="randevu-option {% if clinic.reminder_hours_before == h|add:0 %}selected{% endif %}"
+                                 onclick="selectOption(this,'reminder-options','reminder_hours_before','{{ h }}')">
+                                {{ h }} saat önce
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="reminder_hours_before" id="reminder_hours_before"
+                               value="{{ clinic.reminder_hours_before|default:24 }}">
+                    </div>
+
+                    <div style="margin-top:24px;">
+                        <button type="submit" class="btn-save">💾 Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- DOKTOR ÇALIŞMA SAATLERİ -->
+        <div id="tab-doktor" class="settings-panel">
+            <div class="card">
+                <div class="card-title">👨‍⚕️ Doktor Çalışma Saatleri</div>
+                {% if doktorlar %}
+                <div class="doktor-tab-row">
+                    {% for doktor in doktorlar %}
+                    <button class="doktor-tab {% if forloop.first %}active{% endif %}"
+                            onclick="showDoktorPanel(this, {{ doktor.id }})">
+                        {{ doktor.name }}
+                    </button>
+                    {% endfor %}
+                </div>
+
+                {% for doktor in doktorlar %}
+                <div id="doktor-panel-{{ doktor.id }}"
+                     class="doktor-panel {% if forloop.first %}active{% endif %}">
+                    <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/doktor-saatleri/">
+                        {% csrf_token %}
+                        <input type="hidden" name="doktor_id" value="{{ doktor.id }}">
+
+                        {% for day_num, day_name in days %}
+                        {% with dw=doktor_saatleri|get_item:doktor.id|get_item:day_num %}
+                        <div class="day-row">
+                            <div class="day-name">{{ day_name }}</div>
+                            <label class="toggle-sw">
+                                <input type="checkbox"
+                                       name="d_{{ doktor.id }}_{{ day_num }}_working"
+                                       {% if dw.is_working %}checked{% endif %}
+                                       onchange="toggleDrRow(this, '{{ doktor.id }}_{{ day_num }}')">
+                                <span class="toggle-sl"></span>
+                            </label>
+                            <div id="dr-times-{{ doktor.id }}_{{ day_num }}" class="time-inputs"
+                                 {% if not dw.is_working %}style="opacity:0.3;pointer-events:none;"{% endif %}>
+                                <input type="time" name="d_{{ doktor.id }}_{{ day_num }}_start"
+                                       value="{{ dw.start_time|time:'H:i' }}" class="time-input">
+                                <span class="time-sep">—</span>
+                                <input type="time" name="d_{{ doktor.id }}_{{ day_num }}_end"
+                                       value="{{ dw.end_time|time:'H:i' }}" class="time-input">
+                            </div>
+                        </div>
+                        {% endwith %}
+                        {% endfor %}
+                        <div style="margin-top:20px;">
+                            <button type="submit" class="btn-save">💾 {{ doktor.name }} Saatlerini Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div style="text-align:center;padding:28px;color:var(--gray);font-size:14px;">
+                    Henüz doktor eklenmemiş.
+                    <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/ekle/"
+                       style="color:var(--blue);font-weight:500;">Doktor Ekle →</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- KARTLAR -->
+        <!-- KARTLAR -->
+        <div id="tab-kartlar" class="settings-panel">
+            <div class="card">
+                <div class="card-title">💳 Kayıtlı Kartlar</div>
+
+                {% if kartlar %}
+                <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/kart/aktif-sec/" id="aktif-kart-form">
+                    {% csrf_token %}
+                    {% for kart in kartlar %}
+                    <div style="border:1.5px solid {% if kart.is_active %}#2563eb{% else %}var(--gray-light){% endif %};border-radius:12px;padding:14px 16px;margin-bottom:10px;background:{% if kart.is_active %}#eff6ff{% else %}white{% endif %};">
+
+                        <!-- Kart satırı -->
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <input type="radio" name="aktif_kart_id" value="{{ kart.id }}"
+                                   {% if kart.is_active %}checked{% endif %}
+                                   onchange="document.getElementById('aktif-kart-form').submit()"
+                                   style="width:16px;height:16px;accent-color:#2563eb;cursor:pointer;flex-shrink:0;">
+
+                            <div style="width:40px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+                                background:{% if kart.brand == 'Visa' %}linear-gradient(135deg,#1a1f71,#2563eb){% elif kart.brand == 'Mastercard' %}linear-gradient(135deg,#eb001b,#f79e1b){% else %}linear-gradient(135deg,#374151,#6b7280){% endif %};">
+                                {% if kart.brand == 'Visa' %}<span style="color:white;font-weight:900;font-size:10px;">VISA</span>
+                                {% elif kart.brand == 'Mastercard' %}<span style="color:white;font-size:9px;font-weight:700;">MC</span>
+                                {% else %}<span style="color:white;font-size:12px;">💳</span>{% endif %}
+                            </div>
+
+                            <div style="flex:1;min-width:0;">
+                                <div style="font-size:14px;font-weight:600;color:var(--text);letter-spacing:1px;">•••• •••• •••• {{ kart.last4 }}</div>
+                                <div style="font-size:11px;color:var(--gray);margin-top:2px;display:flex;gap:10px;flex-wrap:wrap;">
+                                    {% if kart.holder %}<span>{{ kart.holder }}</span>{% endif %}
+                                    {% if kart.expiry %}<span>{{ kart.expiry }}</span>{% endif %}
+                                    {% if kart.billing_city %}<span>{{ kart.billing_city }}</span>{% endif %}
+                                </div>
+                            </div>
+
+                            {% if kart.is_active %}
+                            <span style="background:#dbeafe;color:#1d4ed8;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;flex-shrink:0;">✅ Aktif</span>
+                            {% endif %}
+
+                            <button type="button" onclick="toggleKartEdit({{ kart.id }})"
+                                    style="padding:5px 12px;background:#f9fafb;color:var(--gray);border:1px solid var(--gray-light);border-radius:8px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0;">
+                                ✏️ Güncelle
+                            </button>
+                            <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/kart/{{ kart.id }}/sil/"
+                                  onsubmit="return confirm('Bu kartı silmek istiyor musunuz?')" style="display:inline;margin:0;">
+                                {% csrf_token %}
+                                <button type="submit" style="padding:5px 10px;background:#fef2f2;color:var(--red);border:1px solid #fecaca;border-radius:8px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">🗑</button>
+                            </form>
+                        </div>
+
+                        <!-- Güncelleme formu — başlangıçta gizli -->
+                        <div id="kart-edit-{{ kart.id }}" style="display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--gray-light);">
+                            <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/kart/{{ kart.id }}/duzenle/">
+                                {% csrf_token %}
+                                <div class="form-grid">
+                                    <div class="fg form-full">
+                                        <label>Yeni Kart No <span style="color:var(--gray);font-weight:400;">(boş bırakın = değişmez)</span></label>
+                                        <input type="text" name="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" oninput="formatCardNum(this)" style="letter-spacing:2px;">
+                                    </div>
+                                    <div class="fg"><label>Son Kullanma</label><input type="text" name="expiry" value="{{ kart.expiry }}" placeholder="AA/YY" maxlength="5" oninput="formatExp(this)"></div>
+                                    <div class="fg"><label>CVV</label><input type="password" name="cvv" placeholder="•••" maxlength="4"></div>
+                                    <div class="fg form-full"><label>Kart Sahibi</label><input type="text" name="card_holder" value="{{ kart.holder }}" placeholder="AD SOYAD" style="text-transform:uppercase;"></div>
+                                    <div class="fg form-full"><label>Fatura Adresi</label><textarea name="billing_address" rows="2">{{ kart.billing_address }}</textarea></div>
+                                    <div class="fg"><label>Şehir</label><input type="text" name="billing_city" value="{{ kart.billing_city }}" placeholder="İstanbul"></div>
+                                    <div class="fg"><label>Posta Kodu</label><input type="text" name="billing_zip" value="{{ kart.billing_zip }}" placeholder="34000"></div>
+                                    <div class="fg">
+                                        <label>Ülke</label>
+                                        <select name="billing_country">
+                                            <option value="TR" {% if kart.billing_country == 'TR' or not kart.billing_country %}selected{% endif %}>🇹🇷 Türkiye</option>
+                                            <option value="DE" {% if kart.billing_country == 'DE' %}selected{% endif %}>🇩🇪 Almanya</option>
+                                            <option value="NL" {% if kart.billing_country == 'NL' %}selected{% endif %}>🇳🇱 Hollanda</option>
+                                            <option value="GB" {% if kart.billing_country == 'GB' %}selected{% endif %}>🇬🇧 İngiltere</option>
+                                            <option value="FR" {% if kart.billing_country == 'FR' %}selected{% endif %}>🇫🇷 Fransa</option>
+                                            <option value="US" {% if kart.billing_country == 'US' %}selected{% endif %}>🇺🇸 ABD</option>
+                                            <option value="AE" {% if kart.billing_country == 'AE' %}selected{% endif %}>🇦🇪 BAE</option>
+                                            <option value="SA" {% if kart.billing_country == 'SA' %}selected{% endif %}>🇸🇦 S. Arabistan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;margin-top:10px;">
+                                    <button type="submit" class="btn-save" style="padding:8px 18px;font-size:13px;">💾 Kaydet</button>
+                                    <button type="button" onclick="toggleKartEdit({{ kart.id }})" style="padding:8px 14px;background:white;color:var(--gray);border:1px solid var(--gray-light);border-radius:10px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;">İptal</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </form>
+                {% else %}
+                <div style="text-align:center;padding:28px;color:var(--gray);">
+                    <div style="font-size:36px;margin-bottom:10px;">💳</div>
+                    <div style="font-size:14px;">Kayıtlı kart bulunmuyor.</div>
+                </div>
+                {% endif %}
+
+                <!-- Yeni Kart Ekle Butonu -->
+                <div style="margin-top:{% if kartlar %}16px{% else %}0{% endif %};">
+                    <button onclick="toggleYeniKart()" id="btn-yeni-kart"
+                            style="display:flex;align-items:center;gap:8px;padding:10px 18px;background:var(--blue-light);color:var(--blue);border:1.5px solid #bfdbfe;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%;justify-content:center;">
+                        ➕ Yeni Kart Ekle
+                    </button>
+                </div>
+
+                <!-- Yeni Kart Formu — başlangıçta gizli -->
+                <div id="yeni-kart-form" style="display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--gray-light);">
+                    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;">➕ Yeni Kart Bilgileri</div>
+                    <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/ayarlar/kart-guncelle/">
+                        {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="fg form-full">
+                                <label>Kart Numarası</label>
+                                <input type="text" name="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" oninput="formatCardNum(this)" autocomplete="cc-number" style="letter-spacing:2px;font-size:15px;">
+                            </div>
+                            <div class="fg"><label>Son Kullanma (AA/YY)</label><input type="text" name="expiry" placeholder="AA/YY" maxlength="5" oninput="formatExp(this)" autocomplete="cc-exp"></div>
+                            <div class="fg"><label>CVV</label><input type="password" name="cvv" placeholder="•••" maxlength="4" autocomplete="cc-csc"></div>
+                            <div class="fg form-full"><label>Kart Üzerindeki İsim</label><input type="text" name="card_holder" placeholder="AD SOYAD" autocomplete="cc-name" style="text-transform:uppercase;"></div>
+                            <div class="fg form-full" style="border-top:1px solid var(--gray-light);padding-top:12px;margin-top:4px;">
+                                <div style="font-size:12px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Fatura Adresi</div>
+                            </div>
+                            <div class="fg form-full"><label>Adres</label><textarea name="billing_address" rows="2" placeholder="Sokak, Mahalle, No..."></textarea></div>
+                            <div class="fg"><label>Şehir</label><input type="text" name="billing_city" placeholder="İstanbul"></div>
+                            <div class="fg"><label>Posta Kodu</label><input type="text" name="billing_zip" placeholder="34000"></div>
+                            <div class="fg">
+                                <label>Ülke</label>
+                                <select name="billing_country">
+                                    <option value="TR">🇹🇷 Türkiye</option>
+                                    <option value="DE">🇩🇪 Almanya</option>
+                                    <option value="NL">🇳🇱 Hollanda</option>
+                                    <option value="GB">🇬🇧 İngiltere</option>
+                                    <option value="FR">🇫🇷 Fransa</option>
+                                    <option value="US">🇺🇸 ABD</option>
+                                    <option value="AE">🇦🇪 BAE</option>
+                                    <option value="SA">🇸🇦 S. Arabistan</option>
+                                </select>
+                            </div>
+                            <div class="fg form-full">
+                                <div style="display:flex;align-items:center;gap:10px;">
+                                    <label class="toggle-sw"><input type="checkbox" name="make_active" checked><span class="toggle-sl"></span></label>
+                                    <div>
+                                        <div style="font-size:13px;font-weight:500;color:var(--text);">Aktif kart olarak ayarla</div>
+                                        <div style="font-size:11px;color:var(--gray);">Abonelik ödemeleri bu karttan alınır</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top:12px;padding:10px 14px;background:#eff6ff;border-radius:8px;font-size:12px;color:#1e40af;">
+                            🔒 Kart numaranız sistemimizde saklanmaz, sadece son 4 hane görüntülenir.
+                        </div>
+                        <div style="display:flex;gap:8px;margin-top:12px;">
+                            <button type="submit" class="btn-save">💾 Kartı Ekle</button>
+                            <button type="button" onclick="toggleYeniKart()" style="padding:10px 16px;background:white;color:var(--gray);border:1px solid var(--gray-light);border-radius:10px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;">İptal</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<script>
+// Tab sistemi
+const TAB_URL_MAP = {klinik:'klinik',saatler:'saatler',tatil:'tatil',randevu:'randevu',bildirim:'bildirim',doktor:'doktor'};
+
+function showTab(name, btn) {
+    document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.snav-item').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+    history.replaceState(null, '', '?tab=' + name);
+}
+
+// URL'deki tab param'ını oku
+const urlTab = new URLSearchParams(window.location.search).get('tab');
+if (urlTab) {
+    const btn = [...document.querySelectorAll('.snav-item')]
+        .find(b => b.getAttribute('onclick')?.includes("'"+urlTab+"'"));
+    if (btn) { btn.click(); }
+}
+
+// Gün satırı toggle
+function toggleDayRow(cb, day) {
+    const times = document.getElementById('dr-times-' + day) || document.getElementById('day-times-' + day);
+    if (times) {
+        times.style.opacity = cb.checked ? '1' : '0.3';
+        times.style.pointerEvents = cb.checked ? '' : 'none';
+    }
+}
+function toggleDrRow(cb, key) {
+    const times = document.getElementById('dr-times-' + key);
+    if (times) {
+        times.style.opacity = cb.checked ? '1' : '0.3';
+        times.style.pointerEvents = cb.checked ? '' : 'none';
+    }
+}
+
+// Randevu seçenekleri
+function selectOption(el, groupId, inputName, value) {
+    document.querySelectorAll('#' + groupId + ' .randevu-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById(inputName).value = value;
+}
+
+// Doktor paneli
+function showDoktorPanel(btn, doktorId) {
+    document.querySelectorAll('.doktor-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.doktor-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('doktor-panel-' + doktorId).classList.add('active');
+}
+
+// Logo önizleme
+function previewLogo(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            const prev = document.getElementById('logo-preview');
+            prev.innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Telefon format
+const phoneInput = document.getElementById('phone-input');
+if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+        let v = this.value.replace(/\D/g,'');
+        if (v.startsWith('0')) v = v.substring(1);
+        v = v.substring(0,10);
+        let f = '';
+        if (v.length > 0) f = v.substring(0,3);
+        if (v.length > 3) f += ' ' + v.substring(3,6);
+        if (v.length > 6) f += ' ' + v.substring(6,8);
+        if (v.length > 8) f += ' ' + v.substring(8,10);
+        this.value = f;
+    });
+}
+function updatePhoneWrap() {}
+
+// Kart format
+function toggleKartEdit(id) {
+    const el = document.getElementById('kart-edit-' + id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+function toggleYeniKart() {
+    const form = document.getElementById('yeni-kart-form');
+    const btn = document.getElementById('btn-yeni-kart');
+    const open = form.style.display === 'none';
+    form.style.display = open ? 'block' : 'none';
+    btn.textContent = open ? '✕ Kapat' : '➕ Yeni Kart Ekle';
+}
+function formatCardNum(el) {
+    let v = el.value.replace(/\D/g,'').substring(0,16);
+    el.value = v.replace(/(.{4})/g,'$1 ').trim();
+}
+function formatExp(el) {
+    let v = el.value.replace(/\D/g,'').substring(0,4);
+    if (v.length > 2) v = v.substring(0,2) + '/' + v.substring(2);
+    el.value = v;
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[01/May/2026 15:01:52] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /timeclock.php
+[01/May/2026 15:01:52] "GET /timeclock.php HTTP/1.1" 404 2957
+Not Found: /000.php
+[01/May/2026 15:01:52] "GET /000.php HTTP/1.1" 404 2939
+Not Found: /app.php
+[01/May/2026 15:01:52] "GET /app.php HTTP/1.1" 404 2939
+Not Found: /profiler.php
+[01/May/2026 15:01:53] "GET /profiler.php HTTP/1.1" 404 2954
+Not Found: /oauth.php
+[01/May/2026 15:01:53] "GET /oauth.php HTTP/1.1" 404 2945
+Not Found: /styles.php
+[01/May/2026 15:01:53] "GET /styles.php HTTP/1.1" 404 2948
+Not Found: /7.php
+[01/May/2026 15:01:53] "GET /7.php HTTP/1.1" 404 2933
+Not Found: /lmfi2.php
+[01/May/2026 15:01:53] "GET /lmfi2.php HTTP/1.1" 404 2945
+Not Found: /xinfo.php
+[01/May/2026 15:01:53] "GET /xinfo.php HTTP/1.1" 404 2945
+Not Found: /creds.php
+[01/May/2026 15:01:54] "GET /creds.php HTTP/1.1" 404 2945
+Not Found: /teste.php
+[01/May/2026 15:01:54] "GET /teste.php HTTP/1.1" 404 2945
+Not Found: /u.php
+[01/May/2026 15:01:55] "GET /u.php HTTP/1.1" 404 2933
+Not Found: /aw.php
+[01/May/2026 15:01:55] "GET /aw.php HTTP/1.1" 404 2936
+Not Found: /00.php
+[01/May/2026 15:01:55] "GET /00.php HTTP/1.1" 404 2936
+Not Found: /search.php
+[01/May/2026 15:01:55] "GET /search.php HTTP/1.1" 404 2948
+Not Found: /conf.php
+[01/May/2026 15:01:55] "GET /conf.php HTTP/1.1" 404 2942
+Not Found: /yindu.php
+[01/May/2026 15:01:56] "GET /yindu.php HTTP/1.1" 404 2945
+Not Found: /phpstatus.php
+[01/May/2026 15:01:56] "GET /phpstatus.php HTTP/1.1" 404 2957
+Not Found: /album.php
+[01/May/2026 15:01:56] "GET /album.php HTTP/1.1" 404 2945
+Not Found: /phpprobe.php
+[01/May/2026 15:01:56] "GET /phpprobe.php HTTP/1.1" 404 2954
+Not Found: /pdf.php
+[01/May/2026 15:01:57] "GET /pdf.php HTTP/1.1" 404 2939
+Not Found: /you.php
+[01/May/2026 15:01:57] "GET /you.php HTTP/1.1" 404 2939
+Not Found: /mimes.php
+[01/May/2026 15:01:57] "GET /mimes.php HTTP/1.1" 404 2945

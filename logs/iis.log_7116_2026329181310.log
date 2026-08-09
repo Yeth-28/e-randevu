@@ -1,0 +1,23 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Forbidden (Referer checking failed - no Referer.): /
+[29/Mar/2026 11:13:14] "POST / HTTP/1.1" 403 3565
+Not Found: /index.php
+[29/Mar/2026 11:13:15] "POST /index.php HTTP/1.1" 404 2951
+Not Found: /admin
+[29/Mar/2026 11:13:15] "POST /admin HTTP/1.1" 404 2939
+Not Found: /api
+[29/Mar/2026 11:13:15] "POST /api HTTP/1.1" 404 2933
+Not Found: /
+[29/Mar/2026 11:17:02] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[29/Mar/2026 11:17:03] "GET / HTTP/1.1" 404 8849
+[29/Mar/2026 11:21:18] "GET / HTTP/1.1" 200 16347
+Not Found: /robots.txt
+[29/Mar/2026 11:28:57] "GET /robots.txt HTTP/1.1" 404 2948
+[29/Mar/2026 11:36:03] "GET /?sehir=Ã\x84Â°stanbul HTTP/1.1" 200 15580
+[29/Mar/2026 11:46:09] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 11:55:26] "GET / HTTP/1.1" 200 16347

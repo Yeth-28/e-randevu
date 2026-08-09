@@ -1,0 +1,34 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[30/Mar/2026 15:22:09] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /fm.php.gif
+[30/Mar/2026 15:22:10] "GET /fm.php.gif HTTP/1.1" 404 2948
+Not Found: /pepe.php
+[30/Mar/2026 15:22:10] "GET /pepe.php HTTP/1.1" 404 2942
+Not Found: /copypaths.php
+[30/Mar/2026 15:22:10] "GET /copypaths.php HTTP/1.1" 404 2957
+Not Found: /js.php
+[30/Mar/2026 15:22:10] "GET /js.php HTTP/1.1" 404 2936
+Not Found: /5127b574-17a6-4d72-a759-92349f5d56f2.php
+[30/Mar/2026 15:22:10] "GET /5127b574-17a6-4d72-a759-92349f5d56f2.php HTTP/1.1" 404 3038
+Not Found: /credits.php
+[30/Mar/2026 15:22:10] "GET /credits.php HTTP/1.1" 404 2951
+Not Found: /vip.php
+[30/Mar/2026 15:22:11] "GET /vip.php HTTP/1.1" 404 2939
+Not Found: /DEMO/installer.php
+[30/Mar/2026 15:22:11] "GET /DEMO/installer.php HTTP/1.1" 404 2972
+Not Found: /gl.php
+[30/Mar/2026 15:22:11] "GET /gl.php HTTP/1.1" 404 2936
+[30/Mar/2026 15:26:06] "GET /robots.txt HTTP/1.1" 301 0
+[30/Mar/2026 15:26:06] "GET /robots.txt/ HTTP/1.1" 302 0
+[30/Mar/2026 15:26:06] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 15:26:07] "GET /sitemap.xml HTTP/1.1" 301 0
+[30/Mar/2026 15:26:07] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[30/Mar/2026 15:26:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 15:30:52] "GET /.env HTTP/1.1" 301 0
+[30/Mar/2026 15:30:52] "GET /.env/ HTTP/1.1" 302 0
+[30/Mar/2026 15:30:53] "GET /giris/ HTTP/1.1" 200 5064

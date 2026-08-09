@@ -1,0 +1,121 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /xmlrpc.php
+[30/Apr/2026 02:23:51] "POST /xmlrpc.php HTTP/1.1" 404 2950
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[30/Apr/2026 02:31:32] "GET / HTTP/1.1" 500 98183
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[30/Apr/2026 02:46:29] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /admin404.php
+[30/Apr/2026 02:46:30] "GET /admin404.php HTTP/1.1" 404 2954
+Not Found: /7.php
+[30/Apr/2026 02:46:30] "GET /7.php HTTP/1.1" 404 2933
+Not Found: /creds.php
+[30/Apr/2026 02:46:30] "GET /creds.php HTTP/1.1" 404 2945
+Not Found: /phpstatus.php
+[30/Apr/2026 02:46:30] "GET /phpstatus.php HTTP/1.1" 404 2957
+Not Found: /system_check.php
+[30/Apr/2026 02:46:30] "GET /system_check.php HTTP/1.1" 404 2966
+Not Found: /00.php
+[30/Apr/2026 02:46:31] "GET /00.php HTTP/1.1" 404 2936
+Not Found: /search.php
+[30/Apr/2026 02:46:31] "GET /search.php HTTP/1.1" 404 2948
+Not Found: /setup-verify.php
+[30/Apr/2026 02:46:31] "GET /setup-verify.php HTTP/1.1" 404 2966
+Not Found: /xinfo.php
+[30/Apr/2026 02:46:31] "GET /xinfo.php HTTP/1.1" 404 2945
+Not Found: /php-ver.php
+[30/Apr/2026 02:46:31] "GET /php-ver.php HTTP/1.1" 404 2951
+Not Found: /eval-stdin.php
+[30/Apr/2026 02:46:31] "GET /eval-stdin.php HTTP/1.1" 404 2960
+Not Found: /you.php
+[30/Apr/2026 02:46:32] "GET /you.php HTTP/1.1" 404 2939
+Not Found: /app.php
+[30/Apr/2026 02:46:32] "GET /app.php HTTP/1.1" 404 2939
+Not Found: /module-info.php
+[30/Apr/2026 02:46:32] "GET /module-info.php HTTP/1.1" 404 2963
+Not Found: /teste.php
+[30/Apr/2026 02:46:32] "GET /teste.php HTTP/1.1" 404 2945
+Not Found: /pdf.php
+[30/Apr/2026 02:46:32] "GET /pdf.php HTTP/1.1" 404 2939
+Not Found: /album.php
+[30/Apr/2026 02:46:32] "GET /album.php HTTP/1.1" 404 2945
+Not Found: /phpprobe.php
+[30/Apr/2026 02:46:33] "GET /phpprobe.php HTTP/1.1" 404 2954
+Not Found: /timeclock.php
+[30/Apr/2026 02:46:33] "GET /timeclock.php HTTP/1.1" 404 2957
+Not Found: /php_release.php
+[30/Apr/2026 02:46:33] "GET /php_release.php HTTP/1.1" 404 2963
+Not Found: /profiler.php
+[30/Apr/2026 02:46:33] "GET /profiler.php HTTP/1.1" 404 2954
+Not Found: /styles.php
+[30/Apr/2026 02:46:33] "GET /styles.php HTTP/1.1" 404 2948
+Not Found: /php_info.php
+[30/Apr/2026 02:46:34] "GET /php_info.php HTTP/1.1" 404 2954
+Not Found: /lmfi2.php
+[30/Apr/2026 02:46:34] "GET /lmfi2.php HTTP/1.1" 404 2945
+Not Found: /1_1_PhpInfo.php
+[30/Apr/2026 02:46:34] "GET /1_1_PhpInfo.php HTTP/1.1" 404 2963
+Not Found: /wp-tinymce.php
+[30/Apr/2026 02:46:34] "GET /wp-tinymce.php HTTP/1.1" 404 2960
+Not Found: /info_page.php
+[30/Apr/2026 02:46:34] "GET /info_page.php HTTP/1.1" 404 2957
+Not Found: /aw.php
+[30/Apr/2026 02:46:34] "GET /aw.php HTTP/1.1" 404 2936
+Not Found: /mimes.php
+[30/Apr/2026 02:46:35] "GET /mimes.php HTTP/1.1" 404 2945
+Not Found: /000.php
+[30/Apr/2026 02:46:35] "GET /000.php HTTP/1.1" 404 2939
+Not Found: /u.php
+[30/Apr/2026 02:46:35] "GET /u.php HTTP/1.1" 404 2933
+Not Found: /oauth.php
+[30/Apr/2026 02:46:35] "GET /oauth.php HTTP/1.1" 404 2945
+Not Found: /.env.test.php
+[30/Apr/2026 02:46:35] "GET /.env.test.php HTTP/1.1" 404 2957
+Not Found: /php-fpm.php
+[30/Apr/2026 02:46:35] "GET /php-fpm.php HTTP/1.1" 404 2951
+Not Found: /conf.php
+[30/Apr/2026 02:46:36] "GET /conf.php HTTP/1.1" 404 2942
+Not Found: /debug-php.php
+[30/Apr/2026 02:46:36] "GET /debug-php.php HTTP/1.1" 404 2957
+Not Found: /yindu.php
+[30/Apr/2026 02:46:36] "GET /yindu.php HTTP/1.1" 404 2945
+Not Found: /sitemaps.xml
+[30/Apr/2026 02:47:23] "GET /sitemaps.xml HTTP/1.1" 404 2366
+Not Found: /sitemap.xml
+[30/Apr/2026 02:47:58] "GET /sitemap.xml HTTP/1.1" 404 2952

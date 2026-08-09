@@ -1,0 +1,33 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[30/Mar/2026 16:47:40] "GET / HTTP/1.1" 200 16347
+Not Found: /
+[30/Mar/2026 16:57:39] "GET / HTTP/1.1" 404 8848
+Not Found: /
+[30/Mar/2026 17:17:39] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[30/Mar/2026 17:17:40] "GET / HTTP/1.1" 404 8849
+[30/Mar/2026 17:20:40] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 17:33:38] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 17:34:55] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 17:46:12] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 18:00:53] "GET /wp-login.php HTTP/1.1" 301 0
+[30/Mar/2026 18:00:53] "GET /xmlrpc.php HTTP/1.1" 301 0
+[30/Mar/2026 18:10:44] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 18:13:45] "GET /robots.txt HTTP/1.1" 301 0
+[30/Mar/2026 18:13:45] "GET /robots.txt/ HTTP/1.1" 302 0
+[30/Mar/2026 18:13:45] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 18:13:45] "GET /sitemap.xml HTTP/1.1" 301 0
+[30/Mar/2026 18:13:46] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[30/Mar/2026 18:13:46] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 18:17:27] "GET / HTTP/1.1" 200 16347
+Not Found: /robots.txt
+[30/Mar/2026 18:31:56] "GET /robots.txt HTTP/1.1" 404 2949
+[30/Mar/2026 18:31:58] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 18:32:14] "GET / HTTP/1.1" 200 16347
+[30/Mar/2026 18:32:14] "GET / HTTP/1.1" 200 16347
+Not Found: /favicon.ico
+[30/Mar/2026 18:32:16] "GET /favicon.ico HTTP/1.1" 404 2952

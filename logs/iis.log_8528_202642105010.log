@@ -1,0 +1,75 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[02/Apr/2026 03:50:15] "GET / HTTP/1.1" 404 8848
+Not Found: /
+[02/Apr/2026 03:58:55] "GET / HTTP/1.1" 404 8849
+Not Found: /.env
+[02/Apr/2026 04:02:35] "GET /.env HTTP/1.1" 404 2931
+[02/Apr/2026 04:16:23] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 04:25:20] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 04:35:58] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 04:35:58] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 04:36:00] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 04:36:00] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 04:41:15] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 04:41:15] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[02/Apr/2026 04:41:15] "GET /favicon.ico HTTP/1.1" 404 2952
+[02/Apr/2026 04:41:19] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14633
+[02/Apr/2026 04:48:59] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 04:48:59] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 04:52:23] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 04:52:23] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 04:52:45] "GET / HTTP/1.1" 200 9212
+Not Found: /robots.txt
+[02/Apr/2026 05:03:02] "GET /robots.txt HTTP/1.1" 404 2949
+[02/Apr/2026 05:16:11] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 05:16:11] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 05:32:36] "GET /kayit/ HTTP/1.1" 200 20818
+[02/Apr/2026 05:32:36] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 05:34:07] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14633
+[02/Apr/2026 05:37:23] "GET / HTTP/1.1" 200 9212
+Not Found: /favicon.ico
+[02/Apr/2026 05:37:24] "GET /favicon.ico HTTP/1.1" 404 2951
+[02/Apr/2026 05:37:26] "GET / HTTP/1.1" 200 9212
+Not Found: /favicon.ico
+[02/Apr/2026 05:37:30] "GET /favicon.ico HTTP/1.1" 404 2952
+[02/Apr/2026 05:40:47] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 05:40:47] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[02/Apr/2026 05:40:50] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[02/Apr/2026 05:40:50] "GET /static/css/auth.css HTTP/1.1" 304 0
+[02/Apr/2026 05:40:52] "GET /giris/ HTTP/1.1" 200 5067
+[02/Apr/2026 05:40:56] "GET /hasta/kayit/ HTTP/1.1" 200 14886
+[02/Apr/2026 05:40:56] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 05:41:02] "GET /hasta/kayit/ HTTP/1.1" 200 14886
+[02/Apr/2026 05:41:10] "GET /hasta/kayit/ HTTP/1.1" 200 14454
+[02/Apr/2026 05:41:22] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[02/Apr/2026 05:41:39] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:41:40] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:41:41] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:41:46] "GET /hasta/kayit/ HTTP/1.1" 200 15777
+[02/Apr/2026 05:41:46] "GET /static/data/countries.json HTTP/1.1" 200 506674
+[02/Apr/2026 05:41:48] "GET /hasta/kayit/ HTTP/1.1" 200 15777
+[02/Apr/2026 05:41:52] "GET /hasta/kayit/ HTTP/1.1" 200 15063
+[02/Apr/2026 05:41:54] "GET /hasta/kayit/ HTTP/1.1" 200 15063
+[02/Apr/2026 05:41:59] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[02/Apr/2026 05:44:01] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 05:47:20] "GET /hasta/kayit/ HTTP/1.1" 200 15777
+[02/Apr/2026 05:47:20] "GET /static/data/countries.json HTTP/1.1" 304 0
+[02/Apr/2026 05:47:25] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:47:26] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:47:32] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:47:33] "GET /hasta/kayit/ HTTP/1.1" 200 15849
+[02/Apr/2026 05:48:22] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[02/Apr/2026 05:49:08] "GET /kayit/ HTTP/1.1" 200 24473
+[02/Apr/2026 05:49:10] "GET /static/css/kayit.css HTTP/1.1" 200 5991
+[02/Apr/2026 05:52:13] "HEAD / HTTP/1.1" 200 0
+[02/Apr/2026 05:52:44] "GET / HTTP/1.1" 200 9212
+Not Found: /wp-login.php
+[02/Apr/2026 05:55:45] "GET /wp-login.php HTTP/1.1" 404 2955
+[02/Apr/2026 05:56:08] "GET / HTTP/1.1" 200 9212
+[02/Apr/2026 05:59:02] "GET / HTTP/1.1" 200 9212

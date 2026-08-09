@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziyaret Düzenle — {{ hasta.name }}</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;--bg:#f8faff;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;--green:#16a34a;--red:#dc2626;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+.main{margin-left:240px;min-height:100vh;}
+.topbar{background:white;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+.topbar a{color:var(--gray);text-decoration:none;font-size:14px;}
+.topbar a:hover{color:var(--blue);}
+.topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+.content{padding:32px;max-width:760px;}
+.messages{margin-bottom:20px;}
+.msg{padding:12px 16px;border-radius:10px;font-size:14px;margin-bottom:8px;}
+.msg-success{background:#dcfce7;color:var(--green);}
+.msg-error{background:#fee2e2;color:var(--red);}
+
+.banner{background:#f0fdf4;border:1.5px solid #86efac;border-radius:14px;padding:14px 18px;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.banner-icon{font-size:24px;}
+.banner-title{font-size:14px;font-weight:600;color:#166534;}
+.banner-sub{font-size:12px;color:#16a34a;margin-top:2px;}
+
+.card{background:white;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,0.06);margin-bottom:16px;}
+.card-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--gray-light);display:flex;align-items:center;gap:8px;}
+
+/* İŞLEMLER */
+.islem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.islem-item{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1.5px solid var(--gray-light);border-radius:10px;cursor:pointer;font-size:13px;transition:all 0.15s;user-select:none;}
+.islem-item:hover{border-color:var(--blue);background:#f8faff;}
+.islem-item input{display:none;}
+.islem-check{width:16px;height:16px;border:2px solid #d1d5db;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all 0.15s;}
+.islem-item.checked{border-color:var(--blue);background:var(--blue-light);color:var(--blue);font-weight:500;}
+.islem-item.checked .islem-check{background:var(--blue);border-color:var(--blue);color:white;}
+
+/* ÜCRET */
+.ucret-wrap{display:flex;align-items:center;gap:12px;}
+.ucret-symbol{font-size:24px;font-weight:700;color:var(--gray);}
+.ucret-input{flex:1;padding:12px 16px;border:1.5px solid var(--gray-light);border-radius:12px;font-size:24px;font-weight:700;font-family:'DM Sans',sans-serif;color:var(--blue-dark);outline:none;text-align:right;}
+.ucret-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+
+/* TOGGLE */
+.toggle-row{display:flex;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--gray-light);}
+.toggle-sw{position:relative;width:44px;height:24px;flex-shrink:0;}
+.toggle-sw input{display:none;}
+.toggle-track{position:absolute;inset:0;border-radius:999px;background:#d1d5db;cursor:pointer;transition:0.25s;}
+.toggle-track::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;left:3px;top:3px;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.2);transition:0.25s;}
+.toggle-sw input:checked+.toggle-track{background:var(--green);}
+.toggle-sw input:checked+.toggle-track::before{transform:translateX(20px);}
+
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-full{grid-column:1/-1;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.fg label{font-size:12px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.4px;}
+.fg input,.fg select,.fg textarea{padding:10px 14px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;color:var(--text);transition:border-color 0.2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue);}
+.fg textarea{resize:vertical;min-height:80px;}
+
+.btn-row{display:flex;gap:12px;margin-top:8px;}
+.btn-save{padding:13px 32px;background:var(--blue);color:white;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.btn-save:hover{background:var(--blue-dark);}
+.btn-cancel{padding:13px 20px;background:white;color:var(--gray);border:1.5px solid var(--gray-light);border-radius:12px;font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;}
+.btn-cancel:hover{border-color:var(--gray);}
+
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#1e40af,#2563eb);z-index:100;display:flex;flex-direction:column;}
+.sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.sidebar-brand .icon{font-size:28px;}
+.sidebar-brand .name{font-family:'Playfair Display',serif;font-size:18px;color:white;margin-top:4px;}
+.sidebar-brand .clinic-id{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;}
+.sidebar-nav{padding:16px 0;flex:1;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+.nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+.nav-item .icon{font-size:18px;width:24px;text-align:center;}
+.sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+.sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+
+</style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/">← {{ hasta.name }}</a>
+        <span style="color:var(--gray-light)">/</span>
+        <span class="topbar-title">Ziyaret Düzenle</span>
+    </div>
+
+    <div class="content">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if from_randevu %}
+        <div class="banner">
+            <div class="banner-icon">✅</div>
+            <div>
+                <div class="banner-title">Randevu tamamlandı — ziyaret oluşturuldu</div>
+                <div class="banner-sub">Yapılan işlemleri ve ücret bilgisini girerek kaydedin.</div>
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- İŞLEMLER -->
+            <div class="card">
+                <div class="card-title">🦷 Yapılan İşlemler</div>
+                <div class="islem-grid">
+                    {% for val, label, emoji in islemler %}
+                    <div class="islem-item {% if val in ziyaret.procedures %}checked{% endif %}" onclick="toggleIslem(this)">
+                        <input type="checkbox" name="procedures" value="{{ val }}" {% if val in ziyaret.procedures %}checked{% endif %}>
+                        <div class="islem-check">✓</div>
+                        <span>{{ emoji }} {{ label }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div style="margin-top:10px;">
+                    <input type="text" name="other_procedure" placeholder="Diğer işlem yazın..."
+                        style="border:1.5px solid var(--gray-light);border-radius:10px;padding:9px 14px;width:100%;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;">
+                </div>
+            </div>
+
+            <!-- ÜCRET -->
+            <div class="card">
+                <div class="card-title">💰 Ücret & Ödeme</div>
+                <div class="ucret-wrap">
+                    <div class="ucret-symbol">₺</div>
+                    <input type="number" name="fee" class="ucret-input"
+                           value="{{ ziyaret.fee|default:'0' }}" min="0" step="0.01" placeholder="0">
+                </div>
+                <div class="toggle-row">
+                    <label class="toggle-sw">
+                        <input type="checkbox" name="is_paid" {% if ziyaret.is_paid %}checked{% endif %}>
+                        <span class="toggle-track"></span>
+                    </label>
+                    <div>
+                        <div style="font-size:14px;font-weight:500;color:var(--text);">Ödeme alındı</div>
+                        <div style="font-size:12px;color:var(--gray);">Aktif edersen ziyaret ödendi olarak işaretlenir</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETAYLAR -->
+            <div class="card">
+                <div class="card-title">📋 Ziyaret Detayları</div>
+                <div class="form-grid">
+                    <div class="fg">
+                        <label>Doktor</label>
+                        <select name="doctor">
+                            <option value="">— Doktor Seç —</option>
+                            {% for d in doktorlar %}
+                            <option value="{{ d.id }}" {% if ziyaret.doctor_id == d.id %}selected{% endif %}>{{ d.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label>Tarih / Saat</label>
+                        <input type="datetime-local" name="date_time"
+                               value="{{ ziyaret.date_time|date:'Y-m-d' }}T{{ ziyaret.date_time|date:'H:i' }}">
+                    </div>
+                    <div class="fg form-full">
+                        <label>Şikayet</label>
+                        <input type="text" name="complaint" value="{{ ziyaret.complaint|default:'' }}"
+                               placeholder="Hastanın şikayeti...">
+                    </div>
+                    <div class="fg form-full">
+                        <label>Notlar</label>
+                        <textarea name="notes" placeholder="Yapılan işlem notları...">{{ ziyaret.notes|default:'' }}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <button type="submit" class="btn-save">💾 Kaydet</button>
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/" class="btn-cancel">İptal</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function toggleIslem(el) {
+    el.classList.toggle('checked');
+    el.querySelector('input').checked = el.classList.contains('checked');
+}
+</script>
+</body>
+</html>

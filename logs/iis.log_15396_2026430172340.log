@@ -1,0 +1,131 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[30/Apr/2026 10:23:44] "GET / HTTP/1.1" 500 98183
+[30/Apr/2026 10:33:07] "GET / HTTP/1.1" 200 9312
+Not Found: /sitemap.txt
+[30/Apr/2026 10:43:31] "GET /sitemap.txt HTTP/1.1" 404 2952
+Not Found: /robots.txt
+[30/Apr/2026 10:46:54] "GET /robots.txt HTTP/1.1" 404 2949
+Not Found: /robots.txt
+[30/Apr/2026 10:51:00] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 10:52:07] "GET /robots.txt HTTP/1.1" 404 2365
+Not Found: /atom.xml
+[30/Apr/2026 10:56:06] "GET /atom.xml HTTP/1.1" 404 2943
+Not Found: /robots.txt
+[30/Apr/2026 11:00:51] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /
+[30/Apr/2026 11:05:14] "GET / HTTP/1.1" 404 8848
+Not Found: /robots.txt
+[30/Apr/2026 11:09:30] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[30/Apr/2026 11:12:34] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 11:14:15] "GET /robots.txt HTTP/1.1" 404 2363
+Not Found: /robots.txt
+[30/Apr/2026 11:20:01] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[30/Apr/2026 11:39:21] "GET /robots.txt HTTP/1.1" 404 2362
+[30/Apr/2026 11:43:55] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 11:48:50] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 11:51:37] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /.git/config
+[30/Apr/2026 11:53:12] "GET /.git/config HTTP/1.1" 404 8900
+Not Found: /.env
+[30/Apr/2026 11:57:16] "GET /.env HTTP/1.1" 404 2931
+Not Found: /.env
+[30/Apr/2026 11:57:17] "GET /.env HTTP/1.1" 404 2930
+[30/Apr/2026 12:09:27] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[30/Apr/2026 12:26:13] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 12:34:29] "GET / HTTP/1.1" 200 35947
+[30/Apr/2026 12:47:33] "GET / HTTP/1.1" 200 54924
+[30/Apr/2026 12:53:12] "GET / HTTP/1.1" 200 54924
+[30/Apr/2026 13:02:55] "GET / HTTP/1.1" 200 35947
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[30/Apr/2026 13:05:11] "GET / HTTP/1.1" 500 98184
+[30/Apr/2026 13:15:18] "GET / HTTP/1.1" 200 35947
+Not Found: /sitemap.xml.gz
+[30/Apr/2026 13:18:19] "GET /sitemap.xml.gz HTTP/1.1" 404 2372
+[30/Apr/2026 13:23:30] "GET /giris/ HTTP/1.1" 200 5067
+[30/Apr/2026 13:23:58] "GET / HTTP/1.1" 200 35947
+[30/Apr/2026 13:25:05] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 13:26:12] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 13:26:12] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 13:26:12] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[30/Apr/2026 13:26:12] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[30/Apr/2026 13:26:12] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[30/Apr/2026 13:26:14] "GET /?q= HTTP/1.1" 200 9312
+Not Found: /sitemap.txt
+[30/Apr/2026 13:26:21] "GET /sitemap.txt HTTP/1.1" 404 2952
+Not Found: /
+[30/Apr/2026 13:28:31] "HEAD / HTTP/1.1" 404 0
+[30/Apr/2026 13:33:37] "GET / HTTP/1.1" 200 54924
+[30/Apr/2026 13:42:13] "GET / HTTP/1.1" 200 54924

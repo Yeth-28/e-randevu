@@ -1,0 +1,33 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /.git/config
+[07/Apr/2026 10:45:29] "GET /.git/config HTTP/1.1" 404 2951
+Not Found: /.git/config
+[07/Apr/2026 10:45:31] "GET /.git/config HTTP/1.1" 404 2952
+[07/Apr/2026 10:46:41] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[07/Apr/2026 10:47:58] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /aevly.php
+[07/Apr/2026 10:47:58] "GET /aevly.php HTTP/1.1" 404 2945
+Not Found: /bogles.php
+[07/Apr/2026 10:47:59] "GET /bogles.php HTTP/1.1" 404 2948
+Not Found: /.well-known/index.php
+[07/Apr/2026 10:47:59] "GET /.well-known/index.php HTTP/1.1" 404 2981
+Not Found: /100.php
+[07/Apr/2026 10:47:59] "GET /100.php HTTP/1.1" 404 2939
+Not Found: /co.php
+[07/Apr/2026 10:47:59] "GET /co.php HTTP/1.1" 404 2936
+Not Found: /database.php
+[07/Apr/2026 10:47:59] "GET /database.php HTTP/1.1" 404 2954
+Not Found: /css/database.php
+[07/Apr/2026 10:47:59] "GET /css/database.php HTTP/1.1" 404 2966
+Not Found: /x123.php
+[07/Apr/2026 10:47:59] "GET /x123.php HTTP/1.1" 404 2942
+Not Found: /inputs.php
+[07/Apr/2026 10:47:59] "GET /inputs.php HTTP/1.1" 404 2948
+[07/Apr/2026 10:48:17] "GET / HTTP/1.1" 200 9312
+Not Found: /https:/e-randevu.online/
+[07/Apr/2026 10:48:18] "GET /https:/e-randevu.online/?q= HTTP/1.1" 404 2996

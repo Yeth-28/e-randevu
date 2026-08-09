@@ -1,0 +1,179 @@
+{% comment %}
+Bu snippet'i tüm panel template'lerinde </body> kapanmadan önce ekle:
+Topbar'da zil ikonu için şunu ekle (topbar-right div'i içine):
+{% include "panel/bildirim_zil.html" %}
+{% endcomment %}
+
+<style>
+#bildirim-container {
+    position: fixed; top: 20px; right: 20px; z-index: 9999;
+    display: flex; flex-direction: column; gap: 10px;
+    width: 360px; pointer-events: none;
+}
+.bildirim-popup {
+    background: white; border-radius: 14px; padding: 16px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    border-left: 4px solid #2563eb;
+    display: flex; align-items: flex-start; gap: 12px;
+    animation: bildirimSlideIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    pointer-events: all;
+}
+.bildirim-popup.iptal_randevu { border-left-color: #dc2626; }
+.bildirim-popup.yeni_randevu  { border-left-color: #16a34a; }
+.bildirim-icon  { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.bildirim-title { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 3px; }
+.bildirim-body  { font-size: 13px; color: #6b7280; line-height: 1.4; }
+.bildirim-time  { font-size: 11px; color: #9ca3af; margin-top: 4px; }
+.bildirim-kapat {
+    margin-left: auto; background: none; border: none; font-size: 18px;
+    color: #9ca3af; cursor: pointer; padding: 0 0 0 8px; flex-shrink: 0; line-height: 1;
+}
+.bildirim-kapat:hover { color: #374151; }
+@keyframes bildirimSlideIn {
+    from { transform: translateX(130%); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes bildirimSlideOut {
+    from { transform: translateX(0);    opacity: 1; }
+    to   { transform: translateX(130%); opacity: 0; }
+}
+</style>
+
+<div id="bildirim-container"></div>
+
+<script>
+(function() {
+    const CLINIC_ID  = "{{ clinic_id }}";
+    const API_URL    = `{{ PANEL_URL }}/${CLINIC_ID}/api/bildirimler/`;
+    const OKUNDU_URL = `{{ PANEL_URL }}/${CLINIC_ID}/api/bildirimler/okundu/`;
+    const POLL_MS    = 15000;
+
+    let gosterilmisIds = new Set(
+        JSON.parse(localStorage.getItem('dental_gosterilmis_' + CLINIC_ID) || '[]')
+    );
+    let audioCtx = null;
+
+    // AudioContext — kullanıcı tıklayınca aç (tarayıcı politikası)
+    function getCtx() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        return audioCtx;
+    }
+    document.addEventListener('click', () => { try { getCtx(); } catch(e){} }, { once: true });
+
+    function sesOynat(type) {
+        try {
+            const ctx = getCtx();
+            if (ctx.state !== 'running') return;
+            const now = ctx.currentTime;
+            const notlar = type === 'yeni_randevu'
+                ? [[880, 0], [660, 0.18]]   // yükselen ding-dong
+                : [[440, 0], [330, 0.2]];   // alçalan iptal sesi
+            notlar.forEach(([freq, delay]) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.25, now + delay);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.45);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now + delay);
+                osc.stop(now + delay + 0.5);
+            });
+        } catch(e) {}
+    }
+
+    function popupGoster(b) {
+        const container = document.getElementById('bildirim-container');
+        if (!container) return;
+        const icon = b.type === 'yeni_randevu' ? '📅' : '❌';
+        const el = document.createElement('div');
+        el.className = 'bildirim-popup ' + b.type;
+        el.innerHTML = `
+            <div class="bildirim-icon">${icon}</div>
+            <div style="flex:1;min-width:0;">
+                <div class="bildirim-title">${b.title}</div>
+                <div class="bildirim-body">${b.body}</div>
+                <div class="bildirim-time">🕐 ${b.created_at}</div>
+            </div>
+            <button class="bildirim-kapat" title="Kapat">✕</button>
+        `;
+        el.querySelector('.bildirim-kapat').onclick = () => kapat(el, b.id);
+        container.appendChild(el);
+        setTimeout(() => kapat(el, b.id), 7000);
+    }
+
+    function kapat(el, id) {
+        if (!el || !el.parentNode) return;
+        el.style.animation = 'bildirimSlideOut 0.3s ease forwards';
+        setTimeout(() => el.parentNode && el.remove(), 300);
+        okunduIsaretle([id]);
+    }
+
+    function badgeGuncelle(sayi) {
+        const badge = document.getElementById('bildirim-badge');
+        if (!badge) return;
+        badge.textContent = sayi > 99 ? '99+' : sayi;
+        badge.style.display = sayi > 0 ? 'flex' : 'none';
+    }
+
+    function okunduIsaretle(ids) {
+        if (!ids.length) return;
+        fetch(OKUNDU_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken') },
+            body: JSON.stringify({ ids }),
+            credentials: 'include',
+        }).catch(() => {});
+    }
+
+    async function bildirimKontrol() {
+        try {
+            const res = await fetch(API_URL, { credentials: 'include' });
+            if (!res.ok) return;
+            const data = await res.json();
+            const yeniler = (data.notifications || []).filter(b => !gosterilmisIds.has(b.id));
+
+            badgeGuncelle(data.notifications.length);
+
+            yeniler.forEach(b => {
+                gosterilmisIds.add(b.id);
+                sesOynat(b.type);
+                popupGoster(b);
+                if (window.Notification && Notification.permission === 'granted') {
+                    try { new Notification(b.title, { body: b.body }); } catch(e) {}
+                }
+            });
+
+            localStorage.setItem(
+                'dental_gosterilmis_' + CLINIC_ID,
+                JSON.stringify([...gosterilmisIds].slice(-300))
+            );
+        } catch(e) {}
+    }
+
+    function getCookie(name) {
+        const parts = (`; ${document.cookie}`).split(`; ${name}=`);
+        return parts.length === 2 ? parts.pop().split(';').shift() : '';
+    }
+
+    // Tarayıcı bildirimi izni
+    if (window.Notification && Notification.permission === 'default') {
+        setTimeout(() => Notification.requestPermission(), 3000);
+    }
+
+    // Başlat
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            bildirimKontrol();
+            setInterval(bildirimKontrol, POLL_MS);
+        });
+    } else {
+        bildirimKontrol();
+        setInterval(bildirimKontrol, POLL_MS);
+    }
+
+    window.bildirimKontrol = bildirimKontrol;
+})();
+</script>

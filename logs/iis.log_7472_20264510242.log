@@ -1,0 +1,420 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 03:24:07] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:24:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:24:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:24:47] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:25:02] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:25:17] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:25:32] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:25:43] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 03:25:44] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:25:46] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 03:25:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:26:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:26:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:26:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:26:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:27:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:27:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:27:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:27:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:28:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:28:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:28:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:28:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:29:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:29:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:29:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:29:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:30:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:30:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:30:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:30:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:31:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:31:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:31:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:31:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:32:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:32:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:32:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:32:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:33:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:33:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:33:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:33:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:34:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:34:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:34:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:34:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:35:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:35:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:35:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:35:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:36:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:36:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:36:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:36:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:37:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:37:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:37:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:37:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:38:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:38:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:38:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:38:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:38:50] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 03:38:52] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[05/Apr/2026 03:38:56] "GET /robots.txt HTTP/1.1" 404 2948
+[05/Apr/2026 03:38:57] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 03:38:59] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 03:38:59] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[05/Apr/2026 03:39:00] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[05/Apr/2026 03:39:01] "GET /favicon.ico HTTP/1.1" 404 2951
+[05/Apr/2026 03:39:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:39:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:39:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:39:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:40:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:40:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:40:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:40:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:41:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:41:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:41:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:41:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:42:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:42:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:42:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:42:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:43:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:43:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:43:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:43:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:44:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:44:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:44:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:44:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:45:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:45:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:45:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:45:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:46:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:46:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:46:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:46:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:47:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:47:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:47:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:47:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:48:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:48:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:48:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:48:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:49:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:49:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:49:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:49:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:50:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:50:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:50:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:50:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:51:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:51:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:51:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:51:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:52:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:52:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:52:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:52:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:53:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:53:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:53:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:53:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:54:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:54:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:54:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:54:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:55:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:55:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:55:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:55:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:56:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:56:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:56:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:56:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:57:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:57:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:57:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:57:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:58:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:58:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:58:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:58:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:59:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:59:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:59:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 03:59:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:00:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:00:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:00:31] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:00:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:01:01] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:01:16] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:01:21,095] - Broken pipe from ('127.0.0.1', 61170)
+[05/Apr/2026 04:01:21] "GET /5Q1QKL/randevular/ HTTP/1.1" 200 42073
+[05/Apr/2026 04:01:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:01:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:01:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:02:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:02:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:02:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:02:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:03:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:03:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:03:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:03:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:04:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:04:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:04:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:04:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:05:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:05:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:05:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:05:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:06:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:06:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:06:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:06:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:07:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:07:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:07:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:07:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:08:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:08:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:08:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:08:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:09:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:09:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:09:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:09:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:10:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:10:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:10:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:10:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:11:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:11:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:11:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:11:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:12:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:12:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:12:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:12:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:13:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:13:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:13:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:13:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:14:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:14:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:14:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:14:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:15:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:15:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:15:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:15:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:16:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:16:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:16:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:16:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:17:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:17:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:17:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:17:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:18:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:18:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:18:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:18:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[05/Apr/2026 04:19:02] "GET / HTTP/1.1" 500 98184
+[05/Apr/2026 04:19:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:19:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:19:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:19:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:20:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:20:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:20:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:20:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:21:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:21:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:21:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:21:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:22:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:22:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:22:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:22:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:23:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:23:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:23:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:23:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:24:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:24:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:24:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:24:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:25:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:25:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:25:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:25:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:26:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:26:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:26:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:26:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:27:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:27:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:27:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:27:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:28:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:28:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:28:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:28:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:29:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:29:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:29:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:29:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:30:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:30:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:30:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:30:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:31:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:31:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:31:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:31:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:32:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:32:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:32:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:32:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:33:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:33:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:33:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:33:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:34:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /wp-login.php
+[05/Apr/2026 04:34:19] "GET /wp-login.php HTTP/1.1" 404 2954
+[05/Apr/2026 04:34:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:34:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:34:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:35:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:35:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:35:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:35:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:36:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:36:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:36:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:36:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:37:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:37:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:37:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:37:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:38:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:38:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:38:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:38:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:39:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:39:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:39:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:39:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:40:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:40:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:40:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:40:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:41:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:41:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:41:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:41:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:42:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:42:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:42:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:42:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:43:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:43:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:43:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:43:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:44:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:44:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:44:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:44:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:45:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:45:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:45:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:45:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:46:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:46:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:46:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:46:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:47:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:47:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:47:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:47:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Forbidden (Referer checking failed - no Referer.): /
+[05/Apr/2026 04:48:02] "POST / HTTP/1.1" 403 3565
+Not Found: /index.php
+[05/Apr/2026 04:48:02] "POST /index.php HTTP/1.1" 404 2951
+Not Found: /admin
+[05/Apr/2026 04:48:03] "POST /admin HTTP/1.1" 404 2939
+Not Found: /api
+[05/Apr/2026 04:48:03] "POST /api HTTP/1.1" 404 2933
+[05/Apr/2026 04:48:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:48:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:48:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:48:51] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:49:06] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:49:21] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 04:49:36] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+C:\inetpub\wwwroot\e-randevu\dental_management_system\patients\views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 05, 2026 - 03:24:06
+Django version 5.0.9, using settings 'dental.settings'
+Starting development server at http://0.0.0.0:18025/
+Quit the server with CTRL-BREAK.
+
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader

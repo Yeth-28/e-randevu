@@ -1,0 +1,31 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[04/Apr/2026 03:41:24] "HEAD / HTTP/1.0" 200 0
+[04/Apr/2026 03:41:25] "GET / HTTP/1.1" 200 9312
+[04/Apr/2026 03:41:27] "HEAD / HTTP/1.0" 200 0
+[04/Apr/2026 03:41:28] "GET /admin/ HTTP/1.1" 302 0
+[04/Apr/2026 03:41:28] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+[04/Apr/2026 03:41:28] "GET / HTTP/1.1" 200 9312
+Not Found: /manager/
+[04/Apr/2026 03:41:30] "GET /manager/ HTTP/1.1" 404 2942
+[04/Apr/2026 03:41:30] "GET /admin/ HTTP/1.1" 302 0
+[04/Apr/2026 03:41:30] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+[04/Apr/2026 03:41:33] "GET /admin/content/sitetree/ HTTP/1.1" 302 0
+Not Found: /manager/
+[04/Apr/2026 03:41:33] "GET /manager/ HTTP/1.1" 404 2942
+Not Found: /simpla/
+[04/Apr/2026 03:41:35] "GET /simpla/ HTTP/1.0" 404 2939
+Not Found: /js/mage/cookies.js
+[04/Apr/2026 03:41:35] "GET /js/mage/cookies.js HTTP/1.1" 404 2972
+[04/Apr/2026 03:41:35] "GET /admin/content/sitetree/ HTTP/1.1" 302 0
+Not Found: /administrator/
+[04/Apr/2026 03:41:38] "GET /administrator/ HTTP/1.1" 404 2960
+Not Found: /simpla/
+[04/Apr/2026 03:41:38] "GET /simpla/ HTTP/1.0" 404 2939
+Not Found: /js/mage/cookies.js
+[04/Apr/2026 03:41:38] "GET /js/mage/cookies.js HTTP/1.1" 404 2972
+Not Found: /administrator/
+[04/Apr/2026 03:41:41] "GET /administrator/ HTTP/1.1" 404 2960

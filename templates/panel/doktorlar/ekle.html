@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor Ekle — Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; letter-spacing: 1px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .sidebar-footer a:hover { color: white; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-left a { color: var(--gray); text-decoration: none; font-size: 14px; }
+        .topbar-left a:hover { color: var(--blue); }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .separator { color: var(--gray-light); }
+        .content { padding: 32px; max-width: 800px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg {
+            padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .card {
+            background: white; border-radius: 20px; padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 24px;
+        }
+        .card-title {
+            font-size: 16px; font-weight: 600; color: var(--text);
+            margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-light);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        label { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+        label span { color: var(--red); }
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-light);
+            border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif;
+            color: var(--text); background: #fafafa; outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); background: white;
+        }
+        textarea { resize: vertical; min-height: 100px; }
+
+        .specialty-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .specialty-item {
+            display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+            border: 1.5px solid var(--gray-light); border-radius: 10px; cursor: pointer;
+            transition: all 0.2s; font-size: 13px; color: var(--text);
+        }
+        .specialty-item:hover { border-color: var(--blue); background: var(--blue-light); }
+        .specialty-item input[type="checkbox"] { display: none; }
+        .specialty-item.checked { border-color: var(--blue); background: var(--blue-light); color: var(--blue); font-weight: 500; }
+        .check-icon {
+            width: 18px; height: 18px; border: 2px solid var(--gray-light); border-radius: 5px;
+            display: flex; align-items: center; justify-content: center; font-size: 11px;
+            flex-shrink: 0; transition: all 0.2s;
+        }
+        .specialty-item.checked .check-icon { background: var(--blue); border-color: var(--blue); color: white; }
+
+        .photo-upload {
+            border: 2px dashed var(--gray-light); border-radius: 16px; padding: 32px;
+            text-align: center; cursor: pointer; transition: all 0.2s; position: relative;
+        }
+        .photo-upload:hover { border-color: var(--blue); background: var(--blue-light); }
+        .photo-upload input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+        .photo-upload .upload-icon { font-size: 40px; margin-bottom: 8px; }
+        .photo-upload .upload-text { font-size: 14px; color: var(--gray); }
+        .photo-upload .upload-text strong { color: var(--blue); }
+        #photo-preview { max-width: 120px; max-height: 120px; border-radius: 12px; margin: 12px auto 0; display: none; object-fit: cover; }
+
+        .btn-row { display: flex; gap: 12px; justify-content: flex-end; }
+        .btn-cancel {
+            padding: 11px 24px; border: 1.5px solid var(--gray-light); border-radius: 10px;
+            font-size: 14px; font-weight: 500; color: var(--gray); background: white;
+            cursor: pointer; text-decoration: none; font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+        }
+        .btn-cancel:hover { border-color: var(--gray); color: var(--text); }
+        .btn-save {
+            padding: 11px 28px; background: var(--blue); color: white; border: none;
+            border-radius: 10px; font-size: 14px; font-weight: 600;
+            font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s;
+        }
+        .btn-save:hover { background: var(--blue-dark); }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/">← Doktorlar</a>
+            <span class="separator">/</span>
+            <span class="topbar-title">Yeni Doktor Ekle</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="card">
+                <div class="card-title">👨‍⚕️ Kişisel Bilgiler</div>
+                <div class="form-group">
+                    <label>Ad Soyad <span>*</span></label>
+                    <input type="text" name="name" placeholder="Dr. Ali Yılmaz" required>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>E-posta</label>
+                        <input type="email" name="email" placeholder="doktor@klinik.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" name="phone" placeholder="0532 000 00 00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Hakkında</label>
+                    <textarea name="about" placeholder="Doktor hakkında kısa bilgi..."></textarea>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🎓 Uzmanlık Alanları <span style="color:var(--red)">*</span></div>
+                <div class="specialty-grid">
+                    {% for value, label in specialties %}
+                    <div class="specialty-item" onclick="toggleSpecialty(this)">
+                        <input type="checkbox" name="specialties" value="{{ value }}">
+                        <div class="check-icon">✓</div>
+                        {{ label }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📷 Fotoğraf <span style="color:var(--gray);font-weight:400;font-size:12px">(isteğe bağlı)</span></div>
+                <div class="photo-upload">
+                    <input type="file" name="photo" accept="image/*" onchange="previewPhoto(this)">
+                    <div class="upload-icon">🖼️</div>
+                    <div class="upload-text">
+                        <strong>Fotoğraf seç</strong> veya sürükle bırak<br>
+                        <small>PNG, JPG, WEBP — max 5MB</small>
+                    </div>
+                    <img id="photo-preview" src="" alt="Önizleme">
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/doktorlar/" class="btn-cancel">İptal</a>
+                <button type="submit" class="btn-save">Doktoru Kaydet →</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function toggleSpecialty(el) {
+    el.classList.toggle('checked');
+    el.querySelector('input[type="checkbox"]').checked = el.classList.contains('checked');
+}
+function previewPhoto(input) {
+    const preview = document.getElementById('photo-preview');
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = e => { preview.src = e.target.result; preview.style.display = 'block'; };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+</body>
+</html>

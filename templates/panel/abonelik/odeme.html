@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme — DentalReserv</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{
+            --blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;
+            --bg:#f8faff;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+            --green:#059669;--red:#dc2626;
+        }
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+        
+        
+        .sidebar-brand .icon{font-size:28px;}
+        .sidebar-brand .name{font-family:'Playfair Display',serif;font-size:18px;color:white;margin-top:4px;}
+        
+        .nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+        .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+        .nav-item .icon{font-size:18px;width:24px;text-align:center;}
+        
+        .sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar a{color:var(--gray);text-decoration:none;font-size:14px;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .content{padding:32px;display:flex;gap:28px;align-items:flex-start;max-width:960px;}
+
+        .messages{margin-bottom:16px;}
+        .msg{padding:12px 16px;border-radius:10px;font-size:14px;margin-bottom:8px;}
+        .msg-error{background:#fee2e2;color:var(--red);}
+
+        /* SOL — ÖZET */
+        .order-summary{width:320px;flex-shrink:0;}
+        .summary-card{background:white;border-radius:20px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+        .summary-title{font-size:14px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px;}
+        .plan-info{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+        .plan-emoji{font-size:32px;}
+        .plan-name{font-size:18px;font-weight:700;color:var(--text);}
+        .plan-period{font-size:13px;color:var(--gray);}
+        .summary-row{display:flex;justify-content:space-between;font-size:14px;padding:8px 0;border-bottom:1px solid var(--gray-light);}
+        .summary-row:last-of-type{border-bottom:none;}
+        .summary-row.total{font-weight:700;font-size:16px;color:var(--text);padding-top:16px;}
+        .summary-row .label{color:var(--gray);}
+        .secure-note{margin-top:20px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray);background:#f9fafb;padding:10px 14px;border-radius:10px;}
+
+        /* SAĞ — KART FORMU */
+        .payment-form{flex:1;}
+        .form-card{background:white;border-radius:20px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px;}
+        .form-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--gray-light);}
+
+        /* SANAL KART */
+        .virtual-card{
+            background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);
+            border-radius:18px;padding:24px;color:white;margin-bottom:24px;
+            position:relative;overflow:hidden;min-height:180px;
+        }
+        .virtual-card::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.07);}
+        .virtual-card::after{content:'';position:absolute;right:40px;bottom:-60px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.05);}
+        .vc-chip{font-size:24px;margin-bottom:16px;}
+        .vc-number{font-size:18px;font-weight:600;letter-spacing:3px;margin-bottom:16px;font-family:monospace;}
+        .vc-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+        .vc-holder{font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;}
+        .vc-exp{font-size:13px;opacity:0.8;}
+        .vc-brand{position:absolute;top:24px;right:24px;font-size:22px;font-weight:800;letter-spacing:1px;opacity:0.9;}
+
+        /* FORM ALANLARI */
+        .fg{margin-bottom:16px;}
+        .fg label{display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;}
+        .fg input{width:100%;padding:12px 16px;border:1.5px solid var(--gray-light);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;}
+        .fg input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+        .fg input.card-input{letter-spacing:2px;font-size:16px;font-family:monospace;}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+        .form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+        .btn-pay{width:100%;padding:16px;background:var(--blue);color:white;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:10px;}
+        .btn-pay:hover{background:var(--blue-dark);transform:translateY(-1px);}
+        .btn-pay:disabled{background:var(--gray);cursor:not-allowed;transform:none;}
+
+        .iyzico-badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:12px;color:var(--gray);}
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/abonelik/">← Planlar</a>
+        <span style="color:var(--gray-light)">/</span>
+        <span class="topbar-title">Ödeme</span>
+    </div>
+
+    <div class="content" style="flex-direction:column;">
+        {% if messages %}
+        <div class="messages" style="width:100%;">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div style="display:flex;gap:28px;align-items:flex-start;width:100%;">
+
+        <!-- SİPARİŞ ÖZETİ -->
+        <div class="order-summary">
+            <div class="summary-card">
+                <div class="summary-title">Sipariş Özeti</div>
+                <div class="plan-info">
+                    <div class="plan-emoji">{% if plan_key == 'basic' %}🚀{% elif plan_key == 'pro' %}💎{% else %}🏢{% endif %}</div>
+                    <div>
+                        <div class="plan-name">{{ plan.name }}</div>
+                        <div class="plan-period">{% if period == 'yearly' %}Yıllık ödeme{% else %}Aylık ödeme{% endif %}</div>
+                    </div>
+                </div>
+                {% if period == 'yearly' %}
+                <div class="summary-row"><span class="label">Aylık fiyat</span><span>{{ plan.yearly_price }}₺</span></div>
+                <div class="summary-row"><span class="label">Süre</span><span>12 ay</span></div>
+                <div class="summary-row"><span class="label">İndirim (%20)</span><span style="color:var(--green);">-{{ plan.monthly_price|add:plan.monthly_price|add:"-"|add:plan.yearly_total }}₺</span></div>
+                <div class="summary-row total"><span>Toplam</span><span>{{ plan.yearly_total }}₺</span></div>
+                {% else %}
+                <div class="summary-row"><span class="label">Plan</span><span>{{ plan.name }}</span></div>
+                <div class="summary-row"><span class="label">Periyot</span><span>1 ay</span></div>
+                <div class="summary-row total"><span>Toplam</span><span>{{ price }}₺</span></div>
+                {% endif %}
+                <div class="secure-note">🔒 256-bit SSL ile güvenli ödeme. Kart bilgileriniz saklanmaz.</div>
+            </div>
+        </div>
+
+        <!-- KART FORMU -->
+        <div class="payment-form">
+            <form method="post" id="payment-form">
+                {% csrf_token %}
+
+                <!-- KAYITLI KARTLAR -->
+                {% if kayitli_kartlar %}
+                <div class="form-card">
+                    <div class="form-title">💳 Kayıtlı Kartlarınız</div>
+                    <div style="margin-bottom:16px;">
+                        {% for kart in kayitli_kartlar %}
+                        <label style="display:flex;align-items:center;gap:14px;padding:14px;border:1.5px solid var(--gray-light);border-radius:12px;cursor:pointer;margin-bottom:8px;" id="kart-label-{{ kart.id }}">
+                            <input type="radio" name="kayitli_kart_secim" value="{{ kart.id }}" onchange="seciliKartDegisti({{ kart.id }})" style="display:none;">
+                            <div style="width:40px;height:26px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:6px;display:flex;align-items:center;justify-content:center;">💳</div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600;font-size:14px;color:var(--text);letter-spacing:2px;">
+                                        •••• •••• •••• {{ kart.card_number|slice:"-4:" }}
+                                    </div>
+                                <div style="font-size:12px;color:var(--gray);margin-top:2px;">
+                                    {{ kart.card_holder|upper|default:"Kart Sahibi" }}{% if kart.exp_month %} · {{ kart.exp_month }}/{{ kart.exp_year }}{% endif %}
+                                </div>
+                            </div>
+                            <div style="width:22px;height:22px;border-radius:50%;border:2px solid var(--gray-light);display:flex;align-items:center;justify-content:center;" id="kart-radio-{{ kart.id }}">
+                                <div style="width:10px;height:10px;border-radius:50%;background:var(--blue);display:none;" id="kart-dot-{{ kart.id }}"></div>
+                            </div>
+                        </label>
+                        {% endfor %}
+                        <label style="display:flex;align-items:center;gap:14px;padding:14px;border:1.5px solid var(--blue);border-radius:12px;cursor:pointer;background:var(--blue-light);" id="kart-label-yeni">
+                            <input type="radio" name="kayitli_kart_secim" value="yeni" checked onchange="seciliKartDegisti('yeni')" style="display:none;">
+                            <div style="width:40px;height:26px;background:#e0e7ff;border-radius:6px;display:flex;align-items:center;justify-content:center;">➕</div>
+                            <div style="flex:1;"><div style="font-weight:600;font-size:14px;color:var(--blue);">Yeni Kart Kullan</div><div style="font-size:12px;color:var(--gray);">Farklı bir kart ile ödeme yap</div></div>
+                            <div style="width:22px;height:22px;border-radius:50%;border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;" id="kart-radio-yeni">
+                                <div style="width:10px;height:10px;border-radius:50%;background:var(--blue);" id="kart-dot-yeni"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <input type="hidden" name="kart_tipi" id="kart-tipi-input" value="yeni">
+                <input type="hidden" name="kayitli_kart_id" id="kayitli-kart-id-input" value="">
+                {% endif %}
+
+                <!-- SANAL KART -->
+                <div class="form-card" id="yeni-kart-form">
+                    <div class="form-title">💳 Kart Bilgileri</div>
+                    <div class="virtual-card">
+                        <div class="vc-chip">💳</div>
+                        <div class="vc-number" id="vc-number">•••• •••• •••• ••••</div>
+                        <div class="vc-bottom">
+                            <div>
+                                <div style="font-size:10px;opacity:0.7;margin-bottom:2px;">KART SAHİBİ</div>
+                                <div class="vc-holder" id="vc-holder">AD SOYAD</div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:10px;opacity:0.7;margin-bottom:2px;">SON KULLANIM</div>
+                                <div class="vc-exp" id="vc-exp">AA/YY</div>
+                            </div>
+                        </div>
+                        <div class="vc-brand" id="vc-brand">VISA</div>
+                    </div>
+
+                    <div class="fg">
+                        <label>Kart Üzerindeki Ad Soyad</label>
+                        <input type="text" name="card_holder" id="inp-holder" placeholder="AD SOYAD"
+                               style="text-transform:uppercase;" required>
+                    </div>
+                    <div class="fg">
+                        <label>Kart Numarası</label>
+                        <input type="text" name="card_number" id="inp-number" class="card-input"
+                               placeholder="0000 0000 0000 0000" maxlength="19" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="fg">
+                            <label>Son Kullanım Ay</label>
+                            <input type="text" name="exp_month" id="inp-month" placeholder="AA" maxlength="2" required>
+                        </div>
+                        <div class="fg">
+                            <label>Son Kullanım Yıl</label>
+                            <input type="text" name="exp_year" id="inp-year" placeholder="YYYY" maxlength="4" required>
+                        </div>
+                    </div>
+                    <div class="fg" style="max-width:160px;">
+                        <label>CVC</label>
+                        <input type="text" name="cvc" placeholder="•••" maxlength="4" required>
+                    </div>
+                </div>
+
+                <!-- FATURA BİLGİLERİ -->
+                <div class="form-card">
+                    <div class="form-title">🧾 Fatura Bilgileri</div>
+                    <div class="form-row">
+                        <div class="fg">
+                            <label>Ad</label>
+                            <input type="text" name="buyer_name" placeholder="Adınız" required>
+                        </div>
+                        <div class="fg">
+                            <label>Soyad</label>
+                            <input type="text" name="buyer_surname" placeholder="Soyadınız" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="fg">
+                            <label>E-posta</label>
+                            <input type="email" name="buyer_email" placeholder="email@klinik.com" required>
+                        </div>
+                        <div class="fg">
+                            <label>Telefon</label>
+                            <input type="text" name="buyer_phone" placeholder="+905001234567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="fg">
+                            <label>Şehir</label>
+                            <input type="text" name="buyer_city" placeholder="İstanbul">
+                        </div>
+                        <div class="fg">
+                            <label>Adres</label>
+                            <input type="text" name="buyer_address" placeholder="Fatura adresi">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-pay" id="pay-btn">
+                    🔒 {{ price }}₺ Öde
+                </button>
+                <div class="iyzico-badge">
+                    Ödeme altyapısı <strong style="color:var(--blue);margin-left:4px;">iyzico</strong> tarafından sağlanmaktadır
+                </div>
+            </form>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+// Kayıtlı kart seçimi
+function seciliKartDegisti(kart_id) {
+    document.querySelectorAll('[id^="kart-label-"]').forEach(el=>{el.style.borderColor='var(--gray-light)';el.style.background='white';});
+    document.querySelectorAll('[id^="kart-dot-"]').forEach(el=>el.style.display='none');
+    const label=document.getElementById('kart-label-'+kart_id);
+    if(label){label.style.borderColor='var(--blue)';label.style.background='var(--blue-light)';}
+    const dot=document.getElementById('kart-dot-'+kart_id);
+    if(dot)dot.style.display='block';
+    if(kart_id==='yeni'){
+        document.getElementById('kart-tipi-input').value='yeni';
+        document.getElementById('kayitli-kart-id-input').value='';
+        document.getElementById('yeni-kart-form').style.display='block';
+    }else{
+        document.getElementById('kart-tipi-input').value='kayitli';
+        document.getElementById('kayitli-kart-id-input').value=kart_id;
+        document.getElementById('yeni-kart-form').style.display='none';
+    }
+}
+const ilkSecim=document.querySelector('[name="kayitli_kart_secim"]:checked');
+if(ilkSecim)seciliKartDegisti(ilkSecim.value);
+
+// Sanal kart güncelleyici
+const inpHolder = document.getElementById('inp-holder');
+const inpNumber = document.getElementById('inp-number');
+const inpMonth  = document.getElementById('inp-month');
+const inpYear   = document.getElementById('inp-year');
+
+inpHolder.addEventListener('input', () => {
+    document.getElementById('vc-holder').textContent = inpHolder.value.toUpperCase() || 'AD SOYAD';
+});
+
+inpNumber.addEventListener('input', () => {
+    let v = inpNumber.value.replace(/\D/g,'').substring(0,16);
+    inpNumber.value = v.match(/.{1,4}/g)?.join(' ') || v;
+    const display = (v + '•'.repeat(16-v.length)).match(/.{1,4}/g).join(' ');
+    document.getElementById('vc-number').textContent = display;
+    // Kart tipi
+    const brand = v.startsWith('4') ? 'VISA' : v.startsWith('5') ? 'MC' : v.startsWith('9') ? 'TROY' : 'KART';
+    document.getElementById('vc-brand').textContent = brand;
+});
+
+inpMonth.addEventListener('input', () => updateExp());
+inpYear.addEventListener('input',  () => updateExp());
+
+function updateExp() {
+    const m = inpMonth.value || 'AA';
+    const y = inpYear.value ? inpYear.value.slice(-2) : 'YY';
+    document.getElementById('vc-exp').textContent = `${m}/${y}`;
+}
+
+// Ödeme butonu loading
+document.getElementById('payment-form').addEventListener('submit', () => {
+    const btn = document.getElementById('pay-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ İşleniyor...';
+});
+</script>
+</body>
+</html>

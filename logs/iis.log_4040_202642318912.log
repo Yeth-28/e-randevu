@@ -1,0 +1,60 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[23/Apr/2026 11:09:16] "GET / HTTP/1.1" 404 8848
+[23/Apr/2026 11:25:25] "GET /?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnOq9OY1m5UTyV0YsIGTRyUao3-3bmiRPeDkTEaNdK9LFVsFBU5vV4c30YXVU_aem_x3ulCJo9xEnrfeVTDb7JPA HTTP/1.1" 200 9312
+[23/Apr/2026 11:25:25] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[23/Apr/2026 11:29:51] "GET /robots.txt HTTP/1.1" 301 0
+[23/Apr/2026 11:29:52] "GET /robots.txt/ HTTP/1.1" 302 0
+[23/Apr/2026 11:29:52] "GET /giris/ HTTP/1.1" 200 5067
+[23/Apr/2026 11:29:52] "GET /sitemap.xml HTTP/1.1" 301 0
+[23/Apr/2026 11:29:52] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[23/Apr/2026 11:29:53] "GET /giris/ HTTP/1.1" 200 5067
+Not Found: /robots.txt
+[23/Apr/2026 11:49:19] "GET /robots.txt HTTP/1.1" 404 2949
+[23/Apr/2026 11:49:21] "GET / HTTP/1.1" 200 9312
+[23/Apr/2026 11:49:26] "GET /?q HTTP/1.1" 200 9312
+[23/Apr/2026 11:49:29] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2362
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2362
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2360
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[23/Apr/2026 11:49:30] "GET /robots.txt HTTP/1.1" 404 2362
+[23/Apr/2026 11:49:31] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[23/Apr/2026 11:49:35] "GET / HTTP/1.1" 200 38803
+[23/Apr/2026 11:49:37] "GET / HTTP/1.1" 200 54407
+[23/Apr/2026 11:49:39] "GET / HTTP/1.1" 200 54403
+[23/Apr/2026 11:49:40] "GET / HTTP/1.1" 200 54407
+[23/Apr/2026 11:49:42] "GET / HTTP/1.1" 200 54407
+[23/Apr/2026 11:49:43] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[23/Apr/2026 11:49:43] "GET / HTTP/1.1" 200 20962
+[23/Apr/2026 11:49:45] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:46] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:46] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:47] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[23/Apr/2026 11:49:48] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:49] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:49] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:50] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+Not Found: /robots.txt
+[23/Apr/2026 11:49:51] "GET /robots.txt HTTP/1.1" 404 2365
+Not Found: /robots.txt
+[23/Apr/2026 11:49:51] "GET /robots.txt HTTP/1.1" 404 2363
+[23/Apr/2026 11:49:54] "GET / HTTP/1.1" 200 35947
+[23/Apr/2026 11:49:54] "GET / HTTP/1.1" 200 54924
+[23/Apr/2026 11:49:55] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 11:49:55] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[23/Apr/2026 12:01:37] "GET / HTTP/1.1" 200 9312
+Not Found: /
+[23/Apr/2026 12:21:13] "GET / HTTP/1.1" 404 8849
+[23/Apr/2026 12:26:11] "GET /?sehir=Istanbul HTTP/1.1" 200 10004

@@ -1,0 +1,33 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /robots.txt
+[10/Apr/2026 22:41:52] "GET /robots.txt HTTP/1.1" 404 2949
+Not Found: /sitemap.xml
+[10/Apr/2026 22:41:52] "GET /sitemap.xml HTTP/1.1" 404 2952
+[10/Apr/2026 22:41:52] "GET / HTTP/1.1" 200 9312
+[10/Apr/2026 22:41:53] "GET / HTTP/1.1" 200 9312
+[10/Apr/2026 22:41:53] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[10/Apr/2026 22:41:53] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[10/Apr/2026 22:41:53] "GET / HTTP/1.1" 200 9312
+[10/Apr/2026 22:41:53] "GET /?q= HTTP/1.1" 200 9312
+[10/Apr/2026 22:41:53] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[10/Apr/2026 22:41:53] "GET /kayit/ HTTP/1.1" 200 27238
+[10/Apr/2026 22:41:54] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[10/Apr/2026 22:41:54] "GET /kayit/ HTTP/1.1" 200 27238
+[10/Apr/2026 22:41:54] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[10/Apr/2026 22:41:54] "GET /giris/ HTTP/1.1" 200 5067
+[10/Apr/2026 22:41:54] "GET / HTTP/1.1" 200 35938
+[10/Apr/2026 22:41:54] "GET / HTTP/1.1" 200 54924
+[10/Apr/2026 22:41:55] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[10/Apr/2026 22:41:55] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[10/Apr/2026 22:41:55] "GET /kayit/ HTTP/1.1" 200 27238
+[10/Apr/2026 22:41:55] "GET /giris/ HTTP/1.1" 200 5067
+[10/Apr/2026 22:41:55] "GET / HTTP/1.1" 200 35938
+[10/Apr/2026 22:41:56] "GET / HTTP/1.1" 200 54924
+Not Found: /
+[10/Apr/2026 22:55:45] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[10/Apr/2026 22:55:45] "GET / HTTP/1.1" 404 8849

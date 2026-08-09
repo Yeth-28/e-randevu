@@ -1,0 +1,33 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[18/Apr/2026 11:42:10] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /k.php
+[18/Apr/2026 11:42:10] "GET /k.php HTTP/1.1" 404 2933
+Not Found: /kcs.php
+[18/Apr/2026 11:42:10] "GET /kcs.php HTTP/1.1" 404 2939
+Not Found: /wp-post-data.php
+[18/Apr/2026 11:42:10] "GET /wp-post-data.php HTTP/1.1" 404 2966
+Not Found: /shell20211022.php
+[18/Apr/2026 11:42:10] "GET /shell20211022.php HTTP/1.1" 404 2969
+Not Found: /shell20211028.php
+[18/Apr/2026 11:42:10] "GET /shell20211028.php HTTP/1.1" 404 2969
+Not Found: /Marvins.php
+[18/Apr/2026 11:42:10] "GET /Marvins.php HTTP/1.1" 404 2951
+Not Found: /cs.php
+[18/Apr/2026 11:42:10] "GET /cs.php HTTP/1.1" 404 2936
+Not Found: /1index.php
+[18/Apr/2026 11:42:10] "GET /1index.php HTTP/1.1" 404 2948
+Not Found: /subs/upload/upload.php
+[18/Apr/2026 11:42:10] "GET /subs/upload/upload.php HTTP/1.1" 404 2984
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[18/Apr/2026 11:42:10] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+[18/Apr/2026 11:43:54] "GET /robots.txt HTTP/1.1" 301 0
+[18/Apr/2026 11:43:55] "GET /robots.txt/ HTTP/1.1" 302 0
+[18/Apr/2026 11:43:55] "GET /giris/ HTTP/1.1" 200 5067
+[18/Apr/2026 11:43:55] "GET /sitemap.xml HTTP/1.1" 301 0
+[18/Apr/2026 11:43:55] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[18/Apr/2026 11:43:55] "GET /giris/ HTTP/1.1" 200 5067

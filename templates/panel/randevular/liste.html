@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Randevular — Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-light: #eff6ff; --bg: #f8faff;
+            --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --orange: #d97706; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .btn-ekle { padding: 10px 20px; background: var(--blue); color: white; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; }
+        .content { padding: 32px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg { padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+        .view-tabs { display: flex; gap: 4px; background: white; border-radius: 12px; padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .view-tab { padding: 9px 20px; border-radius: 9px; font-size: 13px; font-weight: 500; color: var(--gray); cursor: pointer; border: none; background: transparent; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+        .view-tab.active { background: var(--blue); color: white; }
+        .filter-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .filter-select { border: 1.5px solid var(--gray-light); border-radius: 10px; padding: 9px 14px; font-size: 13px; font-family: 'DM Sans', sans-serif; outline: none; background: white; }
+        .filter-select:focus { border-color: var(--blue); }
+        .btn-filtrele { padding: 9px 18px; background: var(--blue); color: white; border: none; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+        .btn-sifirla { padding: 9px 14px; background: white; color: var(--gray); border: 1.5px solid var(--gray-light); border-radius: 10px; font-size: 13px; text-decoration: none; }
+
+        /* TAKVİM */
+        .calendar-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .fc { font-family: 'DM Sans', sans-serif !important; }
+        .fc .fc-button { font-family: 'DM Sans', sans-serif !important; font-weight: 500 !important; font-size: 13px !important; padding: 6px 14px !important; }
+        .fc .fc-button-primary { background-color: var(--blue) !important; border-color: var(--blue) !important; }
+        .fc .fc-button-primary:hover { background-color: #1d4ed8 !important; }
+        .fc .fc-button-primary:not(:disabled).fc-button-active { background-color: #1d4ed8 !important; }
+        .fc .fc-event { border-radius: 6px !important; border: none !important; font-size: 12px !important; padding: 2px 6px !important; cursor: pointer !important; }
+        .fc .fc-toolbar-title { font-size: 17px !important; font-weight: 600 !important; color: var(--text) !important; }
+        .fc .fc-col-header-cell-cushion { text-decoration: none !important; color: var(--gray) !important; font-weight: 600 !important; font-size: 12px !important; text-transform: uppercase !important; }
+        .fc .fc-daygrid-day-number { text-decoration: none !important; color: var(--text) !important; font-size: 13px !important; }
+        .fc .fc-day-today { background: #eff6ff !important; }
+        .fc .fc-timegrid-slot { height: 40px !important; }
+
+        /* LİSTE */
+        .list-card { background: white; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th { padding: 13px 20px; text-align: left; font-size: 11px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; background: #f9fafb; }
+        td { padding: 13px 20px; border-top: 1px solid var(--gray-light); font-size: 14px; color: var(--text); }
+        tr:hover td { background: #f9fafb; }
+        .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+        .badge-bekliyor { background: #fef3c7; color: var(--orange); }
+        .badge-onaylandi { background: #dbeafe; color: var(--blue); }
+        .badge-tamamlandi { background: #dcfce7; color: var(--green); }
+        .badge-tamamlanamadi { background: #fed7aa; color: #c2410c; }
+        .badge-iptal { background: #fef2f2; color: var(--red); }
+        .btn-sm { padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; display: inline-block; }
+        .btn-edit { background: var(--blue-light); color: var(--blue); }
+        .btn-cancel-r { background: #fef2f2; color: var(--red); }
+        .empty-state { text-align: center; padding: 60px; color: var(--gray); }
+
+        /* MODAL */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 300; align-items: center; justify-content: center; }
+        .modal-overlay.open { display: flex; }
+        .modal { background: white; border-radius: 20px; padding: 32px; width: 560px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .modal-header h3 { font-size: 18px; font-weight: 600; color: var(--text); }
+        .modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gray); padding: 4px; }
+        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .mfg { display: flex; flex-direction: column; gap: 6px; }
+        .mfg.full { grid-column: 1/-1; }
+        .mfg label { font-size: 13px; font-weight: 500; color: #374151; }
+        .mfg select, .mfg input, .mfg textarea {
+            padding: 10px 14px; border: 1.5px solid var(--gray-light); border-radius: 10px;
+            font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; color: var(--text);
+        }
+        .mfg select:focus, .mfg input:focus, .mfg textarea:focus { border-color: var(--blue); }
+        .modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+        .modal-btn-cancel { flex: 1; padding: 11px; border: 1.5px solid var(--gray-light); border-radius: 10px; background: white; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--gray); }
+        .modal-btn-save { flex: 2; padding: 11px; background: var(--blue); color: white; border: none; border-radius: 10px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">Randevular</div>
+        {% include "panel/bildirim_zil.html" %}
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/randevular/ekle/" class="btn-ekle">+ Yeni Randevu</a>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="toolbar">
+            <div class="view-tabs">
+                <button class="view-tab active" id="tab-takvim" onclick="switchView('takvim')">📅 Takvim</button>
+                <button class="view-tab" id="tab-liste" onclick="switchView('liste')">📋 Liste</button>
+            </div>
+            <form method="get" class="filter-row">
+                <select name="durum" class="filter-select">
+                    <option value="">Tüm Durumlar</option>
+                    {% for val, label in status_choices %}
+                    <option value="{{ val }}" {% if durum == val %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <select name="doktor" class="filter-select">
+                    <option value="">Tüm Doktorlar</option>
+                    {% for d in doktorlar %}
+                    <option value="{{ d.id }}" {% if doktor_id == d.id|stringformat:"s" %}selected{% endif %}>{{ d.name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn-filtrele">Filtrele</button>
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/randevular/" class="btn-sifirla">Sıfırla</a>
+            </form>
+        </div>
+
+        <!-- TAKVİM -->
+        <div class="calendar-card" id="view-takvim">
+            <div id="takvim"></div>
+        </div>
+
+        <!-- LİSTE -->
+        <div class="list-card" id="view-liste" style="display:none;">
+            {% if randevular %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hasta</th>
+                        <th>Doktor</th>
+                        <th>Tarih / Saat</th>
+                        <th>İşlem</th>
+                        <th>Süre</th>
+                        <th>Ücret</th>
+                        <th>Durum</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for r in randevular %}
+                <tr>
+                    <td style="font-weight:500;">{{ r.patient.name }}</td>
+                    <td style="color:var(--gray);">{{ r.doctor.name|default:"—" }}</td>
+                    <td>{{ r.date_time|date:"d M Y, H:i" }}</td>
+                    <td>{{ r.get_procedure_display }}</td>
+                    <td style="color:var(--gray);">{{ r.duration }} dk</td>
+                    <td style="font-weight:600;color:var(--blue);">₺{{ r.fee }}</td>
+                    <td><span class="badge badge-{{ r.status }}">{{ r.get_status_display }}</span></td>
+                    <td>
+                        <div style="display:flex;gap:6px;">
+                            <button class="btn-sm btn-edit" onclick="openModal(
+                                {{ r.id }},
+                                '{{ r.patient.name|escapejs }}',
+                                {{ r.patient.id }},
+                                '{{ r.status }}',
+                                '{{ r.procedure }}',
+                                '{{ r.date_time|date:"Y-m-d" }}T{{ r.date_time|date:"H:i" }}',
+                                {{ r.duration }},
+                                '{{ r.notes|escapejs }}',
+                                '{{ r.fee }}',
+                                '{{ r.doctor_id|default:'' }}'
+                            )">✏️ Düzenle</button>
+                            {% if r.status != 'iptal' and r.status != 'tamamlandi' %}
+                            <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/randevular/{{ r.id }}/sil/" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-sm btn-cancel-r" onclick="return confirm('İptal edilsin mi?')">İptal</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div style="font-size:48px;margin-bottom:12px;">📅</div>
+                <p style="margin-bottom:16px;">Henüz randevu yok.</p>
+                {% include "panel/bildirim_zil.html" %}
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/randevular/ekle/" class="btn-ekle">+ Yeni Randevu</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- GÜNCELLE MODAL -->
+<div class="modal-overlay" id="update-modal">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 id="modal-baslik">✏️ Randevu Düzenle</h3>
+            <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <form method="post" id="modal-form">
+            {% csrf_token %}
+            <div class="modal-grid">
+                <div class="mfg full">
+                    <label>Hasta</label>
+                    <select name="patient" id="modal-patient">
+                        {% for h in hastalar %}
+                        <option value="{{ h.id }}">{{ h.name }} — {{ h.phone_number }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mfg">
+                    <label>Doktor</label>
+                    <select name="doctor" id="modal-doctor">
+                        <option value="">— Seç —</option>
+                        {% for d in doktorlar %}
+                        <option value="{{ d.id }}">{{ d.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mfg">
+                    <label>Durum</label>
+                    <select name="status" id="modal-status">
+                        {% for val, label in status_choices %}
+                        <option value="{{ val }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mfg">
+                    <label>İşlem Türü</label>
+                    <select name="procedure" id="modal-procedure">
+                        {% for val, label in procedure_choices %}
+                        <option value="{{ val }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mfg">
+                    <label>Tarih ve Saat</label>
+                    <input type="datetime-local" name="date_time" id="modal-datetime">
+                </div>
+                <div class="mfg">
+                    <label>Süre (dk)</label>
+                    <select name="duration" id="modal-duration">
+                        <option value="15">15 dk</option>
+                        <option value="30">30 dk</option>
+                        <option value="45">45 dk</option>
+                        <option value="60">1 saat</option>
+                        <option value="90">1.5 saat</option>
+                        <option value="120">2 saat</option>
+                    </select>
+                </div>
+                <div class="mfg">
+                    <label>Ücret (₺)</label>
+                    <input type="number" name="fee" id="modal-fee" min="0" step="0.01">
+                </div>
+                <div class="mfg full">
+                    <label>Notlar</label>
+                    <textarea name="notes" id="modal-notes" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="modal-btn-cancel" onclick="closeModal()">Vazgeç</button>
+                <button type="submit" class="modal-btn-save">💾 Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>const CLINIC_ID = "{{ clinic_id }}";</script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+<script>
+const takvimData = {{ takvim_json|safe }};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const calEl = document.getElementById('takvim');
+    let calendar = new FullCalendar.Calendar(calEl, {
+        initialView: 'timeGridWeek',
+        locale: 'tr',
+        firstDay: 1,
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        buttonText: { today:'Bugün', month:'Ay', week:'Hafta', day:'Gün', list:'Liste' },
+        events: takvimData,
+        navLinks: true,
+        navLinkDayClick: function(date) { calendar.changeView('timeGridDay', date); },
+        eventClick: function(info) {
+            const e = info.event, p = e.extendedProps;
+            openModal(e.id, p.hasta_adi, p.patient_id, p.status, p.procedure,
+                p.date_time_local, p.duration, p.notes, p.fee, p.doctor_id || '');
+        },
+        dateClick: function(info) {
+            if (info.view.type === 'dayGridMonth') {
+                calendar.changeView('timeGridDay', info.date);
+            } else {
+                const dt = info.dateStr.length >= 16 ? info.dateStr.substring(0, 16) : info.dateStr + 'T09:00';
+                window.location.href = `{{ PANEL_URL }}/${CLINIC_ID}/randevular/ekle/?dt=${dt}`;
+            }
+        },
+        eventTimeFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
+        slotMinTime: '08:00:00',
+        slotMaxTime: '20:00:00',
+        slotDuration: '00:30:00',
+        height: 650,
+        nowIndicator: true,
+        eventDidMount: function(info) {
+            const p = info.event.extendedProps;
+            info.el.title = `${p.hasta_adi} — ${p.procedure_label}${p.doctor ? '\nDr. ' + p.doctor : ''}`;
+        }
+    });
+    calendar.render();
+});
+
+function switchView(view) {
+    document.getElementById('view-takvim').style.display = view === 'takvim' ? 'block' : 'none';
+    document.getElementById('view-liste').style.display  = view === 'liste'  ? 'block' : 'none';
+    document.getElementById('tab-takvim').classList.toggle('active', view === 'takvim');
+    document.getElementById('tab-liste').classList.toggle('active',  view === 'liste');
+}
+
+function openModal(id, hastaAdi, patientId, status, procedure, datetime, duration, notes, fee, doctorId) {
+    document.getElementById('modal-baslik').textContent = '✏️ ' + hastaAdi;
+    document.getElementById('modal-form').action        = `{{ PANEL_URL }}/${CLINIC_ID}/randevular/${id}/guncelle/`;
+    document.getElementById('modal-patient').value      = patientId;
+    document.getElementById('modal-status').value       = status;
+    document.getElementById('modal-procedure').value    = procedure;
+    document.getElementById('modal-datetime').value     = datetime;
+    document.getElementById('modal-duration').value     = String(duration);
+    document.getElementById('modal-notes').value        = notes;
+    document.getElementById('modal-fee').value          = fee;
+    document.getElementById('modal-doctor').value       = doctorId || '';
+    document.getElementById('update-modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('update-modal').classList.remove('open'); }
+document.getElementById('update-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+</script>
+</body>
+</html>

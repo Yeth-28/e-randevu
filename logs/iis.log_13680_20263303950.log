@@ -1,0 +1,27 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[29/Mar/2026 20:09:54] "GET /admin/.git/config HTTP/1.1" 302 0
+Not Found: /dev/.git/config
+Not Found: /backup/.git/config
+Not Found: /wp-admin/.git/config
+[29/Mar/2026 20:09:54] "GET /dev/.git/config HTTP/1.1" 404 2963
+Not Found: /wp/.git/config
+[29/Mar/2026 20:09:54] "GET /backup/.git/config HTTP/1.1" 404 2972
+Not Found: /v2/.git/config
+Not Found: /.git/config
+Not Found: /api/.git/config
+[29/Mar/2026 20:09:54] "GET /wp-admin/.git/config HTTP/1.1" 404 2978
+[29/Mar/2026 20:09:54] "GET /wp/.git/config HTTP/1.1" 404 2960
+[29/Mar/2026 20:09:54] "GET /.git/config HTTP/1.1" 404 2951
+[29/Mar/2026 20:09:54] "GET /v2/.git/config HTTP/1.1" 404 2960
+[29/Mar/2026 20:09:54] "GET /api/.git/config HTTP/1.1" 404 2963
+[29/Mar/2026 20:28:33] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 20:33:09] "GET / HTTP/1.1" 200 16347
+Not Found: /robots.txt
+[29/Mar/2026 20:33:10] "GET /robots.txt HTTP/1.1" 404 2949
+Not Found: /favicon.ico
+[29/Mar/2026 20:33:11] "GET /favicon.ico HTTP/1.1" 404 2952
+[29/Mar/2026 20:33:12] "GET / HTTP/1.1" 200 16347

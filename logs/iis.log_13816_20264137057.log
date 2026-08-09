@@ -1,0 +1,47 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /robots.txt
+[13/Apr/2026 00:01:01] "GET /robots.txt HTTP/1.1" 404 2360
+[13/Apr/2026 00:01:04] "GET / HTTP/1.1" 200 54403
+Not Found: /robots.txt
+[13/Apr/2026 00:01:09] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:01:11] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:01:13] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:01:16] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:01:20] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:01:22] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:01:24] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:01:26] "GET / HTTP/1.1" 200 39487
+Not Found: /robots.txt
+[13/Apr/2026 00:01:28] "GET /robots.txt HTTP/1.1" 404 2360
+[13/Apr/2026 00:01:31] "GET / HTTP/1.1" 200 20962
+[13/Apr/2026 00:01:33] "GET /robots.txt HTTP/1.1" 301 0
+[13/Apr/2026 00:01:34] "GET /robots.txt/ HTTP/1.1" 302 0
+[13/Apr/2026 00:01:36] "GET /giris/ HTTP/1.1" 200 5067
+Not Found: /robots.txt
+[13/Apr/2026 00:02:45] "GET /robots.txt HTTP/1.1" 404 2360
+[13/Apr/2026 00:02:48] "GET / HTTP/1.1" 200 54403
+Not Found: /robots.txt
+[13/Apr/2026 00:02:51] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:02:53] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:02:55] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:02:58] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:03:00] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:03:02] "GET / HTTP/1.1" 200 54407
+Not Found: /robots.txt
+[13/Apr/2026 00:03:05] "GET /robots.txt HTTP/1.1" 404 2362
+[13/Apr/2026 00:03:07] "GET / HTTP/1.1" 200 39487
+Not Found: /robots.txt
+[13/Apr/2026 00:03:09] "GET /robots.txt HTTP/1.1" 404 2360
+[13/Apr/2026 00:03:12] "GET / HTTP/1.1" 200 20962
+[13/Apr/2026 00:03:14] "GET /robots.txt HTTP/1.1" 301 0
+[13/Apr/2026 00:03:15] "GET /robots.txt/ HTTP/1.1" 302 0
+[13/Apr/2026 00:03:17] "GET /giris/ HTTP/1.1" 200 5067

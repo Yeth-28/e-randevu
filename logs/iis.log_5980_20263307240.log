@@ -1,0 +1,276 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[30/Mar/2026 00:24:06] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[30/Mar/2026 00:24:06] "POST / HTTP/1.1" 404 8850
+[30/Mar/2026 00:24:06] "GET /.env HTTP/1.1" 301 0
+[30/Mar/2026 00:24:06] "GET /.env/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:07] "GET /.env.local HTTP/1.1" 301 0
+[30/Mar/2026 00:24:07] "GET /.env.local/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:07] "GET /.env.production HTTP/1.1" 301 0
+[30/Mar/2026 00:24:07] "GET /.env.production/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:07] "GET /.env.staging HTTP/1.1" 301 0
+[30/Mar/2026 00:24:07] "GET /.env.staging/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:07] "GET /.env.development HTTP/1.1" 301 0
+[30/Mar/2026 00:24:07] "GET /.env.development/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:07] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:07] "GET /.env.test HTTP/1.1" 301 0
+[30/Mar/2026 00:24:08] "GET /.env.test/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:08] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:08] "GET /.env.remote HTTP/1.1" 301 0
+[30/Mar/2026 00:24:08] "GET /.env.remote/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:08] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:08] "GET /.env.bak HTTP/1.1" 301 0
+[30/Mar/2026 00:24:08] "GET /.env.bak/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:08] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:08] "GET /.env.backup HTTP/1.1" 301 0
+[30/Mar/2026 00:24:08] "GET /.env.backup/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:08] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:08] "GET /.env.save HTTP/1.1" 301 0
+[30/Mar/2026 00:24:08] "GET /.env.save/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:08] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:09] "GET /.env.old HTTP/1.1" 301 0
+[30/Mar/2026 00:24:09] "GET /.env.old/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:09] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:09] "GET /.env.sample HTTP/1.1" 301 0
+[30/Mar/2026 00:24:09] "GET /.env.sample/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:09] "GET /giris/ HTTP/1.1" 200 5064
+Not Found: /vendor/.env
+[30/Mar/2026 00:24:09] "GET /vendor/.env HTTP/1.1" 404 8900
+Not Found: /lib/.env
+[30/Mar/2026 00:24:09] "GET /lib/.env HTTP/1.1" 404 8891
+Not Found: /lab/.env
+[30/Mar/2026 00:24:09] "GET /lab/.env HTTP/1.1" 404 8891
+Not Found: /cronlab/.env
+[30/Mar/2026 00:24:09] "GET /cronlab/.env HTTP/1.1" 404 8903
+Not Found: /cron/.env
+[30/Mar/2026 00:24:09] "GET /cron/.env HTTP/1.1" 404 8894
+Not Found: /core/.env
+[30/Mar/2026 00:24:09] "GET /core/.env HTTP/1.1" 404 8894
+Not Found: /core/app/.env
+[30/Mar/2026 00:24:10] "GET /core/app/.env HTTP/1.1" 404 8906
+Not Found: /core/Datavase/.env
+[30/Mar/2026 00:24:10] "GET /core/Datavase/.env HTTP/1.1" 404 8921
+Not Found: /database/.env
+[30/Mar/2026 00:24:10] "GET /database/.env HTTP/1.1" 404 8906
+Not Found: /config/.env
+[30/Mar/2026 00:24:10] "GET /config/.env HTTP/1.1" 404 8900
+Not Found: /assets/.env
+[30/Mar/2026 00:24:10] "GET /assets/.env HTTP/1.1" 404 8900
+Not Found: /app/.env
+[30/Mar/2026 00:24:10] "GET /app/.env HTTP/1.1" 404 8891
+Not Found: /apps/.env
+[30/Mar/2026 00:24:10] "GET /apps/.env HTTP/1.1" 404 8894
+Not Found: /uploads/.env
+[30/Mar/2026 00:24:10] "GET /uploads/.env HTTP/1.1" 404 8903
+Not Found: /sitemaps/.env
+[30/Mar/2026 00:24:11] "GET /sitemaps/.env HTTP/1.1" 404 8906
+Not Found: /saas/.env
+[30/Mar/2026 00:24:11] "GET /saas/.env HTTP/1.1" 404 8894
+Not Found: /api/.env
+[30/Mar/2026 00:24:11] "GET /api/.env HTTP/1.1" 404 8891
+Not Found: /psnlink/.env
+[30/Mar/2026 00:24:11] "GET /psnlink/.env HTTP/1.1" 404 8903
+Not Found: /exapi/.env
+[30/Mar/2026 00:24:11] "GET /exapi/.env HTTP/1.1" 404 8897
+Not Found: /site/.env
+[30/Mar/2026 00:24:11] "GET /site/.env HTTP/1.1" 404 8894
+Not Found: /admin/.env
+[30/Mar/2026 00:24:11] "GET /admin/.env HTTP/1.1" 404 8897
+Not Found: /web/.env
+[30/Mar/2026 00:24:11] "GET /web/.env HTTP/1.1" 404 8891
+Not Found: /public/.env
+[30/Mar/2026 00:24:11] "GET /public/.env HTTP/1.1" 404 8900
+Not Found: /en/.env
+[30/Mar/2026 00:24:11] "GET /en/.env HTTP/1.1" 404 8888
+Not Found: /tools/.env
+[30/Mar/2026 00:24:11] "GET /tools/.env HTTP/1.1" 404 8897
+Not Found: /v1/.env
+[30/Mar/2026 00:24:12] "GET /v1/.env HTTP/1.1" 404 8888
+Not Found: /v2/.env
+[30/Mar/2026 00:24:12] "GET /v2/.env HTTP/1.1" 404 8888
+Not Found: /administrator/.env
+[30/Mar/2026 00:24:12] "GET /administrator/.env HTTP/1.1" 404 8921
+Not Found: /laravel/.env
+[30/Mar/2026 00:24:12] "GET /laravel/.env HTTP/1.1" 404 8903
+Not Found: /storage/.env
+[30/Mar/2026 00:24:12] "GET /storage/.env HTTP/1.1" 404 8903
+Not Found: /backend/.env
+[30/Mar/2026 00:24:12] "GET /backend/.env HTTP/1.1" 404 8903
+Not Found: /server/.env
+[30/Mar/2026 00:24:12] "GET /server/.env HTTP/1.1" 404 8900
+Not Found: /frontend/.env
+[30/Mar/2026 00:24:12] "GET /frontend/.env HTTP/1.1" 404 8906
+Not Found: /current/.env
+[30/Mar/2026 00:24:12] "GET /current/.env HTTP/1.1" 404 8903
+Not Found: /dist/.env
+[30/Mar/2026 00:24:12] "GET /dist/.env HTTP/1.1" 404 8894
+Not Found: /build/.env
+[30/Mar/2026 00:24:13] "GET /build/.env HTTP/1.1" 404 8897
+Not Found: /public_html/.env
+[30/Mar/2026 00:24:13] "GET /public_html/.env HTTP/1.1" 404 8915
+Not Found: /live/.env
+[30/Mar/2026 00:24:13] "GET /live/.env HTTP/1.1" 404 8894
+Not Found: /prod/.env
+[30/Mar/2026 00:24:13] "GET /prod/.env HTTP/1.1" 404 8894
+Not Found: /dev/.env
+[30/Mar/2026 00:24:13] "GET /dev/.env HTTP/1.1" 404 8891
+Not Found: /project/.env
+[30/Mar/2026 00:24:13] "GET /project/.env HTTP/1.1" 404 8903
+Not Found: /client/.env
+[30/Mar/2026 00:24:13] "GET /client/.env HTTP/1.1" 404 8900
+Not Found: /service/.env
+[30/Mar/2026 00:24:13] "GET /service/.env HTTP/1.1" 404 8903
+Not Found: /node/.env
+[30/Mar/2026 00:24:13] "GET /node/.env HTTP/1.1" 404 8894
+[30/Mar/2026 00:24:13] "GET /phpinfo.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:14] "GET /phpinfo.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:14] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:14] "GET /info.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:14] "GET /info.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:14] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:14] "GET /php.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:14] "GET /php.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:14] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:14] "GET /pinfo.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:14] "GET /pinfo.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:14] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:14] "GET /phpinfo HTTP/1.1" 301 0
+[30/Mar/2026 00:24:14] "GET /phpinfo/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:15] "GET /giris/ HTTP/1.1" 200 5064
+Not Found: /admin/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /admin/phpinfo.php HTTP/1.1" 404 8918
+Not Found: /test/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /test/phpinfo.php HTTP/1.1" 404 8915
+Not Found: /dev/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /dev/phpinfo.php HTTP/1.1" 404 8912
+Not Found: /development/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /development/phpinfo.php HTTP/1.1" 404 8936
+Not Found: /develop/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /develop/phpinfo.php HTTP/1.1" 404 8924
+Not Found: /api/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /api/phpinfo.php HTTP/1.1" 404 8912
+Not Found: /backend/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /backend/phpinfo.php HTTP/1.1" 404 8924
+Not Found: /server/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /server/phpinfo.php HTTP/1.1" 404 8921
+Not Found: /current/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /current/phpinfo.php HTTP/1.1" 404 8924
+Not Found: /services/phpinfo.php
+[30/Mar/2026 00:24:15] "GET /services/phpinfo.php HTTP/1.1" 404 8927
+Not Found: /service/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /service/phpinfo.php HTTP/1.1" 404 8924
+Not Found: /laravel/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /laravel/phpinfo.php HTTP/1.1" 404 8924
+Not Found: /dashboard/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /dashboard/phpinfo.php HTTP/1.1" 404 8930
+Not Found: /helper/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /helper/phpinfo.php HTTP/1.1" 404 8921
+Not Found: /xampp/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /xampp/phpinfo.php HTTP/1.1" 404 8918
+Not Found: /backup/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /backup/phpinfo.php HTTP/1.1" 404 8921
+Not Found: /old/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /old/phpinfo.php HTTP/1.1" 404 8912
+Not Found: /crm/phpinfo.php
+[30/Mar/2026 00:24:16] "GET /crm/phpinfo.php HTTP/1.1" 404 8912
+Not Found: /admin/info.php
+[30/Mar/2026 00:24:16] "GET /admin/info.php HTTP/1.1" 404 8909
+Not Found: /test/info.php
+[30/Mar/2026 00:24:16] "GET /test/info.php HTTP/1.1" 404 8906
+Not Found: /dev/info.php
+[30/Mar/2026 00:24:16] "GET /dev/info.php HTTP/1.1" 404 8903
+Not Found: /development/info.php
+[30/Mar/2026 00:24:17] "GET /development/info.php HTTP/1.1" 404 8927
+Not Found: /develop/info.php
+[30/Mar/2026 00:24:17] "GET /develop/info.php HTTP/1.1" 404 8915
+Not Found: /api/info.php
+[30/Mar/2026 00:24:17] "GET /api/info.php HTTP/1.1" 404 8903
+Not Found: /backend/info.php
+[30/Mar/2026 00:24:17] "GET /backend/info.php HTTP/1.1" 404 8915
+Not Found: /server/info.php
+[30/Mar/2026 00:24:17] "GET /server/info.php HTTP/1.1" 404 8912
+Not Found: /current/info.php
+[30/Mar/2026 00:24:17] "GET /current/info.php HTTP/1.1" 404 8915
+Not Found: /services/info.php
+[30/Mar/2026 00:24:17] "GET /services/info.php HTTP/1.1" 404 8918
+Not Found: /service/info.php
+[30/Mar/2026 00:24:17] "GET /service/info.php HTTP/1.1" 404 8915
+Not Found: /laravel/info.php
+[30/Mar/2026 00:24:17] "GET /laravel/info.php HTTP/1.1" 404 8915
+Not Found: /helper/info.php
+[30/Mar/2026 00:24:17] "GET /helper/info.php HTTP/1.1" 404 8912
+Not Found: /xampp/info.php
+[30/Mar/2026 00:24:17] "GET /xampp/info.php HTTP/1.1" 404 8909
+Not Found: /backup/info.php
+[30/Mar/2026 00:24:18] "GET /backup/info.php HTTP/1.1" 404 8912
+Not Found: /old/info.php
+[30/Mar/2026 00:24:18] "GET /old/info.php HTTP/1.1" 404 8903
+Not Found: /crm/info.php
+[30/Mar/2026 00:24:18] "GET /crm/info.php HTTP/1.1" 404 8903
+[30/Mar/2026 00:24:18] "GET /php-info.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:18] "GET /php-info.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:18] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:18] "GET /phpversion.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:18] "GET /phpversion.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:18] "GET /giris/ HTTP/1.1" 200 5064
+[30/Mar/2026 00:24:18] "GET /old_phpinfo.php HTTP/1.1" 301 0
+[30/Mar/2026 00:24:18] "GET /old_phpinfo.php/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:18] "GET /giris/ HTTP/1.1" 200 5064
+Not Found: /_profiler/phpinfo
+[30/Mar/2026 00:24:19] "GET /_profiler/phpinfo HTTP/1.1" 404 8918
+[30/Mar/2026 00:24:19] "GET /_environment HTTP/1.1" 301 0
+[30/Mar/2026 00:24:19] "GET /_environment/ HTTP/1.1" 302 0
+[30/Mar/2026 00:24:19] "GET /giris/ HTTP/1.1" 200 5064
+Not Found: /webroot/index.php/_environment
+[30/Mar/2026 00:24:19] "GET /webroot/index.php/_environment HTTP/1.1" 404 8957
+Not Found: /.git/config
+[30/Mar/2026 00:24:19] "GET /.git/config HTTP/1.1" 404 8900
+Not Found: /
+[30/Mar/2026 00:24:19] "POST / HTTP/1.1" 404 8850
+Not Found: /
+[30/Mar/2026 00:24:19] "POST / HTTP/1.1" 404 8850
+Not Found: /
+[30/Mar/2026 00:24:19] "POST / HTTP/1.1" 404 8850
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[30/Mar/2026 00:27:36] "GET / HTTP/1.1" 500 98092

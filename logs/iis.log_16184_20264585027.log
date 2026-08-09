@@ -1,0 +1,220 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 01:50:31] "GET / HTTP/1.1" 200 9312
+Forbidden (Referer checking failed - no Referer.): /
+[05/Apr/2026 01:50:31] "POST / HTTP/1.1" 403 3565
+Not Found: /.env
+[05/Apr/2026 01:50:32] "GET /.env HTTP/1.1" 404 2931
+Not Found: /.env.local
+[05/Apr/2026 01:50:32] "GET /.env.local HTTP/1.1" 404 2949
+Not Found: /.env.production
+[05/Apr/2026 01:50:33] "GET /.env.production HTTP/1.1" 404 2964
+Not Found: /.env.staging
+[05/Apr/2026 01:50:33] "GET /.env.staging HTTP/1.1" 404 2955
+Not Found: /.env.development
+[05/Apr/2026 01:50:33] "GET /.env.development HTTP/1.1" 404 2967
+Not Found: /.env.test
+[05/Apr/2026 01:50:34] "GET /.env.test HTTP/1.1" 404 2946
+Not Found: /.env.remote
+[05/Apr/2026 01:50:34] "GET /.env.remote HTTP/1.1" 404 2952
+Not Found: /.env.bak
+[05/Apr/2026 01:50:34] "GET /.env.bak HTTP/1.1" 404 2943
+Not Found: /.env.backup
+[05/Apr/2026 01:50:35] "GET /.env.backup HTTP/1.1" 404 2952
+Not Found: /.env.save
+[05/Apr/2026 01:50:35] "GET /.env.save HTTP/1.1" 404 2946
+Not Found: /.env.old
+[05/Apr/2026 01:50:35] "GET /.env.old HTTP/1.1" 404 2943
+Not Found: /.env.sample
+[05/Apr/2026 01:50:36] "GET /.env.sample HTTP/1.1" 404 2952
+Not Found: /vendor/.env
+[05/Apr/2026 01:50:36] "GET /vendor/.env HTTP/1.1" 404 2952
+Not Found: /lib/.env
+[05/Apr/2026 01:50:36] "GET /lib/.env HTTP/1.1" 404 2943
+Not Found: /lab/.env
+[05/Apr/2026 01:50:37] "GET /lab/.env HTTP/1.1" 404 2943
+Not Found: /cronlab/.env
+[05/Apr/2026 01:50:37] "GET /cronlab/.env HTTP/1.1" 404 2955
+Not Found: /cron/.env
+[05/Apr/2026 01:50:38] "GET /cron/.env HTTP/1.1" 404 2946
+Not Found: /core/.env
+[05/Apr/2026 01:50:38] "GET /core/.env HTTP/1.1" 404 2946
+Not Found: /core/app/.env
+[05/Apr/2026 01:50:38] "GET /core/app/.env HTTP/1.1" 404 2958
+Not Found: /core/Datavase/.env
+[05/Apr/2026 01:50:39] "GET /core/Datavase/.env HTTP/1.1" 404 2973
+Not Found: /database/.env
+[05/Apr/2026 01:50:39] "GET /database/.env HTTP/1.1" 404 2958
+Not Found: /config/.env
+[05/Apr/2026 01:50:39] "GET /config/.env HTTP/1.1" 404 2952
+Not Found: /assets/.env
+[05/Apr/2026 01:50:40] "GET /assets/.env HTTP/1.1" 404 2952
+Not Found: /app/.env
+[05/Apr/2026 01:50:40] "GET /app/.env HTTP/1.1" 404 2943
+Not Found: /apps/.env
+[05/Apr/2026 01:50:40] "GET /apps/.env HTTP/1.1" 404 2946
+Not Found: /uploads/.env
+[05/Apr/2026 01:50:40] "GET /uploads/.env HTTP/1.1" 404 2955
+Not Found: /sitemaps/.env
+[05/Apr/2026 01:50:41] "GET /sitemaps/.env HTTP/1.1" 404 2958
+Not Found: /saas/.env
+[05/Apr/2026 01:50:41] "GET /saas/.env HTTP/1.1" 404 2946
+Not Found: /api/.env
+[05/Apr/2026 01:50:41] "GET /api/.env HTTP/1.1" 404 2943
+Not Found: /psnlink/.env
+[05/Apr/2026 01:50:42] "GET /psnlink/.env HTTP/1.1" 404 2955
+Not Found: /exapi/.env
+[05/Apr/2026 01:50:42] "GET /exapi/.env HTTP/1.1" 404 2949
+Not Found: /site/.env
+[05/Apr/2026 01:50:42] "GET /site/.env HTTP/1.1" 404 2946
+[05/Apr/2026 01:50:43] "GET /admin/.env HTTP/1.1" 302 0
+[05/Apr/2026 01:50:43] "GET /admin/login/?next=/admin/.env HTTP/1.1" 200 4195
+Not Found: /web/.env
+[05/Apr/2026 01:50:43] "GET /web/.env HTTP/1.1" 404 2943
+Not Found: /public/.env
+[05/Apr/2026 01:50:44] "GET /public/.env HTTP/1.1" 404 2952
+Not Found: /en/.env
+[05/Apr/2026 01:50:44] "GET /en/.env HTTP/1.1" 404 2940
+Not Found: /tools/.env
+[05/Apr/2026 01:50:44] "GET /tools/.env HTTP/1.1" 404 2949
+Not Found: /v1/.env
+[05/Apr/2026 01:50:45] "GET /v1/.env HTTP/1.1" 404 2940
+Not Found: /v2/.env
+[05/Apr/2026 01:50:45] "GET /v2/.env HTTP/1.1" 404 2940
+Not Found: /administrator/.env
+[05/Apr/2026 01:50:45] "GET /administrator/.env HTTP/1.1" 404 2973
+Not Found: /laravel/.env
+[05/Apr/2026 01:50:46] "GET /laravel/.env HTTP/1.1" 404 2955
+Not Found: /storage/.env
+[05/Apr/2026 01:50:46] "GET /storage/.env HTTP/1.1" 404 2955
+Not Found: /backend/.env
+[05/Apr/2026 01:50:46] "GET /backend/.env HTTP/1.1" 404 2955
+Not Found: /server/.env
+[05/Apr/2026 01:50:47] "GET /server/.env HTTP/1.1" 404 2952
+Not Found: /frontend/.env
+[05/Apr/2026 01:50:47] "GET /frontend/.env HTTP/1.1" 404 2958
+Not Found: /current/.env
+[05/Apr/2026 01:50:47] "GET /current/.env HTTP/1.1" 404 2955
+Not Found: /dist/.env
+[05/Apr/2026 01:50:48] "GET /dist/.env HTTP/1.1" 404 2946
+Not Found: /build/.env
+[05/Apr/2026 01:50:48] "GET /build/.env HTTP/1.1" 404 2949
+Not Found: /public_html/.env
+[05/Apr/2026 01:50:48] "GET /public_html/.env HTTP/1.1" 404 2967
+Not Found: /live/.env
+[05/Apr/2026 01:50:49] "GET /live/.env HTTP/1.1" 404 2946
+Not Found: /prod/.env
+[05/Apr/2026 01:50:49] "GET /prod/.env HTTP/1.1" 404 2946
+Not Found: /dev/.env
+[05/Apr/2026 01:50:49] "GET /dev/.env HTTP/1.1" 404 2943
+Not Found: /project/.env
+[05/Apr/2026 01:50:50] "GET /project/.env HTTP/1.1" 404 2955
+Not Found: /client/.env
+[05/Apr/2026 01:50:50] "GET /client/.env HTTP/1.1" 404 2952
+Not Found: /service/.env
+[05/Apr/2026 01:50:50] "GET /service/.env HTTP/1.1" 404 2955
+Not Found: /node/.env
+[05/Apr/2026 01:50:51] "GET /node/.env HTTP/1.1" 404 2946
+Not Found: /phpinfo.php
+[05/Apr/2026 01:50:51] "GET /phpinfo.php HTTP/1.1" 404 2952
+Not Found: /info.php
+[05/Apr/2026 01:50:51] "GET /info.php HTTP/1.1" 404 2943
+Not Found: /php.php
+[05/Apr/2026 01:50:52] "GET /php.php HTTP/1.1" 404 2940
+Not Found: /pinfo.php
+[05/Apr/2026 01:50:52] "GET /pinfo.php HTTP/1.1" 404 2946
+Not Found: /phpinfo
+[05/Apr/2026 01:50:52] "GET /phpinfo HTTP/1.1" 404 2940
+[05/Apr/2026 01:50:53] "GET /admin/phpinfo.php HTTP/1.1" 302 0
+[05/Apr/2026 01:50:53] "GET /admin/login/?next=/admin/phpinfo.php HTTP/1.1" 200 4209
+Not Found: /test/phpinfo.php
+[05/Apr/2026 01:50:53] "GET /test/phpinfo.php HTTP/1.1" 404 2967
+Not Found: /dev/phpinfo.php
+[05/Apr/2026 01:50:54] "GET /dev/phpinfo.php HTTP/1.1" 404 2964
+Not Found: /development/phpinfo.php
+[05/Apr/2026 01:50:54] "GET /development/phpinfo.php HTTP/1.1" 404 2988
+Not Found: /develop/phpinfo.php
+[05/Apr/2026 01:50:54] "GET /develop/phpinfo.php HTTP/1.1" 404 2976
+Not Found: /api/phpinfo.php
+[05/Apr/2026 01:50:55] "GET /api/phpinfo.php HTTP/1.1" 404 2964
+Not Found: /backend/phpinfo.php
+[05/Apr/2026 01:50:55] "GET /backend/phpinfo.php HTTP/1.1" 404 2976
+Not Found: /server/phpinfo.php
+[05/Apr/2026 01:50:55] "GET /server/phpinfo.php HTTP/1.1" 404 2973
+Not Found: /current/phpinfo.php
+[05/Apr/2026 01:50:56] "GET /current/phpinfo.php HTTP/1.1" 404 2976
+Not Found: /services/phpinfo.php
+[05/Apr/2026 01:50:56] "GET /services/phpinfo.php HTTP/1.1" 404 2979
+Not Found: /service/phpinfo.php
+[05/Apr/2026 01:50:56] "GET /service/phpinfo.php HTTP/1.1" 404 2976
+Not Found: /laravel/phpinfo.php
+[05/Apr/2026 01:50:57] "GET /laravel/phpinfo.php HTTP/1.1" 404 2976
+Not Found: /dashboard/phpinfo.php
+[05/Apr/2026 01:50:57] "GET /dashboard/phpinfo.php HTTP/1.1" 404 2982
+Not Found: /helper/phpinfo.php
+[05/Apr/2026 01:50:57] "GET /helper/phpinfo.php HTTP/1.1" 404 2973
+Not Found: /xampp/phpinfo.php
+[05/Apr/2026 01:50:57] "GET /xampp/phpinfo.php HTTP/1.1" 404 2970
+Not Found: /backup/phpinfo.php
+[05/Apr/2026 01:50:58] "GET /backup/phpinfo.php HTTP/1.1" 404 2973
+Not Found: /old/phpinfo.php
+[05/Apr/2026 01:50:58] "GET /old/phpinfo.php HTTP/1.1" 404 2964
+Not Found: /crm/phpinfo.php
+[05/Apr/2026 01:50:58] "GET /crm/phpinfo.php HTTP/1.1" 404 2964
+[05/Apr/2026 01:50:59] "GET /admin/info.php HTTP/1.1" 302 0
+[05/Apr/2026 01:50:59] "GET /admin/login/?next=/admin/info.php HTTP/1.1" 200 4203
+Not Found: /test/info.php
+[05/Apr/2026 01:50:59] "GET /test/info.php HTTP/1.1" 404 2958
+Not Found: /dev/info.php
+[05/Apr/2026 01:51:00] "GET /dev/info.php HTTP/1.1" 404 2955
+Not Found: /development/info.php
+[05/Apr/2026 01:51:00] "GET /development/info.php HTTP/1.1" 404 2979
+Not Found: /develop/info.php
+[05/Apr/2026 01:51:00] "GET /develop/info.php HTTP/1.1" 404 2967
+Not Found: /api/info.php
+[05/Apr/2026 01:51:01] "GET /api/info.php HTTP/1.1" 404 2955
+Not Found: /backend/info.php
+[05/Apr/2026 01:51:01] "GET /backend/info.php HTTP/1.1" 404 2967
+Not Found: /server/info.php
+[05/Apr/2026 01:51:01] "GET /server/info.php HTTP/1.1" 404 2964
+Not Found: /current/info.php
+[05/Apr/2026 01:51:02] "GET /current/info.php HTTP/1.1" 404 2967
+Not Found: /services/info.php
+[05/Apr/2026 01:51:02] "GET /services/info.php HTTP/1.1" 404 2970
+Not Found: /service/info.php
+[05/Apr/2026 01:51:02] "GET /service/info.php HTTP/1.1" 404 2967
+Not Found: /laravel/info.php
+[05/Apr/2026 01:51:03] "GET /laravel/info.php HTTP/1.1" 404 2967
+Not Found: /helper/info.php
+[05/Apr/2026 01:51:03] "GET /helper/info.php HTTP/1.1" 404 2964
+Not Found: /xampp/info.php
+[05/Apr/2026 01:51:03] "GET /xampp/info.php HTTP/1.1" 404 2961
+Not Found: /backup/info.php
+[05/Apr/2026 01:51:04] "GET /backup/info.php HTTP/1.1" 404 2964
+Not Found: /old/info.php
+[05/Apr/2026 01:51:04] "GET /old/info.php HTTP/1.1" 404 2955
+Not Found: /crm/info.php
+[05/Apr/2026 01:51:04] "GET /crm/info.php HTTP/1.1" 404 2955
+Not Found: /php-info.php
+[05/Apr/2026 01:51:05] "GET /php-info.php HTTP/1.1" 404 2955
+Not Found: /phpversion.php
+[05/Apr/2026 01:51:05] "GET /phpversion.php HTTP/1.1" 404 2961
+Not Found: /old_phpinfo.php
+[05/Apr/2026 01:51:05] "GET /old_phpinfo.php HTTP/1.1" 404 2964
+Not Found: /_profiler/phpinfo
+[05/Apr/2026 01:51:06] "GET /_profiler/phpinfo HTTP/1.1" 404 2970
+Not Found: /_environment
+[05/Apr/2026 01:51:06] "GET /_environment HTTP/1.1" 404 2955
+Not Found: /webroot/index.php/_environment
+[05/Apr/2026 01:51:06] "GET /webroot/index.php/_environment HTTP/1.1" 404 3009
+Not Found: /.git/config
+[05/Apr/2026 01:51:07] "GET /.git/config HTTP/1.1" 404 2952
+Forbidden (Referer checking failed - no Referer.): /
+[05/Apr/2026 01:51:07] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+[05/Apr/2026 01:51:07] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+[05/Apr/2026 01:51:08] "POST / HTTP/1.1" 403 3565

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ödeme Başarılı — DentalReserv</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'DM Sans',sans-serif;background:#f0fdf4;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
+        .card{background:white;border-radius:28px;padding:48px 40px;width:100%;max-width:520px;text-align:center;box-shadow:0 16px 60px rgba(0,0,0,0.1);}
+        .check-anim{width:80px;height:80px;background:linear-gradient(135deg,#059669,#10b981);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 24px;animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+        @keyframes popIn{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+        h1{font-size:26px;font-weight:700;color:#111827;margin-bottom:8px;}
+        .sub{font-size:15px;color:#6b7280;margin-bottom:32px;}
+        .detail-card{background:#f0fdf4;border:1px solid #86efac;border-radius:16px;padding:20px 24px;margin-bottom:28px;text-align:left;}
+        .detail-row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;}
+        .detail-row .label{color:#6b7280;}
+        .detail-row .value{font-weight:600;color:#111827;}
+        .detail-row .value.green{color:#059669;}
+        .btn-dashboard{display:block;padding:14px;background:#059669;color:white;border-radius:14px;text-decoration:none;font-size:15px;font-weight:600;transition:background 0.2s;margin-bottom:12px;}
+        .btn-dashboard:hover{background:#065f46;}
+        .btn-plans{display:block;padding:12px;background:white;color:#6b7280;border:1.5px solid #e5e7eb;border-radius:14px;text-decoration:none;font-size:14px;}
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="check-anim">✓</div>
+    <h1>Ödeme Başarılı! 🎉</h1>
+    <div class="sub">DentalReserv {{ plan.name }} planına hoş geldiniz.<br>Aboneliğiniz hemen aktif edildi.</div>
+
+    {% if abonelik %}
+    <div class="detail-card">
+        <div class="detail-row"><span class="label">Plan</span><span class="value">{{ abonelik.get_plan_display }}</span></div>
+        <div class="detail-row"><span class="label">Periyot</span><span class="value">{% if abonelik.period == 'yearly' %}Yıllık{% else %}Aylık{% endif %}</span></div>
+        <div class="detail-row"><span class="label">Tutar</span><span class="value green">{{ abonelik.amount }}₺</span></div>
+        <div class="detail-row"><span class="label">Başlangıç</span><span class="value">{{ abonelik.starts_at|date:"d M Y" }}</span></div>
+        <div class="detail-row"><span class="label">Bitiş</span><span class="value">{{ abonelik.expires_at|date:"d M Y" }}</span></div>
+        <div class="detail-row"><span class="label">Durum</span><span class="value green">✅ Aktif</span></div>
+    </div>
+    {% endif %}
+
+    <a href="{{ PANEL_URL }}/{{ clinic_id }}/" class="btn-dashboard">🏠 Dashboard'a Dön</a>
+    <a href="{{ PANEL_URL }}/{{ clinic_id }}/abonelik/" class="btn-plans">Abonelik Detayları</a>
+</div>
+</body>
+</html>

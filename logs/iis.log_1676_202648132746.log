@@ -1,0 +1,162 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[08/Apr/2026 06:27:51] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 06:33:54] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 06:33:55] "GET / HTTP/1.1" 200 9312
+Not Found: /xmlrpc.php
+[08/Apr/2026 06:35:43] "POST /xmlrpc.php HTTP/1.1" 404 2950
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[08/Apr/2026 06:44:03] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /ahax.php
+[08/Apr/2026 06:44:03] "GET /ahax.php HTTP/1.1" 404 2942
+Not Found: /uwu2.php
+[08/Apr/2026 06:44:03] "GET /uwu2.php HTTP/1.1" 404 2942
+Not Found: /nc4.php
+[08/Apr/2026 06:44:03] "GET /nc4.php HTTP/1.1" 404 2939
+Not Found: /akcc.php
+[08/Apr/2026 06:44:04] "GET /akcc.php HTTP/1.1" 404 2942
+Not Found: /wp.php
+[08/Apr/2026 06:44:04] "GET /wp.php HTTP/1.1" 404 2936
+Not Found: /zews.php
+[08/Apr/2026 06:44:04] "GET /zews.php HTTP/1.1" 404 2942
+Not Found: /zwso.php
+[08/Apr/2026 06:44:04] "GET /zwso.php HTTP/1.1" 404 2942
+Not Found: /124.php
+[08/Apr/2026 06:44:04] "GET /124.php HTTP/1.1" 404 2939
+Not Found: /epinyins.php
+[08/Apr/2026 06:44:04] "GET /epinyins.php HTTP/1.1" 404 2954
+Not Found: /geck.php
+[08/Apr/2026 06:44:05] "GET /geck.php HTTP/1.1" 404 2942
+Not Found: /shout.php
+[08/Apr/2026 06:44:05] "GET /shout.php HTTP/1.1" 404 2945
+Not Found: /size.php
+[08/Apr/2026 06:44:05] "GET /size.php HTTP/1.1" 404 2942
+Not Found: /wp-gr.php
+[08/Apr/2026 06:44:05] "GET /wp-gr.php HTTP/1.1" 404 2945
+Not Found: /wp-mn.php
+[08/Apr/2026 06:44:05] "GET /wp-mn.php HTTP/1.1" 404 2945
+Not Found: /wp-mt.php
+[08/Apr/2026 06:44:05] "GET /wp-mt.php HTTP/1.1" 404 2945
+Not Found: /ww.php
+[08/Apr/2026 06:44:06] "GET /ww.php HTTP/1.1" 404 2936
+Not Found: /111.php
+[08/Apr/2026 06:44:06] "GET /111.php HTTP/1.1" 404 2939
+Not Found: /ova.php
+[08/Apr/2026 06:44:06] "GET /ova.php HTTP/1.1" 404 2939
+Not Found: /abcd.php
+[08/Apr/2026 06:44:06] "GET /abcd.php HTTP/1.1" 404 2942
+Not Found: /chosen.php
+[08/Apr/2026 06:44:06] "GET /chosen.php HTTP/1.1" 404 2948
+Not Found: /123.php
+[08/Apr/2026 06:44:06] "GET /123.php HTTP/1.1" 404 2939
+Not Found: /we.php
+[08/Apr/2026 06:44:06] "GET /we.php HTTP/1.1" 404 2936
+Not Found: /goat.php
+[08/Apr/2026 06:44:06] "GET /goat.php HTTP/1.1" 404 2942
+Not Found: /ioxi-o.php
+[08/Apr/2026 06:44:06] "GET /ioxi-o.php HTTP/1.1" 404 2948
+Not Found: /v.php
+[08/Apr/2026 06:44:07] "GET /v.php HTTP/1.1" 404 2933
+Not Found: /ar.php
+[08/Apr/2026 06:44:07] "GET /ar.php HTTP/1.1" 404 2936
+Not Found: /qing.php
+[08/Apr/2026 06:44:07] "GET /qing.php HTTP/1.1" 404 2942
+Not Found: /lv.php
+[08/Apr/2026 06:44:07] "GET /lv.php HTTP/1.1" 404 2936
+Not Found: /mms.php
+[08/Apr/2026 06:44:07] "GET /mms.php HTTP/1.1" 404 2939
+Not Found: /gmo.php
+[08/Apr/2026 06:44:07] "GET /gmo.php HTTP/1.1" 404 2939
+Not Found: /dev.php
+[08/Apr/2026 06:44:07] "GET /dev.php HTTP/1.1" 404 2939
+Not Found: /lite.php
+[08/Apr/2026 06:44:07] "GET /lite.php HTTP/1.1" 404 2942
+Not Found: /error.php
+[08/Apr/2026 06:44:08] "GET /error.php HTTP/1.1" 404 2945
+Not Found: /pp.php
+[08/Apr/2026 06:44:08] "GET /pp.php HTTP/1.1" 404 2936
+Not Found: /a1.php
+[08/Apr/2026 06:44:08] "GET /a1.php HTTP/1.1" 404 2936
+Not Found: /a2.php
+[08/Apr/2026 06:44:08] "GET /a2.php HTTP/1.1" 404 2936
+Not Found: /lock360.php
+[08/Apr/2026 06:44:08] "GET /lock360.php HTTP/1.1" 404 2951
+Not Found: /alfa.php
+[08/Apr/2026 06:44:08] "GET /alfa.php HTTP/1.1" 404 2942
+Not Found: /ee.php
+[08/Apr/2026 06:44:08] "GET /ee.php HTTP/1.1" 404 2936
+Not Found: /6.php
+[08/Apr/2026 06:44:08] "GET /6.php HTTP/1.1" 404 2933
+Not Found: /12.php
+[08/Apr/2026 06:44:08] "GET /12.php HTTP/1.1" 404 2936
+Not Found: /02.php
+[08/Apr/2026 06:44:09] "GET /02.php HTTP/1.1" 404 2936
+Not Found: /2.php
+[08/Apr/2026 06:44:09] "GET /2.php HTTP/1.1" 404 2933
+Not Found: /13.php
+[08/Apr/2026 06:44:09] "GET /13.php HTTP/1.1" 404 2936
+Not Found: /13k.php
+[08/Apr/2026 06:44:09] "GET /13k.php HTTP/1.1" 404 2939
+Not Found: /css.php
+[08/Apr/2026 06:44:09] "GET /css.php HTTP/1.1" 404 2939
+Not Found: /bypass.php
+[08/Apr/2026 06:44:09] "GET /bypass.php HTTP/1.1" 404 2948
+Not Found: /3.php
+[08/Apr/2026 06:44:09] "GET /3.php HTTP/1.1" 404 2933
+Not Found: /10.php
+[08/Apr/2026 06:44:09] "GET /10.php HTTP/1.1" 404 2936
+Not Found: /kk.php
+[08/Apr/2026 06:44:09] "GET /kk.php HTTP/1.1" 404 2936
+Not Found: /cf.php
+[08/Apr/2026 06:44:10] "GET /cf.php HTTP/1.1" 404 2936
+Not Found: /456.php
+[08/Apr/2026 06:44:10] "GET /456.php HTTP/1.1" 404 2939
+Not Found: /7.php
+[08/Apr/2026 06:44:10] "GET /7.php HTTP/1.1" 404 2933
+Not Found: /2x.php
+[08/Apr/2026 06:44:10] "GET /2x.php HTTP/1.1" 404 2936
+Not Found: /aa.php
+[08/Apr/2026 06:44:10] "GET /aa.php HTTP/1.1" 404 2936
+Not Found: /goods.php
+[08/Apr/2026 06:44:10] "GET /goods.php HTTP/1.1" 404 2945
+Not Found: /pepe.php
+[08/Apr/2026 06:44:10] "GET /pepe.php HTTP/1.1" 404 2942
+Not Found: /file32.php
+[08/Apr/2026 06:44:11] "GET /file32.php HTTP/1.1" 404 2948
+Not Found: /file.php
+[08/Apr/2026 06:44:11] "GET /file.php HTTP/1.1" 404 2942
+Not Found: /x.php
+[08/Apr/2026 06:44:11] "GET /x.php HTTP/1.1" 404 2933
+Not Found: /11.php
+[08/Apr/2026 06:44:11] "GET /11.php HTTP/1.1" 404 2936
+Not Found: /class20.php
+[08/Apr/2026 06:44:11] "GET /class20.php HTTP/1.1" 404 2951
+Not Found: /ll.php
+[08/Apr/2026 06:44:11] "GET /ll.php HTTP/1.1" 404 2936
+Not Found: /wp-admin/maint/maint.php
+[08/Apr/2026 06:44:11] "GET /wp-admin/maint/maint.php HTTP/1.1" 404 2990
+Not Found: /atomlib.php
+[08/Apr/2026 06:44:11] "GET /atomlib.php HTTP/1.1" 404 2951
+Not Found: /system_log.php
+[08/Apr/2026 06:44:12] "GET /system_log.php HTTP/1.1" 404 2960
+Not Found: /wp-gr.php
+[08/Apr/2026 06:44:12] "GET /wp-gr.php HTTP/1.1" 404 2945
+Not Found: /asus.php
+[08/Apr/2026 06:44:13] "GET /asus.php HTTP/1.1" 404 2942
+Not Found: /wp.php
+[08/Apr/2026 06:44:13] "GET /wp.php HTTP/1.1" 404 2936
+Not Found: /xx.php
+[08/Apr/2026 06:44:13] "GET /xx.php HTTP/1.1" 404 2936
+Not Found: /wp-mn.php
+[08/Apr/2026 06:44:13] "GET /wp-mn.php HTTP/1.1" 404 2945
+Not Found: /pp.php
+[08/Apr/2026 06:44:13] "GET /pp.php HTTP/1.1" 404 2936
+Not Found: /css.php
+[08/Apr/2026 06:44:13] "GET /css.php HTTP/1.1" 404 2939
+Not Found: /jp.php
+[08/Apr/2026 06:44:13] "GET /jp.php HTTP/1.1" 404 2936
+Not Found: /html.php
+[08/Apr/2026 06:44:13] "GET /html.php HTTP/1.1" 404 2942

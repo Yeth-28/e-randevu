@@ -1,0 +1,281 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[21/Apr/2026 07:31:27] "GET / HTTP/1.1" 500 98164
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[21/Apr/2026 07:40:57] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /eFpU3yHnriNNLtvdefault.php
+[21/Apr/2026 07:40:57] "GET /eFpU3yHnriNNLtvdefault.php HTTP/1.1" 404 2996
+Not Found: /bthil.php
+[21/Apr/2026 07:40:57] "GET /bthil.php HTTP/1.1" 404 2945
+Not Found: /xminie.php
+[21/Apr/2026 07:40:57] "GET /xminie.php HTTP/1.1" 404 2948
+Not Found: /av.php
+[21/Apr/2026 07:40:57] "GET /av.php HTTP/1.1" 404 2936
+Not Found: /x=34.php
+[21/Apr/2026 07:40:57] "GET /x=34.php HTTP/1.1" 404 2944
+Not Found: /insta.php
+[21/Apr/2026 07:40:57] "GET /insta.php HTTP/1.1" 404 2945
+Not Found: /eetu.php
+[21/Apr/2026 07:40:57] "GET /eetu.php HTTP/1.1" 404 2942
+Not Found: /xxa.php
+[21/Apr/2026 07:40:58] "GET /xxa.php HTTP/1.1" 404 2939
+Not Found: /a1.php
+[21/Apr/2026 07:40:58] "GET /a1.php HTTP/1.1" 404 2936
+Not Found: /zxcs.php
+[21/Apr/2026 07:40:58] "GET /zxcs.php HTTP/1.1" 404 2942
+Not Found: /s1.php
+[21/Apr/2026 07:40:58] "GET /s1.php HTTP/1.1" 404 2936
+Not Found: /wp-kz.php
+[21/Apr/2026 07:40:58] "GET /wp-kz.php HTTP/1.1" 404 2945
+Not Found: /wmore1.php
+[21/Apr/2026 07:40:58] "GET /wmore1.php HTTP/1.1" 404 2948
+Not Found: /saorix1.php
+[21/Apr/2026 07:40:58] "GET /saorix1.php HTTP/1.1" 404 2951
+Not Found: /themes.php
+[21/Apr/2026 07:40:58] "GET /themes.php HTTP/1.1" 404 2948
+Not Found: /lib.php
+[21/Apr/2026 07:40:58] "GET /lib.php HTTP/1.1" 404 2939
+Not Found: /file-kikikoko.php
+[21/Apr/2026 07:40:59] "GET /file-kikikoko.php HTTP/1.1" 404 2969
+Not Found: /wp-kikikoko.php
+[21/Apr/2026 07:40:59] "GET /wp-kikikoko.php HTTP/1.1" 404 2963
+Not Found: /ganja.php
+[21/Apr/2026 07:40:59] "GET /ganja.php HTTP/1.1" 404 2945
+Not Found: /doc.php
+[21/Apr/2026 07:40:59] "GET /doc.php HTTP/1.1" 404 2939
+Not Found: /sad821.php
+[21/Apr/2026 07:40:59] "GET /sad821.php HTTP/1.1" 404 2948
+Not Found: /sad8210.php
+[21/Apr/2026 07:40:59] "GET /sad8210.php HTTP/1.1" 404 2951
+Not Found: /BDKR28WP.php
+[21/Apr/2026 07:40:59] "GET /BDKR28WP.php HTTP/1.1" 404 2954
+Not Found: /man.php
+[21/Apr/2026 07:40:59] "GET /man.php HTTP/1.1" 404 2939
+Not Found: /aboute.php
+[21/Apr/2026 07:40:59] "GET /aboute.php HTTP/1.1" 404 2948
+Not Found: /ayk.php
+[21/Apr/2026 07:40:59] "GET /ayk.php HTTP/1.1" 404 2939
+Not Found: /wps.php
+[21/Apr/2026 07:40:59] "GET /wps.php HTTP/1.1" 404 2939
+Not Found: /f35.php
+[21/Apr/2026 07:40:59] "GET /f35.php HTTP/1.1" 404 2939
+Not Found: /12.php
+[21/Apr/2026 07:40:59] "GET /12.php HTTP/1.1" 404 2936
+Not Found: /acp.php
+[21/Apr/2026 07:40:59] "GET /acp.php HTTP/1.1" 404 2939
+Not Found: /link.php
+[21/Apr/2026 07:41:00] "GET /link.php HTTP/1.1" 404 2942
+Not Found: /dass.php
+[21/Apr/2026 07:41:00] "GET /dass.php HTTP/1.1" 404 2942
+Not Found: /ws66.php
+[21/Apr/2026 07:41:00] "GET /ws66.php HTTP/1.1" 404 2942
+Not Found: /db.php
+[21/Apr/2026 07:41:00] "GET /db.php HTTP/1.1" 404 2936
+Not Found: /ws81.php
+[21/Apr/2026 07:41:00] "GET /ws81.php HTTP/1.1" 404 2942
+Not Found: /r2.php
+[21/Apr/2026 07:41:00] "GET /r2.php HTTP/1.1" 404 2936
+Not Found: /tiny.php
+[21/Apr/2026 07:41:00] "GET /tiny.php HTTP/1.1" 404 2942
+Not Found: /edit.php
+[21/Apr/2026 07:41:00] "GET /edit.php HTTP/1.1" 404 2942
+Not Found: /ws80.php
+[21/Apr/2026 07:41:00] "GET /ws80.php HTTP/1.1" 404 2942
+Not Found: /f6.php
+[21/Apr/2026 07:41:01] "GET /f6.php HTTP/1.1" 404 2936
+Not Found: /roksad1.php
+[21/Apr/2026 07:41:01] "GET /roksad1.php HTTP/1.1" 404 2951
+Not Found: /fone1.php
+[21/Apr/2026 07:41:01] "GET /fone1.php HTTP/1.1" 404 2945
+Not Found: /config.php
+[21/Apr/2026 07:41:01] "GET /config.php HTTP/1.1" 404 2948
+Not Found: /xltt.php
+[21/Apr/2026 07:41:01] "GET /xltt.php HTTP/1.1" 404 2942
+Not Found: /sadcut1.php
+[21/Apr/2026 07:41:01] "GET /sadcut1.php HTTP/1.1" 404 2951
+Not Found: /dx.php
+[21/Apr/2026 07:41:01] "GET /dx.php HTTP/1.1" 404 2936
+Not Found: /xff.php
+[21/Apr/2026 07:41:01] "GET /xff.php HTTP/1.1" 404 2939
+Not Found: /wglum1.php
+[21/Apr/2026 07:41:01] "GET /wglum1.php HTTP/1.1" 404 2948
+Not Found: /ng.php
+[21/Apr/2026 07:41:01] "GET /ng.php HTTP/1.1" 404 2936
+Not Found: /wgift1.php
+[21/Apr/2026 07:41:01] "GET /wgift1.php HTTP/1.1" 404 2948
+Not Found: /xynz.php
+[21/Apr/2026 07:41:02] "GET /xynz.php HTTP/1.1" 404 2942
+Not Found: /wp-admin/images/admin.php
+[21/Apr/2026 07:41:02] "GET /wp-admin/images/admin.php HTTP/1.1" 404 2993
+Not Found: /press.php
+[21/Apr/2026 07:41:02] "GET /press.php HTTP/1.1" 404 2945
+Not Found: /xwx1.php
+[21/Apr/2026 07:41:02] "GET /xwx1.php HTTP/1.1" 404 2942
+Not Found: /rh.php
+[21/Apr/2026 07:41:02] "GET /rh.php HTTP/1.1" 404 2936
+Not Found: /d.php
+[21/Apr/2026 07:41:02] "GET /d.php HTTP/1.1" 404 2933
+Not Found: /classwithtostring.php
+[21/Apr/2026 07:41:02] "GET /classwithtostring.php HTTP/1.1" 404 2981
+Not Found: /view.php
+[21/Apr/2026 07:41:02] "GET /view.php HTTP/1.1" 404 2942
+Not Found: /cilus.php
+[21/Apr/2026 07:41:02] "GET /cilus.php HTTP/1.1" 404 2945
+Not Found: /adminfuns.php
+[21/Apr/2026 07:41:02] "GET /adminfuns.php HTTP/1.1" 404 2957
+Not Found: /doc.php
+[21/Apr/2026 07:41:03] "GET /doc.php HTTP/1.1" 404 2939
+Not Found: /xper1.php
+[21/Apr/2026 07:41:03] "GET /xper1.php HTTP/1.1" 404 2945
+Not Found: /2.php
+[21/Apr/2026 07:41:03] "GET /2.php HTTP/1.1" 404 2933
+Not Found: /gelio1.php
+[21/Apr/2026 07:41:03] "GET /gelio1.php HTTP/1.1" 404 2948
+Not Found: /ws82.php
+[21/Apr/2026 07:41:03] "GET /ws82.php HTTP/1.1" 404 2942
+Not Found: /wp-includes/theme-compat/wp-login.php
+[21/Apr/2026 07:41:03] "GET /wp-includes/theme-compat/wp-login.php HTTP/1.1" 404 3029
+Not Found: /wp-class.php
+[21/Apr/2026 07:41:03] "GET /wp-class.php HTTP/1.1" 404 2954
+Not Found: /layout.php
+[21/Apr/2026 07:41:03] "GET /layout.php HTTP/1.1" 404 2948
+Not Found: /ws85.php
+[21/Apr/2026 07:41:03] "GET /ws85.php HTTP/1.1" 404 2942
+Not Found: /zogy1.php
+[21/Apr/2026 07:41:03] "GET /zogy1.php HTTP/1.1" 404 2945
+Not Found: /state.php
+[21/Apr/2026 07:41:04] "GET /state.php HTTP/1.1" 404 2945
+Not Found: /ss.php
+[21/Apr/2026 07:41:04] "GET /ss.php HTTP/1.1" 404 2936
+Not Found: /error_log.php
+[21/Apr/2026 07:41:04] "GET /error_log.php HTTP/1.1" 404 2957
+Not Found: /mifta.php
+[21/Apr/2026 07:41:04] "GET /mifta.php HTTP/1.1" 404 2945
+Not Found: /ws57.php
+[21/Apr/2026 07:41:04] "GET /ws57.php HTTP/1.1" 404 2942
+Not Found: /ws86.php
+[21/Apr/2026 07:41:04] "GET /ws86.php HTTP/1.1" 404 2942
+Not Found: /fs.php
+[21/Apr/2026 07:41:04] "GET /fs.php HTTP/1.1" 404 2936
+Not Found: /packsin1.php
+[21/Apr/2026 07:41:04] "GET /packsin1.php HTTP/1.1" 404 2954
+Not Found: /xs.php
+[21/Apr/2026 07:41:04] "GET /xs.php HTTP/1.1" 404 2936
+Not Found: /img.php
+[21/Apr/2026 07:41:05] "GET /img.php HTTP/1.1" 404 2939
+Not Found: /chosen.php
+[21/Apr/2026 07:41:05] "GET /chosen.php HTTP/1.1" 404 2948
+Not Found: /maxro.php
+[21/Apr/2026 07:41:05] "GET /maxro.php HTTP/1.1" 404 2945
+Not Found: /a7.php
+[21/Apr/2026 07:41:05] "GET /a7.php HTTP/1.1" 404 2936
+Not Found: /wp-block.php
+[21/Apr/2026 07:41:05] "GET /wp-block.php HTTP/1.1" 404 2954
+Not Found: /aa.php
+[21/Apr/2026 07:41:05] "GET /aa.php HTTP/1.1" 404 2936
+Not Found: /areak1.php
+[21/Apr/2026 07:41:05] "GET /areak1.php HTTP/1.1" 404 2948
+Not Found: /sallu.php
+[21/Apr/2026 07:41:06] "GET /sallu.php HTTP/1.1" 404 2945
+Not Found: /tiny2.php
+[21/Apr/2026 07:41:06] "GET /tiny2.php HTTP/1.1" 404 2945
+Not Found: /7.php
+[21/Apr/2026 07:41:06] "GET /7.php HTTP/1.1" 404 2933
+Not Found: /gz.php
+[21/Apr/2026 07:41:06] "GET /gz.php HTTP/1.1" 404 2936
+Not Found: /8.php
+[21/Apr/2026 07:41:06] "GET /8.php HTTP/1.1" 404 2933
+Not Found: /gecko.php
+[21/Apr/2026 07:41:06] "GET /gecko.php HTTP/1.1" 404 2945
+Not Found: /aevly.php
+[21/Apr/2026 07:41:06] "GET /aevly.php HTTP/1.1" 404 2945
+Not Found: /ws68.php
+[21/Apr/2026 07:41:06] "GET /ws68.php HTTP/1.1" 404 2942
+Not Found: /pp.php
+[21/Apr/2026 07:41:07] "GET /pp.php HTTP/1.1" 404 2936
+Not Found: /yuzuru1.php
+[21/Apr/2026 07:41:07] "GET /yuzuru1.php HTTP/1.1" 404 2951
+Not Found: /son1.php
+[21/Apr/2026 07:41:07] "GET /son1.php HTTP/1.1" 404 2942
+Not Found: /tx79.php
+[21/Apr/2026 07:41:07] "GET /tx79.php HTTP/1.1" 404 2942
+Not Found: /ws80.php
+[21/Apr/2026 07:41:07] "GET /ws80.php HTTP/1.1" 404 2942
+Not Found: /ws84.php
+[21/Apr/2026 07:41:07] "GET /ws84.php HTTP/1.1" 404 2942
+Not Found: /ws61.php
+[21/Apr/2026 07:41:07] "GET /ws61.php HTTP/1.1" 404 2942
+Not Found: /class-wp-image.php
+[21/Apr/2026 07:41:07] "GET /class-wp-image.php HTTP/1.1" 404 2972
+Not Found: /.git/config
+[21/Apr/2026 07:55:30] "GET /.git/config HTTP/1.1" 404 2952
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[21/Apr/2026 08:06:13] "GET / HTTP/1.1" 500 98184

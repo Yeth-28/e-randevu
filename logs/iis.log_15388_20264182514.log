@@ -1,0 +1,35 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[17/Apr/2026 19:51:08] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /left-sidebar.php
+[17/Apr/2026 19:51:08] "GET /left-sidebar.php HTTP/1.1" 404 2966
+Not Found: /yas.php
+[17/Apr/2026 19:51:08] "GET /yas.php HTTP/1.1" 404 2939
+Not Found: /tk.php
+[17/Apr/2026 19:51:08] "GET /tk.php HTTP/1.1" 404 2936
+Not Found: /bthil.php
+[17/Apr/2026 19:51:08] "GET /bthil.php HTTP/1.1" 404 2945
+Not Found: /sadcut1.php
+[17/Apr/2026 19:51:08] "GET /sadcut1.php HTTP/1.1" 404 2951
+Not Found: /sd.php
+[17/Apr/2026 19:51:08] "GET /sd.php HTTP/1.1" 404 2936
+Not Found: /000.php
+[17/Apr/2026 19:51:08] "GET /000.php HTTP/1.1" 404 2939
+Not Found: /css/w3llstore.php
+[17/Apr/2026 19:51:08] "GET /css/w3llstore.php HTTP/1.1" 404 2969
+Not Found: /w3llstore.php
+[17/Apr/2026 19:51:08] "GET /w3llstore.php HTTP/1.1" 404 2957
+Not Found: /css/themes.php
+[17/Apr/2026 19:51:08] "GET /css/themes.php HTTP/1.1" 404 2960
+Not Found: /themes.php
+[17/Apr/2026 19:51:08] "GET /themes.php HTTP/1.1" 404 2948
+Not Found: /.git/config
+[17/Apr/2026 19:57:08] "GET /.git/config HTTP/1.1" 404 2952
+Not Found: /.git/HEAD
+[17/Apr/2026 19:57:09] "GET /.git/HEAD HTTP/1.1" 404 2946
+Not Found: /app/.git/config
+[17/Apr/2026 19:57:13] "GET /app/.git/config HTTP/1.1" 404 2964

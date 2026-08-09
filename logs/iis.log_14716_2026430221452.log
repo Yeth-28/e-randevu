@@ -1,0 +1,112 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[30/Apr/2026 15:14:55] "GET / HTTP/1.1" 200 9312
+[30/Apr/2026 15:14:57] "GET / HTTP/1.1" 200 9312
+Not Found: /sitemap.xml
+[30/Apr/2026 15:15:01] "GET /sitemap.xml HTTP/1.1" 404 2951
+Not Found: /robots.txt
+[30/Apr/2026 15:15:03] "GET /robots.txt HTTP/1.1" 404 2948
+Not Found: /asset-manifest.json
+[30/Apr/2026 15:15:04] "GET /asset-manifest.json HTTP/1.1" 404 2975
+Not Found: /manifest.json
+[30/Apr/2026 15:15:08] "GET /manifest.json HTTP/1.1" 404 2957
+Not Found: /build-manifest.json
+[30/Apr/2026 15:15:11] "GET /build-manifest.json HTTP/1.1" 404 2975
+Not Found: /_next/static/buildManifest.js
+[30/Apr/2026 15:15:14] "GET /_next/static/buildManifest.js HTTP/1.1" 404 3005
+Not Found: /serverless.yml
+[30/Apr/2026 15:15:18] "GET /serverless.yml HTTP/1.1" 404 2960
+Not Found: /.env.old
+Not Found: /config.env
+[30/Apr/2026 15:15:18] "GET /.env.old HTTP/1.1" 404 2942
+[30/Apr/2026 15:15:18] "GET /config.env HTTP/1.1" 404 2948
+Not Found: /.aws/config
+[30/Apr/2026 15:15:18] "GET /.aws/config HTTP/1.1" 404 2951
+Not Found: /.env.backup
+Not Found: /.env.development
+Not Found: /.ssh/id_ed25519
+[30/Apr/2026 15:15:18] "GET /.env.backup HTTP/1.1" 404 2951
+[30/Apr/2026 15:15:18] "GET /.env.development HTTP/1.1" 404 2966
+Not Found: /.env.local
+[30/Apr/2026 15:15:18] "GET /.ssh/id_ed25519 HTTP/1.1" 404 2963
+Not Found: /.env.production
+[30/Apr/2026 15:15:18] "GET /.env.local HTTP/1.1" 404 2948
+Not Found: /wp-config.php~
+Not Found: /.ssh/id_rsa
+[30/Apr/2026 15:15:18] "GET /.env.production HTTP/1.1" 404 2963
+[30/Apr/2026 15:15:18] "GET /wp-config.php~ HTTP/1.1" 404 2960
+[30/Apr/2026 15:15:18] "GET /.ssh/id_rsa HTTP/1.1" 404 2951
+Not Found: /backend/.env
+Not Found: /wp-config.bak
+Not Found: /.ssh/authorized_keys
+[30/Apr/2026 15:15:20] "GET /backend/.env HTTP/1.1" 404 2954
+Not Found: /terraform.tfstate
+[30/Apr/2026 15:15:20] "GET /wp-config.bak HTTP/1.1" 404 2957
+Not Found: /.env.example
+[30/Apr/2026 15:15:20] "GET /admin/.env HTTP/1.1" 302 0
+Not Found: /terraform.tfstate.backup
+[30/Apr/2026 15:15:20] "GET /.ssh/authorized_keys HTTP/1.1" 404 2978
+Not Found: /.env.production.bak
+[30/Apr/2026 15:15:20] "GET /terraform.tfstate HTTP/1.1" 404 2969
+Not Found: /.ssh/known_hosts
+[30/Apr/2026 15:15:20] "GET /.env.example HTTP/1.1" 404 2954
+Not Found: /.ssh/config
+[30/Apr/2026 15:15:20] "GET /terraform.tfstate.backup HTTP/1.1" 404 2990
+Not Found: /.ssh/id_dsa
+[30/Apr/2026 15:15:20] "GET /.ssh/known_hosts HTTP/1.1" 404 2966
+Not Found: /api/.env
+[30/Apr/2026 15:15:20] "GET /.env.production.bak HTTP/1.1" 404 2975
+Not Found: /.git/config
+Not Found: /.aws/credentials
+[30/Apr/2026 15:15:20] "GET /.ssh/config HTTP/1.1" 404 2951
+Not Found: /.env
+[30/Apr/2026 15:15:20] "GET /.ssh/id_dsa HTTP/1.1" 404 2951
+Not Found: /.env.bak
+[30/Apr/2026 15:15:20] "GET /api/.env HTTP/1.1" 404 2942
+[30/Apr/2026 15:15:20] "GET /.git/config HTTP/1.1" 404 2951
+Not Found: /public/.env
+[30/Apr/2026 15:15:20] "GET /.aws/credentials HTTP/1.1" 404 2966
+Not Found: /app/.env
+[30/Apr/2026 15:15:20] "GET /.env HTTP/1.1" 404 2930
+Not Found: /.terraform/terraform.tfstate
+Not Found: /terraform.tfvars
+[30/Apr/2026 15:15:20] "GET /.env.bak HTTP/1.1" 404 2942
+[30/Apr/2026 15:15:20] "GET /public/.env HTTP/1.1" 404 2951
+[30/Apr/2026 15:15:20] "GET /app/.env HTTP/1.1" 404 2942
+[30/Apr/2026 15:15:20] "GET /.terraform/terraform.tfstate HTTP/1.1" 404 3002
+[30/Apr/2026 15:15:20] "GET /terraform.tfvars HTTP/1.1" 404 2966
+Not Found: /.ssh/id_ecdsa
+[30/Apr/2026 15:15:21] "GET /.ssh/id_ecdsa HTTP/1.1" 404 2957
+Not Found: /graphql
+[30/Apr/2026 15:15:24] "GET /graphql HTTP/1.1" 404 2939
+Not Found: /app-config.json
+[30/Apr/2026 15:15:24] "GET /app-config.json HTTP/1.1" 404 2963
+Not Found: /runtime-config.js
+Not Found: /settings.json
+[30/Apr/2026 15:15:24] "GET /runtime-config.js HTTP/1.1" 404 2969
+Not Found: /env.js
+Not Found: /api/settings
+[30/Apr/2026 15:15:24] "GET /settings.json HTTP/1.1" 404 2957
+Not Found: /env.json
+[30/Apr/2026 15:15:24] "GET /env.js HTTP/1.1" 404 2936
+Not Found: /api/config
+[30/Apr/2026 15:15:24] "GET /api/settings HTTP/1.1" 404 2954
+[30/Apr/2026 15:15:24] "GET /env.json HTTP/1.1" 404 2942
+Not Found: /__env.js
+Not Found: /api/v1/settings
+[30/Apr/2026 15:15:24] "GET /api/config HTTP/1.1" 404 2948
+Not Found: /api/v1/config
+[30/Apr/2026 15:15:24] "GET /api/v1/settings HTTP/1.1" 404 2963
+[30/Apr/2026 15:15:24] "GET /__env.js HTTP/1.1" 404 2942
+[30/Apr/2026 15:15:24] "GET /api/v1/config HTTP/1.1" 404 2957
+Not Found: /config.json
+Not Found: /api/v1/env
+Not Found: /api/env
+[30/Apr/2026 15:15:24] "GET /config.json HTTP/1.1" 404 2951
+[30/Apr/2026 15:15:24] "GET /api/v1/env HTTP/1.1" 404 2948
+[30/Apr/2026 15:15:24] "GET /api/env HTTP/1.1" 404 2939
+Not Found: /config.js
+[30/Apr/2026 15:15:26] "GET /config.js HTTP/1.1" 404 2945

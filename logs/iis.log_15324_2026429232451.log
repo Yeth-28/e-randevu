@@ -1,0 +1,29 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /robots.txt
+[29/Apr/2026 16:24:55] "GET /robots.txt HTTP/1.1" 404 2949
+Not Found: /robots.txt
+[29/Apr/2026 16:28:47] "GET /robots.txt HTTP/1.1" 404 2365
+[29/Apr/2026 16:29:15] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[29/Apr/2026 16:29:18] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+Not Found: /robots.txt
+[29/Apr/2026 16:30:40] "GET /robots.txt HTTP/1.1" 404 2363
+[29/Apr/2026 16:33:08] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[29/Apr/2026 16:36:18] "GET /robots.txt HTTP/1.1" 404 2948
+[29/Apr/2026 16:36:18] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[29/Apr/2026 16:44:40] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[29/Apr/2026 16:44:47] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[29/Apr/2026 16:44:47] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[29/Apr/2026 16:44:49] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[29/Apr/2026 16:44:51] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[29/Apr/2026 16:44:52] "GET /robots.txt HTTP/1.1" 404 2362

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>e-Randevu — Online Diş Kliniği Randevu Sistemi</title>
+    <meta name="description" content="Türkiye'nin online diş kliniği randevu platformu. Yakınındaki diş kliniklerini bul, anında randevu al. 500+ klinik, 81 il.">
+    <meta name="keywords" content="diş kliniği randevu, online randevu, diş hekimi, dental randevu, diş doktoru bul">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="e-Randevu">
+    <link rel="canonical" href="{{ SITE_URL }}/">
+    <meta property="og:title" content="e-Randevu — Online Diş Kliniği Randevu Sistemi">
+    <meta property="og:description" content="Türkiye'nin online diş kliniği randevu platformu. Yakınındaki diş kliniklerini bul, anında randevu al.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ SITE_URL }}/">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="e-Randevu — Online Diş Kliniği Randevu">
+    <meta name="twitter:description" content="Türkiye'nin online diş kliniği randevu platformu.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "e-Randevu",
+      "url": "{{ SITE_URL }}",
+      "description": "Online diş kliniği randevu platformu",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ SITE_URL }}/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ana_sayfa.css' %}">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <a href="{{ SITE_URL }}/" class="logo" aria-label="e-Randevu Ana Sayfa">
+            <div class="logo-icon" aria-hidden="true">🦷</div>
+            <div class="logo-text">e-<span>Randevu</span></div>
+        </a>
+        <nav class="header-nav" aria-label="Ana menü">
+            <a href="{{ SITE_URL }}/" class="nav-link">Ana Sayfa</a>
+            <a href="{{ SITE_URL }}/?q=" class="nav-link">Klinikler</a>
+            {% if hasta_user %}
+            <a href="{{ SITE_URL }}/hasta/profilim/" class="hasta-badge">👤 {{ hasta_user.name|default:hasta_user.phone_number }}</a>
+            {% else %}
+            <a href="{{ SITE_URL }}/hasta/giris/" class="btn-giris">Giriş Yap</a>
+            {% endif %}
+        </nav>
+        <button class="hamburger" aria-label="Menüyü aç/kapat" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobil menü">
+        <a href="{{ SITE_URL }}/">Ana Sayfa</a>
+        <a href="{{ SITE_URL }}/?q=">Klinikler</a>
+        {% if hasta_user %}
+        <a href="{{ SITE_URL }}/hasta/profilim/">👤 Profilim</a>
+        <a href="{{ SITE_URL }}/hasta/cikis/">Çıkış Yap</a>
+        {% else %}
+        <a href="{{ SITE_URL }}/hasta/giris/">Giriş Yap</a>
+        <a href="{{ SITE_URL }}/hasta/kayit/">Kayıt Ol</a>
+        {% endif %}
+        <a href="{{ PANEL_URL }}/kayit/">Kliniğinizi Ekleyin</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">🇹🇷 Türkiye'nin Online Diş Randevu Platformu</div>
+        <h1>Diş Kliniğine<br><span>Kolay Randevu</span> Al</h1>
+        <p>Yakınındaki diş kliniklerini bul, anında online randevu al.<br>Geçmiş kayıtlarına her yerden ulaş.</p>
+
+        <div class="search-form-wrap">
+            <form method="get" action="{{ SITE_URL }}/" id="search-form" role="search">
+                <div class="search-box">
+                    <label for="search-input" class="sr-only">Klinik veya şehir ara</label>
+                    <input type="search" name="q" id="search-input" class="search-input"
+                           value="{{ arama }}"
+                           placeholder="Klinik adı veya şehir ara..."
+                           autocomplete="off"
+                           aria-label="Klinik veya şehir ara">
+                    <button type="submit" class="search-btn">🔍 Ara</button>
+                    <div class="autocomplete-dropdown" id="autocomplete" role="listbox"></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="hero-stats" aria-label="Platform istatistikleri">
+            <div class="hero-stat"><div class="num">500+</div><div class="lbl">Kayıtlı Klinik</div></div>
+            <div class="hero-stat"><div class="num">50K+</div><div class="lbl">Alınan Randevu</div></div>
+            <div class="hero-stat"><div class="num">81</div><div class="lbl">İl</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ŞEHİR FİLTRELERİ -->
+{% if sehirler %}
+<div class="sehir-section">
+    <div class="sehir-inner">
+        <span class="sehir-label">📍 Şehir:</span>
+        <a href="{{ SITE_URL }}/" class="sehir-btn {% if not sehir %}active{% endif %}">Tümü</a>
+        {% for s in sehirler|slice:":12" %}
+        <a href="{{ SITE_URL }}/?sehir={{ s }}" class="sehir-btn {% if sehir == s %}active{% endif %}">{{ s }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- ARAMA SONUÇLARI -->
+{% if arama or sehir %}
+<main class="results-section">
+    <div class="results-header">
+        <h2 class="results-title">
+            {% if arama %}„{{ arama }}" için sonuçlar{% else %}{{ sehir }} klinikleri{% endif %}
+        </h2>
+        <div class="results-count" aria-live="polite">{{ toplam }} klinik bulundu</div>
+    </div>
+
+    {% if klinikler %}
+    <div class="klinik-grid" role="list">
+        {% for klinik in klinikler %}
+        <article class="klinik-card" role="listitem" itemscope itemtype="https://schema.org/Dentist">
+            <div class="klinik-header">
+                <div class="klinik-avatar">
+                    {% if klinik.logo %}
+                    <img src="{{ klinik.logo.url }}" alt="{{ klinik.name }} logosu" loading="lazy">
+                    {% else %}<span aria-hidden="true">🦷</span>{% endif %}
+                </div>
+                <div>
+                    <div class="klinik-name" itemprop="name">{{ klinik.name }}</div>
+                    {% if klinik.city %}
+                    <div class="klinik-city" itemprop="addressLocality">📍 {{ klinik.city }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if klinik.address %}
+            <div class="klinik-address" itemprop="address">{{ klinik.address }}</div>
+            {% endif %}
+            {% if klinik.phone_number %}
+            <div style="font-size:13px;color:var(--gray);margin-bottom:12px;">
+                📞 <a href="tel:{{ klinik.phone_number }}" style="color:var(--gray);">{{ klinik.phone_number }}</a>
+            </div>
+            {% endif %}
+            {% if klinik.plan != 'free' %}
+            <span class="klinik-plan {{ klinik.plan }}">
+                {% if klinik.plan == 'pro' %}⭐ Pro{% elif klinik.plan == 'enterprise' %}🏆 Enterprise{% else %}Basic{% endif %}
+            </span>
+            {% endif %}
+            <a href="https://{{ klinik.subdomain }}.{{ BASE_DOMAIN }}/" class="btn-randevu" itemprop="url">Randevu Al →</a>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state" role="alert">
+        <div class="icon" aria-hidden="true">🔍</div>
+        <p style="font-size:16px;margin-bottom:8px;">Sonuç bulunamadı.</p>
+        <p>Farklı bir arama terimi deneyin.</p>
+    </div>
+    {% endif %}
+</main>
+
+{% else %}
+
+<!-- ÖNE ÇIKAN KLİNİKLER -->
+{% if one_cikan %}
+<section class="featured-section" aria-label="Öne çıkan klinikler">
+    <div class="section-inner">
+        <h2 class="section-title">⭐ Öne Çıkan Klinikler</h2>
+        <p class="section-sub">Premium üye kliniklerimiz</p>
+        <div class="klinik-grid">
+            {% for klinik in one_cikan %}
+            <article class="klinik-card" itemscope itemtype="https://schema.org/Dentist">
+                <div class="klinik-header">
+                    <div class="klinik-avatar">
+                        {% if klinik.logo %}<img src="{{ klinik.logo.url }}" alt="{{ klinik.name }} logosu" loading="lazy">
+                        {% else %}<span aria-hidden="true">🦷</span>{% endif %}
+                    </div>
+                    <div>
+                        <div class="klinik-name" itemprop="name">{{ klinik.name }}</div>
+                        {% if klinik.city %}<div class="klinik-city" itemprop="addressLocality">📍 {{ klinik.city }}</div>{% endif %}
+                    </div>
+                </div>
+                {% if klinik.address %}
+                <div class="klinik-address" itemprop="address">{{ klinik.address }}</div>
+                {% endif %}
+                <a href="https://{{ klinik.subdomain }}.{{ BASE_DOMAIN }}/" class="btn-randevu" itemprop="url">Randevu Al →</a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- NASIL ÇALIŞIR -->
+<section class="how-section" aria-label="Nasıl çalışır">
+    <div class="section-inner" style="text-align:center;">
+        <h2 class="section-title">Nasıl Çalışır?</h2>
+        <p class="section-sub">3 adımda randevunuzu alın</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num" aria-hidden="true">1</div>
+                <h3 class="step-title">Klinik Ara</h3>
+                <p class="step-desc">Adını veya şehrini yazarak istediğiniz kliniği bulun. Adres bilgisiyle doğru kliniği seçin.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num" aria-hidden="true">2</div>
+                <h3 class="step-title">Randevu Al</h3>
+                <p class="step-desc">Doktor, tarih ve saat seçin. Birkaç saniyede randevunuzu oluşturun.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num" aria-hidden="true">3</div>
+                <h3 class="step-title">Takip Et</h3>
+                <p class="step-desc">Giriş yapın, tüm randevularınızı ve tedavi geçmişinizi tek yerden görün.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+<!-- KLİNİK KAYIT CTA -->
+<section class="cta-section" aria-label="Kliniğinizi ekleyin">
+    <div class="cta-inner">
+        <div class="cta-icon" aria-hidden="true">🏥</div>
+        <h2 class="cta-title">Kliniğinizi Platforma Ekleyin</h2>
+        <p class="cta-desc">Binlerce hastaya ulaşın, online randevu alın, kliniğinizi büyütün.</p>
+        <a href="{{ PANEL_URL }}/kayit/" class="cta-btn">Ücretsiz Kaydol →</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">e-<span>Randevu</span></div>
+        <nav class="footer-links" aria-label="Footer menü">
+            <a href="#">Hakkımızda</a>
+            <a href="{{ PANEL_URL }}/kayit/">Klinik Kaydı</a>
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">KVKK</a>
+            <a href="#">İletişim</a>
+        </nav>
+        <p class="footer-copy">© 2026 e-Randevu. Tüm hakları saklıdır.</p>
+    </div>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+    if (!e.target.closest('header')) {
+        document.getElementById('mobileMenu').classList.remove('open');
+    }
+});
+
+const inp = document.getElementById('search-input');
+const ac  = document.getElementById('autocomplete');
+let timer;
+
+inp?.addEventListener('input', () => {
+    clearTimeout(timer);
+    const q = inp.value.trim();
+    if (q.length < 2) { ac.style.display='none'; return; }
+    timer = setTimeout(async () => {
+        try {
+            const res  = await fetch(`/api/klinik-ara/?q=${encodeURIComponent(q)}`);
+            const data = await res.json();
+            if (!data.results?.length) { ac.style.display='none'; return; }
+            ac.innerHTML = data.results.map(r => `
+                <div class="autocomplete-item" onclick="window.location='${r.url}'" tabindex="0" role="option">
+                    <div class="ac-name">🦷 ${r.name}</div>
+                    <div class="ac-addr">📍 ${r.city}${r.address ? ' — '+r.address : ''}</div>
+                </div>
+            `).join('');
+            ac.style.display = 'block';
+        } catch(e) { ac.style.display='none'; }
+    }, 300);
+});
+
+document.addEventListener('click', e => {
+    if (!e.target.closest('.search-box')) ac.style.display='none';
+});
+
+inp?.addEventListener('keydown', e => {
+    if (e.key === 'Escape') ac.style.display='none';
+});
+</script>
+</body>
+</html>

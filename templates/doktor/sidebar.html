@@ -1,0 +1,168 @@
+<style>
+/* DOKTOR SIDEBAR CSS - tüm sayfalarda geçerli */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#065f46,#059669);z-index:100;display:flex;flex-direction:column;}
+.sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.sidebar-brand .icon{font-size:28px;}
+.sidebar-brand .name{font-family:'Playfair Display',serif;font-size:16px;color:white;margin-top:4px;}
+.sidebar-brand .clinic-id{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+.sidebar-nav{padding:16px 0;flex:1;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+.nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+.nav-item .icon{font-size:18px;width:24px;text-align:center;}
+.sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+.sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+.sidebar-footer a:hover{color:white;}
+.main{margin-left:240px;}
+</style>
+<div class="sidebar" style="background:linear-gradient(180deg,#065f46,#059669);">
+    <div class="sidebar-brand">
+        <div class="icon">👨‍⚕️</div>
+        <div class="name">{{ doktor.name }}</div>
+        <div class="clinic-id">Doktor Paneli</div>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/dashboard/"
+           class="nav-item {% if '/dashboard' in request.path %}active{% endif %}">
+            <span class="icon">📊</span> Dashboard
+        </a>
+        <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/randevular/"
+           class="nav-item {% if '/randevular' in request.path %}active{% endif %}">
+            <span class="icon">📅</span> Randevularım
+        </a>
+        <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/hastalar/"
+           class="nav-item {% if '/hastalar' in request.path %}active{% endif %}">
+            <span class="icon">🧑‍🦷</span> Hastalarım
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="{{ PANEL_URL }}/doktor/{{ clinic_id }}/bildirimler/"
+           class="nav-item {% if '/bildirimler' in request.path %}active{% endif %}"
+           style="position:relative;">
+            <span class="icon">🔔</span>
+            <span>Bildirimler</span>
+            <span id="sidebar-bildirim-badge"
+                  style="display:none;background:#ef4444;color:white;border-radius:999px;font-size:10px;font-weight:700;min-width:16px;height:16px;line-height:16px;text-align:center;padding:0 3px;margin-left:4px;"></span>
+        </a>
+        <a href="{{ PANEL_URL }}/doktor/cikis/"
+           style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;padding:6px 0;">
+            🚪 Çıkış Yap
+        </a>
+    </div>
+</div>
+
+<!-- BİLDİRİM POPUP CONTAINER -->
+<div id="bildirim-container" style="position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:10px;width:360px;pointer-events:none;"></div>
+
+<style>
+.bildirim-popup{background:white;border-radius:14px;padding:14px 16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);border-left:4px solid #059669;display:flex;align-items:flex-start;gap:10px;animation:bSlideIn 0.35s cubic-bezier(0.34,1.56,0.64,1);pointer-events:all;margin-bottom:8px;}
+.bildirim-popup.iptal_randevu{border-left-color:#dc2626;}
+.bildirim-popup.yeni_randevu{border-left-color:#16a34a;}
+.bp-icon{font-size:20px;flex-shrink:0;}
+.bp-title{font-size:13px;font-weight:600;color:#111827;margin-bottom:2px;}
+.bp-body{font-size:12px;color:#6b7280;}
+.bp-kapat{margin-left:auto;background:none;border:none;font-size:18px;color:#6b7280;cursor:pointer;padding:0 0 0 8px;flex-shrink:0;line-height:1;}
+@keyframes bSlideIn{from{transform:translateX(130%);opacity:0;}to{transform:translateX(0);opacity:1;}}
+@keyframes bSlideOut{from{transform:translateX(0);opacity:1;}to{transform:translateX(130%);opacity:0;}}
+</style>
+
+<script>
+(function(){
+    var CLINIC_ID = "{{ clinic_id }}";
+    if (!CLINIC_ID) return;
+
+    var API_URL    = '{{ PANEL_URL }}/doktor/' + CLINIC_ID + '/api/bildirimler/';
+    var OKUNDU_URL = '{{ PANEL_URL }}/doktor/' + CLINIC_ID + '/api/bildirimler/okundu/';
+
+    var gosterilmisIds = new Set();
+    try { gosterilmisIds = new Set(JSON.parse(localStorage.getItem('dkt_pb_'+CLINIC_ID)||'[]')); } catch(e){}
+
+    var audioCtx = null;
+    function getCtx(){
+        if(!audioCtx){ try{ audioCtx=new(window.AudioContext||window.webkitAudioContext)(); }catch(e){return null;} }
+        if(audioCtx.state==='suspended') audioCtx.resume();
+        return audioCtx;
+    }
+    document.addEventListener('click', function(){ getCtx(); }, {once:true});
+
+    function sesOynat(type){
+        var ctx = getCtx();
+        if(!ctx || ctx.state!=='running') return;
+        try{
+            var now=ctx.currentTime;
+            var notlar = type==='yeni_randevu' ? [[880,0],[660,0.18]] : [[440,0],[330,0.2]];
+            notlar.forEach(function(n){
+                var osc=ctx.createOscillator(), gain=ctx.createGain();
+                osc.type='sine'; osc.frequency.value=n[0];
+                gain.gain.setValueAtTime(0.22,now+n[1]);
+                gain.gain.exponentialRampToValueAtTime(0.001,now+n[1]+0.45);
+                osc.connect(gain); gain.connect(ctx.destination);
+                osc.start(now+n[1]); osc.stop(now+n[1]+0.5);
+            });
+        }catch(e){}
+    }
+
+    function popupGoster(b){
+        var c = document.getElementById('bildirim-container');
+        if(!c) return;
+        var icon = b.type==='yeni_randevu' ? '📅' : b.type==='iptal_randevu' ? '❌' : '🔔';
+        var el = document.createElement('div');
+        el.className = 'bildirim-popup ' + (b.type||'');
+        el.innerHTML = '<div class="bp-icon">'+icon+'</div>'
+            + '<div style="flex:1;">'
+            + '<div class="bp-title">'+b.title+'</div>'
+            + '<div class="bp-body">'+b.body+'</div>'
+            + '<div style="font-size:11px;color:#9ca3af;margin-top:3px;">'+b.created_at+'</div>'
+            + '</div>'
+            + '<button class="bp-kapat" onclick="this.closest(\'.bildirim-popup\').remove()">✕</button>';
+        c.appendChild(el);
+        setTimeout(function(){
+            el.style.animation='bSlideOut 0.3s ease forwards';
+            setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 300);
+        }, 7000);
+    }
+
+    function badgeGuncelle(n){
+        var b = document.getElementById('sidebar-bildirim-badge');
+        if(!b) return;
+        b.textContent = n>99 ? '99+' : String(n);
+        b.style.display = n>0 ? 'inline-block' : 'none';
+    }
+
+    function getCookie(name){
+        var parts = ('; '+document.cookie).split('; '+name+'=');
+        return parts.length===2 ? parts.pop().split(';').shift() : '';
+    }
+
+    function okunduIsaretle(ids){
+        if(!ids.length) return;
+        fetch(OKUNDU_URL, {
+            method:'POST',
+            headers:{'Content-Type':'application/json','X-CSRFToken':getCookie('csrftoken')},
+            body:JSON.stringify({ids:ids}),
+            credentials:'include'
+        }).catch(function(){});
+    }
+
+    window.bildirimKontrol = function(){
+        fetch(API_URL, {credentials:'include'})
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(data){
+            if(!data) return;
+            var bildirimler = data.notifications || [];
+            var yeniler = bildirimler.filter(function(b){ return !gosterilmisIds.has(b.id); });
+            badgeGuncelle(bildirimler.length);
+            yeniler.forEach(function(b){
+                gosterilmisIds.add(b.id);
+                sesOynat(b.type);
+                popupGoster(b);
+            });
+            try{ localStorage.setItem('dkt_pb_'+CLINIC_ID, JSON.stringify(Array.from(gosterilmisIds).slice(-200))); }catch(e){}
+            if(yeniler.length) okunduIsaretle(yeniler.map(function(b){ return b.id; }));
+        })
+        .catch(function(){});
+    };
+
+    bildirimKontrol();
+    setInterval(bildirimKontrol, 15000);
+})();
+</script>

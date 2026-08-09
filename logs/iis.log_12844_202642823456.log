@@ -1,0 +1,92 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[28/Apr/2026 16:05:00] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-admin/setup-config.php
+[28/Apr/2026 16:05:00] "GET /wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /wp-admin/install.php
+[28/Apr/2026 16:05:00] "GET /wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3004
+Not Found: /wordpress
+[28/Apr/2026 16:05:00] "GET /wordpress HTTP/1.1" 404 2945
+Not Found: /wp
+[28/Apr/2026 16:05:00] "GET /wp HTTP/1.1" 404 2924
+Not Found: /new
+[28/Apr/2026 16:05:00] "GET /new HTTP/1.1" 404 2927
+Not Found: /old
+[28/Apr/2026 16:05:01] "GET /old HTTP/1.1" 404 2927
+Not Found: /blog
+[28/Apr/2026 16:05:01] "GET /blog HTTP/1.1" 404 2930
+Not Found: /test
+[28/Apr/2026 16:05:01] "GET /test HTTP/1.1" 404 2930
+Not Found: /shop
+[28/Apr/2026 16:05:01] "GET /shop HTTP/1.1" 404 2930
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[28/Apr/2026 16:10:55] "GET / HTTP/1.1" 500 98162
+[28/Apr/2026 16:14:20] "GET /robots.txt HTTP/1.1" 301 0
+[28/Apr/2026 16:14:20] "GET /robots.txt/ HTTP/1.1" 302 0
+[28/Apr/2026 16:14:21] "GET /giris/ HTTP/1.1" 200 5067
+[28/Apr/2026 16:14:21] "GET /sitemap.xml HTTP/1.1" 301 0
+[28/Apr/2026 16:14:21] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[28/Apr/2026 16:14:21] "GET /giris/ HTTP/1.1" 200 5067
+[28/Apr/2026 16:33:10] "GET / HTTP/1.1" 200 9312
+[28/Apr/2026 16:53:42] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[28/Apr/2026 17:13:53] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /css.php
+[28/Apr/2026 17:13:53] "GET /css.php HTTP/1.1" 404 2939
+Not Found: /xse.php
+[28/Apr/2026 17:13:53] "GET /xse.php HTTP/1.1" 404 2939
+Not Found: /zzx.php
+[28/Apr/2026 17:13:53] "GET /zzx.php HTTP/1.1" 404 2939
+Not Found: /dr.php
+[28/Apr/2026 17:13:53] "GET /dr.php HTTP/1.1" 404 2936
+Not Found: /eetu.php
+[28/Apr/2026 17:13:53] "GET /eetu.php HTTP/1.1" 404 2942
+Not Found: /dropdown.php
+[28/Apr/2026 17:13:53] "GET /dropdown.php HTTP/1.1" 404 2954
+Not Found: /albin.php
+[28/Apr/2026 17:13:53] "GET /albin.php HTTP/1.1" 404 2945
+Not Found: /pass.php
+[28/Apr/2026 17:13:53] "GET /pass.php HTTP/1.1" 404 2942
+Not Found: /aevly.php
+[28/Apr/2026 17:13:54] "GET /aevly.php HTTP/1.1" 404 2945
+Not Found: /ayk.php
+[28/Apr/2026 17:13:54] "GET /ayk.php HTTP/1.1" 404 2939
+Not Found: /reune.php
+[28/Apr/2026 17:13:54] "GET /reune.php HTTP/1.1" 404 2945
+Not Found: /rasse.php
+[28/Apr/2026 17:13:54] "GET /rasse.php HTTP/1.1" 404 2945

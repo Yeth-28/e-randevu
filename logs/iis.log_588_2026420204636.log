@@ -1,0 +1,218 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[20/Apr/2026 13:46:40] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /test1.php
+[20/Apr/2026 13:46:40] "GET /test1.php HTTP/1.1" 404 2945
+Not Found: /admin.php
+[20/Apr/2026 13:46:41] "GET /admin.php HTTP/1.1" 404 2945
+Not Found: /goods.php
+[20/Apr/2026 13:46:41] "GET /goods.php HTTP/1.1" 404 2945
+Not Found: /public/css.php
+[20/Apr/2026 13:46:41] "GET /public/css.php HTTP/1.1" 404 2960
+Not Found: /alfa.php
+[20/Apr/2026 13:46:41] "GET /alfa.php HTTP/1.1" 404 2942
+Not Found: /css.php
+[20/Apr/2026 13:46:41] "GET /css.php HTTP/1.1" 404 2939
+Not Found: /classwithtostring.php
+[20/Apr/2026 13:46:41] "GET /classwithtostring.php HTTP/1.1" 404 2981
+Not Found: /wp-content/admin.php
+[20/Apr/2026 13:46:42] "GET /wp-content/admin.php HTTP/1.1" 404 2978
+Not Found: /gelay.php
+[20/Apr/2026 13:46:42] "GET /gelay.php HTTP/1.1" 404 2945
+Not Found: /wp-admin/images/admin.php
+[20/Apr/2026 13:46:42] "GET /wp-admin/images/admin.php HTTP/1.1" 404 2993
+Not Found: /adminfuns.php
+[20/Apr/2026 13:46:42] "GET /adminfuns.php HTTP/1.1" 404 2957
+Not Found: /wp-admin/css/
+[20/Apr/2026 13:46:42] "GET /wp-admin/css/ HTTP/1.1" 404 2957
+[20/Apr/2026 13:46:43] "GET /admin/controller/extension/extension/ultra.php HTTP/1.1" 302 0
+[20/Apr/2026 13:46:43] "GET /admin/login/?next=/admin/controller/extension/extension/ultra.php HTTP/1.1" 200 4267
+Not Found: /about.php
+[20/Apr/2026 13:46:43] "GET /about.php HTTP/1.1" 404 2945
+Not Found: /wp-admin/css/colors/index.php
+[20/Apr/2026 13:46:43] "GET /wp-admin/css/colors/index.php HTTP/1.1" 404 3005
+Not Found: /f35.php
+[20/Apr/2026 13:46:43] "GET /f35.php HTTP/1.1" 404 2939
+Not Found: /wp-includes/js/
+[20/Apr/2026 13:46:44] "GET /wp-includes/js/ HTTP/1.1" 404 2963
+Not Found: /wp-admin/css/colors/
+[20/Apr/2026 13:46:44] "GET /wp-admin/css/colors/ HTTP/1.1" 404 2978
+Not Found: /222.php
+[20/Apr/2026 13:46:44] "GET /222.php HTTP/1.1" 404 2939
+Not Found: /chosen.php
+[20/Apr/2026 13:46:44] "GET /chosen.php HTTP/1.1" 404 2948
+Not Found: /info.php
+[20/Apr/2026 13:46:44] "GET /info.php HTTP/1.1" 404 2942
+Not Found: /wp-includes/html-api/
+[20/Apr/2026 13:46:45] "GET /wp-includes/html-api/ HTTP/1.1" 404 2981
+Not Found: /wp-includes/ID3/index.php
+[20/Apr/2026 13:46:45] "GET /wp-includes/ID3/index.php HTTP/1.1" 404 2993
+Not Found: /wp-admin/network/index.php
+[20/Apr/2026 13:46:45] "GET /wp-admin/network/index.php HTTP/1.1" 404 2996
+Not Found: /k.php
+[20/Apr/2026 13:46:45] "GET /k.php HTTP/1.1" 404 2933
+Not Found: /file.php
+[20/Apr/2026 13:46:45] "GET /file.php HTTP/1.1" 404 2942
+Not Found: /wp-admin/js/
+[20/Apr/2026 13:46:45] "GET /wp-admin/js/ HTTP/1.1" 404 2954
+Not Found: /403.php
+[20/Apr/2026 13:46:46] "GET /403.php HTTP/1.1" 404 2939
+Not Found: /wp-includes/images/
+[20/Apr/2026 13:46:46] "GET /wp-includes/images/ HTTP/1.1" 404 2975
+Not Found: /wp-content/cache/
+[20/Apr/2026 13:46:46] "GET /wp-content/cache/ HTTP/1.1" 404 2969
+Not Found: /gecko.php
+[20/Apr/2026 13:46:46] "GET /gecko.php HTTP/1.1" 404 2945
+Not Found: /wp-includes/
+[20/Apr/2026 13:46:46] "GET /wp-includes/ HTTP/1.1" 404 2954
+Not Found: /aa.php
+[20/Apr/2026 13:46:47] "GET /aa.php HTTP/1.1" 404 2936
+Not Found: /0x.php
+[20/Apr/2026 13:46:47] "GET /0x.php HTTP/1.1" 404 2936
+Not Found: /wp-content/upgrade/index.php
+[20/Apr/2026 13:46:47] "GET /wp-content/upgrade/index.php HTTP/1.1" 404 3002
+Not Found: /cah.php
+[20/Apr/2026 13:46:48] "GET /cah.php HTTP/1.1" 404 2939
+Not Found: /wp-includes/js/tinymce/plugins/compat3x/css/
+[20/Apr/2026 13:46:48] "GET /wp-includes/js/tinymce/plugins/compat3x/css/ HTTP/1.1" 404 3050
+Not Found: /system_log.php
+[20/Apr/2026 13:46:48] "GET /system_log.php HTTP/1.1" 404 2960
+Not Found: /wp-includes/pomo/
+[20/Apr/2026 13:46:48] "GET /wp-includes/pomo/ HTTP/1.1" 404 2969
+Not Found: /wp-admin/user/index.php
+[20/Apr/2026 13:46:49] "GET /wp-admin/user/index.php HTTP/1.1" 404 2987
+Not Found: /ioxi-o.php
+[20/Apr/2026 13:46:49] "GET /ioxi-o.php HTTP/1.1" 404 2948
+Not Found: /abc.php
+[20/Apr/2026 13:46:49] "GET /abc.php HTTP/1.1" 404 2939
+Not Found: /akcc.php
+[20/Apr/2026 13:46:49] "GET /akcc.php HTTP/1.1" 404 2942
+Not Found: /wk/index.php
+[20/Apr/2026 13:46:49] "GET /wk/index.php HTTP/1.1" 404 2954
+Not Found: /1.php
+[20/Apr/2026 13:46:50] "GET /1.php HTTP/1.1" 404 2933
+Not Found: /wp-content/x/index.php
+[20/Apr/2026 13:46:50] "GET /wp-content/x/index.php HTTP/1.1" 404 2984
+Not Found: /wp-content/index.php
+[20/Apr/2026 13:46:50] "GET /wp-content/index.php HTTP/1.1" 404 2978
+Not Found: /as.php
+[20/Apr/2026 13:46:50] "GET /as.php HTTP/1.1" 404 2936
+Not Found: /wp-content/themes/admin.php
+[20/Apr/2026 13:46:50] "GET /wp-content/themes/admin.php HTTP/1.1" 404 2999
+Not Found: /wp-config-sample.php
+[20/Apr/2026 13:46:51] "GET /wp-config-sample.php HTTP/1.1" 404 2978
+Not Found: /.well-known/acme-challenge/index.php
+[20/Apr/2026 13:46:51] "GET /.well-known/acme-challenge/index.php HTTP/1.1" 404 3026
+Not Found: /wp-includes/blocks/shortcode/index.php
+[20/Apr/2026 13:46:51] "GET /wp-includes/blocks/shortcode/index.php HTTP/1.1" 404 3032
+Not Found: /wp-includes/images/smilies/
+[20/Apr/2026 13:46:51] "GET /wp-includes/images/smilies/ HTTP/1.1" 404 2999
+Not Found: /cgi-bin/index.php
+[20/Apr/2026 13:46:52] "GET /cgi-bin/index.php HTTP/1.1" 404 2969
+Not Found: /an.php
+[20/Apr/2026 13:46:52] "GET /an.php HTTP/1.1" 404 2936
+Not Found: /wp-admin/images/
+[20/Apr/2026 13:46:52] "GET /wp-admin/images/ HTTP/1.1" 404 2966
+Not Found: /404.php
+[20/Apr/2026 13:46:52] "GET /404.php HTTP/1.1" 404 2939
+Not Found: /wp-login.php
+[20/Apr/2026 13:46:53] "GET /wp-login.php HTTP/1.1" 404 2954
+Not Found: /wp-content/uploads/goods.php
+[20/Apr/2026 13:46:53] "GET /wp-content/uploads/goods.php HTTP/1.1" 404 3002
+Not Found: /wp-includes/ID3/
+[20/Apr/2026 13:46:53] "GET /wp-includes/ID3/ HTTP/1.1" 404 2966
+Not Found: /.well-known/
+[20/Apr/2026 13:46:53] "GET /.well-known/ HTTP/1.1" 404 2954
+Not Found: /wso.php
+[20/Apr/2026 13:46:53] "GET /wso.php HTTP/1.1" 404 2939
+Not Found: /sf.php
+[20/Apr/2026 13:46:54] "GET /sf.php HTTP/1.1" 404 2936
+Not Found: /index/function.php
+[20/Apr/2026 13:46:54] "GET /index/function.php HTTP/1.1" 404 2972
+Not Found: /edit.php
+[20/Apr/2026 13:46:54] "GET /edit.php HTTP/1.1" 404 2942
+Not Found: /wp-includes/rest-api/
+[20/Apr/2026 13:46:54] "GET /wp-includes/rest-api/ HTTP/1.1" 404 2981
+Not Found: /wp-content/themes/twentytwenty/404.php
+[20/Apr/2026 13:46:54] "GET /wp-content/themes/twentytwenty/404.php HTTP/1.1" 404 3032
+Not Found: /wp-good.php
+[20/Apr/2026 13:46:55] "GET /wp-good.php HTTP/1.1" 404 2951
+Not Found: /wp-admin/js/widgets/
+[20/Apr/2026 13:46:55] "GET /wp-admin/js/widgets/ HTTP/1.1" 404 2978
+Not Found: /wp-admin/css/colors/midnight/
+[20/Apr/2026 13:46:56] "GET /wp-admin/css/colors/midnight/ HTTP/1.1" 404 3005
+Not Found: /tes.php
+[20/Apr/2026 13:46:56] "GET /tes.php HTTP/1.1" 404 2939
+Not Found: /files/index.php
+[20/Apr/2026 13:46:56] "GET /files/index.php HTTP/1.1" 404 2963
+Not Found: /wp-content/uploads/index.php
+[20/Apr/2026 13:46:56] "GET /wp-content/uploads/index.php HTTP/1.1" 404 3002
+Not Found: /images/images/about.php
+[20/Apr/2026 13:46:56] "GET /images/images/about.php HTTP/1.1" 404 2987
+Not Found: /ms-edit.php
+[20/Apr/2026 13:46:56] "GET /ms-edit.php HTTP/1.1" 404 2951
+Not Found: /rip.php
+[20/Apr/2026 13:46:57] "GET /rip.php HTTP/1.1" 404 2939
+Not Found: /wp-content/uploads/
+[20/Apr/2026 13:46:57] "GET /wp-content/uploads/ HTTP/1.1" 404 2975
+Not Found: /xmlrpc.php
+[20/Apr/2026 13:46:57] "GET /xmlrpc.php HTTP/1.1" 404 2948
+Not Found: /moon.php
+[20/Apr/2026 13:46:57] "GET /moon.php HTTP/1.1" 404 2942
+Not Found: /cache.php
+[20/Apr/2026 13:46:57] "GET /cache.php HTTP/1.1" 404 2945
+Not Found: /wp-includes/block-bindings/
+[20/Apr/2026 13:46:58] "GET /wp-includes/block-bindings/ HTTP/1.1" 404 2999
+Not Found: /wp-content/themes/
+[20/Apr/2026 13:46:58] "GET /wp-content/themes/ HTTP/1.1" 404 2972
+Not Found: /inputs.php
+[20/Apr/2026 13:46:58] "GET /inputs.php HTTP/1.1" 404 2948
+Not Found: /wp-includes/images/smilies/about.php
+[20/Apr/2026 13:46:58] "GET /wp-includes/images/smilies/about.php HTTP/1.1" 404 3026
+Not Found: /wp-includes/js/crop/
+[20/Apr/2026 13:46:58] "GET /wp-includes/js/crop/ HTTP/1.1" 404 2978
+Not Found: /wp-mail.php
+[20/Apr/2026 13:46:59] "GET /wp-mail.php HTTP/1.1" 404 2951
+Not Found: /o.php
+[20/Apr/2026 13:46:59] "GET /o.php HTTP/1.1" 404 2933
+Not Found: /bb.php
+[20/Apr/2026 13:46:59] "GET /bb.php HTTP/1.1" 404 2936
+Not Found: /wp-admin/maint/admin.php
+[20/Apr/2026 13:46:59] "GET /wp-admin/maint/admin.php HTTP/1.1" 404 2990
+Not Found: /wp-admin/network/
+[20/Apr/2026 13:46:59] "GET /wp-admin/network/ HTTP/1.1" 404 2969
+Not Found: /wp-includes/IXR/index.php
+[20/Apr/2026 13:47:00] "GET /wp-includes/IXR/index.php HTTP/1.1" 404 2993
+Not Found: /xmrlpc.php
+[20/Apr/2026 13:47:00] "GET /xmrlpc.php HTTP/1.1" 404 2948
+Not Found: /epinyins.php
+[20/Apr/2026 13:47:00] "GET /epinyins.php HTTP/1.1" 404 2954
+Not Found: /wp-admin/css/index.php
+[20/Apr/2026 13:47:00] "GET /wp-admin/css/index.php HTTP/1.1" 404 2984
+Not Found: /wp-includes/php-compat/
+[20/Apr/2026 13:47:00] "GET /wp-includes/php-compat/ HTTP/1.1" 404 2987
+Not Found: /wp-includes/style-engine/index.php
+[20/Apr/2026 13:47:00] "GET /wp-includes/style-engine/index.php HTTP/1.1" 404 3020
+Not Found: /wp-admin/css/colors/coffee/index.php
+[20/Apr/2026 13:47:01] "GET /wp-admin/css/colors/coffee/index.php HTTP/1.1" 404 3026
+Not Found: /wp.php
+[20/Apr/2026 13:47:01] "GET /wp.php HTTP/1.1" 404 2936
+Not Found: /function/function.php
+[20/Apr/2026 13:47:01] "GET /function/function.php HTTP/1.1" 404 2981
+Not Found: /wp-includes/style-engine/autoload_classmap.php
+[20/Apr/2026 13:47:01] "GET /wp-includes/style-engine/autoload_classmap.php HTTP/1.1" 404 3056
+Not Found: /wp-includes/SimplePie/admin.php
+[20/Apr/2026 13:47:01] "GET /wp-includes/SimplePie/admin.php HTTP/1.1" 404 3011
+Not Found: /ok.php
+[20/Apr/2026 13:47:01] "GET /ok.php HTTP/1.1" 404 2936
+Not Found: /item.php
+[20/Apr/2026 13:47:02] "GET /item.php HTTP/1.1" 404 2942
+Not Found: /byp.php
+[20/Apr/2026 13:47:02] "GET /byp.php HTTP/1.1" 404 2939
+Not Found: /robots.txt
+[20/Apr/2026 14:04:15] "GET /robots.txt HTTP/1.1" 404 2948
+[20/Apr/2026 14:04:17] "GET / HTTP/1.1" 200 9312

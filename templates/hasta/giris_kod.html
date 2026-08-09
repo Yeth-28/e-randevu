@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Kod Doğrulama — e-Randevu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+<div class="auth-card">
+    <div class="auth-logo">
+        <span class="auth-logo-icon">📱</span>
+        <div class="auth-logo-text">e-<span>Randevu</span></div>
+    </div>
+
+    <h1 class="auth-title" style="text-align:center;">Kod Doğrulama</h1>
+    <p class="auth-desc" style="text-align:center;">E-postanıza doğrulama kodu gönderildi</p>
+
+    {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-error" role="alert">{{ m }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="phone-badge">📞 {{ phone }} numarasına kod gönderildi</div>
+
+    <form method="post" action="{{ SITE_URL }}/hasta/giris/kod/" id="kod-form">
+        {% csrf_token %}
+        <input type="hidden" name="kod" id="kod-hidden">
+        <div class="kod-inputs" aria-label="6 haneli doğrulama kodu">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="1. hane">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="2. hane">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="3. hane">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="4. hane">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="5. hane">
+            <input type="text" maxlength="1" inputmode="numeric" class="kod-box" aria-label="6. hane">
+        </div>
+        <button type="submit" class="btn-primary">Giriş Yap →</button>
+    </form>
+
+    <div class="auth-hint">
+        Kod gelmedi mi? <a href="{{ SITE_URL }}/hasta/giris/">Yeniden gönder</a>
+        &nbsp;·&nbsp; Kod 10 dakika geçerlidir.
+    </div>
+</div>
+
+<div class="auth-back">
+    <a href="{{ SITE_URL }}/hasta/giris/">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Geri Dön
+    </a>
+</div>
+
+<script>
+const boxes = document.querySelectorAll('.kod-box');
+const hidden = document.getElementById('kod-hidden');
+
+function update(){
+    hidden.value = [...boxes].map(b => b.value).join('');
+    boxes.forEach(b => b.classList.toggle('filled', b.value !== ''));
+}
+
+boxes.forEach((b, i) => {
+    b.addEventListener('input', () => {
+        b.value = b.value.replace(/[^0-9]/g, '');
+        if (b.value && i < 5) boxes[i+1].focus();
+        update();
+        if (hidden.value.length === 6) setTimeout(() => document.getElementById('kod-form').submit(), 150);
+    });
+    b.addEventListener('keydown', e => {
+        if (e.key === 'Backspace' && !b.value && i > 0) {
+            boxes[i-1].focus();
+            boxes[i-1].value = '';
+            update();
+        }
+    });
+    b.addEventListener('paste', e => {
+        e.preventDefault();
+        const p = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g,'').slice(0,6);
+        [...p].forEach((c, j) => { if(boxes[j]) boxes[j].value = c; });
+        update();
+        if (hidden.value.length === 6) setTimeout(() => document.getElementById('kod-form').submit(), 150);
+    });
+});
+
+// İlk kutuya focus
+boxes[0]?.focus();
+</script>
+</body>
+</html>

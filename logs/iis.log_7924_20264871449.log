@@ -1,0 +1,18 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[08/Apr/2026 00:14:55] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 00:14:55] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 00:14:57] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 00:14:57] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[08/Apr/2026 00:14:58] "GET / HTTP/1.1" 200 9312
+[08/Apr/2026 00:14:58] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[08/Apr/2026 00:14:58] "GET /favicon.ico HTTP/1.1" 404 2952
+Not Found: /favicon.ico
+[08/Apr/2026 00:15:00] "GET /favicon.ico HTTP/1.1" 404 2952
+Not Found: /.env
+[08/Apr/2026 00:18:48] "GET /.env HTTP/1.1" 404 2931
+[08/Apr/2026 00:30:00] "GET / HTTP/1.1" 200 9312

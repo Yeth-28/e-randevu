@@ -1,0 +1,103 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[27/Apr/2026 06:20:17] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[27/Apr/2026 06:35:26] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /environment.php
+[27/Apr/2026 06:35:26] "GET /environment.php HTTP/1.1" 404 2963
+Not Found: /rendi59.php
+[27/Apr/2026 06:35:26] "GET /rendi59.php HTTP/1.1" 404 2951
+Not Found: /1100.php
+[27/Apr/2026 06:35:26] "GET /1100.php HTTP/1.1" 404 2942
+Not Found: /mga.php
+[27/Apr/2026 06:35:27] "GET /mga.php HTTP/1.1" 404 2939
+Not Found: /favicon.php
+[27/Apr/2026 06:35:27] "GET /favicon.php HTTP/1.1" 404 2951
+Not Found: /admin-ajax.php
+[27/Apr/2026 06:35:27] "GET /admin-ajax.php HTTP/1.1" 404 2960
+Not Found: /xp.php
+[27/Apr/2026 06:35:27] "GET /xp.php HTTP/1.1" 404 2936
+Not Found: /1wx.php
+[27/Apr/2026 06:35:28] "GET /1wx.php HTTP/1.1" 404 2939
+Not Found: /0.php
+[27/Apr/2026 06:35:28] "GET /0.php HTTP/1.1" 404 2933
+Not Found: /strcmp.php
+[27/Apr/2026 06:35:28] "GET /strcmp.php HTTP/1.1" 404 2948
+Not Found: /52.php
+[27/Apr/2026 06:35:28] "GET /52.php HTTP/1.1" 404 2936
+Not Found: /white.php
+[27/Apr/2026 06:35:28] "GET /white.php HTTP/1.1" 404 2945
+Not Found: /wp-includes_function.php
+[27/Apr/2026 06:35:29] "GET /wp-includes_function.php HTTP/1.1" 404 2990
+Not Found: /ultra.php
+[27/Apr/2026 06:35:29] "GET /ultra.php HTTP/1.1" 404 2945
+Not Found: /epinyins.php
+[27/Apr/2026 06:35:29] "GET /epinyins.php HTTP/1.1" 404 2954
+Not Found: /colors.php
+[27/Apr/2026 06:35:29] "GET /colors.php HTTP/1.1" 404 2948
+Not Found: /user-edit.php
+[27/Apr/2026 06:35:29] "GET /user-edit.php HTTP/1.1" 404 2957
+Not Found: /edit-comments.php
+[27/Apr/2026 06:35:30] "GET /edit-comments.php HTTP/1.1" 404 2969
+Not Found: /randkeyword.PhP8
+[27/Apr/2026 06:35:31] "GET /randkeyword.PhP8 HTTP/1.1" 404 2966
+Not Found: /otuz1.php
+[27/Apr/2026 06:35:31] "GET /otuz1.php HTTP/1.1" 404 2945
+Not Found: /filebrowser.php
+[27/Apr/2026 06:35:31] "GET /filebrowser.php HTTP/1.1" 404 2963
+Not Found: /autoloadclassmap.php
+[27/Apr/2026 06:35:31] "GET /autoloadclassmap.php HTTP/1.1" 404 2978
+Not Found: /caches.php
+[27/Apr/2026 06:35:32] "GET /caches.php HTTP/1.1" 404 2948
+Not Found: /alpha.php
+[27/Apr/2026 06:35:32] "GET /alpha.php HTTP/1.1" 404 2945
+Not Found: /comfunctions.php
+[27/Apr/2026 06:35:32] "GET /comfunctions.php HTTP/1.1" 404 2966
+Not Found: /gzdecodes.php
+[27/Apr/2026 06:35:32] "GET /gzdecodes.php HTTP/1.1" 404 2957
+Not Found: /temp.php
+[27/Apr/2026 06:35:32] "GET /temp.php HTTP/1.1" 404 2942
+Not Found: /verinfo.php
+[27/Apr/2026 06:35:33] "GET /verinfo.php HTTP/1.1" 404 2951
+Not Found: /agent.php
+[27/Apr/2026 06:35:33] "GET /agent.php HTTP/1.1" 404 2945
+Not Found: /sys_info.php
+[27/Apr/2026 06:35:33] "GET /sys_info.php HTTP/1.1" 404 2954
+Not Found: /flower.php
+[27/Apr/2026 06:35:33] "GET /flower.php HTTP/1.1" 404 2948
+Not Found: /wp-system.php
+[27/Apr/2026 06:35:33] "GET /wp-system.php HTTP/1.1" 404 2957
+Not Found: /config.old.php
+[27/Apr/2026 06:35:33] "GET /config.old.php HTTP/1.1" 404 2960
+[27/Apr/2026 06:45:42] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[27/Apr/2026 06:45:43] "GET /robots.txt HTTP/1.1" 404 2949
+[27/Apr/2026 06:45:45] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[27/Apr/2026 06:45:46] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[27/Apr/2026 06:45:47] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[27/Apr/2026 06:45:48] "POST /hasta/kayit/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:48] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:49] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:49] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:49] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[27/Apr/2026 06:45:50] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:50] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:50] "POST /hasta/giris/ HTTP/1.1" 200 3649
+[27/Apr/2026 06:45:51] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:51] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:52] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:53] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:54] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:54] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:55] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:55] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:56] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:56] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:57] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:57] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:58] "POST /hasta/giris/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:58] "POST /hasta/profilim/ HTTP/1.1" 302 0
+[27/Apr/2026 06:45:59] "POST /hasta/giris/ HTTP/1.1" 302 0

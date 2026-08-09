@@ -1,0 +1,78 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[18/Apr/2026 17:17:38] "GET / HTTP/1.1" 500 98164
+[18/Apr/2026 17:20:04] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-admin/install.php
+[18/Apr/2026 17:20:21] "GET /wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3004
+Not Found: /wordpress/wp-admin/setup-config.php
+[18/Apr/2026 17:20:21] "GET /wordpress/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3049
+Not Found: /wordpress/wp-admin/install.php
+[18/Apr/2026 17:20:21] "GET /wordpress/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /wp/wp-admin/setup-config.php
+[18/Apr/2026 17:20:21] "GET /wp/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3028
+Not Found: /wp/wp-admin/install.php
+[18/Apr/2026 17:20:21] "GET /wp/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3013
+Not Found: /new/wp-admin/setup-config.php
+[18/Apr/2026 17:20:21] "GET /new/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3031
+Not Found: /new/wp-admin/install.php
+[18/Apr/2026 17:20:22] "GET /new/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3016
+Not Found: /old/wp-admin/setup-config.php
+[18/Apr/2026 17:20:22] "GET /old/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3031
+Not Found: /old/wp-admin/install.php
+[18/Apr/2026 17:20:22] "GET /old/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3016
+Not Found: /blog/wp-admin/setup-config.php
+[18/Apr/2026 17:20:22] "GET /blog/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /blog/wp-admin/install.php
+[18/Apr/2026 17:20:22] "GET /blog/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /test/wp-admin/setup-config.php
+[18/Apr/2026 17:20:22] "GET /test/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /test/wp-admin/install.php
+[18/Apr/2026 17:20:23] "GET /test/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /shop/wp-admin/setup-config.php
+[18/Apr/2026 17:20:23] "GET /shop/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /shop/wp-admin/install.php
+[18/Apr/2026 17:20:23] "GET /shop/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+[18/Apr/2026 17:39:07] "GET /robots.txt HTTP/1.1" 301 0
+[18/Apr/2026 17:39:07] "GET /robots.txt/ HTTP/1.1" 302 0
+[18/Apr/2026 17:39:07] "GET /giris/ HTTP/1.1" 200 5067
+[18/Apr/2026 17:39:07] "GET /sitemap.xml HTTP/1.1" 301 0
+[18/Apr/2026 17:39:07] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[18/Apr/2026 17:39:08] "GET /giris/ HTTP/1.1" 200 5067
+[18/Apr/2026 17:55:14] "GET / HTTP/1.1" 200 9312
+[18/Apr/2026 18:13:02] "GET / HTTP/1.1" 200 9312

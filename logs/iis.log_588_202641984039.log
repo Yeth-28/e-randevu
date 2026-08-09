@@ -1,0 +1,20 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[19/Apr/2026 01:40:43] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[19/Apr/2026 01:41:51] "GET /robots.txt HTTP/1.1" 404 2949
+[19/Apr/2026 01:41:51] "GET /hasta/giris/ HTTP/1.1" 200 3539
+[19/Apr/2026 01:47:25] "GET / HTTP/1.1" 200 9312
+[19/Apr/2026 01:47:38] "GET / HTTP/1.1" 200 9312
+[19/Apr/2026 01:47:38] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[19/Apr/2026 01:47:38] "GET /favicon.ico HTTP/1.1" 404 2952
+[19/Apr/2026 01:54:05] "GET / HTTP/1.1" 200 9312
+[19/Apr/2026 02:00:20] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+[19/Apr/2026 02:07:50] "GET /hasta/kayit/ HTTP/1.1" 200 13510
+[19/Apr/2026 02:19:58] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+[19/Apr/2026 02:35:20] "GET / HTTP/1.1" 200 9312
+[19/Apr/2026 02:46:17] "GET / HTTP/1.1" 200 9312

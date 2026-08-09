@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ doctor.name }}</h1>
+<p>NPI: {{ doctor.npi }}</p>
+<p>Email: {{ doctor.email }}</p>
+<p>Phone: {{ doctor.phone_number }}</p>
+
+<h2>Specialties</h2>
+<ul>
+    {% for specialty in doctor.specialties %}
+    <li>{{ specialty }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Affiliated Clinics</h2>
+<ul>
+    {% for affiliation in doctor.clinic_affiliations.all %}
+    <li>{{ affiliation.clinic.name }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Patients</h2>
+<ul>
+    {% for patient in patients %}
+    <li>{{ patient.name }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'doctor_update' doctor.id %}" class="btn btn-warning">Edit Doctor</a>
+<a href="{% url 'doctor_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

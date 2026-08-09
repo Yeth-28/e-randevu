@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hastalar — Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 16px; }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .toplam-badge { background: var(--blue-light); color: var(--blue); padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+        .btn-ekle {
+            padding: 10px 20px; background: var(--blue); color: white; border: none;
+            border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none;
+        }
+        .content { padding: 32px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg {
+            padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        /* FİLTRE */
+        .filter-card {
+            background: white; border-radius: 16px; padding: 20px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 20px;
+        }
+        .filter-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+        .filter-group { display: flex; flex-direction: column; gap: 6px; }
+        .filter-group label { font-size: 12px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+        .filter-date { border: 1.5px solid var(--gray-light); border-radius: 10px; padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; }
+        .filter-date:focus { border-color: var(--blue); }
+        .btn-ara { padding: 10px 20px; background: var(--blue); color: white; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+        .search-input {
+            border: 1.5px solid var(--gray-light); border-radius: 10px;
+            padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif;
+            outline: none; transition: border-color 0.2s; width: 280px;
+        }
+        .search-input:focus { border-color: var(--blue); }
+        .filter-select {
+            border: 1.5px solid var(--gray-light); border-radius: 10px;
+            padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif;
+            outline: none; background: white; cursor: pointer; min-width: 140px;
+        }
+        .filter-select:focus { border-color: var(--blue); }
+        .btn-ara {
+            padding: 10px 20px; background: var(--blue); color: white; border: none;
+            border-radius: 10px; font-size: 14px; font-weight: 600;
+            font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap;
+        }
+        .btn-sifirla {
+            padding: 10px 16px; background: white; color: var(--gray);
+            border: 1.5px solid var(--gray-light); border-radius: 10px; font-size: 14px;
+            font-family: 'DM Sans', sans-serif; cursor: pointer; text-decoration: none;
+            white-space: nowrap;
+        }
+
+        /* DURUM SEKMELERİ */
+        .durum-tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+        .durum-tab {
+            padding: 8px 18px; border-radius: 10px; font-size: 13px; font-weight: 500;
+            text-decoration: none; color: var(--gray); background: white;
+            border: 1.5px solid var(--gray-light); transition: all 0.2s;
+        }
+        .durum-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+        .durum-tab:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+
+        /* TABLO */
+        .table-card { background: white; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        thead { background: #f9fafb; }
+        th {
+            padding: 14px 20px; text-align: left; font-size: 12px; font-weight: 600;
+            color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;
+            cursor: pointer; user-select: none; white-space: nowrap;
+        }
+        th:hover { color: var(--blue); }
+        td { padding: 14px 20px; border-top: 1px solid var(--gray-light); font-size: 14px; color: var(--text); }
+        tr:hover td { background: #f9fafb; }
+        .hasta-isim { display: flex; align-items: center; gap: 12px; }
+        .hasta-avatar {
+            width: 40px; height: 40px; border-radius: 10px; background: var(--blue-light);
+            display: flex; align-items: center; justify-content: center; font-size: 18px;
+            flex-shrink: 0;
+        }
+        .hasta-isim-text { font-weight: 500; }
+        .hasta-isim-tel { font-size: 12px; color: var(--gray); margin-top: 2px; }
+        .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+        .badge-aktif { background: #dcfce7; color: var(--green); }
+        .badge-pasif { background: #f3f4f6; color: var(--gray); }
+        .badge-erkek { background: #dbeafe; color: #1d4ed8; }
+        .badge-kadin { background: #fce7f3; color: #be185d; }
+        .badge-diger { background: #f3f4f6; color: var(--gray); }
+        .badge-kan { background: #fef3c7; color: #92400e; }
+        .btn-detay {
+            padding: 6px 14px; background: var(--blue-light); color: var(--blue);
+            border: none; border-radius: 8px; font-size: 13px; font-weight: 500;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .btn-detay:hover { background: var(--blue); color: white; }
+        .empty-state { text-align: center; padding: 60px 20px; color: var(--gray); }
+        .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+        .empty-state p { font-size: 15px; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="topbar-title">Hastalar</div>
+            <span class="toplam-badge">{{ toplam }} hasta</span>
+        </div>
+        {% include "panel/bildirim_zil.html" %}
+        <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/ekle/" class="btn-ekle">+ Yeni Hasta</a>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- FİLTRELER -->
+        <div class="filter-card">
+            <form method="get" class="filter-row">
+                <div class="filter-group" style="flex:1;">
+                    <label>🔍 Arama</label>
+                    <input type="text" name="q" value="{{ arama }}" class="search-input" placeholder="Ad, telefon, e-posta...">
+                </div>
+                <div class="filter-group">
+                    <label>👤 Cinsiyet</label>
+                    <select name="cinsiyet" class="filter-select">
+                        <option value="">Tümü</option>
+                        {% for val, label in gender_choices %}
+                        <option value="{{ val }}" {% if cinsiyet == val %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>📅 Kayıt Başlangıç</label>
+                    <input type="date" name="kayit_baslangic" value="{{ kayit_baslangic }}" class="filter-date">
+                </div>
+                <input type="hidden" name="durum" value="{{ durum }}">
+                <button type="submit" class="btn-ara">Filtrele</button>
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/" class="btn-sifirla">Sıfırla</a>
+            </form>
+        </div>
+
+        <!-- DURUM SEKMELERİ -->
+        <div class="durum-tabs">
+            <a href="?durum=aktif{% if arama %}&q={{ arama }}{% endif %}"
+               class="durum-tab {% if durum == 'aktif' %}active{% endif %}">✅ Aktif</a>
+            <a href="?durum=pasif{% if arama %}&q={{ arama }}{% endif %}"
+               class="durum-tab {% if durum == 'pasif' %}active{% endif %}">🔒 Pasif</a>
+            <a href="?durum={% if arama %}&q={{ arama }}{% endif %}"
+               class="durum-tab {% if not durum %}active{% endif %}">📋 Tümü</a>
+        </div>
+
+        <!-- TABLO -->
+        <div class="table-card">
+            {% if hastalar %}
+            <table id="hasta-tablosu">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Hasta ↕</th>
+                        <th onclick="sortTable(1)">Yaş ↕</th>
+                        <th>Cinsiyet</th>
+                        <th>Kan Grubu</th>
+                        <th onclick="sortTable(4)">Şehir ↕</th>
+                        <th>Durum</th>
+                        <th>Kayıt</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hasta in hastalar %}
+                    <tr>
+                        <td>
+                            <div class="hasta-isim">
+                                <div class="hasta-avatar">🧑‍🦷</div>
+                                <div>
+                                    <div class="hasta-isim-text">{{ hasta.name }}</div>
+                                    <div class="hasta-isim-tel">📞 {{ hasta.phone_number }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{% if hasta.get_age %}{{ hasta.get_age }}{% else %}—{% endif %}</td>
+                        <td>
+                            <span class="badge {% if hasta.gender == 'E' %}badge-erkek{% elif hasta.gender == 'K' %}badge-kadin{% else %}badge-diger{% endif %}">
+                                {{ hasta.get_gender_display }}
+                            </span>
+                        </td>
+                        <td><span class="badge badge-kan">{{ hasta.blood_type }}</span></td>
+                        <td>{{ hasta.city|default:"—" }}</td>
+                        <td>
+                            <span class="badge {% if hasta.status == 'aktif' %}badge-aktif{% else %}badge-pasif{% endif %}">
+                                {{ hasta.get_status_display }}
+                            </span>
+                        </td>
+                        <td style="color:var(--gray);font-size:13px;">{{ hasta.created_at|date:"d M Y" }}</td>
+                        <td>
+                            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/" class="btn-detay">Detay →</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div class="icon">🧑‍🦷</div>
+                <p>{% if arama %}Arama sonucu bulunamadı.{% else %}Henüz hasta eklenmemiş.{% endif %}</p>
+                {% if not arama %}
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/ekle/" class="btn-ekle">+ İlk Hastayı Ekle</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+let sortDir = {};
+function sortTable(col) {
+    const table = document.getElementById('hasta-tablosu');
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    sortDir[col] = !sortDir[col];
+    rows.sort((a, b) => {
+        const aVal = a.cells[col]?.textContent.trim() || '';
+        const bVal = b.cells[col]?.textContent.trim() || '';
+        const aNum = parseFloat(aVal), bNum = parseFloat(bVal);
+        if (!isNaN(aNum) && !isNaN(bNum)) return sortDir[col] ? aNum - bNum : bNum - aNum;
+        return sortDir[col] ? aVal.localeCompare(bVal, 'tr') : bVal.localeCompare(aVal, 'tr');
+    });
+    rows.forEach(r => tbody.appendChild(r));
+}
+
+const searchInput = document.querySelector('.search-input');
+let searchTimer;
+searchInput?.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+        if (searchInput.value.length >= 2 || searchInput.value.length === 0) {
+            searchInput.closest('form').submit();
+        }
+    }, 400);
+});
+</script>
+</body>
+</html>

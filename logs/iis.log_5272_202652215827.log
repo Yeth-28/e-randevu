@@ -1,0 +1,2424 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[02/May/2026 14:58:30] "GET / HTTP/1.1" 404 8848
+Not Found: /sitemap.xml
+[02/May/2026 14:59:33] "GET /sitemap.xml HTTP/1.1" 404 2364
+Not Found: /sitemaps.xml
+[02/May/2026 15:09:00] "GET /sitemaps.xml HTTP/1.1" 404 2955
+Not Found: /info.php
+[02/May/2026 15:21:34] "GET /info.php HTTP/1.1" 404 2350
+Not Found: /.env.staging
+[02/May/2026 15:21:34] "GET /.env.staging HTTP/1.1" 404 2362
+Not Found: /.env.local
+[02/May/2026 15:21:34] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /.env.dev
+[02/May/2026 15:21:35] "GET /.env.dev HTTP/1.1" 404 2350
+Not Found: /.env.prod
+Not Found: /.env.stage
+[02/May/2026 15:21:35] "GET /.env.prod HTTP/1.1" 404 2353
+[02/May/2026 15:21:35] "GET /.env.stage HTTP/1.1" 404 2356
+Not Found: /.env
+Not Found: /test.php
+Not Found: /.env.test
+[02/May/2026 15:21:35] "GET /.env HTTP/1.1" 404 2338
+Not Found: /.env.development
+[02/May/2026 15:21:35] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /phpinfo.php
+[02/May/2026 15:21:35] "GET /.env.test HTTP/1.1" 404 2353
+Not Found: /.htpasswd
+[02/May/2026 15:21:35] "GET /.env.development HTTP/1.1" 404 2374
+[02/May/2026 15:21:35,077] - Broken pipe from ('127.0.0.1', 55206)
+[02/May/2026 15:21:35,078] - Broken pipe from ('127.0.0.1', 55209)
+Not Found: /.env.production
+[02/May/2026 15:21:35,081] - Broken pipe from ('127.0.0.1', 55201)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:21:35] "GET / HTTP/1.1" 500 97511
+Not Found: /test.php
+Not Found: /test.php
+[02/May/2026 15:21:38] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /i.php
+Not Found: /.env.stage
+[02/May/2026 15:21:38] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /.env.prod
+[02/May/2026 15:21:38] "GET /.env.stage HTTP/1.1" 404 2356
+Not Found: /info.php
+[02/May/2026 15:21:38] "GET /i.php HTTP/1.1" 404 2341
+Not Found: /.env.production
+[02/May/2026 15:21:38] "GET /.env.prod HTTP/1.1" 404 2353
+Not Found: /.env
+[02/May/2026 15:21:38] "GET /info.php HTTP/1.1" 404 2350
+[02/May/2026 15:21:38] "GET /.env.production HTTP/1.1" 404 2371
+Not Found: /phpinfo.php
+[02/May/2026 15:21:38] "GET /.env HTTP/1.1" 404 2338
+Not Found: /.htpasswd
+[02/May/2026 15:21:38] "GET /phpinfo.php HTTP/1.1" 404 2359
+[02/May/2026 15:21:38] "GET /.htpasswd HTTP/1.1" 404 2353
+Not Found: /.env.local
+Not Found: /.env.test
+[02/May/2026 15:21:38] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /php.php
+[02/May/2026 15:21:38] "GET /.env.test HTTP/1.1" 404 2353
+[02/May/2026 15:21:38] "GET /php.php HTTP/1.1" 404 2347
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:21:38] "GET / HTTP/1.1" 500 20520
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:21:38] "GET / HTTP/1.1" 500 97429
+Not Found: /.env.dev
+[02/May/2026 15:21:38] "GET /.env.dev HTTP/1.1" 404 2350
+Not Found: /.env.development
+[02/May/2026 15:21:38] "GET /.env.development HTTP/1.1" 404 2374
+Not Found: /php_info.php
+Not Found: /phpinfo.php
+[02/May/2026 15:21:38] "GET /php_info.php HTTP/1.1" 404 2362
+[02/May/2026 15:21:38] "GET /phpinfo.php HTTP/1.1" 404 2359
+Not Found: /php-info.php
+[02/May/2026 15:21:38] "GET /php-info.php HTTP/1.1" 404 2362
+Not Found: /info.php
+Not Found: /.aws/credentials
+[02/May/2026 15:21:38] "GET /info.php HTTP/1.1" 404 2350
+[02/May/2026 15:21:38] "GET /.aws/credentials HTTP/1.1" 404 2374
+Not Found: /.aws/config
+[02/May/2026 15:21:38] "GET /.aws/config HTTP/1.1" 404 2359
+Not Found: /.aws/credentials
+[02/May/2026 15:21:38] "GET /.aws/credentials HTTP/1.1" 404 2374
+Not Found: /.aws/config
+[02/May/2026 15:21:38] "GET /.aws/config HTTP/1.1" 404 2359
+Not Found: /.docker/config.json
+Not Found: /.dockerenv
+[02/May/2026 15:21:38] "GET /.docker/config.json HTTP/1.1" 404 2383
+[02/May/2026 15:21:38] "GET /.dockerenv HTTP/1.1" 404 2356
+Not Found: /.env.staging
+[02/May/2026 15:21:38] "GET /.env.staging HTTP/1.1" 404 2362
+Not Found: /.kube/config
+[02/May/2026 15:21:38] "GET /.kube/config HTTP/1.1" 404 2362
+Not Found: /.netrc
+[02/May/2026 15:21:38] "GET /.netrc HTTP/1.1" 404 2344
+Not Found: /.npmrc
+[02/May/2026 15:21:38] "GET /.npmrc HTTP/1.1" 404 2344
+Not Found: /php.php
+[02/May/2026 15:21:38] "GET /php.php HTTP/1.1" 404 2347
+Not Found: /_profiler/phpinfo
+Not Found: /.env.prod
+[02/May/2026 15:21:38] "GET /_profiler/phpinfo HTTP/1.1" 404 2377
+[02/May/2026 15:21:38] "GET /.env.prod HTTP/1.1" 404 2353
+Not Found: /.env.local
+Not Found: /.env
+[02/May/2026 15:21:38] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /index.php
+[02/May/2026 15:21:38] "GET /.env HTTP/1.1" 404 2338
+[02/May/2026 15:21:38] "GET /index.php?=phpinfo() HTTP/1.1" 404 2364
+Not Found: /.env.dev
+Not Found: /.env.staging
+[02/May/2026 15:21:39] "GET /.env.dev HTTP/1.1" 404 2350
+[02/May/2026 15:21:39] "GET /.env.staging HTTP/1.1" 404 2362
+Not Found: /.env.production
+Not Found: /.htpasswd
+[02/May/2026 15:21:39] "GET /.env.production HTTP/1.1" 404 2371
+[02/May/2026 15:21:39] "GET /.htpasswd HTTP/1.1" 404 2353
+Not Found: /.env.development
+[02/May/2026 15:21:39] "GET /.env.development HTTP/1.1" 404 2374
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:21:39] "GET /?=phpinfo() HTTP/1.1" 500 97809
+Not Found: /.env.test
+[02/May/2026 15:21:39] "GET /.env.test HTTP/1.1" 404 2353
+Not Found: /.git/HEAD
+[02/May/2026 15:21:39] "GET /.git/HEAD HTTP/1.1" 404 2353
+Not Found: /.git/config
+[02/May/2026 15:21:39] "GET /.git/config HTTP/1.1" 404 2359
+Not Found: /.git/index
+[02/May/2026 15:21:39] "GET /.git/index HTTP/1.1" 404 2356
+Not Found: /.git/logs/HEAD
+[02/May/2026 15:21:39] "GET /.git/logs/HEAD HTTP/1.1" 404 2368
+Not Found: /.git/config
+[02/May/2026 15:21:39] "GET /.git/config HTTP/1.1" 404 2359
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:21:39] "GET /.git/refs/heads/main HTTP/1.1" 404 2386
+Not Found: /.env::$DATA
+[02/May/2026 15:21:39] "GET /.env::$DATA HTTP/1.1" 404 2359
+Not Found: /.git/refs/heads/master
+[02/May/2026 15:21:39] "GET /.git/refs/heads/master HTTP/1.1" 404 2392
+Not Found: /.env;.css
+Not Found: /.env;.jpg
+[02/May/2026 15:21:39] "GET /.env;.css HTTP/1.1" 404 2355
+[02/May/2026 15:21:39] "GET /.env;.jpg HTTP/1.1" 404 2355
+Not Found: /.env.bak
+[02/May/2026 15:21:39] "GET /.env.bak HTTP/1.1" 404 2350
+Not Found: /.git/packed-refs
+[02/May/2026 15:21:39] "GET /.git/packed-refs HTTP/1.1" 404 2374
+Not Found: /.env.backup
+[02/May/2026 15:21:39] "GET /.env.backup HTTP/1.1" 404 2359
+Not Found: /.env.old
+[02/May/2026 15:21:39] "GET /.env.old HTTP/1.1" 404 2350
+Not Found: /.env.save
+[02/May/2026 15:21:39] "GET /.env.save HTTP/1.1" 404 2353
+Not Found: /.env.swp
+[02/May/2026 15:21:39] "GET /.env.swp HTTP/1.1" 404 2350
+Not Found: /.git-credentials
+[02/May/2026 15:21:39] "GET /.git-credentials HTTP/1.1" 404 2374
+Not Found: /.env_backup
+[02/May/2026 15:21:39] "GET /.env_backup HTTP/1.1" 404 2359
+Not Found: /.git-credentials
+[02/May/2026 15:21:39] "GET /.git-credentials HTTP/1.1" 404 2374
+Not Found: /.gitconfig
+Not Found: /wp-config.php.bak
+[02/May/2026 15:21:39] "GET /.gitconfig HTTP/1.1" 404 2356
+Not Found: /.env~
+[02/May/2026 15:21:39] "GET /wp-config.php.bak HTTP/1.1" 404 2377
+[02/May/2026 15:21:39] "GET /.env~ HTTP/1.1" 404 2341
+Not Found: /wp-config.php.old
+[02/May/2026 15:21:39] "GET /wp-config.php.old HTTP/1.1" 404 2377
+Not Found: /wp-config.php.save
+[02/May/2026 15:21:39] "GET /wp-config.php.save HTTP/1.1" 404 2380
+Not Found: /.env.dist
+[02/May/2026 15:21:39] "GET /.env.dist HTTP/1.1" 404 2353
+Not Found: /.env.production.local
+[02/May/2026 15:21:39] "GET /.env.production.local HTTP/1.1" 404 2389
+Not Found: /wp-config.php.txt
+[02/May/2026 15:21:39] "GET /wp-config.php.txt HTTP/1.1" 404 2377
+Not Found: /.env.development.local
+[02/May/2026 15:21:39] "GET /.env.development.local HTTP/1.1" 404 2392
+Not Found: /wp-config.php~
+[02/May/2026 15:21:39] "GET /wp-config.php~ HTTP/1.1" 404 2368
+Not Found: /.env.backup
+Not Found: /wp-config.php.swp
+[02/May/2026 15:21:39] "GET /.env.backup HTTP/1.1" 404 2359
+[02/May/2026 15:21:39] "GET /wp-config.php.swp HTTP/1.1" 404 2377
+Not Found: /.env.bak
+[02/May/2026 15:21:39] "GET /.env.bak HTTP/1.1" 404 2350
+Not Found: /.env.old
+[02/May/2026 15:21:39] "GET /.env.old HTTP/1.1" 404 2350
+Not Found: /.env.save
+[02/May/2026 15:21:39] "GET /.env.save HTTP/1.1" 404 2353
+Not Found: /api/.env
+[02/May/2026 15:21:39] "GET /api/.env HTTP/1.1" 404 2350
+Not Found: /wp-config.php.orig
+[02/May/2026 15:21:39] "GET /wp-config.php.orig HTTP/1.1" 404 2380
+Not Found: /api/v1/.env
+[02/May/2026 15:21:39] "GET /api/v1/.env HTTP/1.1" 404 2359
+Not Found: /wp-config-backup.php
+[02/May/2026 15:21:39] "GET /wp-config-backup.php HTTP/1.1" 404 2386
+Not Found: /wp-config_old.php
+[02/May/2026 15:21:39] "GET /wp-config_old.php HTTP/1.1" 404 2377
+Not Found: /wp-config-old.php
+[02/May/2026 15:21:39] "GET /wp-config-old.php HTTP/1.1" 404 2377
+Not Found: /old-wp-config.php
+[02/May/2026 15:21:39] "GET /old-wp-config.php HTTP/1.1" 404 2377
+Not Found: /phpinfo.php
+[02/May/2026 15:22:41] "GET /phpinfo.php HTTP/1.1" 404 2359
+Not Found: /php-info.php
+Not Found: /.dockerenv
+[02/May/2026 15:22:41] "GET /php-info.php HTTP/1.1" 404 2362
+[02/May/2026 15:22:41] "GET /.dockerenv HTTP/1.1" 404 2356
+Not Found: /.env.test
+Not Found: /.env
+[02/May/2026 15:22:41] "GET /.env.test HTTP/1.1" 404 2353
+[02/May/2026 15:22:41] "GET /.env HTTP/1.1" 404 2338
+Not Found: /.netrc
+Not Found: /test.php
+[02/May/2026 15:22:41] "GET /.netrc HTTP/1.1" 404 2344
+Not Found: /.npmrc
+[02/May/2026 15:22:41] "GET /test.php HTTP/1.1" 404 2350
+[02/May/2026 15:22:41] "GET /.npmrc HTTP/1.1" 404 2344
+Not Found: /.docker/config.json
+[02/May/2026 15:22:41] "GET /.docker/config.json HTTP/1.1" 404 2383
+Not Found: /php_info.php
+Not Found: /.aws/config
+Not Found: /.aws/config
+Not Found: /.htpasswd
+[02/May/2026 15:22:41] "GET /php_info.php HTTP/1.1" 404 2366
+Not Found: /info.php
+[02/May/2026 15:22:41] "GET /.aws/config HTTP/1.1" 404 2359
+Not Found: /.env.production
+[02/May/2026 15:22:41] "GET /.aws/config HTTP/1.1" 404 2363
+Not Found: /php.php
+[02/May/2026 15:22:41] "GET /.htpasswd HTTP/1.1" 404 2353
+Not Found: /.aws/credentials
+Not Found: /phpinfo.php
+[02/May/2026 15:22:41] "GET /info.php HTTP/1.1" 404 2354
+Not Found: /i.php
+Not Found: /info.php
+[02/May/2026 15:22:41] "GET /.env.production HTTP/1.1" 404 2371
+Not Found: /.env.prod
+[02/May/2026 15:22:41] "GET /php.php HTTP/1.1" 404 2351
+Not Found: /.env.dev
+[02/May/2026 15:22:41,800] - Broken pipe from ('127.0.0.1', 55259)
+Not Found: /.env.local
+Not Found: /.aws/credentials
+Not Found: /.dockerenv
+[02/May/2026 15:22:41] "GET /.aws/credentials HTTP/1.1" 404 2374
+Not Found: /.kube/config
+[02/May/2026 15:22:41,826] - Broken pipe from ('127.0.0.1', 55271)
+Not Found: /php-info.php
+[02/May/2026 15:22:41] "GET /.env.prod HTTP/1.1" 404 2353
+Not Found: /.aws/config
+[02/May/2026 15:22:41] "GET /info.php HTTP/1.1" 404 2350
+Not Found: /.docker/config.json
+[02/May/2026 15:22:41] "GET /.env.dev HTTP/1.1" 404 2350
+Not Found: /phpinfo.php
+[02/May/2026 15:22:41] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /.env.development
+[02/May/2026 15:22:41,865] - Broken pipe from ('127.0.0.1', 55272)
+[02/May/2026 15:22:41,867] - Broken pipe from ('127.0.0.1', 55268)
+Not Found: /info.php
+[02/May/2026 15:22:41,875] - Broken pipe from ('127.0.0.1', 55273)
+[02/May/2026 15:22:41,877] - Broken pipe from ('127.0.0.1', 55274)
+Not Found: /test.php
+[02/May/2026 15:22:41,880] - Broken pipe from ('127.0.0.1', 55275)
+Not Found: /.env.stage
+[02/May/2026 15:22:41,893] - Broken pipe from ('127.0.0.1', 55277)
+Not Found: /.env.staging
+[02/May/2026 15:22:41] "GET /phpinfo.php HTTP/1.1" 404 2359
+[02/May/2026 15:22:41] "GET /.env.development HTTP/1.1" 404 2374
+Not Found: /.aws/credentials
+[02/May/2026 15:22:41,916] - Broken pipe from ('127.0.0.1', 55276)
+[02/May/2026 15:22:41] "GET /info.php HTTP/1.1" 404 2350
+[02/May/2026 15:22:41] "GET /.env.stage HTTP/1.1" 404 2356
+[02/May/2026 15:22:41] "GET /.env.staging HTTP/1.1" 404 2362
+[02/May/2026 15:22:41] "GET /.aws/credentials HTTP/1.1" 404 2374
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.aws/config
+[02/May/2026 15:22:41] "GET / HTTP/1.1" 500 97517
+Not Found: /php_info.php
+[02/May/2026 15:22:41] "GET /.aws/config HTTP/1.1" 404 2359
+[02/May/2026 15:22:42] "GET /php_info.php HTTP/1.1" 404 2362
+Not Found: /test.php
+[02/May/2026 15:22:42] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /i.php
+Not Found: /.kube/config
+[02/May/2026 15:22:42] "GET /i.php HTTP/1.1" 404 2341
+Not Found: /php.php
+[02/May/2026 15:22:42] "GET /.kube/config HTTP/1.1" 404 2362
+Not Found: /.env
+[02/May/2026 15:22:42] "GET /php.php HTTP/1.1" 404 2347
+Not Found: /.htpasswd
+Not Found: /php.php
+[02/May/2026 15:22:42] "GET /.env HTTP/1.1" 404 2338
+[02/May/2026 15:22:42] "GET /.htpasswd HTTP/1.1" 404 2353
+[02/May/2026 15:22:42] "GET /php.php HTTP/1.1" 404 2347
+Not Found: /.env.production
+Not Found: /.git/config
+[02/May/2026 15:22:42] "GET /.env.production HTTP/1.1" 404 2371
+Not Found: /.git/config
+[02/May/2026 15:22:42] "GET /.git/config HTTP/1.1" 404 2359
+[02/May/2026 15:22:42] "GET /.git/config HTTP/1.1" 404 2359
+Not Found: /index.php
+[02/May/2026 15:22:42] "GET /index.php?=phpinfo() HTTP/1.1" 404 2364
+Not Found: /.git/logs/HEAD
+Not Found: /.git/index
+[02/May/2026 15:22:42] "GET /.git/logs/HEAD HTTP/1.1" 404 2368
+Not Found: /.env.local
+[02/May/2026 15:22:42] "GET /.git/index HTTP/1.1" 404 2356
+Not Found: /.git/HEAD
+Not Found: /.env.prod
+[02/May/2026 15:22:42] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /.env.staging
+[02/May/2026 15:22:42] "GET /.git/HEAD HTTP/1.1" 404 2353
+[02/May/2026 15:22:42] "GET /.env.prod HTTP/1.1" 404 2353
+[02/May/2026 15:22:42] "GET /.env.staging HTTP/1.1" 404 2362
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:22:42] "GET /?=phpinfo() HTTP/1.1" 500 97809
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:22:42] "GET / HTTP/1.1" 500 97620
+Not Found: /.env.dev
+[02/May/2026 15:22:42] "GET /.env.dev HTTP/1.1" 404 2350
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:22:42] "GET /_profiler/phpinfo HTTP/1.1" 404 2377
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:22:42] "GET /.git/refs/heads/main HTTP/1.1" 404 2386
+Not Found: /.env.development
+[02/May/2026 15:22:42] "GET /.env.development HTTP/1.1" 404 2374
+Not Found: /.env.test
+[02/May/2026 15:22:42] "GET /.env.test HTTP/1.1" 404 2353
+Not Found: /.git-credentials
+Not Found: /.git/refs/heads/master
+Not Found: /.git/packed-refs
+Not Found: /.env::$DATA
+[02/May/2026 15:22:42] "GET /.git/refs/heads/master HTTP/1.1" 404 2392
+Not Found: /.git-credentials
+[02/May/2026 15:22:42] "GET /.git-credentials HTTP/1.1" 404 2374
+[02/May/2026 15:22:42] "GET /.git/packed-refs HTTP/1.1" 404 2374
+[02/May/2026 15:22:42] "GET /.env::$DATA HTTP/1.1" 404 2359
+[02/May/2026 15:22:42] "GET /.git-credentials HTTP/1.1" 404 2374
+Not Found: /wp-config.php.bak
+Not Found: /.env;.jpg
+Not Found: /.gitconfig
+[02/May/2026 15:22:42] "GET /wp-config.php.bak HTTP/1.1" 404 2377
+[02/May/2026 15:22:42] "GET /.env;.jpg HTTP/1.1" 404 2355
+[02/May/2026 15:22:42] "GET /.gitconfig HTTP/1.1" 404 2356
+Not Found: /.env;.css
+[02/May/2026 15:22:42] "GET /.env;.css HTTP/1.1" 404 2355
+Not Found: /wp-config.php.old
+[02/May/2026 15:22:42] "GET /wp-config.php.old HTTP/1.1" 404 2377
+Not Found: /.env.backup
+[02/May/2026 15:22:43] "GET /.env.backup HTTP/1.1" 404 2359
+Not Found: /wp-config.php.txt
+[02/May/2026 15:22:43] "GET /wp-config.php.txt HTTP/1.1" 404 2377
+Not Found: /.env.old
+[02/May/2026 15:22:43] "GET /.env.old HTTP/1.1" 404 2350
+Not Found: /wp-config.php.save
+[02/May/2026 15:22:43] "GET /wp-config.php.save HTTP/1.1" 404 2380
+Not Found: /.env.bak
+[02/May/2026 15:22:43] "GET /.env.bak HTTP/1.1" 404 2350
+Not Found: /.env.save
+[02/May/2026 15:22:43] "GET /.env.save HTTP/1.1" 404 2353
+Not Found: /wp-config.php.orig
+[02/May/2026 15:22:43] "GET /wp-config.php.orig HTTP/1.1" 404 2380
+Not Found: /wp-config.php.swp
+[02/May/2026 15:22:43] "GET /wp-config.php.swp HTTP/1.1" 404 2377
+Not Found: /.env~
+Not Found: /wp-config.php~
+[02/May/2026 15:22:43] "GET /.env~ HTTP/1.1" 404 2341
+[02/May/2026 15:22:43] "GET /wp-config.php~ HTTP/1.1" 404 2368
+Not Found: /wp-config_old.php
+[02/May/2026 15:22:43] "GET /wp-config_old.php HTTP/1.1" 404 2377
+Not Found: /wp-config-old.php
+[02/May/2026 15:22:43] "GET /wp-config-old.php HTTP/1.1" 404 2377
+Not Found: /.env.dist
+[02/May/2026 15:22:43] "GET /.env.dist HTTP/1.1" 404 2353
+Not Found: /old-wp-config.php
+[02/May/2026 15:22:43] "GET /old-wp-config.php HTTP/1.1" 404 2377
+Not Found: /.env.swp
+[02/May/2026 15:22:43] "GET /.env.swp HTTP/1.1" 404 2350
+Not Found: /.env.development.local
+Not Found: /.env_backup
+[02/May/2026 15:22:43] "GET /.env.development.local HTTP/1.1" 404 2392
+[02/May/2026 15:22:43] "GET /.env_backup HTTP/1.1" 404 2359
+Not Found: /wp-config.php::$DATA
+[02/May/2026 15:22:43] "GET /wp-config.php::$DATA HTTP/1.1" 404 2386
+Not Found: /wp-config-backup.php
+[02/May/2026 15:22:43] "GET /wp-config-backup.php HTTP/1.1" 404 2386
+Not Found: /.env.production.local
+[02/May/2026 15:22:44] "GET /.env.production.local HTTP/1.1" 404 2389
+Not Found: /.env.dev
+[02/May/2026 15:23:24] "GET /.env.dev HTTP/1.1" 404 2354
+Not Found: /.htpasswd
+[02/May/2026 15:23:24] "GET /.htpasswd HTTP/1.1" 404 2357
+Not Found: /.env.stage
+Not Found: /.netrc
+Not Found: /.env.development
+[02/May/2026 15:23:24] "GET /.env.stage HTTP/1.1" 404 2360
+Not Found: /.aws/config
+[02/May/2026 15:23:24] "GET /.env.development HTTP/1.1" 404 2378
+Not Found: /.env.prod
+[02/May/2026 15:23:24] "GET /.netrc HTTP/1.1" 404 2348
+[02/May/2026 15:23:24] "GET /.aws/config HTTP/1.1" 404 2363
+Not Found: /.docker/config.json
+Not Found: /.aws/credentials
+[02/May/2026 15:23:24] "GET /.env.prod HTTP/1.1" 404 2357
+[02/May/2026 15:23:24] "GET /.docker/config.json HTTP/1.1" 404 2387
+Not Found: /.dockerenv
+Not Found: /.aws/credentials
+[02/May/2026 15:23:24] "GET /.aws/credentials HTTP/1.1" 404 2378
+Not Found: /.aws/config
+[02/May/2026 15:23:24] "GET /.dockerenv HTTP/1.1" 404 2360
+Not Found: /.kube/config
+[02/May/2026 15:23:24] "GET /.aws/credentials HTTP/1.1" 404 2378
+Not Found: /.env.local
+[02/May/2026 15:23:24] "GET /.aws/config HTTP/1.1" 404 2363
+[02/May/2026 15:23:24] "GET /.kube/config HTTP/1.1" 404 2366
+[02/May/2026 15:23:24] "GET /.env.local HTTP/1.1" 404 2360
+Not Found: /.npmrc
+[02/May/2026 15:23:24,474] - Broken pipe from ('127.0.0.1', 55256)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:23:24] "GET / HTTP/1.1" 500 97553
+Not Found: /test.php
+Not Found: /.htpasswd
+Not Found: /.env.test
+[02/May/2026 15:23:31] "GET /.htpasswd HTTP/1.1" 404 2354
+Not Found: /.env.development
+[02/May/2026 15:23:31] "GET /test.php HTTP/1.1" 404 2351
+Not Found: /.env.local
+[02/May/2026 15:23:31] "GET /.env.test HTTP/1.1" 404 2354
+Not Found: /info.php
+Not Found: /.env.prod
+[02/May/2026 15:23:31] "GET /.env.development HTTP/1.1" 404 2375
+[02/May/2026 15:23:31] "GET /.env.local HTTP/1.1" 404 2357
+Not Found: /.env.dev
+[02/May/2026 15:23:31] "GET /info.php HTTP/1.1" 404 2351
+Not Found: /.env.staging
+[02/May/2026 15:23:31] "GET /.env.prod HTTP/1.1" 404 2354
+Not Found: /phpinfo.php
+Not Found: /.env
+[02/May/2026 15:23:31] "GET /.env.dev HTTP/1.1" 404 2351
+[02/May/2026 15:23:31] "GET /.env.staging HTTP/1.1" 404 2363
+[02/May/2026 15:23:31] "GET /.env HTTP/1.1" 404 2339
+Not Found: /.env.production
+[02/May/2026 15:23:31] "GET /phpinfo.php HTTP/1.1" 404 2360
+[02/May/2026 15:23:31] "GET /.env.production HTTP/1.1" 404 2372
+Not Found: /.env.stage
+[02/May/2026 15:23:31] "GET /.env.stage HTTP/1.1" 404 2357
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:23:31] "GET / HTTP/1.1" 500 97510
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:23:31] "GET / HTTP/1.1" 500 20506
+Not Found: /php.php
+Not Found: /i.php
+[02/May/2026 15:23:31] "GET /php.php HTTP/1.1" 404 2348
+Not Found: /test.php
+Not Found: /php-info.php
+[02/May/2026 15:23:31] "GET /i.php HTTP/1.1" 404 2342
+Not Found: /.docker/config.json
+Not Found: /php_info.php
+Not Found: /.dockerenv
+[02/May/2026 15:23:31] "GET /php-info.php HTTP/1.1" 404 2363
+[02/May/2026 15:23:31] "GET /test.php HTTP/1.1" 404 2351
+Not Found: /.aws/config
+Not Found: /phpinfo.php
+Not Found: /.aws/credentials
+[02/May/2026 15:23:31] "GET /.docker/config.json HTTP/1.1" 404 2384
+[02/May/2026 15:23:31] "GET /.dockerenv HTTP/1.1" 404 2357
+Not Found: /info.php
+Not Found: /.aws/credentials
+[02/May/2026 15:23:31] "GET /php_info.php HTTP/1.1" 404 2363
+Not Found: /.aws/config
+[02/May/2026 15:23:31] "GET /phpinfo.php HTTP/1.1" 404 2360
+[02/May/2026 15:23:31] "GET /.aws/config HTTP/1.1" 404 2360
+[02/May/2026 15:23:31] "GET /.aws/credentials HTTP/1.1" 404 2375
+[02/May/2026 15:23:31] "GET /info.php HTTP/1.1" 404 2351
+[02/May/2026 15:23:31] "GET /.aws/credentials HTTP/1.1" 404 2375
+[02/May/2026 15:23:31] "GET /.aws/config HTTP/1.1" 404 2360
+Not Found: /.kube/config
+[02/May/2026 15:23:31] "GET /.kube/config HTTP/1.1" 404 2363
+Not Found: /.netrc
+[02/May/2026 15:23:31] "GET /.netrc HTTP/1.1" 404 2345
+Not Found: /.npmrc
+[02/May/2026 15:23:31] "GET /.npmrc HTTP/1.1" 404 2345
+Not Found: /.env.prod
+Not Found: /.env.staging
+[02/May/2026 15:23:31] "GET /.env.prod HTTP/1.1" 404 2354
+Not Found: /.htpasswd
+Not Found: /index.php
+[02/May/2026 15:23:32] "GET /.env.staging HTTP/1.1" 404 2363
+Not Found: /php.php
+Not Found: /.env
+[02/May/2026 15:23:32] "GET /.htpasswd HTTP/1.1" 404 2354
+Not Found: /.env.development
+[02/May/2026 15:23:32] "GET /index.php?=phpinfo() HTTP/1.1" 404 2365
+Not Found: /.env.production
+[02/May/2026 15:23:32] "GET /php.php HTTP/1.1" 404 2348
+Not Found: /.env.dev
+[02/May/2026 15:23:32] "GET /.env.development HTTP/1.1" 404 2375
+Not Found: /.env.test
+[02/May/2026 15:23:32] "GET /.env HTTP/1.1" 404 2339
+Not Found: /.env.local
+[02/May/2026 15:23:32] "GET /.env.production HTTP/1.1" 404 2372
+[02/May/2026 15:23:32] "GET /.env.test HTTP/1.1" 404 2354
+[02/May/2026 15:23:32] "GET /.env.dev HTTP/1.1" 404 2351
+[02/May/2026 15:23:32] "GET /.env.local HTTP/1.1" 404 2357
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env::$DATA
+[02/May/2026 15:23:32] "GET /.env::$DATA HTTP/1.1" 404 2360
+[02/May/2026 15:23:32] "GET /?=phpinfo() HTTP/1.1" 500 97890
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:23:32] "GET /_profiler/phpinfo HTTP/1.1" 404 2378
+Not Found: /.git/config
+[02/May/2026 15:23:32] "GET /.git/config HTTP/1.1" 404 2360
+Not Found: /.git/HEAD
+[02/May/2026 15:23:32] "GET /.git/HEAD HTTP/1.1" 404 2354
+Not Found: /.git/config
+[02/May/2026 15:23:32] "GET /.git/config HTTP/1.1" 404 2360
+Not Found: /.git/index
+[02/May/2026 15:23:32] "GET /.git/index HTTP/1.1" 404 2357
+Not Found: /.git/refs/heads/main
+Not Found: /.git/refs/heads/master
+Not Found: /.git/logs/HEAD
+Not Found: /.git/packed-refs
+[02/May/2026 15:23:32] "GET /.git/refs/heads/main HTTP/1.1" 404 2387
+[02/May/2026 15:23:32] "GET /.git/refs/heads/master HTTP/1.1" 404 2393
+[02/May/2026 15:23:32] "GET /.git/logs/HEAD HTTP/1.1" 404 2369
+[02/May/2026 15:23:32] "GET /.git/packed-refs HTTP/1.1" 404 2375
+Not Found: /.env;.jpg
+Not Found: /.env.bak
+[02/May/2026 15:23:32] "GET /.env;.jpg HTTP/1.1" 404 2356
+Not Found: /.env.backup
+[02/May/2026 15:23:32] "GET /.env.bak HTTP/1.1" 404 2351
+[02/May/2026 15:23:32] "GET /.env.backup HTTP/1.1" 404 2360
+Not Found: /.env.swp
+Not Found: /.env~
+Not Found: /.env;.css
+[02/May/2026 15:23:32] "GET /.env.swp HTTP/1.1" 404 2351
+[02/May/2026 15:23:32] "GET /.env~ HTTP/1.1" 404 2342
+[02/May/2026 15:23:32] "GET /.env;.css HTTP/1.1" 404 2356
+Not Found: /.env.save
+[02/May/2026 15:23:32] "GET /.env.save HTTP/1.1" 404 2354
+Not Found: /.git-credentials
+[02/May/2026 15:23:32] "GET /.git-credentials HTTP/1.1" 404 2375
+Not Found: /.env_backup
+Not Found: /.env.backup
+Not Found: /.env.production.local
+Not Found: /.env.development.local
+[02/May/2026 15:23:32] "GET /.env_backup HTTP/1.1" 404 2360
+Not Found: /.gitconfig
+[02/May/2026 15:23:32] "GET /.env.backup HTTP/1.1" 404 2360
+Not Found: /.env.old
+Not Found: /wp-config.php.bak
+[02/May/2026 15:23:32] "GET /.env.development.local HTTP/1.1" 404 2393
+Not Found: /.env.dist
+[02/May/2026 15:23:32] "GET /.env.production.local HTTP/1.1" 404 2390
+Not Found: /wp-config.php.save
+Not Found: /.git-credentials
+[02/May/2026 15:23:32] "GET /.gitconfig HTTP/1.1" 404 2357
+Not Found: /.env.bak
+[02/May/2026 15:23:32] "GET /.env.old HTTP/1.1" 404 2351
+Not Found: /wp-config.php.old
+Not Found: /.env.old
+[02/May/2026 15:23:32] "GET /wp-config.php.bak HTTP/1.1" 404 2378
+[02/May/2026 15:23:32] "GET /.env.dist HTTP/1.1" 404 2354
+[02/May/2026 15:23:32] "GET /wp-config.php.save HTTP/1.1" 404 2381
+[02/May/2026 15:23:32] "GET /.git-credentials HTTP/1.1" 404 2375
+[02/May/2026 15:23:32] "GET /.env.bak HTTP/1.1" 404 2351
+[02/May/2026 15:23:32] "GET /wp-config.php.old HTTP/1.1" 404 2378
+[02/May/2026 15:23:32] "GET /.env.old HTTP/1.1" 404 2351
+Not Found: /.env.save
+[02/May/2026 15:23:32] "GET /.env.save HTTP/1.1" 404 2354
+Not Found: /wp-config.php.txt
+[02/May/2026 15:23:32] "GET /wp-config.php.txt HTTP/1.1" 404 2378
+Not Found: /wp-config.php~
+[02/May/2026 15:23:32] "GET /wp-config.php~ HTTP/1.1" 404 2369
+Not Found: /wp-config.php.swp
+[02/May/2026 15:23:32] "GET /wp-config.php.swp HTTP/1.1" 404 2378
+Not Found: /api/.env
+[02/May/2026 15:23:32] "GET /api/.env HTTP/1.1" 404 2351
+Not Found: /app/.env
+Not Found: /wp-config_old.php
+Not Found: /wp-config-backup.php
+[02/May/2026 15:23:32] "GET /wp-config_old.php HTTP/1.1" 404 2378
+[02/May/2026 15:23:32] "GET /app/.env HTTP/1.1" 404 2351
+[02/May/2026 15:23:32] "GET /wp-config-backup.php HTTP/1.1" 404 2387
+Not Found: /apps/.env
+Not Found: /wp-config.php.orig
+Not Found: /wp-config-old.php
+[02/May/2026 15:23:32] "GET /apps/.env HTTP/1.1" 404 2354
+Not Found: /backend/.env
+[02/May/2026 15:23:32] "GET /wp-config-old.php HTTP/1.1" 404 2378
+Not Found: /api/v1/.env
+[02/May/2026 15:23:32] "GET /wp-config.php.orig HTTP/1.1" 404 2381
+[02/May/2026 15:23:32] "GET /backend/.env HTTP/1.1" 404 2363
+[02/May/2026 15:23:32] "GET /api/v1/.env HTTP/1.1" 404 2360
+Not Found: /public/.env
+[02/May/2026 15:23:32] "GET /public/.env HTTP/1.1" 404 2360
+Not Found: /old-wp-config.php
+[02/May/2026 15:23:32] "GET /old-wp-config.php HTTP/1.1" 404 2378
+Not Found: /backup/wp-config.php
+[02/May/2026 15:23:32] "GET /backup/wp-config.php HTTP/1.1" 404 2387
+Not Found: /admin/.env
+[02/May/2026 15:23:32] "GET /admin/.env HTTP/1.1" 404 2357
+Not Found: /web/.env
+[02/May/2026 15:23:32] "GET /web/.env HTTP/1.1" 404 2351
+Not Found: /laravel/.env
+[02/May/2026 15:23:33] "GET /laravel/.env HTTP/1.1" 404 2363
+Not Found: /wp-content/debug.log
+[02/May/2026 15:23:33] "GET /wp-content/debug.log HTTP/1.1" 404 2387
+Not Found: /config/.env
+Not Found: /wp-config.php::$DATA
+[02/May/2026 15:23:33] "GET /wp-config.php::$DATA HTTP/1.1" 404 2387
+[02/May/2026 15:23:33] "GET /config/.env HTTP/1.1" 404 2360
+Not Found: /server-status
+Not Found: /server-status
+Not Found: /server-info
+Not Found: /nginx_status
+Not Found: /src/.env
+[02/May/2026 15:23:33] "GET /server-status HTTP/1.1" 404 2366
+[02/May/2026 15:23:33] "GET /server-info HTTP/1.1" 404 2360
+Not Found: /server/.env
+[02/May/2026 15:23:33] "GET /server-status?auto HTTP/1.1" 404 2371
+[02/May/2026 15:23:33] "GET /nginx_status HTTP/1.1" 404 2363
+[02/May/2026 15:23:33] "GET /server/.env HTTP/1.1" 404 2360
+[02/May/2026 15:23:33] "GET /src/.env HTTP/1.1" 404 2351
+Not Found: /_profiler
+[02/May/2026 15:23:33] "GET /_profiler HTTP/1.1" 404 2354
+Not Found: /storage/.env
+[02/May/2026 15:23:33] "GET /storage/.env HTTP/1.1" 404 2363
+Not Found: /prisma/.env
+[02/May/2026 15:23:33] "GET /prisma/.env HTTP/1.1" 404 2360
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:23:33] "GET /?-s HTTP/1.1" 500 20509
+Not Found: /app_dev.php
+[02/May/2026 15:23:33] "GET /app_dev.php HTTP/1.1" 404 2360
+Not Found: /admin/.env
+Not Found: /public/.env
+[02/May/2026 15:23:33] "GET /admin/.env HTTP/1.1" 404 2357
+[02/May/2026 15:23:33] "GET /public/.env HTTP/1.1" 404 2360
+Not Found: /backend/.env
+Not Found: /composer.json
+[02/May/2026 15:23:33] "GET /backend/.env HTTP/1.1" 404 2363
+Not Found: /app/.env
+[02/May/2026 15:23:33] "GET /composer.json HTTP/1.1" 404 2366
+[02/May/2026 15:23:33] "GET /app/.env HTTP/1.1" 404 2351
+Not Found: /composer.lock
+[02/May/2026 15:23:33] "GET /composer.lock HTTP/1.1" 404 2366
+Not Found: /api/.env
+[02/May/2026 15:23:33] "GET /api/.env HTTP/1.1" 404 2351
+Not Found: /auth.json
+[02/May/2026 15:23:33] "GET /auth.json HTTP/1.1" 404 2354
+Not Found: /laravel/.env
+[02/May/2026 15:23:33] "GET /laravel/.env HTTP/1.1" 404 2363
+Not Found: /.composer/auth.json
+Not Found: /actuator/env
+Not Found: /actuator/env
+[02/May/2026 15:23:33] "GET /.composer/auth.json HTTP/1.1" 404 2384
+[02/May/2026 15:23:33] "GET /actuator/env HTTP/1.1" 404 2363
+[02/May/2026 15:23:33] "GET /actuator/env HTTP/1.1" 404 2363
+Not Found: /actuator/configprops
+[02/May/2026 15:23:33] "GET /actuator/configprops HTTP/1.1" 404 2387
+Not Found: /src/.env
+[02/May/2026 15:23:33] "GET /src/.env HTTP/1.1" 404 2351
+Not Found: /server/.env
+[02/May/2026 15:23:33] "GET /server/.env HTTP/1.1" 404 2360
+Not Found: /actuator/health
+[02/May/2026 15:23:33] "GET /actuator/health HTTP/1.1" 404 2372
+Not Found: /actuator/mappings
+Not Found: /config/.env
+[02/May/2026 15:23:33] "GET /actuator/mappings HTTP/1.1" 404 2378
+[02/May/2026 15:23:33] "GET /config/.env HTTP/1.1" 404 2360
+Not Found: /actuator/configprops
+Not Found: /env.txt
+[02/May/2026 15:23:33] "GET /actuator/configprops HTTP/1.1" 404 2387
+[02/May/2026 15:23:33] "GET /env.txt HTTP/1.1" 404 2348
+Not Found: /env
+[02/May/2026 15:23:33] "GET /env HTTP/1.1" 404 2336
+Not Found: /env.json
+[02/May/2026 15:23:33] "GET /env.json HTTP/1.1" 404 2351
+Not Found: /actuator/beans
+Not Found: /actuator/beans
+Not Found: /actuator/loggers
+[02/May/2026 15:23:33] "GET /actuator/beans HTTP/1.1" 404 2369
+[02/May/2026 15:23:33] "GET /actuator/beans HTTP/1.1" 404 2369
+[02/May/2026 15:23:33] "GET /actuator/loggers HTTP/1.1" 404 2375
+Not Found: /actuator/threaddump
+[02/May/2026 15:23:33] "GET /actuator/threaddump HTTP/1.1" 404 2384
+Not Found: /actuator/httptrace
+[02/May/2026 15:23:33] "GET /actuator/httptrace HTTP/1.1" 404 2381
+Not Found: /db.sql
+[02/May/2026 15:23:33] "GET /db.sql HTTP/1.1" 404 2345
+Not Found: /actuator/trace
+[02/May/2026 15:23:33,652] - Broken pipe from ('127.0.0.1', 55282)
+Not Found: /backup.sql
+Not Found: /database.sql
+[02/May/2026 15:23:33,655] - Broken pipe from ('127.0.0.1', 55283)
+[02/May/2026 15:23:33,658] - Broken pipe from ('127.0.0.1', 55267)
+Not Found: /dump.sql
+[02/May/2026 15:23:33,662] - Broken pipe from ('127.0.0.1', 55260)
+Not Found: /php-info.php
+Not Found: /.htpasswd
+[02/May/2026 15:25:09] "GET /php-info.php HTTP/1.1" 404 2364
+[02/May/2026 15:25:09] "GET /.htpasswd HTTP/1.1" 404 2355
+Not Found: /.env.local
+[02/May/2026 15:25:09] "GET /.env.local HTTP/1.1" 404 2358
+Not Found: /.env
+[02/May/2026 15:25:09] "GET /.env HTTP/1.1" 404 2340
+Not Found: /.aws/credentials
+Not Found: /.env.dev
+[02/May/2026 15:25:09] "GET /.aws/credentials HTTP/1.1" 404 2376
+Not Found: /phpinfo.php
+[02/May/2026 15:25:09] "GET /.env.dev HTTP/1.1" 404 2352
+[02/May/2026 15:25:09] "GET /phpinfo.php HTTP/1.1" 404 2361
+Not Found: /.aws/credentials
+Not Found: /test.php
+[02/May/2026 15:25:10] "GET /.aws/credentials HTTP/1.1" 404 2376
+Not Found: /.env.test
+[02/May/2026 15:25:10] "GET /test.php HTTP/1.1" 404 2352
+Not Found: /.env.production
+[02/May/2026 15:25:10] "GET /.env.test HTTP/1.1" 404 2355
+Not Found: /.aws/config
+[02/May/2026 15:25:10] "GET /.env.production HTTP/1.1" 404 2373
+[02/May/2026 15:25:10] "GET /.aws/config HTTP/1.1" 404 2361
+Not Found: /.env.prod
+[02/May/2026 15:25:10] "GET /.env.prod HTTP/1.1" 404 2355
+Not Found: /.docker/config.json
+[02/May/2026 15:25:10] "GET /.docker/config.json HTTP/1.1" 404 2385
+Not Found: /.netrc
+Not Found: /.kube/config
+[02/May/2026 15:25:10] "GET /.kube/config HTTP/1.1" 404 2364
+[02/May/2026 15:25:10] "GET /.netrc HTTP/1.1" 404 2346
+Not Found: /.dockerenv
+[02/May/2026 15:25:10] "GET /.dockerenv HTTP/1.1" 404 2358
+Not Found: /.npmrc
+Not Found: /.env.staging
+Not Found: /info.php
+[02/May/2026 15:25:10] "GET /.npmrc HTTP/1.1" 404 2346
+Not Found: /.env.development
+[02/May/2026 15:25:10] "GET /.env.staging HTTP/1.1" 404 2364
+[02/May/2026 15:25:10] "GET /.env.development HTTP/1.1" 404 2376
+Not Found: /test.php
+[02/May/2026 15:25:10] "GET /info.php HTTP/1.1" 404 2352
+Not Found: /.env.stage
+[02/May/2026 15:25:10] "GET /test.php HTTP/1.1" 404 2352
+Not Found: /php.php
+Not Found: /phpinfo.php
+[02/May/2026 15:25:10] "GET /.env.stage HTTP/1.1" 404 2358
+[02/May/2026 15:25:10] "GET /php.php HTTP/1.1" 404 2349
+[02/May/2026 15:25:10] "GET /phpinfo.php HTTP/1.1" 404 2361
+Not Found: /i.php
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:25:10] "GET /i.php HTTP/1.1" 404 2343
+Not Found: /.aws/config
+[02/May/2026 15:25:10] "GET / HTTP/1.1" 500 97498
+Not Found: /info.php
+[02/May/2026 15:25:10] "GET /.aws/config HTTP/1.1" 404 2361
+Not Found: /php_info.php
+[02/May/2026 15:25:10] "GET /info.php HTTP/1.1" 404 2352
+[02/May/2026 15:25:10] "GET /php_info.php HTTP/1.1" 404 2364
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.htpasswd
+Not Found: /.env
+[02/May/2026 15:25:10] "GET /.env HTTP/1.1" 404 2340
+Not Found: /.env.prod
+[02/May/2026 15:25:10] "GET / HTTP/1.1" 500 97722
+[02/May/2026 15:25:10] "GET /.htpasswd HTTP/1.1" 404 2355
+Not Found: /.git/config
+Not Found: /.env.production
+[02/May/2026 15:25:10] "GET /.env.prod HTTP/1.1" 404 2355
+Not Found: /php.php
+[02/May/2026 15:25:10] "GET /.git/config HTTP/1.1" 404 2361
+Not Found: /.git/config
+[02/May/2026 15:25:10] "GET /.env.production HTTP/1.1" 404 2373
+Not Found: /.env.local
+[02/May/2026 15:25:10] "GET /php.php HTTP/1.1" 404 2349
+Not Found: /index.php
+[02/May/2026 15:25:10] "GET /.git/config HTTP/1.1" 404 2361
+[02/May/2026 15:25:10] "GET /.env.local HTTP/1.1" 404 2358
+[02/May/2026 15:25:10] "GET /index.php?=phpinfo() HTTP/1.1" 404 2366
+Not Found: /.env.staging
+[02/May/2026 15:25:10] "GET /.env.staging HTTP/1.1" 404 2364
+Not Found: /.env.dev
+[02/May/2026 15:25:10] "GET /.env.dev HTTP/1.1" 404 2352
+Not Found: /.git/HEAD
+[02/May/2026 15:25:10] "GET /.git/HEAD HTTP/1.1" 404 2355
+Not Found: /.git/index
+Not Found: /.git/logs/HEAD
+[02/May/2026 15:25:10] "GET /.git/index HTTP/1.1" 404 2358
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:25:10] "GET /.git/logs/HEAD HTTP/1.1" 404 2370
+Not Found: /.git/refs/heads/master
+Not Found: /.env.development
+[02/May/2026 15:25:10] "GET /.git/refs/heads/master HTTP/1.1" 404 2394
+[02/May/2026 15:25:10] "GET /.git/refs/heads/main HTTP/1.1" 404 2388
+[02/May/2026 15:25:10] "GET /.env.development HTTP/1.1" 404 2376
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:25:10] "GET /?=phpinfo() HTTP/1.1" 500 97878
+Not Found: /.env.test
+Not Found: /.git/packed-refs
+[02/May/2026 15:25:10] "GET /_profiler/phpinfo HTTP/1.1" 404 2379
+Not Found: /.env::$DATA
+Not Found: /.git-credentials
+[02/May/2026 15:25:10] "GET /.git/packed-refs HTTP/1.1" 404 2376
+Not Found: /.git-credentials
+[02/May/2026 15:25:10] "GET /.env.test HTTP/1.1" 404 2355
+Not Found: /.gitconfig
+[02/May/2026 15:25:10] "GET /.env::$DATA HTTP/1.1" 404 2361
+[02/May/2026 15:25:10] "GET /.git-credentials HTTP/1.1" 404 2376
+Not Found: /.env;.jpg
+[02/May/2026 15:25:10] "GET /.git-credentials HTTP/1.1" 404 2376
+[02/May/2026 15:25:10] "GET /.gitconfig HTTP/1.1" 404 2358
+[02/May/2026 15:25:10] "GET /.env;.jpg HTTP/1.1" 404 2357
+Not Found: /.env;.css
+Not Found: /.env.bak
+Not Found: /.env.backup
+[02/May/2026 15:25:10] "GET /.env.bak HTTP/1.1" 404 2352
+Not Found: /.env.old
+[02/May/2026 15:25:10] "GET /.env;.css HTTP/1.1" 404 2357
+Not Found: /wp-config.php.bak
+[02/May/2026 15:25:10] "GET /.env.backup HTTP/1.1" 404 2361
+[02/May/2026 15:25:10] "GET /.env.old HTTP/1.1" 404 2352
+[02/May/2026 15:25:10] "GET /wp-config.php.bak HTTP/1.1" 404 2379
+Not Found: /.env.save
+Not Found: /.env~
+Not Found: /wp-config.php.old
+[02/May/2026 15:25:10] "GET /.env.save HTTP/1.1" 404 2355
+Not Found: /wp-config.php.save
+Not Found: /wp-config.php~
+[02/May/2026 15:25:10] "GET /.env~ HTTP/1.1" 404 2343
+[02/May/2026 15:25:10] "GET /wp-config.php.old HTTP/1.1" 404 2379
+Not Found: /.env.swp
+[02/May/2026 15:25:10] "GET /wp-config.php.save HTTP/1.1" 404 2382
+Not Found: /wp-config.php.txt
+[02/May/2026 15:25:10] "GET /wp-config.php~ HTTP/1.1" 404 2370
+[02/May/2026 15:25:10,932] - Broken pipe from ('127.0.0.1', 55377)
+Not Found: /.env.dist
+[02/May/2026 15:25:10,940] - Broken pipe from ('127.0.0.1', 55365)
+[02/May/2026 15:25:10,941] - Broken pipe from ('127.0.0.1', 55379)
+Not Found: /.env_backup
+[02/May/2026 15:25:10,954] - Broken pipe from ('127.0.0.1', 55378)
+Not Found: /wp-config.php.swp
+[02/May/2026 15:25:10,958] - Broken pipe from ('127.0.0.1', 55376)
+Not Found: /wp-config.php.orig
+Not Found: /wp-config-backup.php
+[02/May/2026 15:25:10,963] - Broken pipe from ('127.0.0.1', 55366)
+Not Found: /wp-config_old.php
+[02/May/2026 15:25:10,964] - Broken pipe from ('127.0.0.1', 55367)
+Not Found: /.env.production.local
+[02/May/2026 15:25:10,967] - Broken pipe from ('127.0.0.1', 55368)
+[02/May/2026 15:25:10,968] - Broken pipe from ('127.0.0.1', 55374)
+Not Found: /.aws/config
+[02/May/2026 15:25:12] "GET /.aws/config HTTP/1.1" 404 2361
+Not Found: /.aws/config
+Not Found: /.env.staging
+Not Found: /test.php
+[02/May/2026 15:25:12] "GET /.aws/config HTTP/1.1" 404 2361
+Not Found: /.env.development
+[02/May/2026 15:25:12] "GET /.env.staging HTTP/1.1" 404 2364
+[02/May/2026 15:25:12] "GET /test.php HTTP/1.1" 404 2352
+[02/May/2026 15:25:12] "GET /.env.development HTTP/1.1" 404 2376
+Not Found: /i.php
+Not Found: /.aws/credentials
+[02/May/2026 15:25:12] "GET /i.php HTTP/1.1" 404 2343
+Not Found: /.aws/credentials
+[02/May/2026 15:25:12] "GET /.aws/credentials HTTP/1.1" 404 2376
+Not Found: /.env.test
+[02/May/2026 15:25:12] "GET /.aws/credentials HTTP/1.1" 404 2376
+Not Found: /.env.dev
+[02/May/2026 15:25:12] "GET /.env.test HTTP/1.1" 404 2355
+Not Found: /.netrc
+Not Found: /.kube/config
+[02/May/2026 15:25:12] "GET /.netrc HTTP/1.1" 404 2346
+[02/May/2026 15:25:12] "GET /.kube/config HTTP/1.1" 404 2364
+[02/May/2026 15:25:12] "GET /.env.dev HTTP/1.1" 404 2352
+Not Found: /.dockerenv
+Not Found: /info.php
+[02/May/2026 15:25:12] "GET /info.php HTTP/1.1" 404 2352
+Not Found: /php_info.php
+Not Found: /.htpasswd
+Not Found: /.docker/config.json
+[02/May/2026 15:25:12] "GET /.dockerenv HTTP/1.1" 404 2358
+Not Found: /.env.stage
+[02/May/2026 15:25:12] "GET /php_info.php HTTP/1.1" 404 2364
+Not Found: /phpinfo.php
+[02/May/2026 15:25:12] "GET /.docker/config.json HTTP/1.1" 404 2385
+Not Found: /.env.local
+[02/May/2026 15:25:12] "GET /.htpasswd HTTP/1.1" 404 2355
+Not Found: /phpinfo.php
+[02/May/2026 15:25:12] "GET /.env.stage HTTP/1.1" 404 2358
+[02/May/2026 15:25:12] "GET /phpinfo.php HTTP/1.1" 404 2361
+Not Found: /php-info.php
+[02/May/2026 15:25:12] "GET /.env.local HTTP/1.1" 404 2358
+Not Found: /.npmrc
+[02/May/2026 15:25:12] "GET /phpinfo.php HTTP/1.1" 404 2361
+Not Found: /php.php
+Not Found: /test.php
+[02/May/2026 15:25:12] "GET /php-info.php HTTP/1.1" 404 2364
+[02/May/2026 15:25:12] "GET /.npmrc HTTP/1.1" 404 2346
+[02/May/2026 15:25:12] "GET /test.php HTTP/1.1" 404 2352
+Not Found: /.env
+[02/May/2026 15:25:12] "GET /php.php HTTP/1.1" 404 2349
+[02/May/2026 15:25:12] "GET /.env HTTP/1.1" 404 2340
+Not Found: /.env.production
+Not Found: /info.php
+[02/May/2026 15:25:12] "GET /.env.production HTTP/1.1" 404 2373
+[02/May/2026 15:25:12] "GET /info.php HTTP/1.1" 404 2352
+Not Found: /.htpasswd
+[02/May/2026 15:25:12] "GET /.htpasswd HTTP/1.1" 404 2355
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env
+Not Found: /.git/config
+[02/May/2026 15:25:12] "GET /.env HTTP/1.1" 404 2340
+Not Found: /.env.prod
+[02/May/2026 15:25:12] "GET / HTTP/1.1" 500 97638
+Not Found: /php.php
+[02/May/2026 15:25:12] "GET /.git/config HTTP/1.1" 404 2361
+Not Found: /.env.production
+Not Found: /.git/config
+[02/May/2026 15:25:12] "GET /.env.prod HTTP/1.1" 404 2355
+[02/May/2026 15:25:12] "GET /php.php HTTP/1.1" 404 2349
+Not Found: /.env.prod
+[02/May/2026 15:25:12] "GET /.env.production HTTP/1.1" 404 2373
+Not Found: /.git/HEAD
+[02/May/2026 15:25:12] "GET /.git/config HTTP/1.1" 404 2361
+Not Found: /.git/index
+[02/May/2026 15:25:12] "GET /.env.prod HTTP/1.1" 404 2355
+[02/May/2026 15:25:12] "GET /.git/HEAD HTTP/1.1" 404 2355
+[02/May/2026 15:25:12] "GET /.git/index HTTP/1.1" 404 2358
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env.local
+Not Found: /.env.staging
+[02/May/2026 15:25:12] "GET / HTTP/1.1" 500 97535
+[02/May/2026 15:25:12] "GET /.env.local HTTP/1.1" 404 2358
+Not Found: /index.php
+[02/May/2026 15:25:12] "GET /index.php?=phpinfo() HTTP/1.1" 404 2366
+Not Found: /.git/logs/HEAD
+[02/May/2026 15:25:13] "GET /.env.staging HTTP/1.1" 404 2364
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:25:13] "GET /.git/logs/HEAD HTTP/1.1" 404 2370
+Not Found: /.git/refs/heads/main
+Not Found: /.git/refs/heads/master
+[02/May/2026 15:25:13] "GET /_profiler/phpinfo HTTP/1.1" 404 2379
+Not Found: /.git/packed-refs
+[02/May/2026 15:25:13] "GET /.git/refs/heads/main HTTP/1.1" 404 2388
+Not Found: /.env.dev
+[02/May/2026 15:25:13] "GET /.git/refs/heads/master HTTP/1.1" 404 2394
+Not Found: /.env.development
+[02/May/2026 15:25:13] "GET /.git/packed-refs HTTP/1.1" 404 2376
+Not Found: /.env.test
+Not Found: /.git-credentials
+[02/May/2026 15:25:13] "GET /.env.dev HTTP/1.1" 404 2352
+Not Found: /.git-credentials
+[02/May/2026 15:25:13] "GET /.env.development HTTP/1.1" 404 2376
+[02/May/2026 15:25:13] "GET /.env.test HTTP/1.1" 404 2355
+[02/May/2026 15:25:13] "GET /.git-credentials HTTP/1.1" 404 2376
+[02/May/2026 15:25:13] "GET /.git-credentials HTTP/1.1" 404 2376
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:25:13] "GET /?=phpinfo() HTTP/1.1" 500 97899
+Not Found: /.gitconfig
+Not Found: /.env::$DATA
+[02/May/2026 15:25:13] "GET /.gitconfig HTTP/1.1" 404 2358
+Not Found: /wp-config.php.bak
+[02/May/2026 15:25:13] "GET /.env::$DATA HTTP/1.1" 404 2361
+Not Found: /.env;.jpg
+[02/May/2026 15:25:13] "GET /.env;.jpg HTTP/1.1" 404 2357
+[02/May/2026 15:25:13] "GET /wp-config.php.bak HTTP/1.1" 404 2379
+Not Found: /.env;.css
+Not Found: /.env.bak
+[02/May/2026 15:25:13] "GET /.env;.css HTTP/1.1" 404 2357
+[02/May/2026 15:25:13] "GET /.env.bak HTTP/1.1" 404 2352
+Not Found: /wp-config.php.old
+[02/May/2026 15:25:13] "GET /wp-config.php.old HTTP/1.1" 404 2379
+Not Found: /.env.save
+Not Found: /.env.old
+Not Found: /wp-config.php.save
+Not Found: /.env.backup
+[02/May/2026 15:25:13] "GET /.env.save HTTP/1.1" 404 2355
+[02/May/2026 15:25:13] "GET /.env.old HTTP/1.1" 404 2352
+Not Found: /wp-config.php.txt
+Not Found: /wp-config.php.swp
+[02/May/2026 15:25:13] "GET /wp-config.php.save HTTP/1.1" 404 2382
+Not Found: /wp-config.php~
+[02/May/2026 15:25:13] "GET /.env.backup HTTP/1.1" 404 2361
+Not Found: /.env.swp
+Not Found: /.env~
+[02/May/2026 15:25:13] "GET /wp-config.php.txt HTTP/1.1" 404 2379
+[02/May/2026 15:25:13] "GET /wp-config.php.swp HTTP/1.1" 404 2379
+Not Found: /wp-config-old.php
+[02/May/2026 15:25:13] "GET /wp-config.php~ HTTP/1.1" 404 2370
+Not Found: /wp-config.php.orig
+Not Found: /.env_backup
+[02/May/2026 15:25:13] "GET /.env.swp HTTP/1.1" 404 2352
+Not Found: /wp-config-backup.php
+Not Found: /wp-config_old.php
+[02/May/2026 15:25:13] "GET /.env~ HTTP/1.1" 404 2343
+Not Found: /.env.dist
+[02/May/2026 15:25:13] "GET /wp-config-old.php HTTP/1.1" 404 2379
+[02/May/2026 15:25:13] "GET /.env_backup HTTP/1.1" 404 2361
+[02/May/2026 15:25:13] "GET /wp-config.php.orig HTTP/1.1" 404 2382
+Not Found: /.env.development.local
+[02/May/2026 15:25:13] "GET /wp-config-backup.php HTTP/1.1" 404 2388
+Not Found: /.env.production.local
+[02/May/2026 15:25:13] "GET /wp-config_old.php HTTP/1.1" 404 2379
+Not Found: /old-wp-config.php
+Not Found: /.env.backup
+[02/May/2026 15:25:13] "GET /.env.dist HTTP/1.1" 404 2355
+Not Found: /backup/wp-config.php
+[02/May/2026 15:25:13] "GET /.env.development.local HTTP/1.1" 404 2394
+[02/May/2026 15:25:13] "GET /.env.production.local HTTP/1.1" 404 2391
+Not Found: /.env.bak
+[02/May/2026 15:25:13] "GET /.env.backup HTTP/1.1" 404 2361
+[02/May/2026 15:25:13] "GET /old-wp-config.php HTTP/1.1" 404 2379
+Not Found: /wp-config.php::$DATA
+[02/May/2026 15:25:13] "GET /backup/wp-config.php HTTP/1.1" 404 2388
+Not Found: /.env.save
+Not Found: /.env.old
+[02/May/2026 15:25:13] "GET /.env.bak HTTP/1.1" 404 2352
+[02/May/2026 15:25:13] "GET /wp-config.php::$DATA HTTP/1.1" 404 2388
+[02/May/2026 15:25:13] "GET /.env.save HTTP/1.1" 404 2355
+Not Found: /server-status
+[02/May/2026 15:25:13] "GET /.env.old HTTP/1.1" 404 2352
+Not Found: /api/.env
+[02/May/2026 15:25:13,629] - Broken pipe from ('127.0.0.1', 55393)
+Not Found: /server-status
+Not Found: /wp-content/debug.log
+[02/May/2026 15:25:13,637] - Broken pipe from ('127.0.0.1', 55384)
+Not Found: /backend/.env
+[02/May/2026 15:25:13,637] - Broken pipe from ('127.0.0.1', 55391)
+[02/May/2026 15:25:13,640] - Broken pipe from ('127.0.0.1', 55385)
+[02/May/2026 15:25:13,646] - Broken pipe from ('127.0.0.1', 55371)
+Not Found: /_profiler
+[02/May/2026 15:25:13,664] - Broken pipe from ('127.0.0.1', 55375)
+Not Found: /nginx_status
+Not Found: /api/v1/.env
+[02/May/2026 15:25:13,673] - Broken pipe from ('127.0.0.1', 55383)
+Not Found: /app/.env
+[02/May/2026 15:25:13,677] - Broken pipe from ('127.0.0.1', 55380)
+Not Found: /app_dev.php
+[02/May/2026 15:25:13,680] - Broken pipe from ('127.0.0.1', 55388)
+Not Found: /apps/.env
+[02/May/2026 15:25:13,684] - Broken pipe from ('127.0.0.1', 55370)
+Not Found: /server-info
+[02/May/2026 15:25:13,687] - Broken pipe from ('127.0.0.1', 55387)
+Not Found: /public/.env
+[02/May/2026 15:25:13,688] - Broken pipe from ('127.0.0.1', 55372)
+[02/May/2026 15:25:13,689] - Broken pipe from ('127.0.0.1', 55389)
+Not Found: /.aws/credentials
+Not Found: /
+[02/May/2026 15:25:27] "GET /.aws/credentials HTTP/1.1" 404 8915
+[02/May/2026 15:25:27] "GET /.htpasswd HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET / HTTP/1.1" 404 8849
+Not Found: /
+[02/May/2026 15:25:27] "GET /.env.stage HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.local HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET / HTTP/1.1" 404 8849
+[02/May/2026 15:25:27] "GET /.env.test HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.production HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.staging HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.prod HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.dev HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /test.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.dockerenv HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /php_info.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /info.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /i.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /php-info.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /test.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /php.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /info.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.netrc HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.npmrc HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /phpinfo.php HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /phpinfo.php HTTP/1.1" 301 0
+Not Found: /.aws/credentials
+[02/May/2026 15:25:27] "GET /.aws/credentials HTTP/1.1" 404 8915
+Not Found: /.kube/config
+Not Found: /.docker/config.json
+[02/May/2026 15:25:27] "GET /.docker/config.json HTTP/1.1" 404 8924
+Not Found: /.aws/config
+[02/May/2026 15:25:27] "GET /.kube/config HTTP/1.1" 404 8903
+Not Found: /.aws/config
+[02/May/2026 15:25:27] "GET /.env HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.htpasswd HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.aws/config HTTP/1.1" 404 8900
+[02/May/2026 15:25:27] "GET /.aws/config HTTP/1.1" 404 8900
+Not Found: /.git/config
+[02/May/2026 15:25:27] "GET /.env.prod HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.production HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.git/config HTTP/1.1" 404 8900
+[02/May/2026 15:25:27] "GET /.env.local HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.development HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.staging HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.development HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.dev HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.test HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /php.php HTTP/1.1" 301 0
+Not Found: /
+Not Found: /.git/config
+[02/May/2026 15:25:27] "GET /index.php?=phpinfo() HTTP/1.1" 301 0
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:25:27] "GET /?=phpinfo() HTTP/1.1" 404 8860
+Not Found: /.git/HEAD
+[02/May/2026 15:25:27] "GET /.git/config HTTP/1.1" 404 8900
+Not Found: /.git/index
+[02/May/2026 15:25:27] "GET /_profiler/phpinfo HTTP/1.1" 404 8918
+Not Found: /.git/logs/HEAD
+[02/May/2026 15:25:27] "GET /.git/HEAD HTTP/1.1" 404 8894
+[02/May/2026 15:25:27] "GET /.git/index HTTP/1.1" 404 8897
+[02/May/2026 15:25:27] "GET /.git/logs/HEAD HTTP/1.1" 404 8909
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:25:27] "GET /.env::$DATA HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.git/refs/heads/main HTTP/1.1" 404 8927
+Not Found: /.git/refs/heads/master
+[02/May/2026 15:25:27] "GET /.env;.jpg HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.git-credentials HTTP/1.1" 301 0
+Not Found: /.git/packed-refs
+[02/May/2026 15:25:27] "GET /.git/refs/heads/master HTTP/1.1" 404 8933
+[02/May/2026 15:25:27] "GET /.git/packed-refs HTTP/1.1" 404 8915
+[02/May/2026 15:25:27] "GET /.env;.css HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.git-credentials HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.old HTTP/1.1" 301 0
+[02/May/2026 15:25:27] "GET /.env.bak HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.backup HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.save HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env~ HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.gitconfig HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.swp HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env_backup HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.bak HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.old HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.save HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.txt HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.production.local HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php~ HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.dist HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.orig HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config.php.swp HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config-backup.php HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.development.local HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.backup HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /wp-config_old.php HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.bak HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.save HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /.env.old HTTP/1.1" 301 0
+Not Found: /api/v1/.env
+Not Found: /api/.env
+[02/May/2026 15:25:28] "GET /api/v1/.env HTTP/1.1" 404 8900
+[02/May/2026 15:25:28] "GET /api/.env HTTP/1.1" 404 8891
+Not Found: /backend/.env
+[02/May/2026 15:25:28] "GET /wp-config-old.php HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /old-wp-config.php HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /backend/.env HTTP/1.1" 404 8903
+Not Found: /backup/wp-config.php
+[02/May/2026 15:25:28] "GET /backup/wp-config.php HTTP/1.1" 404 8927
+[02/May/2026 15:25:28] "GET /wp-config.php::$DATA HTTP/1.1" 301 0
+Not Found: /app/.env
+Not Found: /wp-content/debug.log
+[02/May/2026 15:25:28] "GET /server-status HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /app/.env HTTP/1.1" 404 8891
+[02/May/2026 15:25:28] "GET /wp-content/debug.log HTTP/1.1" 404 8927
+Not Found: /apps/.env
+[02/May/2026 15:25:28] "GET /apps/.env HTTP/1.1" 404 8894
+Not Found: /public/.env
+[02/May/2026 15:25:28] "GET /nginx_status HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /public/.env HTTP/1.1" 404 8900
+Not Found: /web/.env
+[02/May/2026 15:25:28] "GET /server-info HTTP/1.1" 301 0
+Not Found: /admin/.env
+[02/May/2026 15:25:28] "GET /server-status?auto HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /web/.env HTTP/1.1" 404 8891
+[02/May/2026 15:25:28] "GET /admin/.env HTTP/1.1" 404 8897
+Not Found: /laravel/.env
+[02/May/2026 15:25:28] "GET /_profiler HTTP/1.1" 301 0
+Not Found: /storage/.env
+Not Found: /config/.env
+[02/May/2026 15:25:28] "GET /storage/.env HTTP/1.1" 404 8903
+[02/May/2026 15:25:28] "GET /laravel/.env HTTP/1.1" 404 8903
+Not Found: /src/.env
+[02/May/2026 15:25:28] "GET /config/.env HTTP/1.1" 404 8900
+Not Found: /
+[02/May/2026 15:25:28] "GET /src/.env HTTP/1.1" 404 8891
+[02/May/2026 15:25:28] "GET /?-s HTTP/1.1" 404 8852
+[02/May/2026 15:25:28] "GET /app_dev.php HTTP/1.1" 301 0
+Not Found: /prisma/.env
+Not Found: /server/.env
+[02/May/2026 15:25:28] "GET /prisma/.env HTTP/1.1" 404 8900
+[02/May/2026 15:25:28] "GET /server/.env HTTP/1.1" 404 8900
+Not Found: /.composer/auth.json
+[02/May/2026 15:25:28] "GET /composer.lock HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /composer.json HTTP/1.1" 301 0
+Not Found: /api/.env
+[02/May/2026 15:25:28] "GET /.composer/auth.json HTTP/1.1" 404 8924
+Not Found: /backend/.env
+[02/May/2026 15:25:28] "GET /api/.env HTTP/1.1" 404 8891
+Not Found: /app/.env
+[02/May/2026 15:25:28] "GET /auth.json HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /backend/.env HTTP/1.1" 404 8903
+[02/May/2026 15:25:28] "GET /app/.env HTTP/1.1" 404 8891
+Not Found: /actuator/env
+[02/May/2026 15:25:28] "GET /actuator/env HTTP/1.1" 404 8903
+Not Found: /actuator/env
+Not Found: /actuator/configprops
+Not Found: /public/.env
+[02/May/2026 15:25:28] "GET /actuator/env HTTP/1.1" 404 8903
+[02/May/2026 15:25:28] "GET /actuator/configprops HTTP/1.1" 404 8927
+Not Found: /admin/.env
+Not Found: /actuator/configprops
+[02/May/2026 15:25:28] "GET /public/.env HTTP/1.1" 404 8900
+[02/May/2026 15:25:28] "GET /admin/.env HTTP/1.1" 404 8897
+[02/May/2026 15:25:28] "GET /actuator/configprops HTTP/1.1" 404 8927
+Not Found: /laravel/.env
+Not Found: /config/.env
+[02/May/2026 15:25:28] "GET /laravel/.env HTTP/1.1" 404 8903
+Not Found: /actuator/health
+Not Found: /server/.env
+[02/May/2026 15:25:28] "GET /config/.env HTTP/1.1" 404 8900
+Not Found: /src/.env
+[02/May/2026 15:25:28] "GET /actuator/health HTTP/1.1" 404 8912
+[02/May/2026 15:25:28] "GET /server/.env HTTP/1.1" 404 8900
+Not Found: /actuator/mappings
+[02/May/2026 15:25:28] "GET /src/.env HTTP/1.1" 404 8891
+Not Found: /actuator/loggers
+[02/May/2026 15:25:28] "GET /env HTTP/1.1" 301 0
+[02/May/2026 15:25:28] "GET /actuator/mappings HTTP/1.1" 404 8918
+Not Found: /actuator/trace
+[02/May/2026 15:25:29] "GET /actuator/loggers HTTP/1.1" 404 8915
+Not Found: /actuator/beans
+[02/May/2026 15:25:29] "GET /actuator/trace HTTP/1.1" 404 8909
+Not Found: /actuator/httptrace
+Not Found: /actuator/beans
+[02/May/2026 15:25:29] "GET /env.txt HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /env.json HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /actuator/beans HTTP/1.1" 404 8909
+Not Found: /actuator/threaddump
+[02/May/2026 15:25:29] "GET /actuator/httptrace HTTP/1.1" 404 8921
+[02/May/2026 15:25:29] "GET /actuator/beans HTTP/1.1" 404 8909
+[02/May/2026 15:25:29] "GET /actuator/threaddump HTTP/1.1" 404 8924
+[02/May/2026 15:25:29] "GET /dump.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /db.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /database.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /backup.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /db_backup.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /database_backup.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /mysqldump.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /pg_dump.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /all-databases.sql HTTP/1.1" 301 0
+[02/May/2026 15:25:29] "GET /export.sql HTTP/1.1" 301 0
+Not Found: /config/master.key
+[02/May/2026 15:25:29,240] - Broken pipe from ('127.0.0.1', 55495)
+Not Found: /info.php
+[02/May/2026 15:25:30] "GET /info.php HTTP/1.1" 404 2351
+Not Found: /.env.stage
+[02/May/2026 15:25:30] "GET /.env.stage HTTP/1.1" 404 2357
+Not Found: /php-info.php
+[02/May/2026 15:25:30] "GET /php-info.php HTTP/1.1" 404 2363
+Not Found: /phpinfo.php
+Not Found: /.env.staging
+Not Found: /phpinfo.php
+[02/May/2026 15:25:30] "GET /phpinfo.php HTTP/1.1" 404 2360
+Not Found: /.aws/credentials
+Not Found: /.env.test
+[02/May/2026 15:25:30] "GET /phpinfo.php HTTP/1.1" 404 2360
+[02/May/2026 15:25:30] "GET /.env.staging HTTP/1.1" 404 2363
+Not Found: /.env.dev
+[02/May/2026 15:25:30] "GET /.aws/credentials HTTP/1.1" 404 2375
+[02/May/2026 15:25:30] "GET /.env.test HTTP/1.1" 404 2354
+Not Found: /i.php
+[02/May/2026 15:25:30] "GET /.env.dev HTTP/1.1" 404 2351
+Not Found: /php_info.php
+[02/May/2026 15:25:30] "GET /i.php HTTP/1.1" 404 2342
+Not Found: /.env.local
+[02/May/2026 15:25:30] "GET /php_info.php HTTP/1.1" 404 2363
+Not Found: /test.php
+Not Found: /.aws/credentials
+Not Found: /.env.development
+[02/May/2026 15:25:30] "GET /test.php HTTP/1.1" 404 2351
+Not Found: /.dockerenv
+Not Found: /php.php
+[02/May/2026 15:25:30] "GET /.env.local HTTP/1.1" 404 2357
+Not Found: /info.php
+Not Found: /.aws/config
+[02/May/2026 15:25:30] "GET /.aws/credentials HTTP/1.1" 404 2375
+Not Found: /.env.prod
+[02/May/2026 15:25:30] "GET /.dockerenv HTTP/1.1" 404 2357
+[02/May/2026 15:25:30] "GET /.env.development HTTP/1.1" 404 2375
+Not Found: /.aws/credentials
+[02/May/2026 15:25:30] "GET /php.php HTTP/1.1" 404 2348
+Not Found: /info.php
+[02/May/2026 15:25:30] "GET /.aws/config HTTP/1.1" 404 2360
+Not Found: /test.php
+[02/May/2026 15:25:30] "GET /info.php HTTP/1.1" 404 2351
+Not Found: /.env
+Not Found: /.netrc
+[02/May/2026 15:25:30] "GET /.env.prod HTTP/1.1" 404 2354
+Not Found: /.dockerenv
+[02/May/2026 15:25:30] "GET /.aws/credentials HTTP/1.1" 404 2375
+Not Found: /.htpasswd
+Not Found: /.aws/config
+[02/May/2026 15:25:30] "GET /info.php HTTP/1.1" 404 2351
+[02/May/2026 15:25:30] "GET /test.php HTTP/1.1" 404 2351
+[02/May/2026 15:25:30] "GET /.env HTTP/1.1" 404 2339
+Not Found: /.kube/config
+[02/May/2026 15:25:30] "GET /.netrc HTTP/1.1" 404 2345
+Not Found: /php_info.php
+[02/May/2026 15:25:30] "GET /.dockerenv HTTP/1.1" 404 2357
+[02/May/2026 15:25:30] "GET /.htpasswd HTTP/1.1" 404 2354
+Not Found: /.docker/config.json
+[02/May/2026 15:25:30] "GET /.aws/config HTTP/1.1" 404 2360
+Not Found: /.env.local
+[02/May/2026 15:25:30] "GET /.kube/config HTTP/1.1" 404 2363
+Not Found: /.npmrc
+[02/May/2026 15:25:30] "GET /php_info.php HTTP/1.1" 404 2363
+Not Found: /php.php
+[02/May/2026 15:25:30] "GET /.docker/config.json HTTP/1.1" 404 2384
+Not Found: /index.php
+[02/May/2026 15:25:30] "GET /.env.local HTTP/1.1" 404 2357
+Not Found: /_profiler/phpinfo
+[02/May/2026 15:25:30] "GET /.npmrc HTTP/1.1" 404 2345
+[02/May/2026 15:25:30] "GET /php.php HTTP/1.1" 404 2348
+[02/May/2026 15:25:30] "GET /index.php?=phpinfo() HTTP/1.1" 404 2365
+[02/May/2026 15:25:30] "GET /_profiler/phpinfo HTTP/1.1" 404 2378
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env.production
+Not Found: /.env.prod
+Not Found: /.env
+[02/May/2026 15:25:30] "GET / HTTP/1.1" 500 97488
+Not Found: /.env.local
+Not Found: /.env.staging
+[02/May/2026 15:25:30] "GET /.env HTTP/1.1" 404 2339
+[02/May/2026 15:25:30] "GET /.env.prod HTTP/1.1" 404 2354
+Not Found: /.htpasswd
+Not Found: /.env
+Not Found: /.env.dev
+[02/May/2026 15:25:30] "GET /.env.production HTTP/1.1" 404 2372
+Not Found: /.env.prod
+[02/May/2026 15:25:30] "GET /.env.local HTTP/1.1" 404 2357
+[02/May/2026 15:25:30] "GET /.env.staging HTTP/1.1" 404 2363
+Not Found: /.env.test
+[02/May/2026 15:25:30] "GET /.env HTTP/1.1" 404 2339
+[02/May/2026 15:25:30] "GET /.htpasswd HTTP/1.1" 404 2354
+[02/May/2026 15:25:30] "GET /.env.dev HTTP/1.1" 404 2351
+[02/May/2026 15:25:30] "GET /.env.prod HTTP/1.1" 404 2354
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:25:31] "GET /.env.test HTTP/1.1" 404 2354
+Not Found: /.env.production
+Not Found: /.env.stage
+[02/May/2026 15:25:31] "GET / HTTP/1.1" 500 97679
+Not Found: /test.php
+[02/May/2026 15:25:31] "GET /.env.production HTTP/1.1" 404 2372
+Not Found: /.git/config
+[02/May/2026 15:25:31] "GET /.env.stage HTTP/1.1" 404 2357
+Not Found: /.npmrc
+Not Found: /.env.development
+[02/May/2026 15:25:31] "GET /test.php HTTP/1.1" 404 2351
+[02/May/2026 15:25:31] "GET /.git/config HTTP/1.1" 404 2360
+Not Found: /i.php
+Not Found: /.git/config
+[02/May/2026 15:25:31] "GET /.npmrc HTTP/1.1" 404 2345
+Not Found: /.env.production
+[02/May/2026 15:25:31] "GET /.env.development HTTP/1.1" 404 2375
+Not Found: /.git/HEAD
+[02/May/2026 15:25:31] "GET /i.php HTTP/1.1" 404 2342
+Not Found: /.git/logs/HEAD
+Not Found: /.aws/config
+[02/May/2026 15:25:31] "GET /.git/config HTTP/1.1" 404 2360
+Not Found: /.git/index
+[02/May/2026 15:25:31] "GET /.env.production HTTP/1.1" 404 2372
+Not Found: /.env.test
+[02/May/2026 15:25:31] "GET /.git/logs/HEAD HTTP/1.1" 404 2369
+[02/May/2026 15:25:31] "GET /.git/index HTTP/1.1" 404 2357
+[02/May/2026 15:25:31] "GET /.aws/config HTTP/1.1" 404 2360
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:25:31] "GET /.git/HEAD HTTP/1.1" 404 2354
+Not Found: /phpinfo.php
+[02/May/2026 15:25:31] "GET /.env.test HTTP/1.1" 404 2354
+Not Found: /.kube/config
+[02/May/2026 15:25:31] "GET / HTTP/1.1" 500 97519
+[02/May/2026 15:25:31,471] - Broken pipe from ('127.0.0.1', 55525)
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:25:31,486] - Broken pipe from ('127.0.0.1', 55520)
+Not Found: /.htpasswd
+[02/May/2026 15:25:31] "GET /.git/refs/heads/main HTTP/1.1" 404 2387
+Not Found: /.htpasswd
+Not Found: /.env
+[02/May/2026 15:25:31,554] - Broken pipe from ('127.0.0.1', 55515)
+[02/May/2026 15:25:31] "GET /.htpasswd HTTP/1.1" 404 2353
+[02/May/2026 15:25:31] "GET /.env HTTP/1.1" 404 2338
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.git/refs/heads/master
+Not Found: /.env::$DATA
+[02/May/2026 15:25:31] "GET /?=phpinfo() HTTP/1.1" 500 97889
+Not Found: /.git/packed-refs
+[02/May/2026 15:25:31] "GET /.git/refs/heads/master HTTP/1.1" 404 2393
+Not Found: /phpinfo.php
+[02/May/2026 15:25:31] "GET /.env::$DATA HTTP/1.1" 404 2360
+Not Found: /info.php
+[02/May/2026 15:25:31] "GET /.git/packed-refs HTTP/1.1" 404 2375
+Not Found: /.aws/credentials
+[02/May/2026 15:25:31] "GET /phpinfo.php HTTP/1.1" 404 2359
+Not Found: /.env.development
+[02/May/2026 15:25:31] "GET /info.php HTTP/1.1" 404 2350
+Not Found: /.npmrc
+[02/May/2026 15:25:31] "GET /.aws/credentials HTTP/1.1" 404 2374
+[02/May/2026 15:25:31,598] - Broken pipe from ('127.0.0.1', 55508)
+[02/May/2026 15:25:31] "GET /.npmrc HTTP/1.1" 404 2344
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env;.jpg
+Not Found: /php-info.php
+[02/May/2026 15:25:31,602] - Broken pipe from ('127.0.0.1', 55509)
+Not Found: /.env.staging
+[02/May/2026 15:25:31] "GET /.env;.jpg HTTP/1.1" 404 2356
+Not Found: /php-info.php
+Not Found: /.kube/config
+[02/May/2026 15:25:31] "GET /php-info.php HTTP/1.1" 404 2362
+[02/May/2026 15:25:31,604] - Broken pipe from ('127.0.0.1', 55498)
+[02/May/2026 15:25:31,604] - Broken pipe from ('127.0.0.1', 55514)
+Not Found: /info.php
+Not Found: /.env.dev
+Not Found: /.env;.css
+[02/May/2026 15:25:31,616] - Broken pipe from ('127.0.0.1', 55547)
+Not Found: /.env.bak
+[02/May/2026 15:25:31] "GET /info.php HTTP/1.1" 404 2350
+Not Found: /.docker/config.json
+[02/May/2026 15:25:31] "GET /.kube/config HTTP/1.1" 404 2362
+Not Found: /phpinfo.php
+[02/May/2026 15:25:31] "GET /.env;.css HTTP/1.1" 404 2356
+Not Found: /.aws/credentials
+[02/May/2026 15:25:31,622] - Broken pipe from ('127.0.0.1', 55522)
+Not Found: /.git-credentials
+[02/May/2026 15:25:31] "GET /.env.bak HTTP/1.1" 404 2351
+[02/May/2026 15:25:31,623] - Broken pipe from ('127.0.0.1', 55503)
+Not Found: /.aws/config
+Not Found: /.git-credentials
+[02/May/2026 15:25:31,629] - Broken pipe from ('127.0.0.1', 55500)
+Not Found: /.aws/config
+[02/May/2026 15:25:31] "GET /.git-credentials HTTP/1.1" 404 2375
+Not Found: /.env.save
+[02/May/2026 15:25:31,636] - Broken pipe from ('127.0.0.1', 55501)
+[02/May/2026 15:25:31] "GET /.git-credentials HTTP/1.1" 404 2375
+[02/May/2026 15:25:31] "GET /.aws/config HTTP/1.1" 404 2359
+[02/May/2026 15:25:31] "GET /.env.save HTTP/1.1" 404 2354
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env.old
+Not Found: /.env.backup
+[02/May/2026 15:25:31] "GET / HTTP/1.1" 500 97429
+Not Found: /info.php
+[02/May/2026 15:25:31] "GET /.env.backup HTTP/1.1" 404 2360
+Not Found: /.docker/config.json
+[02/May/2026 15:25:31,727] - Broken pipe from ('127.0.0.1', 55497)
+[02/May/2026 15:25:31] "GET /.env.old HTTP/1.1" 404 2351
+Not Found: /.dockerenv
+Not Found: /.env.production
+[02/May/2026 15:25:31] "GET /.docker/config.json HTTP/1.1" 404 2383
+Not Found: /php.php
+[02/May/2026 15:25:31] "GET /.dockerenv HTTP/1.1" 404 2356
+[02/May/2026 15:25:31] "GET /.env.production HTTP/1.1" 404 2371
+[02/May/2026 15:25:31,840] - Broken pipe from ('127.0.0.1', 55504)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+Not Found: /.env~
+Not Found: /.env.development
+[02/May/2026 15:25:31] "GET / HTTP/1.1" 500 20504
+Not Found: /.env.local
+Not Found: /.gitconfig
+[02/May/2026 15:25:31] "GET /.env.development HTTP/1.1" 404 2374
+Not Found: /.env.test
+Not Found: /.env.dev
+[02/May/2026 15:25:31] "GET /.env.local HTTP/1.1" 404 2356
+Not Found: /.env_backup
+[02/May/2026 15:25:31] "GET /.env~ HTTP/1.1" 404 2342
+[02/May/2026 15:25:31] "GET /.gitconfig HTTP/1.1" 404 2357
+Not Found: /i.php
+[02/May/2026 15:25:31] "GET /.env.test HTTP/1.1" 404 2353
+Not Found: /test.php
+[02/May/2026 15:25:31] "GET /.env.dev HTTP/1.1" 404 2350
+Not Found: /wp-config.php.txt
+[02/May/2026 15:25:31] "GET /i.php HTTP/1.1" 404 2341
+Not Found: /php_info.php
+[02/May/2026 15:25:31] "GET /.env_backup HTTP/1.1" 404 2360
+Not Found: /wp-config.php.bak
+[02/May/2026 15:25:31] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /test.php
+[02/May/2026 15:25:31] "GET /php_info.php HTTP/1.1" 404 2362
+Not Found: /wp-config.php.old
+[02/May/2026 15:25:31] "GET /wp-config.php.txt HTTP/1.1" 404 2378
+[02/May/2026 15:25:31] "GET /wp-config.php.bak HTTP/1.1" 404 2378
+Not Found: /.env.staging
+[02/May/2026 15:25:31] "GET /test.php HTTP/1.1" 404 2350
+Not Found: /.env.prod
+[02/May/2026 15:25:31] "GET /wp-config.php.old HTTP/1.1" 404 2378
+Not Found: /.env.swp
+[02/May/2026 15:25:31] "GET /.env.staging HTTP/1.1" 404 2362
+Not Found: /wp-config.php.save
+[02/May/2026 15:25:31] "GET /.env.prod HTTP/1.1" 404 2353
+Not Found: /wp-config.php~
+[02/May/2026 15:25:31] "GET /.env.swp HTTP/1.1" 404 2351
+Not Found: /.env.dist
+[02/May/2026 15:25:31] "GET /wp-config.php~ HTTP/1.1" 404 2369
+Not Found: /php.php
+[02/May/2026 15:25:31] "GET /wp-config.php.save HTTP/1.1" 404 2381
+Not Found: /.env.stage
+[02/May/2026 15:25:31] "GET /.env.dist HTTP/1.1" 404 2354
+[02/May/2026 15:25:31] "GET /php.php HTTP/1.1" 404 2347
+[02/May/2026 15:25:31] "GET /.env.stage HTTP/1.1" 404 2356
+Not Found: /.env.production.local
+Not Found: /wp-config.php.swp
+[02/May/2026 15:25:31] "GET /.env.production.local HTTP/1.1" 404 2390
+[02/May/2026 15:25:31] "GET /wp-config.php.swp HTTP/1.1" 404 2378
+Not Found: /phpinfo.php
+[02/May/2026 15:25:31] "GET /phpinfo.php HTTP/1.1" 404 2359
+Not Found: /.env.development.local
+[02/May/2026 15:25:32] "GET /.env.development.local HTTP/1.1" 404 2393
+Not Found: /.aws/credentials
+[02/May/2026 15:25:32] "GET /.aws/credentials HTTP/1.1" 404 2374
+Not Found: /.env.backup
+[02/May/2026 15:25:32] "GET /.env.backup HTTP/1.1" 404 2360
+Not Found: /.netrc
+[02/May/2026 15:25:32] "GET /.netrc HTTP/1.1" 404 2344
+Not Found: /.aws/config
+[02/May/2026 15:25:32] "GET /.aws/config HTTP/1.1" 404 2359
+Not Found: /wp-config-backup.php
+Not Found: /php.php
+Not Found: /.env
+[02/May/2026 15:25:32] "GET /wp-config-backup.php HTTP/1.1" 404 2387
+Not Found: /.htpasswd
+[02/May/2026 15:25:32,273] - Broken pipe from ('127.0.0.1', 55505)
+Not Found: /wp-config.php.orig
+[02/May/2026 15:25:32] "GET /php.php HTTP/1.1" 404 2347
+Not Found: /.git/config
+[02/May/2026 15:25:32] "GET /.htpasswd HTTP/1.1" 404 2353
+Not Found: /wp-config_old.php
+[02/May/2026 15:25:32] "GET /wp-config.php.orig HTTP/1.1" 404 2381
+Not Found: /.git/config
+[02/May/2026 15:25:32] "GET /.git/config HTTP/1.1" 404 2359
+Not Found: /.git/index
+[02/May/2026 15:25:32] "GET /wp-config_old.php HTTP/1.1" 404 2378
+Not Found: /.env.bak
+[02/May/2026 15:25:32] "GET /.git/config HTTP/1.1" 404 2359
+Not Found: /index.php
+[02/May/2026 15:25:32] "GET /.git/index HTTP/1.1" 404 2356
+Not Found: /backend/.env
+[02/May/2026 15:25:32] "GET /.env.bak HTTP/1.1" 404 2351
+Not Found: /wp-config-old.php
+[02/May/2026 15:25:32] "GET /index.php?=phpinfo() HTTP/1.1" 404 2364
+Not Found: /_profiler/phpinfo
+Not Found: /api/v1/.env
+[02/May/2026 15:25:32] "GET /backend/.env HTTP/1.1" 404 2363
+Not Found: /.env.production
+[02/May/2026 15:25:32] "GET /wp-config-old.php HTTP/1.1" 404 2378
+Not Found: /app/.env
+[02/May/2026 15:25:32] "GET /_profiler/phpinfo HTTP/1.1" 404 2377
+Not Found: /.git/logs/HEAD
+[02/May/2026 15:25:32,418] - Broken pipe from ('127.0.0.1', 55539)
+Not Found: /.env.old
+[02/May/2026 15:25:32] "GET /api/v1/.env HTTP/1.1" 404 2360
+Not Found: /.git/HEAD
+[02/May/2026 15:25:32] "GET /app/.env HTTP/1.1" 404 2351
+Not Found: /backup/wp-config.php
+[02/May/2026 15:25:32] "GET /.git/logs/HEAD HTTP/1.1" 404 2368
+Not Found: /.git/refs/heads/main
+[02/May/2026 15:25:32] "GET /.env.old HTTP/1.1" 404 2351
+Not Found: /old-wp-config.php
+[02/May/2026 15:25:32] "GET /.git/HEAD HTTP/1.1" 404 2353
+Not Found: /.env.save
+[02/May/2026 15:25:32] "GET /backup/wp-config.php HTTP/1.1" 404 2387
+Not Found: /wp-config.php::$DATA
+[02/May/2026 15:25:32] "GET /.git/refs/heads/main HTTP/1.1" 404 2386
+Not Found: /.git/refs/heads/master
+[02/May/2026 15:25:32] "GET /old-wp-config.php HTTP/1.1" 404 2378
+[02/May/2026 15:25:32] "GET /.env.save HTTP/1.1" 404 2354
+[02/May/2026 15:25:32] "GET /wp-config.php::$DATA HTTP/1.1" 404 2387
+[02/May/2026 15:25:32] "GET /.git/refs/heads/master HTTP/1.1" 404 2392
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[02/May/2026 15:25:32] "GET /?=phpinfo() HTTP/1.1" 500 97881
+Not Found: /.git-credentials
+Not Found: /.git/packed-refs
+[02/May/2026 15:25:32,499] - Broken pipe from ('127.0.0.1', 55544)
+[02/May/2026 15:25:32,499] - Broken pipe from ('127.0.0.1', 55542)
+Not Found: /.gitconfig
+Not Found: /wp-config.php.bak
+[02/May/2026 15:25:32,505] - Broken pipe from ('127.0.0.1', 55519)
+Not Found: /.git-credentials
+[02/May/2026 15:25:32,506] - Broken pipe from ('127.0.0.1', 55510)
+[02/May/2026 15:25:32,507] - Broken pipe from ('127.0.0.1', 55536)
+[02/May/2026 15:36:51] "GET / HTTP/1.1" 200 9312

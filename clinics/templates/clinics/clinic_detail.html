@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ clinic.name }}</h1>
+<p>Phone: {{ clinic.phone_number }}</p>
+<p>Email: {{ clinic.email }}</p>
+<p>Address: {{ clinic.address }}, {{ clinic.city }}, {{ clinic.state }}</p>
+
+<h2>Affiliated Doctors</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Office Address</th>
+            <th>Working Schedule</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for affiliation in affiliations %}
+        <tr>
+            <td>{{ affiliation.doctor.name }}</td>
+            <td>{{ affiliation.office_address }}</td>
+            <td>{{ affiliation.working_schedule }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'clinic_update' clinic.id %}" class="btn btn-warning">Edit Clinic</a>
+<a href="{% url 'clinic_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

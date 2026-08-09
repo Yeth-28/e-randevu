@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ hasta.name }} — Sil</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', sans-serif; background: #f8faff; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .card {
+            background: white; border-radius: 24px; padding: 40px; width: 440px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1); text-align: center;
+        }
+        .icon { font-size: 56px; margin-bottom: 16px; }
+        h2 { font-size: 22px; font-weight: 600; color: #111827; margin-bottom: 8px; }
+        .sub { font-size: 15px; color: #6b7280; margin-bottom: 8px; }
+        .hasta-name { font-size: 18px; font-weight: 600; color: #dc2626; margin-bottom: 24px; }
+        .warning {
+            background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px;
+            padding: 14px 16px; font-size: 13px; color: #dc2626; margin-bottom: 28px; text-align: left;
+        }
+        .btn-row { display: flex; gap: 12px; }
+        .btn-sil {
+            flex: 1; padding: 13px; background: #dc2626; color: white; border: none;
+            border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .btn-sil:hover { background: #b91c1c; }
+        .btn-iptal {
+            flex: 1; padding: 13px; background: white; color: #6b7280;
+            border: 1.5px solid #e5e7eb; border-radius: 12px; font-size: 15px;
+            font-weight: 500; text-decoration: none; display: flex; align-items: center; justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">⚠️</div>
+        <h2>{% if hasta.status == 'aktif' %}Hastayı Pasife Al{% else %}Hastayı Aktife Al{% endif %}</h2>
+        <div class="sub">Bu işlemi onaylıyor musunuz?</div>
+        <div class="hasta-name">{{ hasta.name }}</div>
+        <div class="warning">
+            🔒 Hasta kaydı <strong>silinmez</strong>, pasif duruma alınır. Tüm geçmiş veriler korunur. Hastayı daha sonra tekrar aktif yapabilirsiniz.
+        </div>
+        <div class="btn-row">
+            {% if hasta.status == 'aktif' %}
+            <form method="post" style="flex:1;">
+                {% csrf_token %}
+                <input type="hidden" name="durum" value="pasif">
+                <button type="submit" class="btn-sil" style="width:100%;">🔒 Pasife Al</button>
+            </form>
+            {% else %}
+            <form method="post" style="flex:1;">
+                {% csrf_token %}
+                <input type="hidden" name="durum" value="aktif">
+                <button type="submit" class="btn-sil" style="width:100%;background:#16a34a;">✅ Aktife Al</button>
+            </form>
+            {% endif %}
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/" class="btn-iptal">İptal</a>
+        </div>
+    </div>
+</body>
+</html>

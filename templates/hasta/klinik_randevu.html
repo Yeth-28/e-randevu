@@ -1,0 +1,460 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ clinic.name }} — Online Randevu</title>
+    <meta name="description" content="{{ clinic.name }}{% if clinic.about %} — {{ clinic.about|truncatechars:120 }}{% endif %}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Dentist","name":"{{ clinic.name }}",{% if clinic.address %}"address":"{{ clinic.address }}",{% endif %}"url":"{{ request.build_absolute_uri }}","telephone":"{{ clinic.phone }}"}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/klinik_randevu.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            {% if clinic.logo %}
+            <img src="{{ clinic.logo.url }}" alt="{{ clinic.name }}" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+            {% else %}<div class="logo-icon">🦷</div>{% endif %}
+            <div class="logo-name">{{ clinic.name }}</div>
+        </div>
+        <nav class="header-nav" aria-label="Sayfa içi navigasyon">
+            {% if clinic.about %}<a href="#hakkinda" class="nav-a">Hakkında</a>{% endif %}
+            {% if doktorlar %}<a href="#doktorlar" class="nav-a">Doktorlar</a>{% endif %}
+            {% if hizmetler %}<a href="#hizmetler" class="nav-a">Hizmetler</a>{% endif %}
+            <a href="#iletisim" class="nav-a">İletişim</a>
+            {% if clinic.appointments_open %}
+            <a href="#randevu-form" class="btn-randevu-top">📅 Randevu Al</a>
+            {% endif %}
+        </nav>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Menü">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        {% if clinic.about %}<a href="#hakkinda" onclick="toggleNav()">Hakkında</a>{% endif %}
+        {% if doktorlar %}<a href="#doktorlar" onclick="toggleNav()">Doktorlar</a>{% endif %}
+        {% if hizmetler %}<a href="#hizmetler" onclick="toggleNav()">Hizmetler</a>{% endif %}
+        <a href="#iletisim" onclick="toggleNav()">İletişim</a>
+        {% if clinic.appointments_open %}
+        <a href="#randevu-form" onclick="toggleNav()" style="color:var(--blue);font-weight:700;">📅 Randevu Al</a>
+        {% endif %}
+    </nav>
+</header>
+
+{% if messages %}
+<div class="msg-bar">
+    {% for message in messages %}
+    <div class="msg msg-{{ message.tags }}" role="alert">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-badge">🦷 {% if clinic.appointments_open %}Online Randevu{% else %}Diş Kliniği{% endif %}</div>
+            <h1 class="hero-title">{{ clinic.name }}</h1>
+            {% if clinic.about %}
+            <p class="hero-desc">{{ clinic.about|truncatechars:200 }}</p>
+            {% else %}
+            <p class="hero-desc">Modern diş hekimliği hizmetleriyle sağlıklı gülüşler için yanınızdayız.</p>
+            {% endif %}
+            <div class="hero-meta">
+                {% if clinic.city %}<div class="meta-item">📍 {{ clinic.city }}</div>{% endif %}
+                {% if clinic.phone %}<div class="meta-item"><a href="tel:{{ clinic.phone }}" style="color:inherit;">📞 {{ clinic.phone }}</a></div>{% endif %}
+                {% if clinic.address %}<div class="meta-item">🏠 {{ clinic.address|truncatechars:50 }}</div>{% endif %}
+                {% if doktorlar %}<div class="meta-item">👨‍⚕️ {{ doktorlar|length }} Uzman Doktor</div>{% endif %}
+            </div>
+            {% if clinic.appointments_open %}
+            <a href="#randevu-form" class="hero-randevu-btn">📅 Randevu Al</a>
+            {% endif %}
+        </div>
+
+        <!-- HERO RANDEVU KARTI — sadece masaüstü -->
+        {% if clinic.appointments_open %}
+        <div class="randevu-card">
+            <div class="rc-title">📅 Hızlı Randevu Al</div>
+            <form method="post" action="">
+                {% csrf_token %}
+                {% if doktorlar %}
+                <div class="fg">
+                    <label>Doktor</label>
+                    <select name="doktor_id">
+                        {% for d in doktorlar %}<option value="{{ d.id }}">{{ d.name }}</option>{% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+                <div class="fg">
+                    <label>Tarih</label>
+                    <input type="date" name="_tarih_hero" id="tarih-hero-date" required>
+                </div>
+                <div class="fg">
+                    <label>Saat</label>
+                    <select name="_saat_hero" id="saat-hero">
+                        <option value="">Önce tarih seçin</option>
+                    </select>
+                    <input type="hidden" name="tarih_saat" id="tarih-hero-hidden">
+                </div>
+                <div class="fg">
+                    <label>Adınız Soyadınız</label>
+                    <input type="text" name="hasta_adi" placeholder="Ad Soyad" required
+                           {% if hasta_user and hasta_user.name %}value="{{ hasta_user.name }}"{% endif %}>
+                </div>
+                <div class="fg">
+                    <label>Telefon</label>
+                    <div class="phone-row">
+                        <select name="country_code" id="hero_cc" class="cc-sel">
+                            <option value="+90">🇹🇷 +90</option>
+                        </select>
+                        <input type="tel" name="hasta_tel" id="hero_tel" placeholder="5XX XXX XX XX" required
+                               {% if hasta_user %}value="{{ hasta_user.phone_number }}"{% endif %}>
+                    </div>
+                </div>
+                <div class="fg">
+                    <label>Şikayet / Notlar</label>
+                    <textarea name="notlar" rows="2" placeholder="Şikayetiniz..."></textarea>
+                </div>
+                <input type="hidden" name="procedure" value="muayene">
+                <button type="submit" class="btn-submit">Randevu Al →</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="randevu-card">
+            <div class="kapali-card">
+                <div class="kapali-icon">📵</div>
+                <div class="kapali-title">Online Randevu Kapalı</div>
+                <div class="kapali-desc">Randevu için bizimle iletişime geçin</div>
+                {% if clinic.phone %}
+                <a href="tel:{{ clinic.phone }}" class="iletisim-btn tel">
+                    <span class="iletisim-btn-icon">📞</span>
+                    <div>
+                        <div class="iletisim-btn-label">Telefon ile Randevu</div>
+                        <div class="iletisim-btn-val">{{ clinic.phone }}</div>
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- HAKKINDA -->
+{% if clinic.about %}
+<section class="section" id="hakkinda">
+    <div class="section-inner">
+        <h2 class="section-title">Kliniğimiz Hakkında</h2>
+        <p class="section-sub">Sağlığınız için buradayız</p>
+        <div class="about-grid">
+            <div class="about-text">{{ clinic.about|linebreaks }}</div>
+            <div class="about-stats">
+                {% if doktorlar %}
+                <div class="stat-box"><div class="stat-num">{{ doktorlar|length }}</div><div class="stat-lbl">Uzman Doktor</div></div>
+                {% endif %}
+                <div class="stat-box"><div class="stat-num">10+</div><div class="stat-lbl">Yıllık Deneyim</div></div>
+                <div class="stat-box"><div class="stat-num">1000+</div><div class="stat-lbl">Mutlu Hasta</div></div>
+                <div class="stat-box"><div class="stat-num">7/24</div><div class="stat-lbl">Online Randevu</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- DOKTORLAR -->
+{% if doktorlar %}
+<section class="section bg-gray" id="doktorlar">
+    <div class="section-inner">
+        <h2 class="section-title">Doktorlarımız</h2>
+        <p class="section-sub">Alanında uzman kadromuz ile hizmetinizdeyiz</p>
+        <div class="doktorlar-grid">
+            {% for doktor in doktorlar %}
+            <div class="flip-card" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" aria-label="{{ doktor.name }}">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <div class="doktor-foto">
+                            {% if doktor.photo %}
+                            <img src="{{ doktor.photo.url }}" alt="{{ doktor.name }}" loading="lazy">
+                            {% else %}
+                            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:50%;font-size:32px;">👨‍⚕️</div>
+                            {% endif %}
+                        </div>
+                        <div class="doktor-isim">{{ doktor.name }}</div>
+                        {% if doktor.about %}<p style="font-size:13px;color:var(--gray);margin-top:6px;line-height:1.5;">{{ doktor.about|truncatechars:80 }}</p>{% endif %}
+                        {% if doktor.specialties %}
+                        <div class="doktor-specs">
+                            {% for spec in doktor.get_specialties_display_list %}<span class="spec-tag">{{ spec }}</span>{% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="flip-hint">🔄 Çalışma saatleri için tıklayın</div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="doktor-isim">{{ doktor.name }}</div>
+                        <div class="flip-saat-title">Çalışma Günleri</div>
+                        <div id="doktor-saat-{{ doktor.id }}" style="width:100%;"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- HİZMETLER — sadece doktor varsa ve hizmet varsa göster -->
+{% if hizmetler %}
+<section class="section" id="hizmetler">
+    <div class="section-inner">
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <p class="section-sub">Uzman kadromuzun sunduğu hizmetler</p>
+
+        {% if doktorlar|length > 1 %}
+        <!-- Doktor filtre butonları — birden fazla doktor varsa göster -->
+        <div class="doktor-filtre" id="doktor-filtre">
+            <button class="filtre-btn active" onclick="filtreHizmet('all',this)">Tümü</button>
+            {% for doktor in doktorlar %}
+            <button class="filtre-btn" onclick="filtreHizmet('{{ doktor.id }}',this)">{{ doktor.name }}</button>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="hizmet-grid" id="hizmet-grid">
+            {% for hizmet in hizmetler %}
+            <div class="hizmet-item" data-doktor="{{ hizmet.doktor_ids|default:'all' }}">
+                <div class="hizmet-icon">{{ hizmet.icon }}</div>
+                <div class="hizmet-name">{{ hizmet.name }}</div>
+                {% if hizmet.doktor_adlari and doktorlar|length > 1 %}
+                <div class="hizmet-doktorlar">
+                    {% for ad in hizmet.doktor_adlari %}
+                    <span class="hizmet-doktor-tag">{{ ad }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+
+<!-- İLETİŞİM -->
+<section class="section bg-gray" id="iletisim">
+    <div class="section-inner">
+        <div class="iletisim-grid">
+            <div>
+                <h2 class="section-title">🕐 Çalışma Saatleri</h2>
+                <div class="calisma-saatleri">
+                    {% for saat in klinik_saatleri %}
+                    <div class="saat-row {% if not saat.is_open %}kapali{% endif %}">
+                        <span class="saat-gun">{{ saat.gun }}</span>
+                        {% if saat.is_open %}
+                        <span class="saat-val">{{ saat.open_time }} — {{ saat.close_time }}</span>
+                        {% else %}
+                        <span class="saat-kapali">Kapalı</span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">🏖️ Tatil Günleri</h2>
+                <div style="margin-top:16px;">
+                    {% if tatil_detay %}
+                    {% for tatil in tatil_detay %}
+                    <div class="tatil-item">
+                        <span style="font-size:18px;">🚫</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:600;color:#dc2626;">{{ tatil.tarih }}</div>
+                            {% if tatil.aciklama %}<div style="font-size:12px;color:#6b7280;">{{ tatil.aciklama }}</div>{% endif %}
+                            {% if tatil.tekrar %}<div style="font-size:11px;color:#f59e0b;">🔄 Her yıl tekrar eder</div>{% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="tatil-bos">
+                        <div style="font-size:28px;margin-bottom:8px;">✅</div>
+                        <div style="font-size:13px;">Yakın dönemde tatil günü yok</div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">📞 İletişim</h2>
+                <div style="margin-top:16px;">
+                    {% if clinic.phone %}
+                    <a href="tel:{{ clinic.phone }}" class="iletisim-item">
+                        <span style="font-size:22px;">📞</span>
+                        <div><div class="iletisim-item-label">Telefon</div><div class="iletisim-item-val">{{ clinic.phone }}</div></div>
+                    </a>
+                    {% endif %}
+                    {% if clinic.email %}
+                    <a href="mailto:{{ clinic.email }}" class="iletisim-item">
+                        <span style="font-size:22px;">✉️</span>
+                        <div><div class="iletisim-item-label">E-posta</div><div class="iletisim-item-val">{{ clinic.email }}</div></div>
+                    </a>
+                    {% endif %}
+                    {% if clinic.address %}
+                    <div class="iletisim-item">
+                        <span style="font-size:22px;">📍</span>
+                        <div><div class="iletisim-item-label">Adres</div><div class="iletisim-item-val">{{ clinic.address }}</div></div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 {{ clinic.name }} — <a href="{{ SITE_URL }}">e-Randevu</a> platformu üzerinden online randevu alabilirsiniz.</p>
+</footer>
+
+<script>
+// Mobil menü
+function toggleNav(){
+    document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// Hizmet filtrele — doktor_ids space-separated olabilir ("1 2 3")
+function filtreHizmet(doktorId, btn){
+    document.querySelectorAll('.filtre-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#hizmet-grid .hizmet-item').forEach(item=>{
+        const ids = (item.dataset.doktor||'').split(' ');
+        const goster = doktorId==='all' || ids.includes('all') || ids.includes(doktorId);
+        item.style.display = goster ? '' : 'none';
+    });
+}
+
+// Telefon format
+const ULKE_MAX={'+90':10,'+1':10,'+44':10,'+49':11,'+33':9,'+39':10,'+7':10,'+966':9,'+971':9};
+function formatTel(inp,ccId){
+    const cc=document.getElementById(ccId)?.value||'+90';
+    const max=ULKE_MAX[cc]||12;
+    let v=inp.value.replace(/\D/g,'').substring(0,max);
+    let f='';
+    if(v.length>0)f=v.substring(0,Math.min(3,v.length));
+    if(v.length>3)f+=' '+v.substring(3,Math.min(6,v.length));
+    if(v.length>6)f+=' '+v.substring(6,Math.min(8,v.length));
+    if(v.length>8)f+=' '+v.substring(8,max);
+    inp.value=f;
+}
+document.getElementById('hero_tel')?.addEventListener('input',function(){formatTel(this,'hero_cc');});
+
+// Ülke kodları
+async function loadCC(selId){
+    const sel=document.getElementById(selId);
+    if(!sel)return;
+    try {
+        const r=await fetch('https://restcountries.com/v3.1/all?fields=name,idd,flag,cca2,translations');
+        const d=await r.json();
+        d.sort((a,b)=>{
+            const na=a.translations?.tur?.common||a.name.common;
+            const nb=b.translations?.tur?.common||b.name.common;
+            return na.localeCompare(nb,'tr');
+        });
+        const trOpt=sel.querySelector('option[value="+90"]');
+        if(trOpt)trOpt.textContent='🇹🇷 +90';
+        d.forEach(c=>{
+            if(!c.idd?.root||c.cca2==='TR')return;
+            const suf=c.idd.suffixes?.length===1?c.idd.suffixes[0]:'';
+            if(!suf)return;
+            const opt=document.createElement('option');
+            opt.value=c.idd.root+suf;
+            opt.textContent=`${c.flag} ${opt.value}`;
+            sel.appendChild(opt);
+        });
+    } catch(e){}
+}
+loadCC('hero_cc');
+
+// Form submit
+document.querySelectorAll('form').forEach(form=>{
+    form.addEventListener('submit',function(){
+        const tel=this.querySelector('[name="hasta_tel"]');
+        const cc=this.querySelector('[name="country_code"]');
+        if(tel&&cc){tel.value=cc.value+tel.value.replace(/\s/g,'');cc.disabled=true;}
+    });
+});
+
+// Randevu slot sistemi
+const MUSAIT_SLOTLAR         = {{ musait_slotlar|safe }};
+const DOLU_GUNLER            = {{ dolu_gunler|safe }};
+const DOKTOR_CALISMA_GUNLERI = {{ doktor_calisma_gunleri|safe }};
+const TUM_SLOTLAR            = {{ tum_slotlar|safe }};
+const BUGUN                  = "{{ bugun_str }}";
+const MAX_TARIH              = "{{ max_tarih_str }}";
+
+function gunSecildi(tarih,saatSelId,hiddenId){
+    const sel=document.getElementById(saatSelId);
+    const hid=document.getElementById(hiddenId);
+    if(!sel)return;
+    sel.innerHTML='';if(hid)hid.value='';
+    if(!tarih){sel.innerHTML='<option>Önce tarih seçin</option>';return;}
+    if(DOLU_GUNLER.includes(tarih)){sel.innerHTML='<option>❌ Bu gün dolu</option>';return;}
+    const musait=MUSAIT_SLOTLAR[tarih]||[];
+    const tumSlot=TUM_SLOTLAR[tarih]||musait;
+    if(!tumSlot.length){sel.innerHTML='<option>❌ Çalışma saati yok</option>';return;}
+    const def=document.createElement('option');def.value='';def.textContent='-- Saat Seçin --';sel.appendChild(def);
+    tumSlot.forEach(s=>{
+        const opt=document.createElement('option');
+        const m=musait.includes(s);
+        opt.value=m?s:'';opt.disabled=!m;
+        opt.textContent=m?s:('⊘ '+s+' — Dolu');
+        if(!m)opt.style.color='#9ca3af';
+        sel.appendChild(opt);
+    });
+}
+
+function initRandevu(){
+    // Hero form
+    const heroTarih=document.getElementById('tarih-hero-date');
+    if(heroTarih){
+        heroTarih.min=BUGUN;heroTarih.max=MAX_TARIH;
+        heroTarih.addEventListener('change',function(){gunSecildi(this.value,'saat-hero','tarih-hero-hidden');});
+        document.getElementById('saat-hero')?.addEventListener('change',function(){
+            const h=document.getElementById('tarih-hero-hidden');
+            if(h&&heroTarih.value&&this.value)h.value=heroTarih.value+'T'+this.value;
+        });
+    }
+
+
+    // Doktor çalışma saatleri — flip card arka yüzü
+    const GUNLER=['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'];
+    Object.entries(DOKTOR_CALISMA_GUNLERI).forEach(([id,gunler])=>{
+        const el=document.getElementById('doktor-saat-'+id);
+        if(!el)return;
+        if(!gunler?.length){
+            el.innerHTML='<div style="color:rgba(255,255,255,0.5);font-size:12px;text-align:center;padding:8px;">Çalışma saati girilmemiş</div>';
+            return;
+        }
+        el.innerHTML=gunler.map(g=>`
+            <div class="flip-saat-row">
+                <span class="flip-saat-gun">${GUNLER[g.gun_num]||g.gun}</span>
+                <span class="flip-saat-val">${g.start} — ${g.end}</span>
+            </div>`).join('');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',e=>{
+            const t=document.querySelector(a.getAttribute('href'));
+            if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+        });
+    });
+}
+document.readyState==='loading'?document.addEventListener('DOMContentLoaded',initRandevu):initRandevu();
+</script>
+</body>
+</html>

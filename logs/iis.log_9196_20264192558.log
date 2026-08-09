@@ -1,0 +1,279 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[01/Apr/2026 02:26:05] "GET / HTTP/1.1" 200 65994
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[01/Apr/2026 02:26:05] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2517
+[01/Apr/2026 02:26:23] "GET /?q= HTTP/1.1" 200 16347
+[01/Apr/2026 02:26:34] "GET / HTTP/1.1" 200 16347
+[01/Apr/2026 02:26:53] "GET /api/klinik-ara/?q=Ac HTTP/1.1" 200 641
+[01/Apr/2026 02:26:54] "GET /api/klinik-ara/?q=Aclini HTTP/1.1" 200 641
+[01/Apr/2026 02:26:55] "GET /api/klinik-ara/?q=Aclinic HTTP/1.1" 200 641
+[01/Apr/2026 02:26:56] "GET /api/klinik-ara/?q=Aclini HTTP/1.1" 200 641
+[01/Apr/2026 02:28:47] "GET / HTTP/1.1" 200 16344
+Not Found: /kayit/
+[01/Apr/2026 02:28:49] "GET /kayit/ HTTP/1.1" 404 2937
+Not Found: /kayit/
+[01/Apr/2026 02:30:22] "GET /kayit/ HTTP/1.1" 404 2937
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[01/Apr/2026 02:32:17] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /fffff.php
+[01/Apr/2026 02:32:17] "GET /fffff.php HTTP/1.1" 404 2945
+Not Found: /xdd.php
+[01/Apr/2026 02:32:17] "GET /xdd.php HTTP/1.1" 404 2939
+Not Found: /wo.php
+[01/Apr/2026 02:32:17] "GET /wo.php HTTP/1.1" 404 2936
+Not Found: /wdone1.php
+[01/Apr/2026 02:32:17] "GET /wdone1.php HTTP/1.1" 404 2948
+Not Found: /ws79.php
+[01/Apr/2026 02:32:17] "GET /ws79.php HTTP/1.1" 404 2942
+Not Found: /aee.php
+[01/Apr/2026 02:32:18] "GET /aee.php HTTP/1.1" 404 2939
+Not Found: /max.php
+[01/Apr/2026 02:32:18] "GET /max.php HTTP/1.1" 404 2939
+Not Found: /ccs.php
+[01/Apr/2026 02:32:18] "GET /ccs.php HTTP/1.1" 404 2939
+Not Found: /wglum1.php
+[01/Apr/2026 02:32:18] "GET /wglum1.php HTTP/1.1" 404 2948
+Not Found: /xwx1.php
+[01/Apr/2026 02:32:18] "GET /xwx1.php HTTP/1.1" 404 2942
+Not Found: /wp-true.php
+[01/Apr/2026 02:32:18] "GET /wp-true.php HTTP/1.1" 404 2951
+Not Found: /ws42.php
+[01/Apr/2026 02:32:18] "GET /ws42.php HTTP/1.1" 404 2942
+Not Found: /66.php
+[01/Apr/2026 02:32:18] "GET /66.php HTTP/1.1" 404 2936
+Not Found: /wgift1.php
+[01/Apr/2026 02:32:21] "GET /wgift1.php HTTP/1.1" 404 2948
+Not Found: /aa.php
+[01/Apr/2026 02:32:21] "GET /aa.php HTTP/1.1" 404 2936
+Not Found: /north1.php
+[01/Apr/2026 02:32:21] "GET /north1.php HTTP/1.1" 404 2948
+Not Found: /eee.php
+[01/Apr/2026 02:32:21] "GET /eee.php HTTP/1.1" 404 2939
+Not Found: /ggb.php
+[01/Apr/2026 02:32:21] "GET /ggb.php HTTP/1.1" 404 2939
+Not Found: /wp-admin/admin.php
+[01/Apr/2026 02:32:21] "GET /wp-admin/admin.php HTTP/1.1" 404 2972
+Not Found: /ws77.php
+[01/Apr/2026 02:32:21] "GET /ws77.php HTTP/1.1" 404 2942
+Not Found: /gpt-sh.php
+[01/Apr/2026 02:32:21] "GET /gpt-sh.php HTTP/1.1" 404 2948
+Not Found: /f6.php
+[01/Apr/2026 02:32:22] "GET /f6.php HTTP/1.1" 404 2936
+Not Found: /ws85.php
+[01/Apr/2026 02:32:22] "GET /ws85.php HTTP/1.1" 404 2942
+Not Found: /wander.php
+[01/Apr/2026 02:32:22] "GET /wander.php HTTP/1.1" 404 2948
+Not Found: /h02ugyh.php
+[01/Apr/2026 02:32:22] "GET /h02ugyh.php HTTP/1.1" 404 2951
+Not Found: /ad.php
+[01/Apr/2026 02:32:22] "GET /ad.php HTTP/1.1" 404 2936
+Not Found: /z60.php
+[01/Apr/2026 02:32:22] "GET /z60.php HTTP/1.1" 404 2939
+Not Found: /gptsh.php
+[01/Apr/2026 02:32:22] "GET /gptsh.php HTTP/1.1" 404 2945
+Not Found: /wp-admin/maint/wta.php
+[01/Apr/2026 02:32:22] "GET /wp-admin/maint/wta.php HTTP/1.1" 404 2984
+Not Found: /sql.php
+[01/Apr/2026 02:32:22] "GET /sql.php HTTP/1.1" 404 2939
+Not Found: /rithin.php
+[01/Apr/2026 02:32:23] "GET /rithin.php HTTP/1.1" 404 2948
+Not Found: /wp-class.php
+[01/Apr/2026 02:32:23] "GET /wp-class.php HTTP/1.1" 404 2954
+Not Found: /xper1.php
+[01/Apr/2026 02:32:23] "GET /xper1.php HTTP/1.1" 404 2945
+Not Found: /ws78.php
+[01/Apr/2026 02:32:23] "GET /ws78.php HTTP/1.1" 404 2942
+Not Found: /uang.php
+[01/Apr/2026 02:32:23] "GET /uang.php HTTP/1.1" 404 2942
+Not Found: /save.php
+[01/Apr/2026 02:32:24] "GET /save.php HTTP/1.1" 404 2942
+Not Found: /wtiiy.php
+[01/Apr/2026 02:32:24] "GET /wtiiy.php HTTP/1.1" 404 2945
+Not Found: /xs.php
+[01/Apr/2026 02:32:24] "GET /xs.php HTTP/1.1" 404 2936
+Not Found: /bolt.php
+[01/Apr/2026 02:32:24] "GET /bolt.php HTTP/1.1" 404 2942
+Not Found: /gelio1.php
+[01/Apr/2026 02:32:24] "GET /gelio1.php HTTP/1.1" 404 2948
+Not Found: /as.php
+[01/Apr/2026 02:32:24] "GET /as.php HTTP/1.1" 404 2936
+Not Found: /yuzuru1.php
+[01/Apr/2026 02:32:24] "GET /yuzuru1.php HTTP/1.1" 404 2951
+Not Found: /gettest.php
+[01/Apr/2026 02:32:24] "GET /gettest.php HTTP/1.1" 404 2951
+Not Found: /sweg.php
+[01/Apr/2026 02:32:24] "GET /sweg.php HTTP/1.1" 404 2942
+Not Found: /xpwer1.php
+[01/Apr/2026 02:32:24] "GET /xpwer1.php HTTP/1.1" 404 2948
+Not Found: /ws40.php
+[01/Apr/2026 02:32:25] "GET /ws40.php HTTP/1.1" 404 2942
+Not Found: /albin.php
+[01/Apr/2026 02:32:25] "GET /albin.php HTTP/1.1" 404 2945
+Not Found: /awh.php
+[01/Apr/2026 02:32:25] "GET /awh.php HTTP/1.1" 404 2939
+Not Found: /shellerr.php
+[01/Apr/2026 02:32:25] "GET /shellerr.php HTTP/1.1" 404 2954
+Not Found: /wp-scanner.php
+[01/Apr/2026 02:32:25] "GET /wp-scanner.php HTTP/1.1" 404 2960
+Not Found: /8.php
+[01/Apr/2026 02:32:25] "GET /8.php HTTP/1.1" 404 2933
+Not Found: /to.php
+[01/Apr/2026 02:32:25] "GET /to.php HTTP/1.1" 404 2936
+Not Found: /wp9.php
+[01/Apr/2026 02:32:25] "GET /wp9.php HTTP/1.1" 404 2939
+Not Found: /ant.php
+[01/Apr/2026 02:32:25] "GET /ant.php HTTP/1.1" 404 2939
+Not Found: /ws86.php
+[01/Apr/2026 02:32:26] "GET /ws86.php HTTP/1.1" 404 2942
+Not Found: /jga.php
+[01/Apr/2026 02:32:26] "GET /jga.php HTTP/1.1" 404 2939
+Not Found: /xda.php
+[01/Apr/2026 02:32:26] "GET /xda.php HTTP/1.1" 404 2939
+Not Found: /classgoto24.php
+[01/Apr/2026 02:32:26] "GET /classgoto24.php HTTP/1.1" 404 2963
+Not Found: /ws82.php
+[01/Apr/2026 02:32:26] "GET /ws82.php HTTP/1.1" 404 2942
+Not Found: /ws43.php
+[01/Apr/2026 02:32:26] "GET /ws43.php HTTP/1.1" 404 2942
+Not Found: /gec.php
+[01/Apr/2026 02:32:27] "GET /gec.php HTTP/1.1" 404 2939
+Not Found: /uuu.php
+[01/Apr/2026 02:32:27] "GET /uuu.php HTTP/1.1" 404 2939
+Not Found: /1.php
+[01/Apr/2026 02:32:27] "GET /1.php HTTP/1.1" 404 2933
+Not Found: /size.php
+[01/Apr/2026 02:32:27] "GET /size.php HTTP/1.1" 404 2942
+Not Found: /lib.php
+[01/Apr/2026 02:32:28] "GET /lib.php HTTP/1.1" 404 2939
+Not Found: /wp-load.php
+[01/Apr/2026 02:32:28] "GET /wp-load.php HTTP/1.1" 404 2951
+Not Found: /torsa1.php
+[01/Apr/2026 02:32:28] "GET /torsa1.php HTTP/1.1" 404 2948
+Not Found: /b.php
+[01/Apr/2026 02:32:28] "GET /b.php HTTP/1.1" 404 2933
+Not Found: /vaza.php
+[01/Apr/2026 02:32:28] "GET /vaza.php HTTP/1.1" 404 2942
+Not Found: /bnm.php
+[01/Apr/2026 02:32:28] "GET /bnm.php HTTP/1.1" 404 2939
+Not Found: /wp-admin/maint/admin.php
+[01/Apr/2026 02:32:28] "GET /wp-admin/maint/admin.php HTTP/1.1" 404 2990
+Not Found: /xc0252.php
+[01/Apr/2026 02:32:28] "GET /xc0252.php HTTP/1.1" 404 2948
+Not Found: /saorix1.php
+[01/Apr/2026 02:32:28] "GET /saorix1.php HTTP/1.1" 404 2951
+Not Found: /tx79.php
+[01/Apr/2026 02:32:29] "GET /tx79.php HTTP/1.1" 404 2942
+Not Found: /wp-admin/images/admin.php
+[01/Apr/2026 02:32:29] "GET /wp-admin/images/admin.php HTTP/1.1" 404 2993
+Not Found: /wp3.php
+[01/Apr/2026 02:32:29] "GET /wp3.php HTTP/1.1" 404 2939
+Not Found: /v3.php
+[01/Apr/2026 02:32:29] "GET /v3.php HTTP/1.1" 404 2936
+Not Found: /v.php
+[01/Apr/2026 02:32:29] "GET /v.php HTTP/1.1" 404 2933
+Not Found: /d2.php
+[01/Apr/2026 02:32:30] "GET /d2.php HTTP/1.1" 404 2936
+Not Found: /xc.php
+[01/Apr/2026 02:32:30] "GET /xc.php HTTP/1.1" 404 2936
+Not Found: /g.php
+[01/Apr/2026 02:32:30] "GET /g.php HTTP/1.1" 404 2933
+Not Found: /gmo.php
+[01/Apr/2026 02:32:30] "GET /gmo.php HTTP/1.1" 404 2939
+Not Found: /11.php
+[01/Apr/2026 02:32:30] "GET /11.php HTTP/1.1" 404 2936
+Not Found: /20.php
+[01/Apr/2026 02:32:30] "GET /20.php HTTP/1.1" 404 2936
+Not Found: /f35.php
+[01/Apr/2026 02:32:30] "GET /f35.php HTTP/1.1" 404 2939
+Not Found: /c.php
+[01/Apr/2026 02:32:30] "GET /c.php HTTP/1.1" 404 2933
+Not Found: /we2.php
+[01/Apr/2026 02:32:30] "GET /we2.php HTTP/1.1" 404 2939
+Not Found: /04.php
+[01/Apr/2026 02:32:31] "GET /04.php HTTP/1.1" 404 2936
+Not Found: /333.php
+[01/Apr/2026 02:32:31] "GET /333.php HTTP/1.1" 404 2939
+Not Found: /kayit/
+[01/Apr/2026 02:34:08] "GET /kayit/ HTTP/1.1" 404 2937
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[01/Apr/2026 02:35:33] "GET / HTTP/1.1" 500 98109
+Not Found: /index.php
+[01/Apr/2026 02:42:56] "GET /index.php?rest_route=/wp/v2/users&orderby=id&order=asc&per_page=100&page=1 HTTP/1.1" 404 3026
+[01/Apr/2026 02:58:56] "GET / HTTP/1.1" 200 0
+[01/Apr/2026 02:59:04] "GET / HTTP/1.1" 200 0
+[01/Apr/2026 03:02:05] "GET /robots.txt HTTP/1.1" 301 0
+[01/Apr/2026 03:02:05] "GET /robots.txt/ HTTP/1.1" 302 0
+[01/Apr/2026 03:02:06] "GET /giris/ HTTP/1.1" 200 0
+[01/Apr/2026 03:02:06] "GET /sitemap.xml HTTP/1.1" 301 0
+[01/Apr/2026 03:02:06] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[01/Apr/2026 03:02:06] "GET /giris/ HTTP/1.1" 200 0
+[01/Apr/2026 03:03:12] "GET / HTTP/1.1" 200 16347
+[01/Apr/2026 03:04:33] "GET / HTTP/1.1" 200 16353
+[01/Apr/2026 03:04:34] "GET /kayit/ HTTP/1.1" 200 0
+[01/Apr/2026 03:04:56] "GET /kayit/ HTTP/1.1" 200 0
+[01/Apr/2026 03:04:59] "GET /kayit/ HTTP/1.1" 200 0
+Not Found: /
+[01/Apr/2026 03:05:06] "GET / HTTP/1.1" 404 8848
+[01/Apr/2026 03:17:15] "GET /kayit/ HTTP/1.1" 200 10163
+[01/Apr/2026 03:32:23] "GET / HTTP/1.1" 200 16353
+[01/Apr/2026 03:41:44] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 03:41:44] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10414
+[01/Apr/2026 03:41:48] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[01/Apr/2026 03:42:17] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14959
+[01/Apr/2026 03:42:17] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10414
+[01/Apr/2026 03:42:17] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[01/Apr/2026 03:42:21] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 03:42:21] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10414
+[01/Apr/2026 03:42:24] "GET /api/klinik-ara/?q=ACL%C4%B0N%C4%B0 HTTP/1.1" 200 15
+[01/Apr/2026 03:42:26] "GET /api/klinik-ara/?q=al HTTP/1.1" 200 15
+[01/Apr/2026 03:42:27] "GET /api/klinik-ara/?q=aclini HTTP/1.1" 200 641
+[01/Apr/2026 03:42:28] "GET /api/klinik-ara/?q=aclinic HTTP/1.1" 200 641
+[01/Apr/2026 03:42:35] "GET /api/klinik-ara/?q=te HTTP/1.1" 200 204
+[01/Apr/2026 03:42:36] "GET /api/klinik-ara/?q=test HTTP/1.1" 200 111
+[01/Apr/2026 03:42:38] "GET /api/klinik-ara/?q=tes HTTP/1.1" 200 111
+[01/Apr/2026 03:42:39] "GET /api/klinik-ara/?q=te HTTP/1.1" 200 204
+[01/Apr/2026 03:42:42] "GET / HTTP/1.1" 200 64865
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[01/Apr/2026 03:42:42] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2514
+Not Found: /favicon.ico
+[01/Apr/2026 03:42:43] "GET /favicon.ico HTTP/1.1" 404 2361
+[01/Apr/2026 03:48:15] "GET /api/klinik-ara/?q=ac HTTP/1.1" 200 641
+[01/Apr/2026 03:48:15] "GET /api/klinik-ara/?q=acli HTTP/1.1" 200 641
+[01/Apr/2026 03:48:25] "GET / HTTP/1.1" 200 9688
+[01/Apr/2026 03:57:27] "GET /kayit/ HTTP/1.1" 200 10166

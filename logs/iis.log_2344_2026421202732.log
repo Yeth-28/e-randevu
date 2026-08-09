@@ -1,0 +1,7 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[21/Apr/2026 13:27:36] "GET /?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGn8UIb5mWR5WIFfBqs46z6iZybNjxAsZ0HIkLhOeX715ntuONjRuUsdY29YeI_aem_7wAeJcpQH2IYOtRf4iq3vA HTTP/1.1" 200 9312
+[21/Apr/2026 13:27:36] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882

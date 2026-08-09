@@ -1,0 +1,18 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[22/Apr/2026 02:07:27] "GET / HTTP/1.1" 404 8848
+[22/Apr/2026 02:24:04] "GET /?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn8RpqH32LMLUE4C3_uVRiNX3NDccNhdUMd5X6EZDWGzfS7oncn9h1o8R1GqI_aem_N40ns1aXMe8skNVo6z4HVQ HTTP/1.1" 200 9312
+[22/Apr/2026 02:24:04] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[22/Apr/2026 02:24:05] "GET /favicon.ico HTTP/1.1" 404 2951
+[22/Apr/2026 02:24:55] "GET /robots.txt HTTP/1.1" 301 0
+[22/Apr/2026 02:24:56] "GET /robots.txt/ HTTP/1.1" 302 0
+[22/Apr/2026 02:24:56] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 02:24:56] "GET /sitemap.xml HTTP/1.1" 301 0
+[22/Apr/2026 02:24:56] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[22/Apr/2026 02:24:56] "GET /giris/ HTTP/1.1" 200 5067
+[22/Apr/2026 02:33:12] "GET / HTTP/1.1" 200 9312

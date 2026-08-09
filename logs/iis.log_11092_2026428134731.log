@@ -1,0 +1,47 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[28/Apr/2026 06:47:35] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[28/Apr/2026 06:50:32] "GET /robots.txt HTTP/1.1" 404 2949
+[28/Apr/2026 06:50:35] "GET / HTTP/1.1" 200 9312
+[28/Apr/2026 06:50:40] "GET /?q HTTP/1.1" 200 9312
+[28/Apr/2026 06:50:42] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+Not Found: /robots.txt
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2362
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2362
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2360
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[28/Apr/2026 06:50:44] "GET /robots.txt HTTP/1.1" 404 2362
+[28/Apr/2026 06:50:46] "GET / HTTP/1.1" 200 54407
+[28/Apr/2026 06:50:48] "GET / HTTP/1.1" 200 20962
+[28/Apr/2026 06:50:50] "GET / HTTP/1.1" 200 39145
+[28/Apr/2026 06:50:51] "GET / HTTP/1.1" 200 54403
+[28/Apr/2026 06:50:53] "GET / HTTP/1.1" 200 54407
+[28/Apr/2026 06:50:53] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+Not Found: /robots.txt
+[28/Apr/2026 06:50:55] "GET /robots.txt HTTP/1.1" 404 2363
+Not Found: /robots.txt
+[28/Apr/2026 06:50:55] "GET /robots.txt HTTP/1.1" 404 2365
+[28/Apr/2026 06:50:56] "GET / HTTP/1.1" 200 54407
+[28/Apr/2026 06:50:57] "GET / HTTP/1.1" 200 54924
+[28/Apr/2026 06:50:58] "GET / HTTP/1.1" 200 36289
+[28/Apr/2026 06:57:38] "GET /robots.txt HTTP/1.1" 301 0
+[28/Apr/2026 06:57:38] "GET /robots.txt/ HTTP/1.1" 302 0
+[28/Apr/2026 06:57:38] "GET /giris/ HTTP/1.1" 200 5067
+Not Found: /
+[28/Apr/2026 06:57:38] "GET / HTTP/1.1" 404 8849
+[28/Apr/2026 07:13:14] "GET /robots.txt HTTP/1.1" 301 0
+[28/Apr/2026 07:13:14] "GET /robots.txt/ HTTP/1.1" 302 0
+[28/Apr/2026 07:13:15] "GET /giris/ HTTP/1.1" 200 5067
+[28/Apr/2026 07:13:15] "GET /sitemap.xml HTTP/1.1" 301 0
+[28/Apr/2026 07:13:15] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[28/Apr/2026 07:13:15] "GET /giris/ HTTP/1.1" 200 5067

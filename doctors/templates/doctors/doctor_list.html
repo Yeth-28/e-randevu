@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Doctors</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>NPI</th>
+            <th>Name</th>
+            <th>Specialties</th>
+            <th>Affiliated Clinics</th>
+            <th>Affiliated Patients</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for doctor in doctors %}
+        <tr>
+            <td>{{ doctor.npi }}</td>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.specialties|join:", " }}</td>
+            <td>{{ doctor.clinic_affiliations.count }}</td>
+            <td>{{ doctor.patient_set.count }}</td>
+            <td>
+                <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-sm btn-info">View</a>
+                <a href="{% url 'doctor_update' doctor.id %}" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'doctor_create' %}" class="btn btn-primary">Add New Doctor</a>
+{% endblock %}

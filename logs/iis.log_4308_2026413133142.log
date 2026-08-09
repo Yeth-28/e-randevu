@@ -1,0 +1,62 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /
+[13/Apr/2026 06:31:45] "GET / HTTP/1.1" 404 8848
+[13/Apr/2026 06:47:08] "GET / HTTP/1.1" 200 9312
+Not Found: /backend/.env
+[13/Apr/2026 06:47:09] "GET /backend/.env HTTP/1.1" 404 2955
+Not Found: /.env.production
+[13/Apr/2026 06:47:09] "GET /.env.production HTTP/1.1" 404 2964
+Not Found: /.cursor/mcp.json
+[13/Apr/2026 06:47:10] "GET /.cursor/mcp.json HTTP/1.1" 404 2967
+Not Found: /docker-compose.yml
+Not Found: /.openai/config.json
+[13/Apr/2026 06:47:10] "GET /docker-compose.yml HTTP/1.1" 404 2973
+Not Found: /.env.bak
+[13/Apr/2026 06:47:10] "GET /.openai/config.json HTTP/1.1" 404 2976
+[13/Apr/2026 06:47:10] "GET /.env.bak HTTP/1.1" 404 2943
+Not Found: /serviceAccountKey.json
+[13/Apr/2026 06:47:10] "GET /serviceAccountKey.json HTTP/1.1" 404 2985
+Not Found: /src/.env
+Not Found: /.env
+[13/Apr/2026 06:47:10] "GET /src/.env HTTP/1.1" 404 2943
+[13/Apr/2026 06:47:10] "GET /.env HTTP/1.1" 404 2931
+Not Found: /api/.env
+Not Found: /config.json
+[13/Apr/2026 06:47:10] "GET /api/.env HTTP/1.1" 404 2943
+Not Found: /appsettings.json
+Not Found: /.aws/credentials
+Not Found: /credentials.json
+[13/Apr/2026 06:47:10] "GET /.aws/credentials HTTP/1.1" 404 2967
+[13/Apr/2026 06:47:10] "GET /config.json HTTP/1.1" 404 2952
+[13/Apr/2026 06:47:10] "GET /appsettings.json HTTP/1.1" 404 2967
+[13/Apr/2026 06:47:10] "GET /credentials.json HTTP/1.1" 404 2967
+Not Found: /app/.env
+Not Found: /laravel/.env
+Not Found: /.env.dev
+[13/Apr/2026 06:47:10] "GET /laravel/.env HTTP/1.1" 404 2955
+Not Found: /secrets.json
+[13/Apr/2026 06:47:10] "GET /app/.env HTTP/1.1" 404 2943
+Not Found: /.env.backup
+[13/Apr/2026 06:47:10] "GET /.env.dev HTTP/1.1" 404 2943
+Not Found: /.env.staging
+[13/Apr/2026 06:47:10] "GET /secrets.json HTTP/1.1" 404 2955
+[13/Apr/2026 06:47:10] "GET /.env.backup HTTP/1.1" 404 2952
+Not Found: /.env.local
+[13/Apr/2026 06:47:10] "GET /.env.staging HTTP/1.1" 404 2955
+Not Found: /.anthropic/config.json
+[13/Apr/2026 06:47:10] "GET /.env.local HTTP/1.1" 404 2949
+Not Found: /config/.env
+[13/Apr/2026 06:47:10] "GET /.anthropic/config.json HTTP/1.1" 404 2985
+Not Found: /.git/config
+[13/Apr/2026 06:47:10] "GET /config/.env HTTP/1.1" 404 2952
+Not Found: /server/.env
+[13/Apr/2026 06:47:10] "GET /.git/config HTTP/1.1" 404 2952
+[13/Apr/2026 06:47:10] "GET /server/.env HTTP/1.1" 404 2952
+Not Found: /.npmrc
+[13/Apr/2026 06:47:10] "GET /.npmrc HTTP/1.1" 404 2937
+[13/Apr/2026 06:47:10] "GET / HTTP/1.1" 200 9312
+[13/Apr/2026 07:04:16] "GET / HTTP/1.1" 200 9312

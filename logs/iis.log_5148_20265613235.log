@@ -1,0 +1,44 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[06/May/2026 06:02:39] "GET / HTTP/1.1" 200 9312
+Not Found: /robots.txt
+[06/May/2026 06:14:32] "GET /robots.txt HTTP/1.1" 404 2949
+[06/May/2026 06:14:32] "GET / HTTP/1.1" 200 9312
+[06/May/2026 06:14:36] "GET /?q HTTP/1.1" 200 9312
+[06/May/2026 06:14:39] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+Not Found: /robots.txt
+Not Found: /robots.txt
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2362
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2362
+Not Found: /robots.txt
+Not Found: /robots.txt
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2360
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2360
+Not Found: /robots.txt
+[06/May/2026 06:14:41] "GET /robots.txt HTTP/1.1" 404 2362
+[06/May/2026 06:14:42] "GET /?sehir=Istanbul HTTP/1.1" 200 10004
+Not Found: /robots.txt
+[06/May/2026 06:14:43] "GET /robots.txt HTTP/1.1" 404 2363
+Not Found: /robots.txt
+[06/May/2026 06:14:43] "GET /robots.txt HTTP/1.1" 404 2365
+[06/May/2026 06:14:46] "GET / HTTP/1.1" 200 38803
+[06/May/2026 06:14:48] "GET / HTTP/1.1" 200 54407
+[06/May/2026 06:14:49] "GET / HTTP/1.1" 200 54407
+[06/May/2026 06:14:51] "GET / HTTP/1.1" 200 54407
+[06/May/2026 06:14:53] "GET / HTTP/1.1" 200 20962
+[06/May/2026 06:14:54] "GET / HTTP/1.1" 200 54403
+[06/May/2026 06:14:56] "GET / HTTP/1.1" 200 35947
+[06/May/2026 06:14:57] "GET / HTTP/1.1" 200 54924
+[06/May/2026 06:29:14] "GET / HTTP/1.1" 200 9312
+Not Found: /favicon.ico
+[06/May/2026 06:29:14] "GET /favicon.ico HTTP/1.1" 404 2951
+[06/May/2026 06:29:17] "GET / HTTP/1.1" 200 9312
+Not Found: /favicon.ico
+[06/May/2026 06:29:24] "GET /favicon.ico HTTP/1.1" 404 2952
+Not Found: /robots.txt
+[06/May/2026 06:42:48] "GET /robots.txt HTTP/1.1" 404 2356

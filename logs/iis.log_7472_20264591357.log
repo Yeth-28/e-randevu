@@ -1,0 +1,160 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[05/Apr/2026 02:14:03] "GET / HTTP/1.1" 200 57853
+[05/Apr/2026 02:14:03] "GET / HTTP/1.1" 200 57853
+[05/Apr/2026 02:14:03,356] - Broken pipe from ('127.0.0.1', 58415)
+[05/Apr/2026 02:14:03] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10965
+[05/Apr/2026 02:14:05] "GET / HTTP/1.1" 200 57853
+[05/Apr/2026 02:14:05] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:14:25] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:16:13] "GET / HTTP/1.1" 200 9312
+[05/Apr/2026 02:16:13] "GET /static/css/ana_sayfa.css HTTP/1.1" 304 0
+[05/Apr/2026 02:16:40] "GET / HTTP/1.1" 200 60077
+[05/Apr/2026 02:16:40] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10806
+[05/Apr/2026 02:16:43] "GET / HTTP/1.1" 200 60077
+[05/Apr/2026 02:16:43] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:16:57] "GET / HTTP/1.1" 200 66657
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+[05/Apr/2026 02:16:57] "GET /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js HTTP/1.1" 404 2520
+[05/Apr/2026 02:17:12] "GET / HTTP/1.1" 200 60077
+[05/Apr/2026 02:17:12] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:17:13] "GET / HTTP/1.1" 200 60077
+[05/Apr/2026 02:17:27] "GET /?sehir=%C4%B0stanbul HTTP/1.1" 200 14733
+[05/Apr/2026 02:17:27] "GET /media/clinics/logos/download.jpg HTTP/1.1" 304 0
+[05/Apr/2026 02:17:35] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:17:35] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10806
+[05/Apr/2026 02:17:35] "GET /media/clinics/logos/download.jpg HTTP/1.1" 304 0
+[05/Apr/2026 02:18:19] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10965
+[05/Apr/2026 02:18:20] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:18:20] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10965
+[05/Apr/2026 02:18:20] "GET /media/clinics/logos/download.jpg HTTP/1.1" 200 3832
+[05/Apr/2026 02:18:20] "GET /media/doctors/photos/download_U6GMFfS.jpg HTTP/1.1" 200 3832
+[05/Apr/2026 02:20:28] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:20:30] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 02:20:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:20:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:21:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:21:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:21:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:21:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:22:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:22:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:22:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:22:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:23:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:23:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:23:27] "GET /5Q1QKL/hastalar/ HTTP/1.1" 200 33657
+[05/Apr/2026 02:23:28] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:23:30] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 02:23:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:23:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:24:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:24:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:24:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:24:46] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:25:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:25:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:25:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:25:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:26:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:26:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:26:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:26:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:27:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:27:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:27:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:27:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:28:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:28:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:28:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:28:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:29:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:29:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:29:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:29:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:30:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:30:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:30:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:30:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:31:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:31:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:31:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:31:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:32:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:32:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:32:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:32:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:33:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:33:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:33:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:33:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:34:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:34:15] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:34:30] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:34:45] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:34:51] "POST /5Q1QKL/klinik-ayarlar-kod-gonder/ HTTP/1.1" 200 39
+[05/Apr/2026 02:35:00] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:35:05] "GET /5Q1QKL/bildirimler/ HTTP/1.1" 200 25447
+[05/Apr/2026 02:35:05] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /accounts/logout/
+[05/Apr/2026 02:35:11] "GET /accounts/logout/ HTTP/1.1" 404 8915
+[05/Apr/2026 02:35:20] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /accounts/logout/
+[05/Apr/2026 02:35:22] "GET /accounts/logout/ HTTP/1.1" 404 8915
+[05/Apr/2026 02:35:24] "GET /5Q1QKL/ HTTP/1.1" 200 33838
+[05/Apr/2026 02:35:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:35:39] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:35:54] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:36:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:36:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:36:39] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:36:54] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:37:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:37:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:37:39] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:37:55] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:38:09] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:38:17] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:38:17] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[05/Apr/2026 02:38:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:38:30] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:38:30] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:38:35] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:38:35] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 10806
+[05/Apr/2026 02:38:38] "GET / HTTP/1.1" 200 42020
+[05/Apr/2026 02:38:38] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:38:40] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:38:50] "GET / HTTP/1.1" 200 38153
+[05/Apr/2026 02:38:50] "GET /static/css/klinik_randevu.css HTTP/1.1" 200 13013
+[05/Apr/2026 02:38:52] "GET / HTTP/1.1" 200 38153
+[05/Apr/2026 02:38:52] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:38:55] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:39:00] "GET / HTTP/1.1" 200 38153
+[05/Apr/2026 02:39:00] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:39:10] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:39:10] "GET /static/css/klinik_randevu.css HTTP/1.1" 304 0
+[05/Apr/2026 02:39:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+Not Found: /accounts/logout/
+[05/Apr/2026 02:39:25] "GET /accounts/logout/ HTTP/1.1" 404 8915
+[05/Apr/2026 02:39:40] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:39:55] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:40:10] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:40:25] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:41:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:42:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+[05/Apr/2026 02:43:24] "GET /5Q1QKL/api/bildirimler/ HTTP/1.1" 200 21
+C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 05, 2026 - 02:14:02
+Django version 5.0.9, using settings 'dental.settings'
+Starting development server at http://0.0.0.0:4293/
+Quit the server with CTRL-BREAK.
+
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader

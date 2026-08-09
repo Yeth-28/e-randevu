@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonelik — {{ clinic.name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{--blue:#2563eb;--blue-light:#eff6ff;--bg:#f8faff;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;--green:#059669;--green-light:#dcfce7;--purple:#7c3aed;--red:#dc2626;--orange:#d97706;}
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .content{padding:32px;}
+
+        /* UYARILAR */
+        .uyari-box{padding:14px 18px;border-radius:12px;margin-bottom:12px;display:flex;align-items:center;gap:12px;font-size:14px;}
+        .uyari-box.kirmizi{background:#fef2f2;border:1.5px solid #fecaca;color:#991b1b;}
+        .uyari-box.sari{background:#fffbeb;border:1.5px solid #fcd34d;color:#92400e;}
+
+        /* AKTİF ABONELİK */
+        .aktif-card{background:white;border-radius:20px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:28px;}
+        .aktif-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+        .aktif-title{font-size:16px;font-weight:700;color:var(--text);}
+        .aktif-badge{padding:5px 14px;border-radius:999px;font-size:12px;font-weight:700;background:var(--green-light);color:var(--green);}
+        .aktif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+        .aktif-item{text-align:center;padding:16px;background:#f9fafb;border-radius:12px;}
+        .aktif-item .val{font-size:22px;font-weight:700;color:var(--text);}
+        .aktif-item .lbl{font-size:12px;color:var(--gray);margin-top:4px;}
+
+        /* LİMİT BARLAR */
+        .limit-section{background:white;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:28px;}
+        .limit-section h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:16px;}
+        .limit-row{margin-bottom:16px;}
+        .limit-row:last-child{margin-bottom:0;}
+        .limit-row-header{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
+        .limit-bar{height:8px;background:#f3f4f6;border-radius:999px;overflow:hidden;}
+        .limit-fill{height:100%;border-radius:999px;transition:width 0.6s ease;}
+        .limit-fill.green{background:var(--green);}
+        .limit-fill.yellow{background:#f59e0b;}
+        .limit-fill.red{background:var(--red);}
+
+        /* PLAN KARTLARI */
+        .section-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:20px;}
+        .period-selector{display:flex;justify-content:center;margin-bottom:32px;}
+        .period-tabs{display:flex;background:white;border-radius:14px;padding:4px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+        .period-tab{padding:10px 28px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--gray);font-family:'DM Sans',sans-serif;transition:all 0.2s;position:relative;}
+        .period-tab.active{background:var(--blue);color:white;}
+        .period-tab .discount{position:absolute;top:-8px;right:-8px;background:#dc2626;color:white;font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;}
+        .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;}
+        .plan-card{background:white;border-radius:20px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:2px solid var(--gray-light);position:relative;transition:transform 0.2s;}
+        .plan-card:hover{transform:translateY(-3px);}
+        .plan-card.aktif-plan{border-color:var(--green);box-shadow:0 4px 20px rgba(5,150,105,0.15);}
+        .plan-card.popular{border-color:var(--blue);}
+        .plan-kart-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;}
+        .plan-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+        .plan-name{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px;}
+        .plan-desc{font-size:12px;color:var(--gray);margin-bottom:20px;}
+        .price-monthly,.price-yearly{display:none;}
+        .price-monthly.show,.price-yearly.show{display:block;}
+        .price-amount{font-size:32px;font-weight:800;color:var(--text);}
+        .price-period{font-size:13px;color:var(--gray);}
+        .price-note{font-size:11px;color:var(--green);margin-top:2px;}
+        .plan-divider{height:1px;background:var(--gray-light);margin:20px 0;}
+        .plan-features{list-style:none;margin-bottom:24px;}
+        .plan-features li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);padding:4px 0;}
+        .plan-features li::before{content:'✓';color:var(--green);font-weight:700;}
+        .btn-plan{display:block;width:100%;padding:12px;border-radius:12px;font-size:14px;font-weight:600;text-align:center;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-decoration:none;}
+        .btn-plan.blue{background:var(--blue);color:white;}
+        .btn-plan.green{background:var(--green);color:white;}
+        .btn-plan.purple{background:var(--purple);color:white;}
+        .btn-plan.mevcut{background:#f3f4f6;color:var(--gray);cursor:default;}
+
+        /* GEÇMİŞ TABLO */
+        .gecmis-card{background:white;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+        .gecmis-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:16px;}
+        table{width:100%;border-collapse:collapse;}
+        th{padding:10px 16px;text-align:left;font-size:11px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;background:#f9fafb;}
+        td{padding:12px 16px;border-top:1px solid var(--gray-light);font-size:13px;color:var(--text);}
+        tr:hover td{background:#f9fafb;}
+        .badge{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;}
+        .badge-active{background:var(--green-light);color:var(--green);}
+        .badge-expired{background:#f3f4f6;color:var(--gray);}
+        .badge-pending{background:#fef3c7;color:var(--orange);}
+        .empty-state{text-align:center;padding:32px;color:var(--gray);}
+    </style>
+</head>
+<body>
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">💳 Abonelik</div>
+        {% include "panel/bildirim_zil.html" %}
+    </div>
+    <div class="content">
+
+        <!-- UYARILAR -->
+        {% for uyari in limit_bilgi.uyarilar %}
+        <div class="uyari-box {{ uyari.tip }}">
+            {{ uyari.mesaj }}
+            {% if next_plan_key %}
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/abonelik/{{ next_plan_key }}/monthly/"
+               style="margin-left:auto;padding:6px 14px;border-radius:8px;background:var(--blue);color:white;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;">
+               Üst Pakete Geç →
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <!-- AKTİF ABONELİK -->
+        <div class="aktif-card">
+            <div class="aktif-header">
+                <div>
+                    <div class="aktif-title">
+                        {% if clinic.plan == 'free' %}🆓{% elif clinic.plan == 'pro' %}💎{% else %}🏢{% endif %}
+                        {{ mevcut_plan.label }} Plan — Aktif
+                    </div>
+                    <div style="font-size:13px;color:var(--gray);margin-top:4px;">
+                        Klinik: {{ clinic.name }} · ID: {{ clinic.clinic_id }}
+                    </div>
+                </div>
+                <span class="aktif-badge">● Aktif</span>
+            </div>
+
+            <div class="aktif-grid">
+                <div class="aktif-item">
+                    <div class="val">{{ limit_bilgi.hasta_sayisi }}</div>
+                    <div class="lbl">Aktif Hasta{% if limit_bilgi.max_hasta < 99999 %} / {{ limit_bilgi.max_hasta }}{% endif %}</div>
+                </div>
+                <div class="aktif-item">
+                    <div class="val">{{ limit_bilgi.doktor_sayisi }}</div>
+                    <div class="lbl">Aktif Doktor{% if limit_bilgi.max_doktor < 999 %} / {{ limit_bilgi.max_doktor }}{% endif %}</div>
+                </div>
+                <div class="aktif-item">
+                    <div class="val">
+                        {% if aktif_abonelik %}{{ aktif_abonelik.days_remaining }}{% else %}∞{% endif %}
+                    </div>
+                    <div class="lbl">Kalan Gün</div>
+                </div>
+                <div class="aktif-item">
+                    <div class="val">
+                        {% if aktif_abonelik %}{{ aktif_abonelik.expires_at|date:"d.m.Y" }}{% else %}—{% endif %}
+                    </div>
+                    <div class="lbl">Bitiş Tarihi</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LİMİT BARLAR -->
+        <div class="limit-section">
+            <h3>📊 Kullanım Durumu</h3>
+            {% if limit_bilgi.max_hasta < 99999 %}
+            <div class="limit-row">
+                <div class="limit-row-header">
+                    <span>🧑‍🦷 Hasta Kullanımı</span>
+                    <span style="font-weight:600;">{{ limit_bilgi.hasta_sayisi }} / {{ limit_bilgi.max_hasta }}</span>
+                </div>
+                <div class="limit-bar">
+                    <div class="limit-fill {% if limit_bilgi.hasta_oran >= 100 %}red{% elif limit_bilgi.hasta_oran >= 80 %}yellow{% else %}green{% endif %}"
+                         style="width:{{ limit_bilgi.hasta_oran }}%;"></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if limit_bilgi.max_doktor < 999 %}
+            <div class="limit-row">
+                <div class="limit-row-header">
+                    <span>👨‍⚕️ Doktor Kullanımı</span>
+                    <span style="font-weight:600;">{{ limit_bilgi.doktor_sayisi }} / {{ limit_bilgi.max_doktor }}</span>
+                </div>
+                <div class="limit-bar">
+                    <div class="limit-fill {% if limit_bilgi.doktor_oran >= 100 %}red{% elif limit_bilgi.doktor_oran >= 80 %}yellow{% else %}green{% endif %}"
+                         style="width:{{ limit_bilgi.doktor_oran }}%;"></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if limit_bilgi.max_hasta >= 99999 and limit_bilgi.max_doktor >= 999 %}
+            <div style="text-align:center;color:var(--green);font-size:14px;padding:16px;">
+                ✅ Kurumsal planda tüm limitler sınırsızdır.
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- PLAN DEĞİŞİKLİĞİ -->
+        <div class="section-title">🔄 Plan Değiştir</div>
+
+        <div class="period-selector">
+            <div class="period-tabs">
+                <button class="period-tab active" id="tab-monthly" onclick="setPeriod('monthly')">Aylık</button>
+                <button class="period-tab" id="tab-yearly" onclick="setPeriod('yearly')">
+                    Yıllık <span class="discount">%20</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="plans-grid">
+            <!-- ÜCRETSIZ -->
+            <div class="plan-card {% if clinic.plan == 'free' %}aktif-plan{% endif %}">
+                {% if clinic.plan == 'free' %}<span class="plan-kart-badge" style="background:var(--green);color:white;">✓ Mevcut Planınız</span>{% endif %}
+                <div class="plan-icon" style="background:#f3f4f6;">🆓</div>
+                <div class="plan-name">Ücretsiz</div>
+                <div class="plan-desc">Başlangıç için ideal</div>
+                <div class="price-monthly show" id="free-monthly"><span class="price-amount">0₺</span><span class="price-period">/ay</span></div>
+                <div class="price-yearly" id="free-yearly"><span class="price-amount">0₺</span><span class="price-period">/ay</span></div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li>50 hasta</li><li>1 doktor</li><li>Temel özellikler</li><li>Online randevu</li>
+                </ul>
+                {% if clinic.plan == 'free' %}
+                <span class="btn-plan mevcut">Mevcut Planınız</span>
+                {% else %}
+                <a href="{{ PANEL_URL }}/{{ clinic_id }}/abonelik/free/monthly/" class="btn-plan blue">Ücretsiz'e Geç</a>
+                {% endif %}
+            </div>
+
+            <!-- PRO -->
+            <div class="plan-card {% if clinic.plan == 'pro' %}aktif-plan{% else %}popular{% endif %}">
+                {% if clinic.plan == 'pro' %}
+                <span class="plan-kart-badge" style="background:var(--green);color:white;">✓ Mevcut Planınız</span>
+                {% else %}
+                <span class="plan-kart-badge" style="background:var(--blue);color:white;">⭐ Popüler</span>
+                {% endif %}
+                <div class="plan-icon" style="background:#dcfce7;">💎</div>
+                <div class="plan-name">Pro</div>
+                <div class="plan-desc">Büyüyen klinikler için</div>
+                <div class="price-monthly show" id="pro-monthly"><span class="price-amount">499₺</span><span class="price-period">/ay</span></div>
+                <div class="price-yearly" id="pro-yearly"><span class="price-amount">399₺</span><span class="price-period">/ay</span><div class="price-note">Yıllık: 4.788₺ · 1.200₺ tasarruf</div></div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li>500 hasta</li><li>5 doktor</li><li>Online randevu</li><li>Raporlama</li><li>Öncelikli destek</li>
+                </ul>
+                {% if clinic.plan == 'pro' %}
+                <span class="btn-plan mevcut">Mevcut Planınız</span>
+                {% else %}
+                <a href="#" class="btn-plan green" id="pro-btn" onclick="gotoOdeme('pro');return false;">
+                    {% if clinic.plan == 'enterprise' %}Pro'ya İn{% else %}Pro'ya Geç →{% endif %}
+                </a>
+                {% endif %}
+            </div>
+
+            <!-- ENTERPRISE -->
+            <div class="plan-card {% if clinic.plan == 'enterprise' %}aktif-plan{% endif %}">
+                {% if clinic.plan == 'enterprise' %}
+                <span class="plan-kart-badge" style="background:var(--green);color:white;">✓ Mevcut Planınız</span>
+                {% else %}
+                <span class="plan-kart-badge" style="background:var(--purple);color:white;">🏆 En Kapsamlı</span>
+                {% endif %}
+                <div class="plan-icon" style="background:#f3e8ff;">🏢</div>
+                <div class="plan-name">Kurumsal</div>
+                <div class="plan-desc">Zincir klinikler için</div>
+                <div class="price-monthly show" id="enterprise-monthly"><span class="price-amount">999₺</span><span class="price-period">/ay</span></div>
+                <div class="price-yearly" id="enterprise-yearly"><span class="price-amount">799₺</span><span class="price-period">/ay</span><div class="price-note">Yıllık: 9.588₺ · 2.400₺ tasarruf</div></div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li>Sınırsız hasta</li><li>Sınırsız doktor</li><li>Tüm özellikler</li><li>SMS bildirimleri</li><li>2FA giriş</li><li>Öncelikli destek</li>
+                </ul>
+                {% if clinic.plan == 'enterprise' %}
+                <span class="btn-plan mevcut">Mevcut Planınız</span>
+                {% else %}
+                <a href="#" class="btn-plan purple" id="enterprise-btn" onclick="gotoOdeme('enterprise');return false;">Kurumsal'a Geç →</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- ABONELİK GEÇMİŞİ -->
+        <div class="gecmis-card">
+            <h3>📋 Abonelik Geçmişi</h3>
+            {% if gecmis %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Periyot</th>
+                        <th>Tutar</th>
+                        <th>Başlangıç</th>
+                        <th>Bitiş</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for a in gecmis %}
+                <tr>
+                    <td>
+                        {% if a.plan == 'free' %}🆓{% elif a.plan == 'pro' %}💎{% else %}🏢{% endif %}
+                        {{ a.get_plan_display|default:a.plan }}
+                    </td>
+                    <td>{% if a.period == 'yearly' %}Yıllık{% else %}Aylık{% endif %}</td>
+                    <td style="font-weight:600;">₺{{ a.amount }}</td>
+                    <td>{{ a.starts_at|date:"d.m.Y" }}</td>
+                    <td>{{ a.expires_at|date:"d.m.Y" }}</td>
+                    <td>
+                        <span class="badge badge-{{ a.status }}">
+                            {% if a.status == 'active' %}✅ Aktif
+                            {% elif a.status == 'expired' %}⏰ Süresi Doldu
+                            {% else %}⏳ Bekliyor{% endif %}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <div style="font-size:32px;margin-bottom:8px;">📋</div>
+                <p>Henüz abonelik geçmişi yok.</p>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+<script>
+let currentPeriod = 'monthly';
+const CLINIC_ID = "{{ clinic_id }}";
+
+function setPeriod(period) {
+    currentPeriod = period;
+    document.getElementById('tab-monthly').classList.toggle('active', period === 'monthly');
+    document.getElementById('tab-yearly').classList.toggle('active', period === 'yearly');
+    ['free','pro','enterprise'].forEach(plan => {
+        document.getElementById(plan+'-monthly')?.classList.toggle('show', period === 'monthly');
+        document.getElementById(plan+'-yearly')?.classList.toggle('show', period === 'yearly');
+    });
+}
+
+function gotoOdeme(plan) {
+    window.location.href = `{{ PANEL_URL }}/${CLINIC_ID}/abonelik/${plan}/${currentPeriod}/`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[29/Mar/2026 12:25:16] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 12:25:16] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 12:25:16,735] - Broken pipe from ('127.0.0.1', 63416)
+Not Found: /favicon.ico
+[29/Mar/2026 12:25:17] "GET /favicon.ico HTTP/1.1" 404 2951
+Not Found: /admin
+[29/Mar/2026 12:25:21] "GET /admin HTTP/1.1" 404 2933
+[29/Mar/2026 12:25:35] "GET /api/klinik-ara HTTP/1.1" 301 0
+[29/Mar/2026 12:25:35] "GET /api/klinik-ara/ HTTP/1.1" 200 15
+[29/Mar/2026 12:28:02] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 12:28:55] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 12:31:58] "GET / HTTP/1.1" 200 16347
+[29/Mar/2026 12:32:53] "GET / HTTP/1.1" 200 16347
+Not Found: /robots.txt
+[29/Mar/2026 12:40:30] "GET /robots.txt HTTP/1.1" 404 2949

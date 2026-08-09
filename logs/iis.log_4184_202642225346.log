@@ -1,0 +1,45 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[02/Apr/2026 15:53:50] "GET /.env.staging HTTP/1.1" 301 0
+[02/Apr/2026 15:53:50] "GET /.env.development HTTP/1.1" 301 0
+[02/Apr/2026 15:53:50] "GET /.env.backup HTTP/1.1" 301 0
+[02/Apr/2026 15:53:50] "GET /.env.bak HTTP/1.1" 301 0
+[02/Apr/2026 15:53:51] "GET /.env.old HTTP/1.1" 301 0
+[02/Apr/2026 15:53:51] "GET /.env.example HTTP/1.1" 301 0
+[02/Apr/2026 15:53:51] "GET /.env.save HTTP/1.1" 301 0
+Not Found: /core/.env
+[02/Apr/2026 15:53:51] "GET /core/.env HTTP/1.1" 404 8894
+Not Found: /api/.env
+[02/Apr/2026 15:53:51] "GET /api/.env HTTP/1.1" 404 8891
+Not Found: /backend/.env
+[02/Apr/2026 15:53:51] "GET /backend/.env HTTP/1.1" 404 8903
+Not Found: /laravel/.env
+[02/Apr/2026 15:53:51] "GET /laravel/.env HTTP/1.1" 404 8903
+Not Found: /app/.env
+[02/Apr/2026 15:53:51] "GET /app/.env HTTP/1.1" 404 8891
+Not Found: /web/.env
+[02/Apr/2026 15:53:51] "GET /web/.env HTTP/1.1" 404 8891
+Not Found: /src/.env
+[02/Apr/2026 15:53:51] "GET /src/.env HTTP/1.1" 404 8891
+Not Found: /server/.env
+[02/Apr/2026 15:53:51] "GET /server/.env HTTP/1.1" 404 8900
+Not Found: /config/.env
+[02/Apr/2026 15:53:52] "GET /config/.env HTTP/1.1" 404 8900
+Not Found: /shared/.env
+[02/Apr/2026 15:53:52] "GET /shared/.env HTTP/1.1" 404 8900
+Not Found: /public/.env
+[02/Apr/2026 15:53:52] "GET /public/.env HTTP/1.1" 404 8900
+Not Found: /_next/static/env.js
+[02/Apr/2026 15:53:52] "GET /_next/static/env.js HTTP/1.1" 404 8924
+Not Found: /.vercel/.env.production.local
+[02/Apr/2026 15:53:52] "GET /.vercel/.env.production.local HTTP/1.1" 404 8954
+Not Found: /.git/config
+[02/Apr/2026 15:53:52] "GET /.git/config HTTP/1.1" 404 8900
+Not Found: /actuator/env
+[02/Apr/2026 15:53:52] "GET /actuator/env HTTP/1.1" 404 8903
+Not Found: /debug/default/view
+[02/Apr/2026 15:53:52] "GET /debug/default/view HTTP/1.1" 404 8921
+[02/Apr/2026 15:58:22] "GET / HTTP/1.1" 200 9212

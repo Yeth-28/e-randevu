@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Klinik Kaydı — e-Randevu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/kayit.css' %}">
+    <style>
+    .cs-wrap{position:relative;width:100%;}
+    .cs-input{width:100%;padding:11px 32px 11px 12px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;background:white;color:var(--text);transition:border-color 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .cs-input:focus,.cs-input.open{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+    .cs-input.disabled{background:#f9fafb;color:#9ca3af;cursor:not-allowed;pointer-events:none;}
+    .cs-arrow{position:absolute;right:8px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--gray);}
+    .cs-drop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:white;border:1.5px solid var(--blue);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,0.15);z-index:9999;display:none;flex-direction:column;max-height:280px;overflow:hidden;}
+    .cs-drop.open{display:flex;}
+    .cs-search{padding:10px 12px;border-bottom:1px solid var(--gray-light);flex-shrink:0;}
+    .cs-search input{width:100%;border:1.5px solid var(--gray-light);border-radius:8px;padding:8px 12px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+    .cs-search input:focus{border-color:var(--blue);}
+    .cs-list{overflow-y:auto;flex:1;}
+    .cs-opt{padding:10px 14px;font-size:14px;cursor:pointer;border-bottom:1px solid #f3f4f6;transition:background 0.1s;}
+    .cs-opt:last-child{border-bottom:none;}
+    .cs-opt:hover,.cs-opt.active{background:#eff6ff;color:var(--blue);font-weight:500;}
+    .cs-opt.empty{color:var(--gray);cursor:default;font-style:italic;}
+    .cs-loading{padding:12px 14px;font-size:13px;color:var(--gray);display:flex;align-items:center;gap:8px;}
+    .cs-loading::before{content:'';width:14px;height:14px;border:2px solid var(--gray-light);border-top-color:var(--blue);border-radius:50%;animation:spin 0.8s linear infinite;flex-shrink:0;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Telefon satırı */
+    .phone-row{display:flex;gap:8px;align-items:stretch;}
+    .phone-cc-wrap{width:100px;flex-shrink:0;position:relative;}
+    .phone-cc-wrap .cs-drop{width:280px;} /* dropdown daha geniş */
+    .phone-inp{flex:1;min-width:0;padding:11px 14px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;color:var(--text);letter-spacing:0.5px;}
+    .phone-inp:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+
+    .adres-ozet{font-size:12px;color:var(--blue);font-weight:500;margin-top:6px;min-height:16px;}
+    @media(max-width:600px){
+        .phone-row{flex-direction:column;}
+        .phone-cc-wrap{width:100%;}
+        .phone-cc-wrap .cs-drop{width:100%;}
+    }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="logo">
+        <span class="logo-icon">🦷</span>
+        <div class="logo-name">e-Randevu</div>
+        <div class="logo-sub">Klinik Yönetim Sistemi</div>
+    </div>
+
+    <div class="steps">
+        <div class="step {% if step >= 1 %}{% if step > 1 %}done{% else %}active{% endif %}{% endif %}">
+            <div class="step-circle">{% if step > 1 %}✓{% else %}1{% endif %}</div>
+            <div class="step-label">Bilgiler</div>
+        </div>
+        <div class="step-line {% if step > 1 %}done{% endif %}"></div>
+        <div class="step {% if step >= 2 %}{% if step > 2 %}done{% else %}active{% endif %}{% endif %}">
+            <div class="step-circle">{% if step > 2 %}✓{% else %}2{% endif %}</div>
+            <div class="step-label">Plan</div>
+        </div>
+        <div class="step-line {% if step > 2 %}done{% endif %}"></div>
+        <div class="step {% if step >= 3 %}active{% endif %}">
+            <div class="step-circle">3</div>
+            <div class="step-label">Ödeme</div>
+        </div>
+    </div>
+
+    {% if messages %}
+    <div class="msgs" role="alert">
+        {% for message in messages %}
+        <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if step == 1 %}
+    <div class="section-title">Klinik Bilgileri</div>
+    <div class="section-sub">Kliniğinizi sisteme kaydedin</div>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="step" value="1">
+        <input type="hidden" name="phone_cc" id="h_cc" value="+90">
+        <input type="hidden" name="ulke_kodu" id="h_ulke_kodu" value="TR">
+        <input type="hidden" name="ulke_adi" id="h_ulke_adi" value="Türkiye">
+        <input type="hidden" name="city" id="h_sehir" value="">
+        <input type="hidden" name="ilce" id="h_ilce" value="">
+
+        <div class="fg">
+            <label for="name">Klinik Adı *</label>
+            <input type="text" name="name" id="name" value="{{ form_data.name|default:'' }}"
+                   placeholder="AClinic Diş Kliniği" required autocomplete="organization">
+            <div class="fg-hint">Adınızdan otomatik subdomain oluşturulur</div>
+        </div>
+
+        <div class="form-grid">
+            <div class="fg">
+                <label for="email">E-posta *</label>
+                <input type="email" name="email" id="email" value="{{ form_data.email|default:'' }}"
+                       placeholder="klinik@ornek.com" required autocomplete="email">
+            </div>
+            <div class="fg">
+                <label>Telefon *</label>
+                <div class="phone-row">
+                    <div class="phone-cc-wrap">
+                        <input type="text" class="cs-input" id="cc_display" value="🇹🇷 +90"
+                               readonly onclick="csToggle('cc')" placeholder="Kod">
+                        <svg class="cs-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                        <div class="cs-drop" id="cc_drop">
+                            <div class="cs-search">
+                                <input type="text" placeholder="🔍 Ülke veya +kod ara..."
+                                       oninput="csFilter('cc',this.value)" autocomplete="off">
+                            </div>
+                            <div class="cs-list" id="cc_list"><div class="cs-loading">Yükleniyor...</div></div>
+                        </div>
+                    </div>
+                    <input type="tel" name="phone" id="phone" class="phone-inp"
+                           value="{{ form_data.phone|default:'' }}"
+                           placeholder="5XX XXX XX XX" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="adres-group">
+            <div class="adres-group-title">📍 Klinik Adresi</div>
+
+            <div class="fg">
+                <label>Ülke *</label>
+                <div class="cs-wrap">
+                    <input type="text" class="cs-input" id="ulke_display" value="🇹🇷 Türkiye"
+                           readonly onclick="csToggle('ulke')" placeholder="Ülke seçin...">
+                    <svg class="cs-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    <div class="cs-drop" id="ulke_drop">
+                        <div class="cs-search">
+                            <input type="text" placeholder="🔍 Ülke ara..."
+                                   oninput="csFilter('ulke',this.value)" autocomplete="off">
+                        </div>
+                        <div class="cs-list" id="ulke_list"><div class="cs-loading">Yükleniyor...</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fg">
+                <label>Şehir / İl *</label>
+                <div class="cs-wrap">
+                    <input type="text" class="cs-input disabled" id="sehir_display"
+                           readonly onclick="csToggle('sehir')" placeholder="Önce ülke seçin">
+                    <svg class="cs-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    <div class="cs-drop" id="sehir_drop">
+                        <div class="cs-search">
+                            <input type="text" placeholder="🔍 Şehir ara..."
+                                   oninput="csFilter('sehir',this.value)" autocomplete="off">
+                        </div>
+                        <div class="cs-list" id="sehir_list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fg">
+                <label>İlçe</label>
+                <div class="cs-wrap">
+                    <input type="text" class="cs-input disabled" id="ilce_display"
+                           readonly onclick="csToggle('ilce')" placeholder="Önce şehir seçin">
+                    <svg class="cs-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    <div class="cs-drop" id="ilce_drop">
+                        <div class="cs-search">
+                            <input type="text" placeholder="🔍 İlçe ara..."
+                                   oninput="csFilter('ilce',this.value)" autocomplete="off">
+                        </div>
+                        <div class="cs-list" id="ilce_list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fg">
+                <label for="address">Detay Adres (Mahalle, Sokak, No, Kat vs.)</label>
+                <input type="text" name="address" id="address" value="{{ form_data.address|default:'' }}"
+                       placeholder="Atatürk Mah. Cumhuriyet Cad. No:12 Kat:3"
+                       autocomplete="street-address">
+                <div class="adres-ozet" id="adres_ozet"></div>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label for="pw1">Şifre *</label>
+            <div class="pw-wrap">
+                <input type="password" name="password1" id="pw1" placeholder="Şifrenizi oluşturun"
+                       required autocomplete="new-password">
+                <button type="button" class="pw-eye" onclick="togglePw('pw1',this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="pw-strength"><div class="pw-bar" id="pw-bar"></div></div>
+            <div class="pw-hint" id="pw-hint">8+ karakter, büyük/küçük harf, rakam ve özel karakter</div>
+        </div>
+
+        <div class="fg">
+            <label for="pw2">Şifre Tekrar *</label>
+            <div class="pw-wrap">
+                <input type="password" name="password2" id="pw2" placeholder="Şifrenizi tekrar girin"
+                       required autocomplete="new-password">
+                <button type="button" class="pw-eye" onclick="togglePw('pw2',this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="pw-match" style="font-size:12px;margin-top:4px;"></div>
+        </div>
+
+        <button type="submit" class="btn-primary">Devam Et →</button>
+        <div class="login-hint">
+            Zaten hesabınız var mı? <a href="{{ PANEL_URL }}/giris/" class="link">Giriş Yap</a>
+        </div>
+    </form>
+    {% endif %}
+
+    {% if step == 2 %}
+    <div class="section-title">Paket Seçin</div>
+    <div class="section-sub">İhtiyacınıza uygun paketi seçin</div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="step" value="2">
+        <input type="hidden" name="plan" id="selected-plan" value="free">
+        <div class="plan-grid">
+            {% for key, name, price, features in plan_choices %}
+            <div class="plan-card {% if key == 'free' %}selected{% endif %}"
+                 onclick="selectPlan('{{ key }}',this)">
+                <div class="plan-name">{{ name }}</div>
+                <div class="plan-price">{{ price }}</div>
+                <div class="plan-feat">{% for f in features %}{{ f }}<br>{% endfor %}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn-primary">Seçili Pakete Devam Et →</button>
+    </form>
+    {% endif %}
+
+    {% if step == 3 %}
+    <div class="section-title">Ödeme Bilgileri</div>
+    <div class="section-sub">iyzico güvenli ödeme altyapısı</div>
+    <div class="info-box">🔒 Kart bilgileriniz güvenli şekilde işlenir. Kart numaranız sistemimizde saklanmaz.</div>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="step" value="3">
+        <div class="fg">
+            <label>Kart Numarası</label>
+            <input type="text" name="card_number" class="card-input" placeholder="XXXX XXXX XXXX XXXX"
+                   maxlength="19" oninput="fmtCard(this)" required autocomplete="cc-number">
+        </div>
+        <div class="form-grid">
+            <div class="fg"><label>Son Kullanma</label>
+                <input type="text" name="expiry" placeholder="AA/YY" maxlength="5"
+                       oninput="fmtExp(this)" required autocomplete="cc-exp"></div>
+            <div class="fg"><label>CVV</label>
+                <input type="password" name="cvv" placeholder="•••" maxlength="4"
+                       required autocomplete="cc-csc"></div>
+        </div>
+        <div class="fg"><label>Kart Sahibi</label>
+            <input type="text" name="card_holder" placeholder="AD SOYAD"
+                   style="text-transform:uppercase;" required autocomplete="cc-name"></div>
+        <button type="submit" class="btn-primary">💳 Ödemeyi Tamamla →</button>
+    </form>
+    {% endif %}
+</div>
+
+<script>
+const GEO_USER = 'Nookware';
+const GEO_BASE = 'https://secure.geonames.org';
+
+// ── Tel kodları fallback (GeoNames phonePrefix bazen eksik gelir) ──
+const CC_FALLBACK = [
+    {code:'TR',flag:'🇹🇷',name:'Türkiye',dial:'+90'},
+    {code:'DE',flag:'🇩🇪',name:'Almanya',dial:'+49'},
+    {code:'GB',flag:'🇬🇧',name:'Birleşik Krallık',dial:'+44'},
+    {code:'US',flag:'🇺🇸',name:'Amerika',dial:'+1'},
+    {code:'FR',flag:'🇫🇷',name:'Fransa',dial:'+33'},
+    {code:'IT',flag:'🇮🇹',name:'İtalya',dial:'+39'},
+    {code:'NL',flag:'🇳🇱',name:'Hollanda',dial:'+31'},
+    {code:'BE',flag:'🇧🇪',name:'Belçika',dial:'+32'},
+    {code:'CH',flag:'🇨🇭',name:'İsviçre',dial:'+41'},
+    {code:'AT',flag:'🇦🇹',name:'Avusturya',dial:'+43'},
+    {code:'SE',flag:'🇸🇪',name:'İsveç',dial:'+46'},
+    {code:'NO',flag:'🇳🇴',name:'Norveç',dial:'+47'},
+    {code:'DK',flag:'🇩🇰',name:'Danimarka',dial:'+45'},
+    {code:'FI',flag:'🇫🇮',name:'Finlandiya',dial:'+358'},
+    {code:'RU',flag:'🇷🇺',name:'Rusya',dial:'+7'},
+    {code:'UA',flag:'🇺🇦',name:'Ukrayna',dial:'+380'},
+    {code:'PL',flag:'🇵🇱',name:'Polonya',dial:'+48'},
+    {code:'GR',flag:'🇬🇷',name:'Yunanistan',dial:'+30'},
+    {code:'SA',flag:'🇸🇦',name:'S. Arabistan',dial:'+966'},
+    {code:'AE',flag:'🇦🇪',name:'BAE',dial:'+971'},
+    {code:'QA',flag:'🇶🇦',name:'Katar',dial:'+974'},
+    {code:'KW',flag:'🇰🇼',name:'Kuveyt',dial:'+965'},
+    {code:'EG',flag:'🇪🇬',name:'Mısır',dial:'+20'},
+    {code:'MA',flag:'🇲🇦',name:'Fas',dial:'+212'},
+    {code:'IR',flag:'🇮🇷',name:'İran',dial:'+98'},
+    {code:'IQ',flag:'🇮🇶',name:'Irak',dial:'+964'},
+    {code:'SY',flag:'🇸🇾',name:'Suriye',dial:'+963'},
+    {code:'IN',flag:'🇮🇳',name:'Hindistan',dial:'+91'},
+    {code:'CN',flag:'🇨🇳',name:'Çin',dial:'+86'},
+    {code:'JP',flag:'🇯🇵',name:'Japonya',dial:'+81'},
+    {code:'KR',flag:'🇰🇷',name:'G. Kore',dial:'+82'},
+    {code:'AU',flag:'🇦🇺',name:'Avustralya',dial:'+61'},
+    {code:'CA',flag:'🇨🇦',name:'Kanada',dial:'+1'},
+    {code:'BR',flag:'🇧🇷',name:'Brezilya',dial:'+55'},
+    {code:'AR',flag:'🇦🇷',name:'Arjantin',dial:'+54'},
+    {code:'MX',flag:'🇲🇽',name:'Meksika',dial:'+52'},
+    {code:'ES',flag:'🇪🇸',name:'İspanya',dial:'+34'},
+    {code:'PT',flag:'🇵🇹',name:'Portekiz',dial:'+351'},
+    {code:'RO',flag:'🇷🇴',name:'Romanya',dial:'+40'},
+    {code:'HU',flag:'🇭🇺',name:'Macaristan',dial:'+36'},
+    {code:'CZ',flag:'🇨🇿',name:'Çekya',dial:'+420'},
+    {code:'SK',flag:'🇸🇰',name:'Slovakya',dial:'+421'},
+    {code:'HR',flag:'🇭🇷',name:'Hırvatistan',dial:'+385'},
+    {code:'RS',flag:'🇷🇸',name:'Sırbistan',dial:'+381'},
+    {code:'BG',flag:'🇧🇬',name:'Bulgaristan',dial:'+359'},
+    {code:'PK',flag:'🇵🇰',name:'Pakistan',dial:'+92'},
+    {code:'BD',flag:'🇧🇩',name:'Bangladeş',dial:'+880'},
+    {code:'AF',flag:'🇦🇫',name:'Afganistan',dial:'+93'},
+    {code:'AZ',flag:'🇦🇿',name:'Azerbaycan',dial:'+994'},
+    {code:'KZ',flag:'🇰🇿',name:'Kazakistan',dial:'+7'},
+    {code:'UZ',flag:'🇺🇿',name:'Özbekistan',dial:'+998'},
+    {code:'LY',flag:'🇱🇾',name:'Libya',dial:'+218'},
+    {code:'TN',flag:'🇹🇳',name:'Tunus',dial:'+216'},
+    {code:'DZ',flag:'🇩🇿',name:'Cezayir',dial:'+213'},
+    {code:'NG',flag:'🇳🇬',name:'Nijerya',dial:'+234'},
+    {code:'ZA',flag:'🇿🇦',name:'G. Afrika',dial:'+27'},
+    {code:'ID',flag:'🇮🇩',name:'Endonezya',dial:'+62'},
+    {code:'MY',flag:'🇲🇾',name:'Malezya',dial:'+60'},
+    {code:'TH',flag:'🇹🇭',name:'Tayland',dial:'+66'},
+    {code:'VN',flag:'🇻🇳',name:'Vietnam',dial:'+84'},
+    {code:'PH',flag:'🇵🇭',name:'Filipinler',dial:'+63'},
+    {code:'NZ',flag:'🇳🇿',name:'Yeni Zelanda',dial:'+64'},
+];
+
+// ── CUSTOM SELECT ──
+function csToggle(id) {
+    const inp = document.getElementById(id+'_display');
+    if(inp.classList.contains('disabled')) return;
+    const drop = document.getElementById(id+'_drop');
+    const isOpen = drop.classList.contains('open');
+    document.querySelectorAll('.cs-drop.open').forEach(d=>d.classList.remove('open'));
+    document.querySelectorAll('.cs-input.open').forEach(i=>i.classList.remove('open'));
+    if(!isOpen){
+        drop.classList.add('open');
+        inp.classList.add('open');
+        setTimeout(()=>drop.querySelector('input')?.focus(), 50);
+    }
+}
+document.addEventListener('click', e=>{
+    if(!e.target.closest('.cs-wrap') && !e.target.closest('.phone-cc-wrap')){
+        document.querySelectorAll('.cs-drop.open').forEach(d=>d.classList.remove('open'));
+        document.querySelectorAll('.cs-input.open').forEach(i=>i.classList.remove('open'));
+    }
+});
+function csFilter(id, q){
+    const lower = q.toLowerCase();
+    document.querySelectorAll('#'+id+'_list .cs-opt').forEach(o=>{
+        o.style.display = o.dataset.s.includes(lower) ? '' : 'none';
+    });
+}
+function csRender(listId, items, onSelect){
+    const list = document.getElementById(listId);
+    list.innerHTML = '';
+    if(!items.length){ list.innerHTML='<div class="cs-opt empty">Sonuç bulunamadı</div>'; return; }
+    const frag = document.createDocumentFragment();
+    items.forEach(item=>{
+        const div = document.createElement('div');
+        div.className = 'cs-opt';
+        div.dataset.s = item.search || item.label.toLowerCase();
+        div.textContent = item.label;
+        div.addEventListener('click', ()=>{
+            list.querySelectorAll('.cs-opt').forEach(o=>o.classList.remove('active'));
+            div.classList.add('active');
+            document.querySelectorAll('.cs-drop.open').forEach(d=>d.classList.remove('open'));
+            document.querySelectorAll('.cs-input.open').forEach(i=>i.classList.remove('open'));
+            const drop = div.closest('.cs-drop');
+            if(drop) drop.querySelector('input').value = '';
+            csFilter(listId.replace('_list',''), '');
+            onSelect(item.value, item.label, item.data);
+        });
+        frag.appendChild(div);
+    });
+    list.appendChild(frag);
+}
+function csEnable(id, ph){ const i=document.getElementById(id+'_display'); i.classList.remove('disabled'); i.placeholder=ph||'Seçin...'; }
+function csDisable(id, ph){ const i=document.getElementById(id+'_display'); i.classList.add('disabled'); i.value=''; i.placeholder=ph||''; document.getElementById(id+'_list').innerHTML=''; }
+function csLoading(id){ document.getElementById(id+'_list').innerHTML='<div class="cs-loading">Yükleniyor...</div>'; }
+
+// ── GEONAMES ──
+async function geoGet(endpoint, params){
+    const p = new URLSearchParams({...params, username: GEO_USER});
+    const r = await fetch(`${GEO_BASE}/${endpoint}?${p}`);
+    return r.json();
+}
+
+let _countries = null;
+
+async function initGeo(){
+    csLoading('ulke'); csLoading('cc');
+
+    // restcountries.com - tüm ülkeler, bayraklar, tel kodları
+    // CORS destekli, ücretsiz, kayıt gerektirmez
+    try {
+        const r = await fetch('https://restcountries.com/v3.1/all?fields=name,cca2,idd,flag,translations');
+        const raw = await r.json();
+
+        // İşle ve sırala
+        const all = raw
+            .filter(c => c.idd?.root)
+            .map(c => {
+                const suf = c.idd.suffixes?.length === 1 ? c.idd.suffixes[0] : '';
+                const dial = suf ? c.idd.root + suf : c.idd.root;
+                const trName = c.translations?.tur?.common || c.name.common;
+                return {
+                    code: c.cca2,
+                    flag: c.flag,
+                    name: trName,
+                    nameEn: c.name.common,
+                    dial: dial
+                };
+            })
+            .sort((a,b) => a.name.localeCompare(b.name, 'tr'));
+
+        // Türkiye'yi başa al
+        const trIdx = all.findIndex(c=>c.code==='TR');
+        if(trIdx > 0){ const tr = all.splice(trIdx,1); all.unshift(tr[0]); }
+
+        _countries = all;
+
+        // Tel kodu listesi
+        csRender('cc_list', all.map(c=>({
+            value: c.dial,
+            label: `${c.flag} ${c.name} (${c.dial})`,
+            search: c.name.toLowerCase()+' '+c.nameEn.toLowerCase()+' '+c.dial+' '+c.code.toLowerCase(),
+            data: c
+        })), (val, label, data)=>{
+            document.getElementById('cc_display').value = `${data.flag} ${val}`;
+            document.getElementById('h_cc').value = val;
+            document.getElementById('phone').value = '';
+            document.getElementById('phone').placeholder = val==='+90' ? '5XX XXX XX XX' : 'Telefon numarası';
+        });
+
+        // Ülke listesi
+        csRender('ulke_list', all.map(c=>({
+            value: c.code,
+            label: `${c.flag} ${c.name}`,
+            search: c.name.toLowerCase()+' '+c.nameEn.toLowerCase()+' '+c.code.toLowerCase(),
+            data: c
+        })), async (val, label, data)=>{
+            document.getElementById('ulke_display').value = label;
+            document.getElementById('h_ulke_kodu').value = val;
+            document.getElementById('h_ulke_adi').value = data.name;
+            document.getElementById('h_sehir').value='';
+            document.getElementById('h_ilce').value='';
+            csDisable('ilce','Önce şehir seçin');
+            csEnable('sehir','Yükleniyor...');
+            document.getElementById('sehir_display').value='';
+            // GeoNames ile şehirleri yükle
+            const geo = await geoGet('countryInfoJSON', {country: val, lang:'tr'});
+            const geoId = geo.geonames?.[0]?.geonameId;
+            if(geoId) loadSehirler(geoId);
+            else { csEnable('sehir','Şehir verisi yok'); }
+            guncelleOzet();
+        });
+
+        // Türkiye'yi başlat
+        const geoTR = await geoGet('countryInfoJSON', {country:'TR', lang:'tr'});
+        const trGeoId = geoTR.geonames?.[0]?.geonameId;
+        if(trGeoId) loadSehirler(trGeoId);
+
+    } catch(e){
+        console.error('Hata:', e);
+        document.getElementById('ulke_list').innerHTML='<div class="cs-opt empty">Bağlantı hatası — sayfayı yenileyin</div>';
+        document.getElementById('cc_list').innerHTML='<div class="cs-opt empty">Bağlantı hatası</div>';
+    }
+}
+
+
+
+async function loadSehirler(geonameId){
+    csLoading('sehir'); csEnable('sehir','Yükleniyor...');
+    try {
+        const d = await geoGet('childrenJSON', {geonameId, maxRows:200});
+        const states = (d.geonames||[]).sort((a,b)=>a.name.localeCompare(b.name,'tr'));
+        csRender('sehir_list', states.map(s=>({
+            value: s.geonameId, label: s.name,
+            search: s.name.toLowerCase(), data: s
+        })), (val, label, data)=>{
+            document.getElementById('sehir_display').value = label;
+            document.getElementById('h_sehir').value = label;
+            csEnable('ilce','Yükleniyor...');
+            document.getElementById('ilce_display').value='';
+            document.getElementById('h_ilce').value='';
+            loadIlceler(val);
+            guncelleOzet();
+        });
+        csEnable('sehir','Şehir / İl seçin...');
+    } catch(e){ csEnable('sehir','Hata — tekrar deneyin'); }
+}
+
+async function loadIlceler(geonameId){
+    csLoading('ilce');
+    try {
+        const d = await geoGet('childrenJSON', {geonameId, maxRows:500});
+        const cities = (d.geonames||[]).sort((a,b)=>a.name.localeCompare(b.name,'tr'));
+        if(!cities.length){
+            document.getElementById('ilce_list').innerHTML='<div class="cs-opt empty">İlçe verisi bulunamadı</div>';
+            csEnable('ilce','İlçe seçin (opsiyonel)'); return;
+        }
+        csRender('ilce_list', cities.map(c=>({
+            value: c.geonameId, label: c.name,
+            search: c.name.toLowerCase(), data: c
+        })), (val, label)=>{
+            document.getElementById('ilce_display').value = label;
+            document.getElementById('h_ilce').value = label;
+            document.getElementById('address').placeholder = label+' Mah., Sokak No:';
+            guncelleOzet();
+        });
+        csEnable('ilce','İlçe seçin...');
+    } catch(e){ csEnable('ilce','Hata — tekrar deneyin'); }
+}
+
+function guncelleOzet(){
+    const p = [
+        document.getElementById('h_ilce').value,
+        document.getElementById('h_sehir').value,
+        document.getElementById('h_ulke_adi').value !== 'Türkiye' ? document.getElementById('h_ulke_adi').value : ''
+    ].filter(Boolean);
+    document.getElementById('adres_ozet').textContent = p.length ? '📍 '+p.join(', ') : '';
+}
+
+// ── ŞİFRE ──
+const eyeOpen='<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+const eyeClosed='<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+const pwV={};
+function togglePw(id,btn){
+    pwV[id]=!pwV[id];
+    document.getElementById(id).type=pwV[id]?'text':'password';
+    btn.querySelector('svg').innerHTML=pwV[id]?eyeClosed:eyeOpen;
+}
+document.getElementById('pw1')?.addEventListener('input',function(){
+    const v=this.value; let s=0;
+    if(v.length>=8)s++; if(/[A-Z]/.test(v))s++; if(/[a-z]/.test(v))s++;
+    if(/\d/.test(v))s++; if(/[!@#$%^&*(),.?":{}|<>_\-]/.test(v))s++;
+    const bar=document.getElementById('pw-bar'),hint=document.getElementById('pw-hint');
+    const c=['#dc2626','#f97316','#eab308','#22c55e','#16a34a'],t=['Çok zayıf','Zayıf','Orta','Güçlü','Çok güçlü'];
+    bar.style.width=(s*20)+'%'; bar.style.background=c[s-1]||'#e5e7eb';
+    hint.textContent=s>0?t[s-1]:'8+ karakter...'; hint.style.color=c[s-1]||'#6b7280';
+    checkMatch();
+});
+document.getElementById('pw2')?.addEventListener('input',checkMatch);
+function checkMatch(){
+    const p1=document.getElementById('pw1')?.value,p2=document.getElementById('pw2')?.value,el=document.getElementById('pw-match');
+    if(!el||!p2)return;
+    el.style.color=p2===p1?'#16a34a':'#dc2626';
+    el.textContent=p2===p1?'✓ Şifreler eşleşiyor':'✗ Şifreler eşleşmiyor';
+}
+
+// ── TEL FORMAT ──
+const TEL_MAX={'+90':10,'+1':10,'+44':10,'+49':11,'+33':9,'+39':10,'+7':10,'+966':9,'+971':9,'+974':9,'+965':9};
+document.getElementById('phone')?.addEventListener('input',function(){
+    const cc=document.getElementById('h_cc').value||'+90';
+    const max=TEL_MAX[cc]||12;
+    let v=this.value.replace(/\D/g,'').substring(0,max);
+    let f='';
+    if(v.length>0)f=v.substring(0,Math.min(3,v.length));
+    if(v.length>3)f+=' '+v.substring(3,Math.min(6,v.length));
+    if(v.length>6)f+=' '+v.substring(6,Math.min(8,v.length));
+    if(v.length>8)f+=' '+v.substring(8,max);
+    this.value=f;
+});
+
+// ── PLAN & ÖDEME ──
+function selectPlan(key,el){document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');document.getElementById('selected-plan').value=key;}
+function fmtCard(el){let v=el.value.replace(/\D/g,'').substring(0,16);el.value=v.replace(/(.{4})/g,'$1 ').trim();}
+function fmtExp(el){let v=el.value.replace(/\D/g,'').substring(0,4);if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2);el.value=v;}
+
+initGeo();
+</script>
+</body>
+</html>

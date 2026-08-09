@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1>Schedule Appointment for {{ patient.name }}</h1>
+
+<form method="post">
+  {% csrf_token %}
+  
+  <div class="mb-3">
+      <label for="procedure" class="form-label">Procedure</label>
+      <select id="procedure" name="procedure" class="form-select" required>
+          {% for code, name in procedures %}
+              <option value="{{ code }}">{{ name }}</option>
+          {% endfor %}
+      </select>
+  </div>
+
+  <div class="mb-3">
+      <label for="clinic" class="form-label">Clinic</label>
+      <select id="clinic" name="clinic" class="form-select" required>
+      </select>
+  </div>
+
+  <div class="mb-3">
+      <label for="doctor" class="form-label">Doctor</label>
+      <select id="doctor" name="doctor" class="form-select" required>
+      </select>
+  </div>
+
+  <div class="mb-3">
+      <label for="date_time" class="form-label">Date and Time</label>
+      <input type="datetime-local" id="date_time" name="date_time" class="form-control" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+    $('#procedure').change(function() {
+        const procedure = $(this).val();
+        $.ajax({
+            url: '/api/clinics/',
+            data: { procedure: procedure },
+            success: function(data) {
+                $('#clinic').empty();
+                data.forEach(function(clinic) {
+                    $('#clinic').append(new Option(clinic.name, clinic.id));
+                });
+            }
+        });
+    });
+
+    $('#clinic').change(function() {
+        const clinicId = $(this).val();
+        const procedure = $('#procedure').val();
+        $.ajax({
+            url: '/api/doctors/',
+            data: { clinic: clinicId, procedure: procedure },
+            success: function(data) {
+                $('#doctor').empty();
+                data.forEach(function(doctor) {
+                    $('#doctor').append(new Option(doctor.name, doctor.id));
+                });
+            }
+        });
+    });
+});
+</script>
+
+{% endblock %}

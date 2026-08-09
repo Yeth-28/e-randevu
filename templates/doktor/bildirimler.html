@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildirimler — Doktor Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        :root{
+            --green:#059669;--green-dark:#065f46;--green-light:#dcfce7;
+            --bg:#f0fdf4;--gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+            --red:#dc2626;--blue:#2563eb;
+        }
+        body{font-family:'DM Sans',sans-serif;background:var(--bg);}
+
+        /* ── SIDEBAR ── */
+        .sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:linear-gradient(180deg,#065f46,#059669);z-index:100;display:flex;flex-direction:column;}
+        .sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .sidebar-brand .icon{font-size:28px;}
+        .sidebar-brand .name{font-family:'Playfair Display',serif;font-size:16px;color:white;margin-top:4px;}
+        .sidebar-brand .clinic-id{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+        .sidebar-nav{padding:16px 0;flex:1;}
+        .nav-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;border-left:3px solid transparent;}
+        .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.1);color:white;border-left-color:white;}
+        .nav-item .icon{font-size:18px;width:24px;text-align:center;}
+        .sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);}
+        .sidebar-footer a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;}
+        .sidebar-footer a:hover{color:white;}
+
+        /* ── MAIN ── */
+        .main{margin-left:240px;min-height:100vh;}
+        .topbar{background:white;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-light);position:sticky;top:0;z-index:50;}
+        .topbar-title{font-size:20px;font-weight:600;color:var(--text);}
+        .doktor-badge{background:#f0fdf4;padding:7px 14px;border-radius:999px;font-size:13px;color:var(--green-dark);font-weight:500;}
+        .content{padding:32px;max-width:720px;}
+
+        /* ── BİLDİRİMLER ── */
+        .bildirim-kart{background:white;border-radius:14px;padding:18px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;border-left:4px solid var(--gray-light);transition:box-shadow 0.2s;}
+        .bildirim-kart:hover{box-shadow:0 4px 16px rgba(0,0,0,0.1);}
+        .bildirim-kart.yeni_randevu{border-left-color:var(--green);}
+        .bildirim-kart.iptal_randevu{border-left-color:var(--red);}
+        .b-icon{font-size:24px;flex-shrink:0;margin-top:2px;}
+        .b-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;}
+        .b-body{font-size:13px;color:var(--gray);line-height:1.5;}
+        .b-time{font-size:12px;color:#9ca3af;margin-top:6px;}
+        .b-badge{margin-left:auto;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;flex-shrink:0;white-space:nowrap;}
+        .b-badge.yeni_randevu{background:var(--green-light);color:var(--green);}
+        .b-badge.iptal_randevu{background:#fef2f2;color:var(--red);}
+        .empty-state{text-align:center;padding:60px 20px;color:var(--gray);}
+        .empty-state .icon{font-size:48px;margin-bottom:12px;}
+        .tarih-baslik{font-size:12px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin:20px 0 10px;display:flex;align-items:center;gap:6px;}
+    </style>
+</head>
+<body>
+
+{% include "doktor/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-title">🔔 Bildirimler</div>
+        <div class="doktor-badge">👨‍⚕️ {{ doktor.name }}</div>
+    </div>
+    <div class="content">
+        {% if bildirimler %}
+            {% regroup bildirimler by created_at|date:"d M Y" as gunler %}
+            {% for gun in gunler %}
+            <div class="tarih-baslik">📆 {{ gun.grouper }}</div>
+            {% for b in gun.list %}
+            <div class="bildirim-kart {{ b.type }}">
+                <div class="b-icon">{% if b.type == 'yeni_randevu' %}📅{% else %}❌{% endif %}</div>
+                <div style="flex:1;">
+                    <div class="b-title">{{ b.title }}</div>
+                    <div class="b-body">{{ b.body }}</div>
+                    <div class="b-time">🕐 {{ b.created_at|date:"H:i" }}</div>
+                </div>
+                <span class="b-badge {{ b.type }}">
+                    {% if b.type == 'yeni_randevu' %}Yeni Randevu{% else %}İptal{% endif %}
+                </span>
+            </div>
+            {% endfor %}
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <div class="icon">🔔</div>
+                <p style="font-size:16px;font-weight:500;margin-bottom:8px;">Henüz bildirim yok</p>
+                <p style="font-size:13px;">Size atanan randevular burada görünecek.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

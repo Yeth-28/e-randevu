@@ -1,0 +1,53 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[03/Apr/2026 11:18:10] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[03/Apr/2026 11:19:50] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /wp-class.php
+[03/Apr/2026 11:19:50] "GET /wp-class.php HTTP/1.1" 404 2954
+Not Found: /dass.php
+[03/Apr/2026 11:19:50] "GET /dass.php HTTP/1.1" 404 2942
+Not Found: /taff.php
+[03/Apr/2026 11:19:50] "GET /taff.php HTTP/1.1" 404 2942
+Not Found: /maxro.php
+[03/Apr/2026 11:19:50] "GET /maxro.php HTTP/1.1" 404 2945
+Not Found: /xwx1.php
+[03/Apr/2026 11:19:50] "GET /xwx1.php HTTP/1.1" 404 2942
+Not Found: /tymi.php
+[03/Apr/2026 11:19:50] "GET /tymi.php HTTP/1.1" 404 2942
+Not Found: /7logs.php
+[03/Apr/2026 11:19:50] "GET /7logs.php HTTP/1.1" 404 2945
+Not Found: /xxc.php
+[03/Apr/2026 11:19:51] "GET /xxc.php HTTP/1.1" 404 2939
+Not Found: /Jcrop.php
+[03/Apr/2026 11:19:51] "GET /Jcrop.php HTTP/1.1" 404 2945
+Not Found: /rh.php
+[03/Apr/2026 11:19:51] "GET /rh.php HTTP/1.1" 404 2936
+Not Found: /55l453.php
+[03/Apr/2026 11:19:51] "GET /55l453.php HTTP/1.1" 404 2948
+Not Found: /xx.php
+[03/Apr/2026 11:19:51] "GET /xx.php HTTP/1.1" 404 2936
+Not Found: /bkyac.php
+[03/Apr/2026 11:19:51] "GET /bkyac.php HTTP/1.1" 404 2945
+Not Found: /cilus.php
+[03/Apr/2026 11:19:51] "GET /cilus.php HTTP/1.1" 404 2945
+Not Found: /error_log.php
+[03/Apr/2026 11:19:51] "GET /error_log.php HTTP/1.1" 404 2957
+Not Found: /HLA-dd.php
+[03/Apr/2026 11:19:51] "GET /HLA-dd.php HTTP/1.1" 404 2948
+Not Found: /wsc.php
+[03/Apr/2026 11:19:51] "GET /wsc.php HTTP/1.1" 404 2939
+Not Found: /wp-lvminl.php
+[03/Apr/2026 11:19:51] "GET /wp-lvminl.php HTTP/1.1" 404 2957
+Not Found: /ww.php
+[03/Apr/2026 11:19:51] "GET /ww.php HTTP/1.1" 404 2936
+Not Found: /dczem.php
+[03/Apr/2026 11:19:51] "GET /dczem.php HTTP/1.1" 404 2945
+Not Found: /albrt.php
+[03/Apr/2026 11:19:51] "GET /albrt.php HTTP/1.1" 404 2945
+Not Found: /wp-login.php
+[03/Apr/2026 11:39:24] "GET /wp-login.php HTTP/1.1" 404 2955
+[03/Apr/2026 11:44:02] "GET / HTTP/1.1" 200 9312

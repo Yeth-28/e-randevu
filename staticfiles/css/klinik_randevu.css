@@ -1,0 +1,162 @@
+/* Klinik Randevu Sayfası CSS */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+    --blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;
+    --green:#059669;--green-light:#dcfce7;
+    --gray:#6b7280;--gray-light:#e5e7eb;--text:#111827;
+    --red:#dc2626;--orange:#d97706;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:white;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;height:auto;}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:200;background:white;border-bottom:1px solid var(--gray-light);box-shadow:0 1px 8px rgba(0,0,0,0.06);}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{font-size:26px;}
+.logo-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;}
+.header-nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.nav-a{font-size:14px;color:var(--gray);transition:color 0.2s;}
+.nav-a:hover{color:var(--text);}
+.btn-randevu-top{padding:8px 20px;background:var(--blue);color:white;border-radius:10px;font-size:14px;font-weight:600;white-space:nowrap;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:white;padding:16px 24px;border-bottom:1px solid var(--gray-light);box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:199;flex-direction:column;gap:12px;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:15px;font-weight:500;color:var(--text);padding:8px 0;border-bottom:1px solid var(--gray-light);}
+.mobile-nav a:last-child{border-bottom:none;}
+
+/* MESAJLAR */
+.msg-bar{max-width:1100px;margin:0 auto;padding:16px 24px 0;}
+.msg{padding:12px 16px;border-radius:10px;font-size:14px;margin-bottom:8px;}
+.msg-success{background:var(--green-light);color:var(--green);}
+.msg-error{background:#fee2e2;color:var(--red);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 40%,#2563eb 70%,#3b82f6 100%);padding:60px 24px;position:relative;overflow:visible;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);padding:5px 14px;border-radius:999px;font-size:13px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.2);}
+.hero-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:white;line-height:1.2;margin-bottom:12px;}
+.hero-desc{font-size:16px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:24px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;}
+.meta-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.8);font-size:13px;}
+
+/* RANDEVU KARTI */
+.randevu-card{background:white;border-radius:20px;padding:28px;box-shadow:0 16px 48px rgba(0,0,0,0.2);}
+.rc-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:12px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:5px;}
+.fg select,.fg input,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid var(--gray-light);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;background:white;color:var(--text);}
+.fg select:focus,.fg input:focus,.fg textarea:focus{border-color:var(--blue);}
+.fg textarea{resize:none;}
+.phone-row{display:flex;gap:8px;}
+.phone-row select{width:110px;flex-shrink:0;}
+.phone-row input{flex:1;min-width:0;}
+.btn-submit{width:100%;padding:14px;background:var(--blue);color:white;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:4px;transition:background 0.2s;}
+.btn-submit:hover{background:var(--blue-dark);}
+
+/* RANDEVU KAPALI */
+.kapali-card{text-align:center;padding:16px 0;}
+.kapali-icon{font-size:40px;margin-bottom:8px;}
+.kapali-title{font-size:16px;font-weight:700;color:#111827;margin-bottom:4px;}
+.kapali-desc{font-size:13px;color:#6b7280;margin-bottom:16px;}
+.iletisim-btn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;text-decoration:none;margin-bottom:10px;}
+.iletisim-btn.tel{background:#eff6ff;border:1.5px solid #bfdbfe;}
+.iletisim-btn.email{background:white;border:1px solid var(--gray-light);}
+.iletisim-btn-icon{font-size:24px;}
+.iletisim-btn-label{font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;}
+.iletisim-btn.tel .iletisim-btn-label{color:#2563eb;}
+.iletisim-btn.email .iletisim-btn-label{color:var(--gray);}
+.iletisim-btn-val{font-size:15px;font-weight:700;color:#1e40af;}
+.iletisim-btn.email .iletisim-btn-val{color:#111827;}
+
+/* SECTION */
+.section{padding:60px 24px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.section-sub{font-size:15px;color:var(--gray);margin-bottom:36px;}
+.bg-gray{background:#f8faff;}
+
+/* HAKKINDA */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.about-text{font-size:15px;line-height:1.8;color:#374151;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.stat-box{background:#f8faff;border-radius:14px;padding:20px;text-align:center;border:1px solid var(--gray-light);}
+.stat-num{font-size:32px;font-weight:800;color:var(--blue);margin-bottom:4px;}
+.stat-lbl{font-size:13px;color:var(--gray);}
+
+/* DOKTORLAR */
+.doktorlar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+.flip-card{height:300px;perspective:1000px;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform 0.6s cubic-bezier(0.4,0.2,0.2,1);transform-style:preserve-3d;}
+.flip-card:hover .flip-inner,.flip-card.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:18px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1.5px solid var(--gray-light);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.flip-front{background:white;}
+.flip-back{background:linear-gradient(135deg,#1e40af,#2563eb);color:white;transform:rotateY(180deg);justify-content:flex-start;padding-top:28px;overflow-y:auto;}
+.doktor-foto{width:80px;height:80px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 14px;overflow:hidden;flex-shrink:0;}
+.doktor-foto img{width:100%;height:100%;object-fit:cover;}
+.doktor-isim{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.flip-back .doktor-isim{color:white;}
+.doktor-specs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px;}
+.spec-tag{font-size:11px;background:var(--blue-light);color:var(--blue);padding:3px 10px;border-radius:999px;font-weight:500;}
+.flip-back .spec-tag{background:rgba(255,255,255,0.2);color:white;}
+.flip-hint{font-size:11px;color:var(--gray);margin-top:8px;}
+.flip-saat-title{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);margin:12px 0 6px;text-transform:uppercase;letter-spacing:0.5px;align-self:flex-start;}
+.flip-saat-row{display:flex;justify-content:space-between;width:100%;font-size:12px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.flip-saat-row:last-child{border-bottom:none;}
+.flip-saat-gun{color:rgba(255,255,255,0.8);}
+.flip-saat-val{color:white;font-weight:600;}
+
+/* HİZMETLER */
+.hizmet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;}
+.hizmet-item{background:white;border-radius:14px;padding:20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);border:1px solid var(--gray-light);}
+.hizmet-icon{font-size:32px;margin-bottom:10px;}
+.hizmet-name{font-size:13px;font-weight:600;color:var(--text);}
+
+/* İLETİŞİM GRID */
+.iletisim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;align-items:start;}
+.calisma-saatleri{background:white;border-radius:16px;overflow:hidden;border:1px solid var(--gray-light);margin-top:16px;}
+.saat-row{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid #f3f4f6;}
+.saat-row:last-child{border-bottom:none;}
+.saat-row.kapali{opacity:0.45;}
+.saat-gun{font-size:13px;font-weight:500;color:#374151;}
+.saat-val{font-size:13px;font-weight:600;color:#2563eb;}
+.saat-kapali{font-size:12px;color:#9ca3af;font-style:italic;}
+.tatil-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:white;border-radius:12px;margin-bottom:8px;border:1.5px solid #fecaca;}
+.tatil-bos{padding:24px;background:white;border-radius:16px;text-align:center;color:#9ca3af;border:1px solid var(--gray-light);}
+.iletisim-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border-radius:12px;margin-bottom:10px;border:1px solid var(--gray-light);text-decoration:none;}
+.iletisim-item-label{font-size:11px;color:var(--gray);font-weight:600;text-transform:uppercase;}
+.iletisim-item-val{font-size:15px;font-weight:600;color:#111827;}
+
+/* FOOTER */
+footer{background:#111827;color:rgba(255,255,255,0.6);padding:32px 24px;text-align:center;font-size:13px;}
+footer a{color:#60a5fa;}
+
+/* MOBİL */
+@media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+    .randevu-card{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+    .header-nav{display:none;}
+    .hamburger{display:flex;}
+    .hero{padding:40px 16px;}
+    .hero-title{font-size:26px;}
+    .hero-desc{font-size:14px;}
+    .section{padding:40px 16px;}
+    .section-title{font-size:22px;}
+    .about-stats{grid-template-columns:1fr 1fr;}
+    .doktorlar-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+    .hizmet-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
+    .iletisim-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+    .hero-title{font-size:22px;}
+    .hero-meta{gap:8px;}
+    .about-stats{grid-template-columns:1fr 1fr;}
+    .doktorlar-grid{grid-template-columns:1fr 1fr;}
+    .flip-card{height:260px;}
+}

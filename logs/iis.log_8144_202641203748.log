@@ -1,0 +1,21 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[01/Apr/2026 13:37:52] "GET / HTTP/1.1" 200 9212
+[01/Apr/2026 13:41:33] "HEAD / HTTP/1.1" 200 0
+Not Found: /
+[01/Apr/2026 13:43:39] "HEAD / HTTP/1.1" 404 0
+[01/Apr/2026 13:57:07] "GET /?q= HTTP/1.1" 200 9212
+Not Found: /adminer.php
+[01/Apr/2026 13:57:10] "GET /adminer.php HTTP/1.1" 404 2952
+Not Found: /.env
+[01/Apr/2026 13:57:10] "GET /.env HTTP/1.1" 404 2931
+[01/Apr/2026 13:57:10] "GET /?q=&q=%27 HTTP/1.1" 200 8439
+[01/Apr/2026 13:57:10] "GET /?q=&q=..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd HTTP/1.1" 200 8541
+[01/Apr/2026 13:57:10] "GET /?q=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E HTTP/1.1" 200 8529
+[01/Apr/2026 13:57:10] "GET /?q=&q= HTTP/1.1" 200 9212
+[01/Apr/2026 13:57:11] "GET /?q=%27 HTTP/1.1" 200 8439
+[01/Apr/2026 13:57:13] "GET /?q=%27 HTTP/1.1" 200 8439
+[01/Apr/2026 14:14:24] "GET /hasta/giris/ HTTP/1.1" 200 3539

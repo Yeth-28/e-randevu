@@ -1,0 +1,590 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[06/Apr/2026 23:55:21] "HEAD / HTTP/1.1" 200 0
+Not Found: /wp-json/omapp/v1/support
+Not Found: /spcgi.cgi
+Not Found: /changePassword
+[06/Apr/2026 23:56:33] "OPTIONS /wp-json/omapp/v1/support HTTP/1.1" 404 2995
+[06/Apr/2026 23:56:33] "POST /spcgi.cgi HTTP/1.1" 404 2947
+[06/Apr/2026 23:56:33] "GET /changePassword?username=administrator HTTP/1.1" 404 2984
+Not Found: /data/settings/settings.xml
+Not Found: /ws/km-wsdl/setting/address_book
+Not Found: /backupsettings.dat
+[06/Apr/2026 23:56:33] "GET /data/settings/settings.xml HTTP/1.1" 404 2997
+[06/Apr/2026 23:56:33] "POST /ws/km-wsdl/setting/address_book HTTP/1.1" 404 3013
+[06/Apr/2026 23:56:33] "GET /backupsettings.dat HTTP/1.1" 404 2973
+Not Found: /kubepi/api/v1/systems/login/logs/search
+[06/Apr/2026 23:56:33] "POST /kubepi/api/v1/systems/login/logs/search?pageNum=1&&pageSize=10 HTTP/1.1" 404 3068
+Not Found: /cgi-bin/ExportLogs.sh
+[06/Apr/2026 23:56:33] "GET /cgi-bin/ExportLogs.sh HTTP/1.1" 404 2982
+Not Found: /backupsettings.dat
+Not Found: /sysinit.shtml
+Not Found: /set_safety.shtml
+Not Found: /api/subscriber
+[06/Apr/2026 23:56:33] "GET /backupsettings.dat HTTP/1.1" 404 2973
+Not Found: /live_check.shtml
+[06/Apr/2026 23:56:33] "GET /set_safety.shtml?r=52300 HTTP/1.1" 404 2975
+[06/Apr/2026 23:56:33] "GET /sysinit.shtml?r=52300 HTTP/1.1" 404 2966
+[06/Apr/2026 23:56:33] "GET /api/subscriber HTTP/1.1" 404 2961
+[06/Apr/2026 23:56:33] "GET /live_check.shtml HTTP/1.1" 404 2967
+Not Found: /cgi-bin/cgiServer.exx
+[06/Apr/2026 23:56:33] "GET /cgi-bin/cgiServer.exx?download=/etc/passwd HTTP/1.1" 404 3003
+Not Found: /api/login
+[06/Apr/2026 23:56:33] "GET / HTTP/1.1" 200 9312
+Not Found: /api/v2/parameters/core/
+Not Found: /api/graphql
+[06/Apr/2026 23:56:33] "POST /api/login HTTP/1.1" 404 2947
+[06/Apr/2026 23:56:33] "GET /api/v2/parameters/core/ HTTP/1.1" 404 2988
+[06/Apr/2026 23:56:33] "POST /api/graphql HTTP/1.1" 404 2953
+[06/Apr/2026 23:56:33] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-json
+[06/Apr/2026 23:56:35] "GET /wp-json HTTP/1.1" 404 2940
+Not Found: /wp-json
+[06/Apr/2026 23:56:38] "GET /wp-json HTTP/1.1" 404 2940
+Not Found: /login.zul
+[06/Apr/2026 23:56:38] "GET /login.zul HTTP/1.1" 404 2946
+Not Found: /backup2.cgi
+[06/Apr/2026 23:56:39] "GET /backup2.cgi HTTP/1.1" 404 2952
+[06/Apr/2026 23:56:39] "GET / HTTP/1.1" 200 9312
+Not Found: /bin/login/XWikiLogin
+[06/Apr/2026 23:56:40] "GET /bin/login/XWikiLogin?xpage=uorgsuggest&uorg=user&wiki&media=json HTTP/1.1" 404 3035
+Not Found: /backup2.cgi
+[06/Apr/2026 23:56:42] "GET /backup2.cgi HTTP/1.1" 404 2952
+Not Found: /cgi-bin/ExportLogs.sh
+[06/Apr/2026 23:56:42] "GET /cgi-bin/ExportLogs.sh HTTP/1.1" 404 2982
+Not Found: /xwiki/bin/login/XWikiLogin
+[06/Apr/2026 23:56:43] "GET /xwiki/bin/login/XWikiLogin?xpage=uorgsuggest&uorg=user&wiki&media=json HTTP/1.1" 404 3053
+Not Found: /api/v1/users
+[06/Apr/2026 23:56:59] "GET /api/v1/users HTTP/1.1" 404 2955
+Not Found: /minio/bootstrap/v1/verify
+[06/Apr/2026 23:57:33] "POST /minio/bootstrap/v1/verify HTTP/1.1" 404 2995
+[06/Apr/2026 23:57:33] code 400, message Bad request syntax ('0')
+[06/Apr/2026 23:57:33] "0" 400 -
+Not Found: /.env
+[06/Apr/2026 23:57:36] "GET /.env HTTP/1.1" 404 2931
+Not Found: /user/login/
+[06/Apr/2026 23:57:43] "GET /user/login/ HTTP/1.1" 404 2952
+[06/Apr/2026 23:57:48] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 23:57:49] "POST /wp-admin/admin-ajax.php HTTP/1.1" 404 2989
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 23:57:49] "POST /wp-admin/admin-ajax.php?action=eventon_get_virtual_users HTTP/1.1" 404 3022
+Not Found: /wp-content/plugins/user-meta/readme.txt
+[06/Apr/2026 23:57:49] "GET /wp-content/plugins/user-meta/readme.txt HTTP/1.1" 404 3036
+[06/Apr/2026 23:57:49] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-content/tmp/db/wp_users.sql
+Not Found: /wp-content/tmp/db/wp_usermeta.sql
+Not Found: /wp-content/tmp/db/wp_options.sql
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_users.sql HTTP/1.1" 404 3009
+Not Found: /wp-content/tmp/db/wp_postmeta.sql
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_usermeta.sql HTTP/1.1" 404 3018
+Not Found: /wp-content/tmp/db/wp_posts.sql
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_options.sql HTTP/1.1" 404 3015
+Not Found: /wp-content/tmp/db/wp_comments.sql
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_postmeta.sql HTTP/1.1" 404 3018
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_posts.sql HTTP/1.1" 404 3009
+[06/Apr/2026 23:57:54] "GET /wp-content/tmp/db/wp_comments.sql HTTP/1.1" 404 3018
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 23:57:54] "POST /wp-admin/admin-ajax.php HTTP/1.1" 404 2989
+Not Found: /cgi-bin/info.cgi
+Not Found: /helpdesk/WebObjects/Helpdesk.woa/ra/OrionTickets/
+[06/Apr/2026 23:57:55] "GET /cgi-bin/info.cgi HTTP/1.1" 404 2967
+[06/Apr/2026 23:57:55] "GET /helpdesk/WebObjects/Helpdesk.woa/ra/OrionTickets/ HTTP/1.1" 404 3066
+Not Found: /password_change.cgi
+[06/Apr/2026 23:57:55] "POST /password_change.cgi HTTP/1.1" 404 2977
+Not Found: /c/router
+[06/Apr/2026 23:57:56] "POST /c/router HTTP/1.1" 404 2944
+Not Found: /c/router
+[06/Apr/2026 23:57:56] "POST /c/router HTTP/1.1" 404 2944
+Not Found: /cgi-bin/skk_get.cgi
+[06/Apr/2026 23:57:57] "POST /cgi-bin/skk_get.cgi HTTP/1.1" 404 2977
+Not Found: /nifi-api/controller/config
+[06/Apr/2026 23:57:57] "GET /nifi-api/controller/config HTTP/1.1" 404 2997
+Not Found: /nifi-api/flow/process-groups/root
+[06/Apr/2026 23:57:57] "GET /nifi-api/flow/process-groups/root HTTP/1.1" 404 3018
+Not Found: /internal/v2/config/mps_secret/ADM_SESSIONID
+[06/Apr/2026 23:57:58] "GET /internal/v2/config/mps_secret/ADM_SESSIONID HTTP/1.1" 404 3048
+[06/Apr/2026 23:58:01] "GET / HTTP/1.1" 200 9312
+Not Found: /_sql
+[06/Apr/2026 23:58:08] "POST /_sql?types HTTP/1.1" 404 2938
+Not Found: /wp-content/uploads/
+[06/Apr/2026 23:58:08] "GET /wp-content/uploads/ HTTP/1.1" 404 2976
+Not Found: /blog/wp-content/uploads/
+[06/Apr/2026 23:58:11] "GET /blog/wp-content/uploads/ HTTP/1.1" 404 2991
+Not Found: /_sql
+[06/Apr/2026 23:58:11] "POST /_sql?types HTTP/1.1" 404 2938
+Not Found: /wordpress/wp-content/uploads/
+[06/Apr/2026 23:58:13] "GET /wordpress/wp-content/uploads/ HTTP/1.1" 404 3006
+Not Found: /_sql
+[06/Apr/2026 23:58:14] "POST /_sql?types HTTP/1.1" 404 2938
+Not Found: /wp/wp-content/uploads/
+[06/Apr/2026 23:58:16] "GET /wp/wp-content/uploads/ HTTP/1.1" 404 2985
+Not Found: /index.php/wp-json/wp/v2/sensei_email/
+[06/Apr/2026 23:58:18] "GET /index.php/wp-json/wp/v2/sensei_email/ HTTP/1.1" 404 3030
+Not Found: /login
+[06/Apr/2026 23:58:20] "GET /login?next=/ HTTP/1.1" 404 2941
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 23:58:21] "POST /wp-admin/admin-ajax.php HTTP/1.1" 404 2989
+Not Found: /wp-content/wphb-logs/api-debug.log
+[06/Apr/2026 23:58:28] "GET /wp-content/wphb-logs/api-debug.log HTTP/1.1" 404 3021
+Not Found: /rest/wikis/xwiki/pages
+[06/Apr/2026 23:58:33] "GET /rest/wikis/xwiki/pages?space HTTP/1.1" 404 2991
+Not Found: /xwiki/rest/wikis/xwiki/pages
+[06/Apr/2026 23:58:33] "GET /xwiki/rest/wikis/xwiki/pages?space HTTP/1.1" 404 3009
+Not Found: /rest/wikis/xwiki/spaces/Sandbox/pages/WebHome/attachments
+[06/Apr/2026 23:58:52] "GET /rest/wikis/xwiki/spaces/Sandbox/pages/WebHome/attachments HTTP/1.1" 404 3090
+Not Found: /xwiki/rest/wikis/xwiki/spaces/Sandbox/pages/WebHome/attachments
+[06/Apr/2026 23:58:52] "GET /xwiki/rest/wikis/xwiki/spaces/Sandbox/pages/WebHome/attachments HTTP/1.1" 404 3108
+Not Found: /.env
+[06/Apr/2026 23:58:55] "GET /.env HTTP/1.1" 404 2931
+Not Found: /loginok.html
+[06/Apr/2026 23:58:56] "POST /loginok.html HTTP/1.1" 404 2956
+[06/Apr/2026 23:59:00] "GET / HTTP/1.1" 200 9312
+Not Found: /p/u/doAuthentication.do
+[06/Apr/2026 23:59:07] "POST /p/u/doAuthentication.do HTTP/1.0" 404 2989
+Not Found: /password.php
+[06/Apr/2026 23:59:10] "GET /password.php HTTP/1.1" 404 2955
+Not Found: /wp-admin/admin-ajax.php
+[06/Apr/2026 23:59:10] "POST /wp-admin/admin-ajax.php HTTP/1.1" 404 2989
+Not Found: /wp-content/plugins/trinity-audio/admin/inc/phpinfo.php
+[06/Apr/2026 23:59:11] "GET /wp-content/plugins/trinity-audio/admin/inc/phpinfo.php HTTP/1.1" 404 3081
+Not Found: /api/setup/backup
+[06/Apr/2026 23:59:11] "POST /api/setup/backup HTTP/1.1" 404 2968
+Not Found: /api/4/system
+[06/Apr/2026 23:59:27] "GET /api/4/system HTTP/1.1" 404 2955
+Not Found: /api/authenticate
+[06/Apr/2026 23:59:27] "POST /api/authenticate HTTP/1.1" 404 2968
+Not Found: /api/authenticate
+[06/Apr/2026 23:59:27] "POST /api/authenticate HTTP/1.1" 404 2968
+Not Found: /apps/my_sample_agent/users/3C1EvuyvcwubceciEKRPcuh9qDL/sessions/s_123
+[06/Apr/2026 23:59:29] "POST /apps/my_sample_agent/users/3C1EvuyvcwubceciEKRPcuh9qDL/sessions/s_123 HTTP/1.1" 404 3127
+Forbidden (Referer checking failed - no Referer.): /
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Not Found: /mcp/
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /mcp/
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+[06/Apr/2026 23:59:35] "POST / HTTP/1.1" 403 3565
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /mcp/
+[06/Apr/2026 23:59:35] "POST /mcp/ HTTP/1.1" 404 2932
+Forbidden (Referer checking failed - no Referer.): /
+[06/Apr/2026 23:59:36] "POST / HTTP/1.1" 403 3565
+Not Found: /mcp/
+[06/Apr/2026 23:59:36] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /mcp/
+[06/Apr/2026 23:59:36] "POST /mcp/ HTTP/1.1" 404 2932
+Not Found: /saml/login
+[06/Apr/2026 23:59:46] "POST /saml/login HTTP/1.1" 404 2950
+Not Found: /e-randevu.online_db.sql
+[06/Apr/2026 23:59:52] "GET /e-randevu.online_db.sql HTTP/1.1" 404 2988
+Not Found: /backup.sql
+[06/Apr/2026 23:59:52] "GET /backup.sql HTTP/1.1" 404 2949
+Not Found: /mysqldump.sql
+Not Found: /wp-content/mysql.sql
+[06/Apr/2026 23:59:52] "GET /wp-content/mysql.sql HTTP/1.1" 404 2979
+[06/Apr/2026 23:59:52] "GET /mysqldump.sql HTTP/1.1" 404 2958
+Not Found: /localhost.sql
+Not Found: /wp-content/uploads/dump.sql
+[06/Apr/2026 23:59:52] "GET /localhost.sql HTTP/1.1" 404 2958
+Not Found: /e-randevu.online.sql
+[06/Apr/2026 23:59:52] "GET /wp-content/uploads/dump.sql HTTP/1.1" 404 3000
+[06/Apr/2026 23:59:52] "GET /e-randevu.online.sql HTTP/1.1" 404 2979
+Not Found: /translate.sql
+[06/Apr/2026 23:59:52] "GET /translate.sql HTTP/1.1" 404 2958
+Not Found: /db.sql
+Not Found: /site.sql
+Not Found: /temp.sql
+[06/Apr/2026 23:59:52] "GET /db.sql HTTP/1.1" 404 2937
+Not Found: /dbdump.sql
+[06/Apr/2026 23:59:52] "GET /site.sql HTTP/1.1" 404 2943
+Not Found: /dump.sql
+[06/Apr/2026 23:59:52] "GET /temp.sql HTTP/1.1" 404 2943
+Not Found: /sql.sql
+[06/Apr/2026 23:59:52] "GET /dbdump.sql HTTP/1.1" 404 2949
+Not Found: /db_backup.sql
+Not Found: /users.sql
+[06/Apr/2026 23:59:52] "GET /sql.sql HTTP/1.1" 404 2940
+Not Found: /data.sql
+[06/Apr/2026 23:59:52] "GET /db_backup.sql HTTP/1.1" 404 2958
+Not Found: /mysql.sql
+[06/Apr/2026 23:59:52] "GET /dump.sql HTTP/1.1" 404 2943
+Not Found: /database.sql
+[06/Apr/2026 23:59:52] "GET /users.sql HTTP/1.1" 404 2946
+Not Found: /www.sql
+[06/Apr/2026 23:59:52] "GET /data.sql HTTP/1.1" 404 2943
+Not Found: /1.sql
+[06/Apr/2026 23:59:52] "GET /mysql.sql HTTP/1.1" 404 2946
+[06/Apr/2026 23:59:52] "GET /database.sql HTTP/1.1" 404 2955
+[06/Apr/2026 23:59:52] "GET /www.sql HTTP/1.1" 404 2940
+[06/Apr/2026 23:59:52] "GET /1.sql HTTP/1.1" 404 2934
+Not Found: /site.bak
+Not Found: /wp-content/uploads/dump.bak
+Not Found: /db.bak
+Not Found: /sql.bak
+[06/Apr/2026 23:59:56] "GET /site.bak HTTP/1.1" 404 2943
+[06/Apr/2026 23:59:56] "GET /sql.bak HTTP/1.1" 404 2940
+[06/Apr/2026 23:59:56] "GET /db.bak HTTP/1.1" 404 2937
+Not Found: /wp-content/mysql.bak
+[06/Apr/2026 23:59:56] "GET /wp-content/uploads/dump.bak HTTP/1.1" 404 3000
+Not Found: /e-randevu.online.bak
+Not Found: /mysqldump.bak
+Not Found: /translate.bak
+Not Found: /users.bak
+[06/Apr/2026 23:59:56] "GET /wp-content/mysql.bak HTTP/1.1" 404 2979
+[06/Apr/2026 23:59:56] "GET /e-randevu.online.bak HTTP/1.1" 404 2979
+Not Found: /localhost.bak
+[06/Apr/2026 23:59:56] "GET /mysqldump.bak HTTP/1.1" 404 2958
+[06/Apr/2026 23:59:56] "GET /users.bak HTTP/1.1" 404 2946
+Not Found: /dump.bak
+[06/Apr/2026 23:59:56] "GET /translate.bak HTTP/1.1" 404 2958
+Not Found: /sa.bak
+[06/Apr/2026 23:59:56] "GET /localhost.bak HTTP/1.1" 404 2958
+[06/Apr/2026 23:59:56] "GET /dump.bak HTTP/1.1" 404 2943
+Not Found: /temp.bak
+Not Found: /wwwroot.bak
+[06/Apr/2026 23:59:56] "GET /sa.bak HTTP/1.1" 404 2937
+Not Found: /www.bak
+[06/Apr/2026 23:59:56] "GET /temp.bak HTTP/1.1" 404 2943
+Not Found: /backup.bak
+[06/Apr/2026 23:59:56] "GET /wwwroot.bak HTTP/1.1" 404 2952
+Not Found: /dbdump.bak
+[06/Apr/2026 23:59:56] "GET /www.bak HTTP/1.1" 404 2940
+Not Found: /e-randevu.online_db.bak
+[06/Apr/2026 23:59:56] "GET /dbdump.bak HTTP/1.1" 404 2949
+Not Found: /db_backup.bak
+Not Found: /data.bak
+[06/Apr/2026 23:59:56] "GET /backup.bak HTTP/1.1" 404 2949
+Not Found: /mysql.bak
+[06/Apr/2026 23:59:56] "GET /e-randevu.online_db.bak HTTP/1.1" 404 2988
+Not Found: /database.bak
+[06/Apr/2026 23:59:56] "GET /db_backup.bak HTTP/1.1" 404 2958
+[06/Apr/2026 23:59:56] "GET /data.bak HTTP/1.1" 404 2943
+[06/Apr/2026 23:59:56] "GET /mysql.bak HTTP/1.1" 404 2946
+[06/Apr/2026 23:59:56] "GET /database.bak HTTP/1.1" 404 2955
+Not Found: /login
+[06/Apr/2026 23:59:59] "POST /login HTTP/1.1" 404 2935
+Not Found: /wsfed/passive
+[07/Apr/2026 00:00:01] "GET /wsfed/passive?wctx HTTP/1.1" 404 2963
+Not Found: /menu/admin/logmanager
+[07/Apr/2026 00:00:16] "GET /menu/admin/logmanager HTTP/1.1" 404 2982
+Not Found: /api/rawdata
+[07/Apr/2026 00:00:25] "GET /api/rawdata HTTP/1.1" 404 2952
+Not Found: /api/http/routers
+[07/Apr/2026 00:00:42] "GET /api/http/routers HTTP/1.1" 404 2967
+Not Found: /inc/mysql_backup/
+[07/Apr/2026 00:00:51] "GET /inc/mysql_backup/ HTTP/1.1" 404 2970
+Not Found: /swagger-ui.html
+Not Found: /swagger/swagger-ui.html
+[07/Apr/2026 00:00:58] "GET /swagger-ui.html HTTP/1.1" 404 2964
+Not Found: /api/swagger-ui.html
+Not Found: /api-docs/swagger.json
+Not Found: /swagger.json
+[07/Apr/2026 00:00:58] "GET /swagger/swagger-ui.html HTTP/1.1" 404 2988
+[07/Apr/2026 00:00:58] "GET /api-docs/swagger.json HTTP/1.1" 404 2982
+Not Found: /api-docs/swagger.yaml
+[07/Apr/2026 00:00:58] "GET /api/swagger-ui.html HTTP/1.1" 404 2976
+[07/Apr/2026 00:00:58] "GET /swagger.json HTTP/1.1" 404 2955
+[07/Apr/2026 00:00:58] "GET /api-docs/swagger.yaml HTTP/1.1" 404 2982
+Not Found: /swagger-ui.js
+Not Found: /v2/api-docs
+Not Found: /swagger/swagger-ui.js
+[07/Apr/2026 00:00:58] "GET /swagger-ui.js HTTP/1.1" 404 2958
+[07/Apr/2026 00:00:58] "GET /v2/api-docs HTTP/1.1" 404 2952
+Not Found: /api-docs
+Not Found: /swagger-ui/swagger-ui.js
+[07/Apr/2026 00:00:58] "GET /swagger/swagger-ui.js HTTP/1.1" 404 2982
+Not Found: /swagger/ui/swagger-ui.js
+[07/Apr/2026 00:00:58] "GET /api-docs HTTP/1.1" 404 2943
+Not Found: /api_docs
+[07/Apr/2026 00:00:58] "GET /swagger-ui/swagger-ui.js HTTP/1.1" 404 2991
+Not Found: /swagger.yaml
+[07/Apr/2026 00:00:58] "GET /swagger/ui/swagger-ui.js HTTP/1.1" 404 2991
+Not Found: /swagger/index.html
+[07/Apr/2026 00:00:58] "GET /api_docs HTTP/1.1" 404 2943
+Not Found: /swagger/ui/index
+[07/Apr/2026 00:00:58] "GET /swagger.yaml HTTP/1.1" 404 2955
+[07/Apr/2026 00:00:58] "GET /swagger/index.html HTTP/1.1" 404 2973
+[07/Apr/2026 00:00:58] "GET /swagger/ui/index HTTP/1.1" 404 2967
+Not Found: /v1/api-docs
+[07/Apr/2026 00:00:58] "GET /v1/api-docs HTTP/1.1" 404 2952
+Not Found: /api/index.html
+Not Found: /api/swagger.json
+[07/Apr/2026 00:00:59] "GET /api/index.html HTTP/1.1" 404 2961
+Not Found: /api/swagger.yml
+Not Found: /api/swagger.yaml
+[07/Apr/2026 00:00:59] "GET /api/swagger.json HTTP/1.1" 404 2967
+Not Found: /swagger/v1/swagger.json
+[07/Apr/2026 00:00:59] "GET /api/swagger.yml HTTP/1.1" 404 2964
+Not Found: /api/docs/
+[07/Apr/2026 00:00:59] "GET /api/swagger.yaml HTTP/1.1" 404 2967
+Not Found: /swagger/v1/swagger.yaml
+Not Found: /api/doc
+[07/Apr/2026 00:00:59] "GET /swagger/v1/swagger.json HTTP/1.1" 404 2988
+[07/Apr/2026 00:00:59] "GET /api/docs/ HTTP/1.1" 404 2946
+[07/Apr/2026 00:00:59] "GET /swagger/v1/swagger.yaml HTTP/1.1" 404 2988
+[07/Apr/2026 00:00:59] "GET /api/doc HTTP/1.1" 404 2940
+Not Found: /db.sql
+Not Found: /database.sql
+[07/Apr/2026 00:01:05] "GET /db.sql HTTP/1.1" 404 2937
+[07/Apr/2026 00:01:05] "GET /database.sql HTTP/1.1" 404 2955
+Not Found: /wp-content/uploads/e-randevu.online.sql
+Not Found: /mysql.sql
+Not Found: /dump.sql
+[07/Apr/2026 00:01:05] "GET /wp-content/uploads/e-randevu.online.sql HTTP/1.1" 404 3036
+Not Found: /backup.sql
+[07/Apr/2026 00:01:05] "GET /dump.sql HTTP/1.1" 404 2943
+Not Found: /wp-content/database.sql
+[07/Apr/2026 00:01:05] "GET /mysql.sql HTTP/1.1" 404 2946
+Not Found: /e-randevu.online.sql
+[07/Apr/2026 00:01:05] "GET /backup.sql HTTP/1.1" 404 2949
+Not Found: /wp-content/uploads/dump.sql
+Not Found: /backups/database.sql
+[07/Apr/2026 00:01:05] "GET /wp-content/database.sql HTTP/1.1" 404 2988
+Not Found: /wp-content/uploads/database.sql
+[07/Apr/2026 00:01:05] "GET /wp-content/uploads/dump.sql HTTP/1.1" 404 3000
+Not Found: /wp-content/uploads/backup.sql
+[07/Apr/2026 00:01:05] "GET /wp-content/uploads/database.sql HTTP/1.1" 404 3012
+[07/Apr/2026 00:01:05] "GET /backups/database.sql HTTP/1.1" 404 2979
+[07/Apr/2026 00:01:05] "GET /e-randevu.online.sql HTTP/1.1" 404 2979
+[07/Apr/2026 00:01:05] "GET /wp-content/uploads/backup.sql HTTP/1.1" 404 3006
+Not Found: /api/swagger/index.html
+Not Found: /api/swagger/swagger-ui.html
+[07/Apr/2026 00:01:22] "GET /api/swagger/index.html HTTP/1.1" 404 2985
+Not Found: /api/api-docs/swagger.json
+[07/Apr/2026 00:01:22] "GET /api/swagger/swagger-ui.html HTTP/1.1" 404 3000
+[07/Apr/2026 00:01:22] "GET /api/api-docs/swagger.json HTTP/1.1" 404 2994
+Not Found: /api/spec/swagger.yaml
+[07/Apr/2026 00:01:23] "GET /api/spec/swagger.yaml HTTP/1.1" 404 2982
+Not Found: /api/v1/swagger-ui/swagger.yaml
+Not Found: /api/spec/swagger.json
+Not Found: /api/swagger-ui/swagger.json
+Not Found: /api/api-docs
+[07/Apr/2026 00:01:23] "GET /api/spec/swagger.json HTTP/1.1" 404 2982
+Not Found: /__swagger__/
+[07/Apr/2026 00:01:23] "GET /api/swagger-ui/swagger.json HTTP/1.1" 404 3000
+Not Found: /api/swagger-ui/api-docs
+[07/Apr/2026 00:01:23] "GET /api/v1/swagger-ui/swagger.yaml HTTP/1.1" 404 3009
+[07/Apr/2026 00:01:23] "GET /api/api-docs HTTP/1.1" 404 2955
+Not Found: /api/swagger-resources
+[07/Apr/2026 00:01:23] "GET /__swagger__/ HTTP/1.1" 404 2955
+[07/Apr/2026 00:01:23] "GET /api/swagger-ui/api-docs HTTP/1.1" 404 2988
+Not Found: /api/_swagger_/
+[07/Apr/2026 00:01:23] "GET /api/swagger-resources HTTP/1.1" 404 2982
+Not Found: /api/swagger-ui/swagger.yaml
+[07/Apr/2026 00:01:23] "GET /api/_swagger_/ HTTP/1.1" 404 2961
+Not Found: /api/apidocs
+Not Found: /api/swagger-resources/restservices/v2/api-docs
+Not Found: /_swagger_/
+[07/Apr/2026 00:01:23] "GET /api/swagger-ui/swagger.yaml HTTP/1.1" 404 3000
+[07/Apr/2026 00:01:23] "GET /api/apidocs HTTP/1.1" 404 2952
+[07/Apr/2026 00:01:23] "GET /api/swagger-resources/restservices/v2/api-docs HTTP/1.1" 404 3057
+[07/Apr/2026 00:01:23] "GET /_swagger_/ HTTP/1.1" 404 2949
+Not Found: /api/apidocs/swagger.json
+Not Found: /api/apidocs/swagger.yaml
+Not Found: /api/swagger/ui/index
+Not Found: /api/api-docs/swagger.yaml
+Not Found: /api/swagger/static/index.html
+[07/Apr/2026 00:01:23] "GET /api/apidocs/swagger.json HTTP/1.1" 404 2991
+Not Found: /api/swagger
+[07/Apr/2026 00:01:23] "GET /api/apidocs/swagger.yaml HTTP/1.1" 404 2991
+Not Found: /api/v1/swagger-ui/swagger.json
+[07/Apr/2026 00:01:23] "GET /api/api-docs/swagger.yaml HTTP/1.1" 404 2994
+Not Found: /api/__swagger__/
+[07/Apr/2026 00:01:23] "GET /api/swagger/ui/index HTTP/1.1" 404 2979
+[07/Apr/2026 00:01:23] "GET /api/swagger/static/index.html HTTP/1.1" 404 3006
+Not Found: /api/doc.json
+[07/Apr/2026 00:01:23] "GET /api/swagger HTTP/1.1" 404 2952
+[07/Apr/2026 00:01:23] "GET /api/v1/swagger-ui/swagger.json HTTP/1.1" 404 3009
+[07/Apr/2026 00:01:23] "GET /api/__swagger__/ HTTP/1.1" 404 2967
+[07/Apr/2026 00:01:23] "GET /api/doc.json HTTP/1.1" 404 2955
+Not Found: /docu
+Not Found: /.env.live
+Not Found: /.env_1
+Not Found: /.env.old
+[07/Apr/2026 00:01:50] "GET /docu HTTP/1.1" 404 2931
+Not Found: /.env.prod.local
+[07/Apr/2026 00:01:50] "GET /.env.old HTTP/1.1" 404 2943
+[07/Apr/2026 00:01:50] "GET /.env.live HTTP/1.1" 404 2946
+[07/Apr/2026 00:01:50] "GET /.env_1 HTTP/1.1" 404 2937
+[07/Apr/2026 00:01:50] "GET /.env.prod.local HTTP/1.1" 404 2964
+Not Found: /api/swagger_doc.json
+Not Found: /.env
+[07/Apr/2026 00:01:50] "GET /api/swagger_doc.json HTTP/1.1" 404 2979
+Not Found: /.env.example
+[07/Apr/2026 00:01:50] "GET /.env HTTP/1.1" 404 2931
+Not Found: /.env.stage
+Not Found: /.env.local
+[07/Apr/2026 00:01:50] "GET /.env.example HTTP/1.1" 404 2955
+Not Found: /.env_sample
+[07/Apr/2026 00:01:50] "GET /.env.stage HTTP/1.1" 404 2949
+[07/Apr/2026 00:01:50] "GET /.env.local HTTP/1.1" 404 2949
+Not Found: /.env.dev.local
+Not Found: /swagger-resources/restservices/v2/api-docs
+[07/Apr/2026 00:01:50] "GET /.env_sample HTTP/1.1" 404 2952
+[07/Apr/2026 00:01:50] "GET /.env.dev.local HTTP/1.1" 404 2961
+Not Found: /.env.production.local
+Not Found: /.env.development.local
+[07/Apr/2026 00:01:50] "GET /swagger-resources/restservices/v2/api-docs HTTP/1.1" 404 3045
+[07/Apr/2026 00:01:50] "GET /.env.production.local HTTP/1.1" 404 2982
+[07/Apr/2026 00:01:50] "GET /.env.development.local HTTP/1.1" 404 2985
+Not Found: /doc/
+Not Found: /swagger
+[07/Apr/2026 00:01:52] "GET /swagger HTTP/1.1" 404 2940
+[07/Apr/2026 00:01:52] "GET /doc/ HTTP/1.1" 404 2931
+Not Found: /swagger-ui/swagger-ui-standalone-preset.js
+Not Found: /swagger-ui/swagger-ui/swagger-ui-bundle.js
+[07/Apr/2026 00:01:52] "GET /swagger-ui/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 404 3045
+[07/Apr/2026 00:01:52] "GET /swagger-ui/swagger-ui-standalone-preset.js HTTP/1.1" 404 3045
+Not Found: /api-doc
+Not Found: /webjars/swagger-ui/swagger-ui-bundle.js
+[07/Apr/2026 00:01:52] "GET /api-doc HTTP/1.1" 404 2940
+Not Found: /docs/
+Not Found: /developers/documentation
+Not Found: /webjars/swagger-ui/index.html
+[07/Apr/2026 00:01:52] "GET /webjars/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 404 3036
+Not Found: /swagger-ui/springfox.js
+[07/Apr/2026 00:01:52] "GET /docs/ HTTP/1.1" 404 2934
+Not Found: /docs
+[07/Apr/2026 00:01:52] "GET /developers/documentation HTTP/1.1" 404 2991
+[07/Apr/2026 00:01:52] "GET /webjars/swagger-ui/index.html HTTP/1.1" 404 3006
+[07/Apr/2026 00:01:52] "GET /swagger-ui/springfox.js HTTP/1.1" 404 2988
+[07/Apr/2026 00:01:52] "GET /docs HTTP/1.1" 404 2931
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[07/Apr/2026 00:09:27] "GET / HTTP/1.1" 500 98185
+[07/Apr/2026 00:11:04] "GET / HTTP/1.1" 200 9312
+Not Found: /wp-admin/setup-config.php
+[07/Apr/2026 00:11:09] "GET /wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /wp-admin/install.php
+[07/Apr/2026 00:11:09] "GET /wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3004
+Not Found: /wordpress/wp-admin/setup-config.php
+[07/Apr/2026 00:11:12] "GET /wordpress/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3049
+Not Found: /wordpress/wp-admin/install.php
+[07/Apr/2026 00:11:12] "GET /wordpress/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /wp/wp-admin/setup-config.php
+[07/Apr/2026 00:11:12] "GET /wp/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3028
+Not Found: /wp/wp-admin/install.php
+[07/Apr/2026 00:11:12] "GET /wp/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3013
+Not Found: /new/wp-admin/setup-config.php
+[07/Apr/2026 00:11:12] "GET /new/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3031
+Not Found: /new/wp-admin/install.php
+[07/Apr/2026 00:11:13] "GET /new/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3016
+Not Found: /old/wp-admin/setup-config.php
+[07/Apr/2026 00:11:13] "GET /old/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3031
+Not Found: /old/wp-admin/install.php
+[07/Apr/2026 00:11:13] "GET /old/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3016
+Not Found: /blog/wp-admin/setup-config.php
+[07/Apr/2026 00:11:13] "GET /blog/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /blog/wp-admin/install.php
+[07/Apr/2026 00:11:13] "GET /blog/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /test/wp-admin/setup-config.php
+[07/Apr/2026 00:11:13] "GET /test/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /test/wp-admin/install.php
+[07/Apr/2026 00:11:13] "GET /test/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+Not Found: /shop/wp-admin/setup-config.php
+[07/Apr/2026 00:11:13] "GET /shop/wp-admin/setup-config.php?step=1&language=en_GB HTTP/1.1" 404 3034
+Not Found: /shop/wp-admin/install.php
+[07/Apr/2026 00:11:13] "GET /shop/wp-admin/install.php?step=1&language=en_GB HTTP/1.1" 404 3019
+[07/Apr/2026 00:18:59] "GET / HTTP/1.1" 200 9312
+[07/Apr/2026 00:18:59] "GET / HTTP/1.1" 200 9312
+[07/Apr/2026 00:19:02] "GET / HTTP/1.1" 200 9312
+[07/Apr/2026 00:19:02] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[07/Apr/2026 00:19:02] "GET /favicon.ico HTTP/1.1" 404 2952
+[07/Apr/2026 00:19:03] "GET / HTTP/1.1" 200 9312
+[07/Apr/2026 00:19:03] "GET /static/css/ana_sayfa.css HTTP/1.1" 200 10882
+Not Found: /favicon.ico
+[07/Apr/2026 00:19:06] "GET /favicon.ico HTTP/1.1" 404 2952
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 133, in klinik_randevu_sayfasi
+    clinic = Clinic.objects.get(subdomain=subdomain, is_active=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+tenants.models.Clinic.DoesNotExist: Clinic matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\tenants\hasta_views.py", line 135, in klinik_randevu_sayfasi
+    return render(request, 'hasta/klinik_bulunamadi.html', {}, status=404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: hasta/klinik_bulunamadi.html
+[07/Apr/2026 00:38:37] "GET / HTTP/1.1" 500 98184

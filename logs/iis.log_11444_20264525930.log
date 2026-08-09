@@ -1,0 +1,21 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+Not Found: /.env
+Not Found: /.aws/credentials
+[04/Apr/2026 19:59:34] "GET /.env HTTP/1.1" 404 2337
+Not Found: /.env.production
+[04/Apr/2026 19:59:34] "GET /.aws/credentials HTTP/1.1" 404 2373
+[04/Apr/2026 19:59:34] "GET /.env.production HTTP/1.1" 404 2370
+Not Found: /aws.env
+[04/Apr/2026 19:59:34] "GET /aws.env HTTP/1.1" 404 2346
+Not Found: /.aws/credentials
+[04/Apr/2026 20:07:57] "GET /.aws/credentials HTTP/1.1" 404 2967
+Not Found: /.env
+[04/Apr/2026 20:07:57] "GET /.env HTTP/1.1" 404 2931
+Not Found: /aws.env
+[04/Apr/2026 20:07:58] "GET /aws.env HTTP/1.1" 404 2940
+Not Found: /.env.production
+[04/Apr/2026 20:08:00] "GET /.env.production HTTP/1.1" 404 2964

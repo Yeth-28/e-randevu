@@ -1,0 +1,28 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[31/Mar/2026 02:51:01] "GET / HTTP/1.1" 200 16347
+[31/Mar/2026 03:01:14] "GET /.env HTTP/1.1" 301 0
+Not Found: /.env
+[31/Mar/2026 03:04:45] "GET /.env HTTP/1.1" 404 2931
+Not Found: /
+[31/Mar/2026 03:06:28] "GET / HTTP/1.1" 404 8849
+Forbidden (Referer checking failed - no Referer.): /
+[31/Mar/2026 03:21:47] "POST / HTTP/1.1" 403 3565
+Not Found: /index.php
+[31/Mar/2026 03:21:47] "POST /index.php HTTP/1.1" 404 2951
+Not Found: /admin
+[31/Mar/2026 03:21:48] "POST /admin HTTP/1.1" 404 2939
+Not Found: /api
+[31/Mar/2026 03:21:48] "POST /api HTTP/1.1" 404 2933
+[31/Mar/2026 03:35:38] "GET /robots.txt HTTP/1.1" 301 0
+[31/Mar/2026 03:35:39] "GET /robots.txt/ HTTP/1.1" 302 0
+[31/Mar/2026 03:35:39] "GET /giris/ HTTP/1.1" 200 5064
+[31/Mar/2026 03:35:39] "GET /robots.txt HTTP/1.1" 301 0
+[31/Mar/2026 03:35:39] "GET /robots.txt/ HTTP/1.1" 302 0
+[31/Mar/2026 03:35:39] "GET /giris/ HTTP/1.1" 200 5064
+[31/Mar/2026 03:35:40] "GET /sitemap.xml HTTP/1.1" 301 0
+[31/Mar/2026 03:35:40] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[31/Mar/2026 03:35:40] "GET /giris/ HTTP/1.1" 200 5064

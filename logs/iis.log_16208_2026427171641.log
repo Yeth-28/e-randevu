@@ -1,0 +1,94 @@
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+C:\inetpub\wwwroot\e-randevu\dental_management_system\venv\Lib\site-packages\django\db\models\base.py:366: RuntimeWarning: Model 'patients.hastasession' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+Watching for file changes with StatReloader
+[27/Apr/2026 10:16:44] "GET /robots.txt HTTP/1.1" 301 0
+[27/Apr/2026 10:16:44] "GET /robots.txt/ HTTP/1.1" 302 0
+[27/Apr/2026 10:16:45] "GET /giris/ HTTP/1.1" 200 5067
+[27/Apr/2026 10:16:45] "GET /sitemap.xml HTTP/1.1" 301 0
+[27/Apr/2026 10:16:45] "GET /sitemap.xml/ HTTP/1.1" 302 0
+[27/Apr/2026 10:16:45] "GET /giris/ HTTP/1.1" 200 5067
+Not Found: /wp-content/plugins/hellopress/wp_filemanager.php
+[27/Apr/2026 10:26:05] "GET /wp-content/plugins/hellopress/wp_filemanager.php HTTP/1.1" 404 3062
+Not Found: /settings.php
+[27/Apr/2026 10:26:05] "GET /settings.php HTTP/1.1" 404 2954
+Not Found: /sx.php
+[27/Apr/2026 10:26:06] "GET /sx.php HTTP/1.1" 404 2936
+Not Found: /connector.minimal.php
+[27/Apr/2026 10:26:06] "GET /connector.minimal.php HTTP/1.1" 404 2981
+Not Found: /.env.php.dist
+[27/Apr/2026 10:26:06] "GET /.env.php.dist HTTP/1.1" 404 2957
+Not Found: /applications.php
+[27/Apr/2026 10:26:06] "GET /applications.php HTTP/1.1" 404 2966
+Not Found: /wp-config.php.swo
+[27/Apr/2026 10:26:06] "GET /wp-config.php.swo HTTP/1.1" 404 2969
+Not Found: /ajax_officebuilding.php
+[27/Apr/2026 10:26:06] "GET /ajax_officebuilding.php HTTP/1.1" 404 2987
+Not Found: /sys-details.php
+[27/Apr/2026 10:26:07] "GET /sys-details.php HTTP/1.1" 404 2963
+Not Found: /env.php
+[27/Apr/2026 10:26:07] "GET /env.php HTTP/1.1" 404 2939
+Not Found: /release_info.php
+[27/Apr/2026 10:26:07] "GET /release_info.php HTTP/1.1" 404 2966
+Not Found: /mailer_url.php
+[27/Apr/2026 10:26:07] "GET /mailer_url.php HTTP/1.1" 404 2960
+Not Found: /iR7SzrsOUEP.php
+[27/Apr/2026 10:26:07] "GET /iR7SzrsOUEP.php HTTP/1.1" 404 2963
+Not Found: /connector.php
+[27/Apr/2026 10:26:08] "GET /connector.php HTTP/1.1" 404 2957
+Not Found: /systeminfo.php
+[27/Apr/2026 10:26:08] "GET /systeminfo.php HTTP/1.1" 404 2960
+Not Found: /wp-config.phpc
+[27/Apr/2026 10:26:08] "GET /wp-config.phpc HTTP/1.1" 404 2960
+Not Found: /showphpinfo.php
+[27/Apr/2026 10:26:08] "GET /showphpinfo.php HTTP/1.1" 404 2963
+Not Found: /main.php
+[27/Apr/2026 10:26:09] "GET /main.php HTTP/1.1" 404 2942
+Not Found: /phpsysinfo.php
+[27/Apr/2026 10:26:09] "GET /phpsysinfo.php HTTP/1.1" 404 2960
+Not Found: /phpinfo__.php
+[27/Apr/2026 10:26:09] "GET /phpinfo__.php HTTP/1.1" 404 2957
+Not Found: /sys-info.php
+[27/Apr/2026 10:26:09] "GET /sys-info.php HTTP/1.1" 404 2954
+Not Found: /profile.php
+[27/Apr/2026 10:26:09] "GET /profile.php HTTP/1.1" 404 2951
+Not Found: /defau1t.php
+[27/Apr/2026 10:26:10] "GET /defau1t.php HTTP/1.1" 404 2951
+Not Found: /fraie1p4.php
+[27/Apr/2026 10:26:10] "GET /fraie1p4.php HTTP/1.1" 404 2954
+Not Found: /routes.php
+[27/Apr/2026 10:26:10] "GET /routes.php HTTP/1.1" 404 2948
+Not Found: /del.php
+[27/Apr/2026 10:26:10] "GET /del.php HTTP/1.1" 404 2939
+Not Found: /c99shell.php
+[27/Apr/2026 10:26:10] "GET /c99shell.php HTTP/1.1" 404 2954
+Not Found: /vv.php
+[27/Apr/2026 10:26:11] "GET /vv.php HTTP/1.1" 404 2936
+Not Found: /database.php
+[27/Apr/2026 10:26:11] "GET /database.php HTTP/1.1" 404 2954
+Not Found: /smtp.php
+[27/Apr/2026 10:26:11] "GET /smtp.php HTTP/1.1" 404 2942
+Not Found: /oo.php
+[27/Apr/2026 10:26:11] "GET /oo.php HTTP/1.1" 404 2936
+Not Found: /sk.php
+[27/Apr/2026 10:26:11] "GET /sk.php HTTP/1.1" 404 2936
+Not Found: /content.php888
+[27/Apr/2026 10:26:12] "GET /content.php888 HTTP/1.1" 404 2960
+Not Found: /loading.php
+[27/Apr/2026 10:26:12] "GET /loading.php HTTP/1.1" 404 2951
+Not Found: /kct.php
+[27/Apr/2026 10:26:12] "GET /kct.php HTTP/1.1" 404 2939
+Not Found: /ninja.php
+[27/Apr/2026 10:26:12] "GET /ninja.php HTTP/1.1" 404 2945
+Not Found: /path.php
+[27/Apr/2026 10:26:13] "GET /path.php HTTP/1.1" 404 2942
+Not Found: /wp-key.php
+[27/Apr/2026 10:26:13] "GET /wp-key.php HTTP/1.1" 404 2948
+Not Found: /pm.php
+[27/Apr/2026 10:26:13] "GET /pm.php HTTP/1.1" 404 2936
+Not Found: /phpcheck.php
+[27/Apr/2026 10:26:13] "GET /phpcheck.php HTTP/1.1" 404 2954
+Not Found: /filesystems.php
+[27/Apr/2026 10:26:13] "GET /filesystems.php HTTP/1.1" 404 2963
+[27/Apr/2026 10:33:15] "GET / HTTP/1.1" 200 9312

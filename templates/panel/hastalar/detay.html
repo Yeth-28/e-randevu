@@ -1,0 +1,885 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ hasta.name }} — Hasta Detayı</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff;
+            --bg: #f8faff; --gray: #6b7280; --gray-light: #e5e7eb; --text: #111827;
+            --green: #16a34a; --red: #dc2626; --orange: #d97706;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); }
+        .sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+            background: linear-gradient(180deg, #1e40af, #2563eb);
+            z-index: 100; display: flex; flex-direction: column;
+        }
+        .sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-brand .icon { font-size: 28px; }
+        .sidebar-brand .name { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-top: 4px; }
+        .sidebar-brand .clinic-id { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .sidebar-nav { padding: 16px 0; flex: 1; }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+            color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+            font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; border-left-color: white; }
+        .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+        .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-footer a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+        .main { margin-left: 240px; min-height: 100vh; }
+        .topbar {
+            background: white; padding: 16px 32px; display: flex; align-items: center;
+            justify-content: space-between; border-bottom: 1px solid var(--gray-light);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-left a { color: var(--gray); text-decoration: none; font-size: 14px; }
+        .topbar-title { font-size: 20px; font-weight: 600; color: var(--text); }
+        .topbar-actions { display: flex; gap: 8px; }
+        .btn-duzenle { padding: 8px 16px; background: var(--blue-light); color: var(--blue); border: none; border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; }
+        .btn-sil { padding: 8px 16px; background: #fef2f2; color: var(--red); border: none; border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; }
+        .content { padding: 32px; }
+
+        /* MESAJLAR */
+        .messages { margin-bottom: 20px; }
+        .msg { padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .msg-success { background: #dcfce7; color: var(--green); }
+        .msg-error { background: #fee2e2; color: var(--red); }
+        .msg-info { background: var(--blue-light); color: var(--blue); }
+
+        .grid-main { display: grid; grid-template-columns: 320px 1fr; gap: 24px; }
+
+        /* HASTA KARTI */
+        .hasta-kart { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .hasta-foto {
+            width: 80px; height: 80px; border-radius: 16px;
+            background: var(--blue-light); display: flex; align-items: center;
+            justify-content: center; font-size: 36px; margin-bottom: 16px;
+        }
+        .hasta-ad { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+        .hasta-id { font-size: 12px; color: var(--gray); margin-bottom: 16px; }
+        .info-row { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--gray-light); font-size: 13px; color: var(--text); }
+        .info-row:last-child { border-bottom: none; }
+        .info-row .label { color: var(--gray); min-width: 100px; font-size: 12px; }
+        .badge { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+        .badge-kan { background: #fef3c7; color: #92400e; }
+        .badge-aktif { background: #dcfce7; color: var(--green); }
+        .badge-pasif { background: #f3f4f6; color: var(--gray); }
+        .section-title { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 12px; padding-top: 16px; border-top: 1px solid var(--gray-light); }
+
+        /* TABS */
+        .tabs { display: flex; gap: 4px; background: #f3f4f6; border-radius: 12px; padding: 4px; margin-bottom: 20px; }
+        .tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--gray); cursor: pointer; transition: all 0.2s; border: none; background: transparent; font-family: 'DM Sans', sans-serif; }
+        .tab.active { background: white; color: var(--blue); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* DİŞ HARİTASI */
+        .visit-card { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; border-left: 4px solid var(--blue); }
+        .visit-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .visit-date { font-weight: 600; font-size: 14px; color: var(--text); }
+        .visit-fee { font-weight: 700; font-size: 16px; color: var(--blue); }
+        .visit-doctor { font-size: 13px; color: var(--gray); margin-bottom: 6px; }
+        .visit-notes { font-size: 13px; color: var(--text); background: #f9fafb; border-radius: 8px; padding: 10px; }
+        .badge-odendi { background: #dcfce7; color: var(--green); }
+        .badge-bekliyor { background: #fef3c7; color: var(--orange); }
+        .btn-ziyaret {
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+            background: var(--blue); color: white; border: none; border-radius: 10px;
+            font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer;
+            margin-bottom: 16px; font-family: 'DM Sans', sans-serif;
+        }
+
+        /* DOSYALAR */
+        .file-card { background: white; border-radius: 12px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
+        .file-info { display: flex; align-items: center; gap: 12px; }
+        .file-icon { font-size: 24px; }
+        .file-name { font-size: 14px; font-weight: 500; color: var(--text); }
+        .file-date { font-size: 12px; color: var(--gray); }
+        .btn-indir { padding: 6px 14px; background: var(--blue-light); color: var(--blue); border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; }
+
+        /* MODAL */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center; }
+        .modal-overlay.open { display: flex; }
+        .modal { background: white; border-radius: 20px; padding: 32px; width: 440px; max-width: 90vw; }
+        .modal h3 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+        .modal-form-group { margin-bottom: 16px; }
+        .modal-form-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+        .modal-form-group select, .modal-form-group textarea, .modal-form-group input {
+            width: 100%; padding: 10px 14px; border: 1.5px solid var(--gray-light);
+            border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none;
+        }
+        .modal-form-group select:focus, .modal-form-group textarea:focus { border-color: var(--blue); }
+        .modal-btn-row { display: flex; gap: 10px; margin-top: 20px; }
+        .modal-btn-cancel { flex: 1; padding: 10px; border: 1.5px solid var(--gray-light); border-radius: 10px; background: white; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; }
+        .modal-btn-save { flex: 1; padding: 10px; background: var(--blue); color: white; border: none; border-radius: 10px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; }
+
+        .empty-state { text-align: center; padding: 40px 20px; color: var(--gray); }
+        .empty-state .icon { font-size: 40px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+{% include "panel/sidebar.html" %}
+
+<div class="main">
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/">← Hastalar</a>
+            <span style="color:var(--gray-light)">/</span>
+            <span class="topbar-title">{{ hasta.name }}</span>
+        </div>
+        <div class="topbar-actions">
+            {% include "panel/bildirim_zil.html" %}
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/duzenle/" class="btn-duzenle">✏️ Düzenle</a>
+            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/sil/" class="btn-sil">🗑️ Sil</a>
+        </div>
+    </div>
+
+    <div class="content">
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg msg-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="grid-main">
+
+            <!-- SOL: HASTA KARTI -->
+            <div>
+                <div class="hasta-kart">
+                    <div class="hasta-foto">🧑‍🦷</div>
+                    <div class="hasta-ad">{{ hasta.name }}</div>
+                    <div class="hasta-id">Hasta #{{ hasta.id }}</div>
+
+                    <div class="info-row"><span class="label">📞 Telefon</span> {{ hasta.phone_number }}</div>
+                    {% if hasta.email %}<div class="info-row"><span class="label">✉️ E-posta</span> {{ hasta.email }}</div>{% endif %}
+                    {% if hasta.get_age %}<div class="info-row"><span class="label">🎂 Yaş</span> {{ hasta.get_age }} yaş</div>{% endif %}
+                    <div class="info-row"><span class="label">👤 Cinsiyet</span> {{ hasta.get_gender_display }}</div>
+                    <div class="info-row"><span class="label">🩸 Kan Grubu</span> <span class="badge badge-kan">{{ hasta.blood_type }}</span></div>
+                    {% if hasta.city %}<div class="info-row"><span class="label">📍 Şehir</span> {{ hasta.city }}</div>{% endif %}
+                    <div class="info-row">
+                        <span class="label">📋 Durum</span>
+                        <span class="badge {% if hasta.status == 'aktif' %}badge-aktif{% else %}badge-pasif{% endif %}">{{ hasta.get_status_display }}</span>
+                    </div>
+
+                    {% if hasta.allergies %}
+                    <div class="section-title">⚠️ Alerjiler</div>
+                    <div style="font-size:13px;color:var(--red);background:#fef2f2;padding:10px;border-radius:8px;border-left:3px solid var(--red);">{{ hasta.allergies }}</div>
+                    {% endif %}
+
+                    {% if hasta.medical_notes %}
+                    <div class="section-title">🏥 Kronik Rahatsızlıklar</div>
+                    <div style="font-size:13px;color:#92400e;background:#fff7ed;padding:10px;border-radius:8px;border-left:3px solid #f59e0b;">{{ hasta.medical_notes }}</div>
+                    {% endif %}
+
+                    {% if hasta.notes %}
+                    <div class="section-title">📝 Ek Notlar</div>
+                    <div style="font-size:13px;color:#374151;background:#f9fafb;padding:10px;border-radius:8px;border-left:3px solid #9ca3af;">{{ hasta.notes }}</div>
+                    {% endif %}
+
+                    {% if hasta.emergency_contact_name %}   
+                    <div class="section-title">🚨 Acil İletişim</div>
+                    <div style="font-size:13px;color:var(--text);">
+                        {{ hasta.emergency_contact_name }}<br>
+                        <span style="color:var(--gray);">{{ hasta.emergency_contact_relation }}</span><br>
+                        📞 {{ hasta.emergency_contact_phone }}
+                    </div>
+                    {% endif %}
+
+                    {% if hasta.insurance_company %}
+                    <div class="section-title">🛡️ Sigorta</div>
+                    <div style="font-size:13px;">
+                        {{ hasta.insurance_company }}<br>
+                        <span style="color:var(--gray);">{{ hasta.insurance_number }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- SAĞ: TABS -->
+            <div>
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('dis-haritasi', this)">🦷 Diş Haritası</button>
+                    <button class="tab" onclick="showTab('ziyaretler', this)">📋 Ziyaretler ({{ ziyaretler|length }})</button>
+                    <button class="tab" onclick="showTab('dosyalar', this)">📁 Dosyalar ({{ dosyalar|length }})</button>
+                </div>
+
+                <!-- DİŞ HARİTASI -->
+                <div id="tab-dis-haritasi" class="tab-content active">
+
+                    <div style="display:flex;gap:8px;margin-bottom:16px;">
+                        <button onclick="switchModel('hazir')" id="btn-hazir"
+                            style="flex:1;padding:12px;border-radius:12px;border:2px solid #2563eb;background:#eff6ff;color:#2563eb;font-weight:600;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;">
+                            🦷 Hazır Diş Modeli
+                        </button>
+                        <button onclick="switchModel('hasta')" id="btn-hasta"
+                            style="flex:1;padding:12px;border-radius:12px;border:2px solid #e5e7eb;background:white;color:#6b7280;font-weight:600;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;">
+                            📤 Hasta Diş Modeli
+                        </button>
+                    </div>
+
+                    <!-- SNAPSHOT SİSTEMİ -->
+                    <div style="background:white;border-radius:14px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:16px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                                <span style="font-size:13px;font-weight:600;color:#374151;">📅 Harita:</span>
+                                {% if snapshots %}
+                                    {% for snap in snapshots %}
+                                    <a href="?snapshot_id={{ snap.id }}&tab=dis-haritasi"
+                                       style="display:inline-flex;align-items:center;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;text-decoration:none;{% if aktif_snapshot.id == snap.id %}background:#2563eb;color:white;{% else %}background:#f3f4f6;color:#374151;{% endif %}">
+                                        {{ snap.snapshot_date|date:"d.m.Y" }} — {{ snap.label }}
+                                    </a>
+                                    {% endfor %}
+                                {% else %}
+                                    <span style="font-size:12px;color:#9ca3af;">Henüz harita oluşturulmamış</span>
+                                {% endif %}
+                            </div>
+                            <button onclick="document.getElementById('snapshot-modal').classList.add('open')"
+                                    style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#eff6ff;color:#2563eb;border:1.5px solid #bfdbfe;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">
+                                ＋ Yeni Harita
+                            </button>
+                        </div>
+                        {% if aktif_snapshot %}
+                        <div style="margin-top:10px;padding-top:10px;border-top:1px solid #f3f4f6;display:flex;align-items:center;justify-content:space-between;">
+                            <span style="font-size:12px;color:#6b7280;">
+                                Aktif: <strong>{{ aktif_snapshot.label }}</strong> — {{ aktif_snapshot.snapshot_date|date:"d F Y" }}
+                            </span>
+                            <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/snapshot/{{ aktif_snapshot.id }}/sil/"
+                                  onsubmit="return confirm('Bu haritayı silmek istediğinize emin misiniz?')">
+                                {% csrf_token %}
+                                <button type="submit" style="background:none;border:none;color:#dc2626;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;">🗑 Sil</button>
+                            </form>
+                        </div>
+                        {% endif %}
+                    </div>
+
+
+                    <!-- HAZIR DİŞ MODELİ -->
+                    <div id="panel-hazir">
+                        <div style="background:white;border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);position:relative;">
+                            <canvas id="toothCanvas" style="width:100%;height:520px;display:block;cursor:grab;"></canvas>
+                            <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,0.95);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e5e7eb;backdrop-filter:blur(10px);">
+                                <span id="tooth-info-text" style="font-size:13px;color:#6b7280;">Bir dişe tıklayın veya döndürmek için sürükleyin</span>
+                                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                    {% for val, label in tooth_statuses %}
+                                    <div style="display:flex;align-items:center;gap:3px;font-size:11px;color:#6b7280;">
+                                        <div style="width:10px;height:10px;border-radius:2px;background:
+                                            {% if val == 'saglikli' %}#e2e8f0
+                                            {% elif val == 'dolgulu' %}#93c5fd
+                                            {% elif val == 'cekimli' %}#9ca3af
+                                            {% elif val == 'implant' %}#4ade80
+                                            {% elif val == 'kanal' %}#fbbf24
+                                            {% elif val == 'kron' %}#c084fc
+                                            {% elif val == 'hasarli' %}#f87171
+                                            {% else %}#f1f5f9{% endif %}
+                                            ;border:1px solid #d1d5db;"></div>
+                                        {{ label }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HASTA DİŞ MODELİ -->
+                    <div id="panel-hasta" style="display:none;">
+                        <div style="background:white;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px;">
+                            <div style="font-size:14px;font-weight:600;color:#111827;margin-bottom:16px;">📤 3D Model Yükle</div>
+                            <form method="post" enctype="multipart/form-data"
+                                action="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/tooth-model/yukle/">
+                                {% csrf_token %}
+                                <div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;">
+                                    <div>
+                                        <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">
+                                            Model Dosyası <span style="color:#6b7280;font-weight:400;">(STL, OBJ, GLB, GLTF)</span>
+                                        </label>
+                                        <input type="file" name="model_file" accept=".stl,.obj,.glb,.gltf" required
+                                            style="border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 12px;width:100%;font-size:13px;">
+                                    </div>
+                                    <button type="submit" style="padding:10px 20px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">
+                                        Yükle
+                                    </button>
+                                </div>
+                                <input type="text" name="description" placeholder="Açıklama (opsiyonel)"
+                                    style="margin-top:10px;border:1.5px solid #e5e7eb;border-radius:10px;padding:10px;width:100%;font-size:13px;">
+                            </form>
+                        </div>
+
+                        {% with models=hasta.tooth_models.all %}
+                        {% if models %}
+                            {% for model in models %}
+                            <div style="background:white;border-radius:16px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:12px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                                    <div style="display:flex;align-items:center;gap:10px;">
+                                        <span style="font-size:24px;">🦴</span>
+                                        <div>
+                                            <div style="font-weight:600;font-size:14px;">{{ model.file_format|upper }} Model — {{ model.description|default:"Açıklama yok" }}</div>
+                                            <div style="font-size:12px;color:#6b7280;">{{ model.uploaded_at|date:"d M Y, H:i" }}</div>
+                                        </div>
+                                    </div>
+                                    <button onclick="loadPatientModel('{{ model.file.url }}', '{{ model.file_format }}', '{{ model.id }}')"
+                                            style="padding:8px 16px;background:#eff6ff;color:#2563eb;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">
+                                        Görüntüle
+                                    </button>
+                                </div>
+                                <div id="viewer-{{ model.id }}" style="display:none;background:#f0f4ff;border-radius:12px;overflow:hidden;">
+                                    <canvas id="canvas-{{ model.id }}" style="width:100%;height:400px;display:block;cursor:grab;"></canvas>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div style="text-align:center;padding:48px;background:white;border-radius:16px;color:#6b7280;">
+                                <div style="font-size:48px;margin-bottom:12px;">🦴</div>
+                                <p style="font-size:15px;margin-bottom:8px;">Henüz 3D diş modeli yüklenmemiş</p>
+                                <p style="font-size:13px;">Kliniğinizdeki CBCT cihazından aldığınız STL, OBJ veya GLB dosyasını yükleyin</p>
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+
+                </div>
+
+                <!-- ZİYARETLER -->
+                <div id="tab-ziyaretler" class="tab-content">
+                    <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/ziyaret/ekle/" class="btn-ziyaret">
+                        + Yeni Ziyaret Ekle
+                    </a>
+                    {% if ziyaretler %}
+                        {% for ziyaret in ziyaretler %}
+                        <div class="visit-card">
+                            <div class="visit-header">
+                                <div class="visit-date">📅 {{ ziyaret.date_time|date:"d M Y, H:i" }}</div>
+                                <div style="display:flex;align-items:center;gap:10px;">
+                                    <span class="badge {% if ziyaret.is_paid %}badge-odendi{% else %}badge-bekliyor{% endif %}">
+                                        {% if ziyaret.is_paid %}✅ Ödendi{% else %}⏳ Bekliyor{% endif %}
+                                    </span>
+                                    <div class="visit-fee">₺{{ ziyaret.fee }}</div>
+                                </div>
+                            </div>
+                            {% if ziyaret.doctor %}
+                            <div class="visit-doctor">👨‍⚕️ {{ ziyaret.doctor.name }}</div>
+                            {% endif %}
+                            {% if ziyaret.procedures %}
+                            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                                {% for proc in ziyaret.procedures %}
+                                <span style="background:#eff6ff;color:#2563eb;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:500;">{{ proc }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            {% if ziyaret.notes %}
+                            <div class="visit-notes">{{ ziyaret.notes }}</div>
+                            {% endif %}
+                            <a href="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/ziyaret/{{ ziyaret.id }}/duzenle/"
+                               style="display:inline-block;margin-top:10px;padding:6px 14px;background:#f0fdf4;color:#16a34a;border:1px solid #a7f3d0;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">✏️ Düzenle</a>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-state">
+                            <div class="icon">📋</div>
+                            <p>Henüz ziyaret kaydı yok.</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- DOSYALAR -->
+                <div id="tab-dosyalar" class="tab-content">
+                    <form method="post" enctype="multipart/form-data"
+                          action="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/dosya/yukle/"
+                          style="background:white;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:16px;">
+                        {% csrf_token %}
+                        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;">
+                            <div>
+                                <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">Dosya Seç</label>
+                                <input type="file" name="file" required style="border:1.5px solid var(--gray-light);border-radius:10px;padding:8px;width:100%;">
+                            </div>
+                            <div>
+                                <label style="font-size:13px;font-weight:500;display:block;margin-bottom:6px;">Tür</label>
+                                <select name="file_type" style="border:1.5px solid var(--gray-light);border-radius:10px;padding:10px;width:100%;">
+                                    <option value="rontgen">Röntgen</option>
+                                    <option value="rapor">Rapor</option>
+                                    <option value="recete">Reçete</option>
+                                    <option value="diger">Diğer</option>
+                                </select>
+                            </div>
+                            <button type="submit" style="padding:10px 20px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">
+                                Yükle
+                            </button>
+                        </div>
+                        <input type="text" name="description" placeholder="Açıklama (opsiyonel)" style="margin-top:10px;border:1.5px solid var(--gray-light);border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:'DM Sans',sans-serif;">
+                    </form>
+
+                    {% if dosyalar %}
+                        {% for dosya in dosyalar %}
+                        <div class="file-card">
+                            <div class="file-info">
+                                <div class="file-icon">
+                                    {% if dosya.file_type == 'rontgen' %}🩻
+                                    {% elif dosya.file_type == 'rapor' %}📄
+                                    {% elif dosya.file_type == 'recete' %}💊
+                                    {% else %}📎{% endif %}
+                                </div>
+                                <div>
+                                    <div class="file-name">{{ dosya.get_file_type_display }} — {{ dosya.description|default:"Açıklama yok" }}</div>
+                                    <div class="file-date">{{ dosya.uploaded_at|date:"d M Y, H:i" }}</div>
+                                </div>
+                            </div>
+                            <a href="{{ dosya.file.url }}" target="_blank" class="btn-indir">İndir</a>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-state">
+                            <div class="icon">📁</div>
+                            <p>Henüz dosya yüklenmemiş.</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SNAPSHOT MODAL -->
+<div class="modal-overlay" id="snapshot-modal">
+    <div class="modal" style="width:480px;">
+        <h3>📅 Yeni Diş Haritası</h3>
+        <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/snapshot/ekle/">
+            {% csrf_token %}
+            <div class="modal-form-group">
+                <label>Etiket <span style="color:#9ca3af;font-weight:400;">(örn: İlk Muayene, 2025 Kontrol)</span></label>
+                <input type="text" name="label" placeholder="Harita adı..." required>
+            </div>
+            <div class="modal-form-group">
+                <label>Tarih</label>
+                <input type="date" name="snapshot_date" value="{% now 'Y-m-d' %}" required>
+            </div>
+            {% if snapshots %}
+            <div class="modal-form-group">
+                <label>Mevcut haritadan kopyala <span style="color:#9ca3af;font-weight:400;">(opsiyonel)</span></label>
+                <select name="kopya_snapshot_id">
+                    <option value="">— Boş harita başlat —</option>
+                    {% for snap in snapshots %}
+                    <option value="{{ snap.id }}" {% if aktif_snapshot.id == snap.id %}selected{% endif %}>
+                        {{ snap.snapshot_date|date:"d.m.Y" }} — {{ snap.label }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+            <div class="modal-btn-row">
+                <button type="button" class="modal-btn-cancel" onclick="document.getElementById('snapshot-modal').classList.remove('open')">İptal</button>
+                <button type="submit" class="modal-btn-save">Oluştur</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- DİŞ MODAL -->
+<div class="modal-overlay" id="tooth-modal">
+    <div class="modal">
+        <h3 id="modal-title">Diş Durumu</h3>
+        <form method="post" action="{{ PANEL_URL }}/{{ clinic_id }}/hastalar/{{ hasta.id }}/dis-haritasi/">
+            {% csrf_token %}
+            <input type="hidden" name="snapshot_id" id="modal-snapshot-id" value="{% if aktif_snapshot %}{{ aktif_snapshot.id }}{% endif %}">
+            <div class="modal-form-group">
+                <label>Durum</label>
+                <select name="status" id="modal-status">
+                    {% for val, label in tooth_statuses %}
+                    <option value="{{ val }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="modal-form-group">
+                <label>Not</label>
+                <textarea name="notes" id="modal-notes" rows="3" placeholder="Yapılan işlem, tarih..."></textarea>
+            </div>
+            <div class="modal-btn-row">
+                <button type="button" class="modal-btn-cancel" onclick="closeModal()">İptal</button>
+                <button type="submit" class="modal-btn-save">Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════
+// MODEL SEÇİCİ
+// ═══════════════════════════════════════════════════════
+function switchModel(type) {
+    ['hazir','hasta'].forEach(t => {
+        document.getElementById('panel-'+t).style.display = t===type ? 'block' : 'none';
+        const btn = document.getElementById('btn-'+t);
+        btn.style.borderColor = t===type ? '#2563eb' : '#e5e7eb';
+        btn.style.background  = t===type ? '#eff6ff' : 'white';
+        btn.style.color       = t===type ? '#2563eb' : '#6b7280';
+    });
+}
+
+// ═══════════════════════════════════════════════════════
+// DİŞ VERİLERİ
+// ═══════════════════════════════════════════════════════
+const toothData = {
+    {% for num, record in dis_kayitlari.items %}
+    {{ num }}: { status: "{{ record.status }}", notes: "{{ record.notes|escapejs }}" },
+    {% endfor %}
+};
+
+const TOOTH_MESH_MAP = {
+    1:"Teeth031", 2:"Teeth030", 3:"Teeth029", 4:"Teeth028",
+    5:"Teeth027", 6:"Teeth026", 7:"Teeth025", 8:"Teeth024",
+    9:"Teeth023", 10:"Teeth022", 11:"Teeth021", 12:"Teeth020",
+    13:"Teeth019", 14:"Teeth018", 15:"Teeth017", 16:"Teeth016",
+    17:"Teeth",    18:"Teeth001", 19:"Teeth002", 20:"Teeth003",
+    21:"Teeth004", 22:"Teeth005", 23:"Teeth006", 24:"Teeth007",
+    25:"Teeth008", 26:"Teeth009", 27:"Teeth010", 28:"Teeth011",
+    29:"Teeth012", 30:"Teeth013", 31:"Teeth014", 32:"Teeth015",
+};
+const MESH_TO_FDI = {};
+for (const [fdi, meshName] of Object.entries(TOOTH_MESH_MAP)) {
+    MESH_TO_FDI[meshName] = parseInt(fdi);
+}
+
+const STATUS_COLORS = {
+    saglikli: new THREE.Color(0xf5f0eb),
+    dolgulu:  new THREE.Color(0x3b82f6),
+    cekimli:  new THREE.Color(0x6b7280),
+    implant:  new THREE.Color(0x22c55e),
+    kanal:    new THREE.Color(0xf59e0b),
+    kron:     new THREE.Color(0xa855f7),
+    hasarli:  new THREE.Color(0xef4444),
+    eksik:    new THREE.Color(0xe5e7eb),
+};
+const STATUS_LABELS = {
+    saglikli:'Sağlıklı', dolgulu:'Dolgulu', cekimli:'Çekilmiş',
+    implant:'İmplant', kanal:'Kanal Tedavisi', kron:'Kron',
+    hasarli:'Hasarlı/Çürük', eksik:'Eksik',
+};
+
+// ═══════════════════════════════════════════════════════
+// RENDERER
+// ═══════════════════════════════════════════════════════
+const canvas = document.getElementById('toothCanvas');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setClearColor(0xeef2ff);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+renderer.outputEncoding = THREE.sRGBEncoding;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xeef2ff);
+const camera = new THREE.PerspectiveCamera(38, 2, 0.01, 1000);
+camera.position.set(0, 0, 5);
+
+scene.add(new THREE.AmbientLight(0xffffff, 1.0));
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.5);
+keyLight.position.set(3, 5, 4); keyLight.castShadow = true;
+keyLight.shadow.mapSize.set(2048, 2048); keyLight.shadow.bias = -0.001;
+scene.add(keyLight);
+const fillLight = new THREE.DirectionalLight(0xdbeafe, 0.6);
+fillLight.position.set(-4, 2, 3); scene.add(fillLight);
+const rimLight = new THREE.DirectionalLight(0xfff0f5, 0.4);
+rimLight.position.set(0, -4, -3); scene.add(rimLight);
+
+function resizeCanvas() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (renderer.domElement.width !== w || renderer.domElement.height !== h) {
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+    }
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const pivot = new THREE.Group();
+scene.add(pivot);
+
+const toothMeshes = {};
+const toothOriginalColors = {};
+let modelLoaded = false;
+let _cachedMeshes = null;
+
+const loadingEl = document.createElement('div');
+loadingEl.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#2563eb;font-weight:600;font-size:15px;font-family:"DM Sans",sans-serif;background:rgba(255,255,255,0.9);padding:16px 28px;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,0.1);z-index:10;';
+loadingEl.textContent = '⏳ Diş modeli yükleniyor...';
+canvas.parentElement.style.position = 'relative';
+canvas.parentElement.appendChild(loadingEl);
+
+const gltfLoader = new THREE.GLTFLoader();
+gltfLoader.load(
+    '{% static "models/teeth.glb" %}',
+    (gltf) => {
+        loadingEl.remove();
+        const model = gltf.scene;
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 7.0 / maxDim;
+        model.scale.setScalar(scale);
+        model.position.sub(center.multiplyScalar(scale));
+        pivot.add(model);
+        modelLoaded = true;
+        model.traverse((child) => {
+            if (!child.isMesh) return;
+            const fdi = MESH_TO_FDI[child.name];
+            if (fdi) {
+                toothMeshes[fdi] = child;
+                child.castShadow = true;
+                child.receiveShadow = true;
+                toothOriginalColors[fdi] = child.material.color ? child.material.color.clone() : new THREE.Color(0xf5f0eb);
+                applyToothStatus(fdi);
+            }
+        });
+        _cachedMeshes = Object.values(toothMeshes).filter(m => m);
+        targetZoom = maxDim * scale * 1.1;
+        currentZoom = targetZoom;
+        camera.position.z = currentZoom;
+    },
+    (xhr) => { loadingEl.textContent = `⏳ Yükleniyor... %${Math.round(xhr.loaded / (xhr.total || 1) * 100)}`; },
+    (err) => { loadingEl.textContent = '❌ Model yüklenemedi'; console.error(err); }
+);
+
+function applyToothStatus(fdi) {
+    const mesh = toothMeshes[fdi];
+    if (!mesh) return;
+    const status = toothData[fdi]?.status || 'saglikli';
+    if (!mesh.userData.matCloned) { mesh.material = mesh.material.clone(); mesh.userData.matCloned = true; }
+    if (status === 'saglikli') {
+        mesh.material.color.copy(toothOriginalColors[fdi] || new THREE.Color(0xf5f0eb));
+        if (mesh.material.emissive) { mesh.material.emissive.set(0x000000); mesh.material.emissiveIntensity = 0; }
+    } else {
+        mesh.material.color.copy(STATUS_COLORS[status]);
+        if (mesh.material.emissive) { mesh.material.emissive.copy(STATUS_COLORS[status]).multiplyScalar(0.1); mesh.material.emissiveIntensity = 0.2; }
+    }
+}
+
+// ═══════════════════════════════════════════════════════
+// KONTROLLER
+// ═══════════════════════════════════════════════════════
+let isDragging = false, isRightDrag = false;
+let prevX = 0, prevY = 0, mouseMovedDist = 0;
+let targetRotY = 0.15, currentRotY = 0.15;
+let targetRotX = -0.08, currentRotX = -0.08;
+let targetZoom = 5, currentZoom = 5;
+let targetPanX = 0, currentPanX = 0;
+let targetPanY = 0, currentPanY = 0;
+
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+canvas.addEventListener('mousedown', e => { isDragging = true; isRightDrag = e.button === 2; prevX = e.clientX; prevY = e.clientY; mouseMovedDist = 0; canvas.style.cursor = isRightDrag ? 'move' : 'grabbing'; });
+window.addEventListener('mouseup', () => { isDragging = false; isRightDrag = false; canvas.style.cursor = 'grab'; });
+canvas.addEventListener('mousemove', e => {
+    if (!isDragging) { handleHover(e); return; }
+    const dx = e.clientX - prevX, dy = e.clientY - prevY;
+    mouseMovedDist += Math.abs(dx) + Math.abs(dy);
+    if (isRightDrag) { targetPanX += dx * 0.005; targetPanY -= dy * 0.005; }
+    else { targetRotY += dx * 0.007; targetRotX += dy * 0.004; targetRotX = Math.max(-0.9, Math.min(0.9, targetRotX)); }
+    prevX = e.clientX; prevY = e.clientY;
+});
+canvas.addEventListener('wheel', e => { targetZoom += e.deltaY * 0.01; targetZoom = Math.max(1.5, Math.min(18, targetZoom)); e.preventDefault(); }, { passive: false });
+
+// ═══════════════════════════════════════════════════════
+// HOVER TOOLTIP
+// ═══════════════════════════════════════════════════════
+const raycaster = new THREE.Raycaster();
+const mouse2D = new THREE.Vector2();
+const tooltip = document.createElement('div');
+tooltip.style.cssText = 'position:fixed;pointer-events:none;background:rgba(17,24,39,0.92);color:white;padding:8px 14px;border-radius:10px;font-size:13px;font-family:"DM Sans",sans-serif;display:none;z-index:9999;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,0.25);line-height:1.6;';
+document.body.appendChild(tooltip);
+
+function handleHover(e) {
+    if (!modelLoaded) return;
+    const rect = canvas.getBoundingClientRect();
+    mouse2D.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse2D.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(mouse2D, camera);
+    const hits = raycaster.intersectObjects(_cachedMeshes || []);
+    if (hits.length > 0) {
+        const fdi = MESH_TO_FDI[hits[0].object.name];
+        if (fdi) {
+            const data = toothData[fdi] || {};
+            tooltip.innerHTML = `<strong>Diş ${fdi}</strong> &nbsp;·&nbsp; ${STATUS_LABELS[data.status || 'saglikli']}${data.notes ? `<br><span style="color:#d1d5db;font-size:12px">${data.notes}</span>` : ''}`;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (e.clientX + 14) + 'px';
+            tooltip.style.top = (e.clientY - 10) + 'px';
+            canvas.style.cursor = 'pointer';
+        }
+    } else { tooltip.style.display = 'none'; if (!isDragging) canvas.style.cursor = 'grab'; }
+}
+canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+// ═══════════════════════════════════════════════════════
+// TIKLAMA
+// ═══════════════════════════════════════════════════════
+let selectedFdi = null;
+canvas.addEventListener('click', e => {
+    if (mouseMovedDist > 6 || !modelLoaded) return;
+    const rect = canvas.getBoundingClientRect();
+    mouse2D.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse2D.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(mouse2D, camera);
+    const hits = raycaster.intersectObjects(_cachedMeshes || []);
+    if (hits.length > 0) {
+        const fdi = MESH_TO_FDI[hits[0].object.name];
+        if (fdi) selectTooth(fdi);
+    }
+});
+
+function selectTooth(fdi) {
+    if (selectedFdi && toothMeshes[selectedFdi]) applyToothStatus(selectedFdi);
+    selectedFdi = fdi;
+    const mesh = toothMeshes[fdi];
+    if (!mesh) return;
+    if (!mesh.userData.matCloned) { mesh.material = mesh.material.clone(); mesh.userData.matCloned = true; }
+    mesh.material.color.set(0x2563eb);
+    if (mesh.material.emissive) { mesh.material.emissive.set(0x1e40af); mesh.material.emissiveIntensity = 0.25; }
+    const data = toothData[fdi] || { status: 'saglikli', notes: '' };
+    const color = '#' + STATUS_COLORS[data.status || 'saglikli'].getHexString();
+    document.getElementById('tooth-info-text').innerHTML = `
+        <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:${color};border:1px solid #d1d5db;margin-right:6px;vertical-align:middle;"></span>
+        <strong>Diş ${fdi}</strong> &nbsp;·&nbsp; ${STATUS_LABELS[data.status || 'saglikli']}
+        ${data.notes ? `&nbsp;·&nbsp; <em style="color:#6b7280">${data.notes}</em>` : ''}
+        &nbsp;&nbsp;
+        <a href="#" onclick="openToothModal(${fdi});return false;" style="background:#2563eb;color:white;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;display:inline-block;">✏️ Güncelle</a>
+    `;
+}
+
+// ═══════════════════════════════════════════════════════
+// ANİMASYON LOOP
+// ═══════════════════════════════════════════════════════
+const LERP = 0.07;
+let lastFrame = 0;
+function animate(timestamp) {
+    requestAnimationFrame(animate);
+    if (timestamp - lastFrame < 16) return;
+    lastFrame = timestamp;
+    currentRotY += (targetRotY - currentRotY) * LERP;
+    currentRotX += (targetRotX - currentRotX) * LERP;
+    currentZoom += (targetZoom - currentZoom) * LERP;
+    currentPanX += (targetPanX - currentPanX) * LERP;
+    currentPanY += (targetPanY - currentPanY) * LERP;
+    pivot.rotation.y = currentRotY;
+    pivot.rotation.x = currentRotX;
+    pivot.position.x = currentPanX;
+    pivot.position.y = currentPanY;
+    camera.position.z = currentZoom;
+    renderer.render(scene, camera);
+}
+animate(0);
+
+// ═══════════════════════════════════════════════════════
+// HASTA MODELİ VİEWER
+// ═══════════════════════════════════════════════════════
+const activeViewers = {};
+function loadPatientModel(url, format, modelId) {
+    const viewerDiv = document.getElementById('viewer-' + modelId);
+    const canvasEl  = document.getElementById('canvas-' + modelId);
+    if (!viewerDiv || !canvasEl) return;
+    if (viewerDiv.style.display === 'block') { viewerDiv.style.display = 'none'; return; }
+    viewerDiv.style.display = 'block';
+    if (activeViewers[modelId]) return;
+
+    const vR = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true });
+    vR.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    vR.setClearColor(0xf0f4ff);
+    vR.toneMapping = THREE.ACESFilmicToneMapping;
+    vR.outputEncoding = THREE.sRGBEncoding;
+    const vS = new THREE.Scene();
+    vS.background = new THREE.Color(0xf0f4ff);
+    const vC = new THREE.PerspectiveCamera(40, 2, 0.001, 2000);
+    vS.add(new THREE.AmbientLight(0xffffff, 0.9));
+    const vKey = new THREE.DirectionalLight(0xffffff, 1.2);
+    vKey.position.set(5, 10, 7); vKey.castShadow = true; vS.add(vKey);
+    vS.add(Object.assign(new THREE.DirectionalLight(0xdbeafe, 0.5), { position: new THREE.Vector3(-5,-5,-5) }));
+
+    viewerDiv.style.position = 'relative';
+    const ld = document.createElement('div');
+    ld.id = 'loading-' + modelId;
+    ld.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#2563eb;font-weight:600;font-size:14px;background:rgba(255,255,255,0.85);padding:12px 24px;border-radius:12px;';
+    ld.textContent = '⏳ Yükleniyor...';
+    viewerDiv.appendChild(ld);
+
+    function onLoaded(obj) {
+        document.getElementById('loading-' + modelId)?.remove();
+        vS.add(obj);
+        const box = new THREE.Box3().setFromObject(obj);
+        const cnt = box.getCenter(new THREE.Vector3());
+        const sz  = box.getSize(new THREE.Vector3());
+        const sc  = 5.0 / Math.max(sz.x, sz.y, sz.z);
+        obj.scale.setScalar(sc);
+        obj.position.sub(cnt.multiplyScalar(sc));
+        vC.position.set(0, sz.y * sc * 0.2, Math.max(sz.x, sz.y, sz.z) * sc * 1.4);
+        vC.lookAt(0, 0, 0);
+        const vP = new THREE.Group(); vS.add(vP); vP.add(obj);
+        function resV() { const w = canvasEl.clientWidth, h = canvasEl.clientHeight; vR.setSize(w, h, false); vC.aspect = w/h; vC.updateProjectionMatrix(); }
+        resV(); window.addEventListener('resize', resV);
+        let vD=false,vRD=false,vPX=0,vPY=0,vTRY=0,vTRX=0,vCRY=0,vCRX=0;
+        let vTZ=vC.position.z,vCZ=vC.position.z,vTPX=0,vTPY=0,vCPX=0,vCPY=0,vLF=0;
+        canvasEl.addEventListener('contextmenu', e=>e.preventDefault());
+        canvasEl.addEventListener('mousedown', e=>{vD=true;vRD=e.button===2;vPX=e.clientX;vPY=e.clientY;});
+        window.addEventListener('mouseup',()=>{vD=false;});
+        canvasEl.addEventListener('mousemove', e=>{
+            if(!vD)return;
+            const dx=e.clientX-vPX,dy=e.clientY-vPY;
+            if(vRD){vTPX+=dx*0.005;vTPY-=dy*0.005;}
+            else{vTRY+=dx*0.008;vTRX+=dy*0.004;vTRX=Math.max(-1.2,Math.min(1.2,vTRX));}
+            vPX=e.clientX;vPY=e.clientY;
+        });
+        canvasEl.addEventListener('wheel',e=>{vTZ+=e.deltaY*0.005;vTZ=Math.max(0.3,Math.min(20,vTZ));e.preventDefault();},{passive:false});
+        function vA(ts){
+            requestAnimationFrame(vA);if(ts-vLF<16)return;vLF=ts;resV();
+            vCRY+=(vTRY-vCRY)*0.07;vCRX+=(vTRX-vCRX)*0.07;vCZ+=(vTZ-vCZ)*0.07;
+            vCPX+=(vTPX-vCPX)*0.07;vCPY+=(vTPY-vCPY)*0.07;
+            vP.rotation.y=vCRY;vP.rotation.x=vCRX;vP.position.x=vCPX;vP.position.y=vCPY;vC.position.z=vCZ;
+            vR.render(vS,vC);
+        }
+        vA(0); activeViewers[modelId] = true;
+    }
+
+    const fmt = format.toLowerCase();
+    if (fmt==='glb'||fmt==='gltf') { new THREE.GLTFLoader().load(url, g=>onLoaded(g.scene)); }
+    else if (fmt==='stl') { new THREE.STLLoader().load(url, g=>onLoaded(new THREE.Mesh(g, new THREE.MeshPhongMaterial({color:0xe2e8f0,shininess:80})))); }
+    else if (fmt==='obj') { new THREE.OBJLoader().load(url, o=>onLoaded(o)); }
+}
+
+// ═══════════════════════════════════════════════════════
+// MODAL & TAB
+// ═══════════════════════════════════════════════════════
+function openToothModal(num) {
+    document.getElementById('modal-title').textContent = 'Diş ' + num + ' — Durum Güncelle';
+    document.getElementById('modal-tooth-num').value = num;
+    const data = toothData[num] || { status: 'saglikli', notes: '' };
+    document.getElementById('modal-status').value = data.status;
+    document.getElementById('modal-notes').value  = data.notes;
+    document.getElementById('tooth-modal').classList.add('open');
+}
+function closeModal() { document.getElementById('tooth-modal').classList.remove('open'); }
+document.getElementById('tooth-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+function showTab(name, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+}
+</script>
+</body>
+</html>
