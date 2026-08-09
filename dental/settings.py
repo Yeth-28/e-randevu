@@ -9,20 +9,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-secret-key-change-in-prod')
 DEBUG       = config('DEBUG', default=True, cast=bool)
 
-# ─── DOMAIN AYARLARI (.env'den okunur) ────────────────────────────────────────
+# ─── DOMAIN AYARLARI ──────────────────────────────────────────────────────────
+# Canlı ortamda (Render) butonların localhost'a yönlenmesini engellemek için doğrudan tanımlandı:
 BASE_DOMAIN  = config('BASE_DOMAIN',  default='e-randevu.online')
-PANEL_DOMAIN = config('PANEL_DOMAIN', default='panel.localhost')
-HASTA_DOMAIN = config('HASTA_DOMAIN', default='hasta.localhost')
-SITE_URL     = config('SITE_URL',     default='http://hasta.localhost:8000')
-PANEL_URL    = config('PANEL_URL',    default='http://panel.localhost:8000')
+
+if DEBUG:
+    PANEL_DOMAIN = config('PANEL_DOMAIN', default='panel.localhost')
+    HASTA_DOMAIN = config('HASTA_DOMAIN', default='hasta.localhost')
+    SITE_URL     = config('SITE_URL',     default='http://hasta.localhost:8000')
+    PANEL_URL    = config('PANEL_URL',    default='http://panel.localhost:8000')
+else:
+    PANEL_DOMAIN = config('PANEL_DOMAIN', default=f'panel.{BASE_DOMAIN}')
+    HASTA_DOMAIN = config('HASTA_DOMAIN', default=f'hasta.{BASE_DOMAIN}')
+    SITE_URL     = config('SITE_URL',     default=f'https://{BASE_DOMAIN}')
+    PANEL_URL    = config('PANEL_URL',    default=f'https://panel.{BASE_DOMAIN}')
 
 ALLOWED_HOSTS = ['*'] if DEBUG else [
     BASE_DOMAIN,
     f'.{BASE_DOMAIN}',
     PANEL_DOMAIN,
+    HASTA_DOMAIN,
     'localhost',
     '127.0.0.1',
-    '.onrender.com', # Render domain uzantısı izinleri
+    '.onrender.com',
 ]
 
 # ─── MULTI-TENANT APPS ────────────────────────────────────────────────────────
@@ -62,7 +71,7 @@ MIDDLEWARE = [
     'dental.middleware.PanelSubdomainMiddleware',
     'dental.middleware.SuperAdminIPMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Render'da statik dosyaları (CSS/JS) sunmak için
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Statik dosyalar (CSS/JS) için
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,7 +113,6 @@ if DATABASE_URL:
             ssl_require=True
         )
     }
-    # Django-Tenants Motorunu Zorla
     DATABASES['default']['ENGINE'] = 'django_tenants.postgresql_backend'
 else:
     # Lokal Geliştirme Ortamı
