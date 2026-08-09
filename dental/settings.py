@@ -1,11 +1,12 @@
 import os
 from pathlib import Path
 from decouple import config, Csv
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ─── TEMEL ────────────────────────────────────────────────────────────────────
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-secret-key-change-in-prod')
 DEBUG       = config('DEBUG', default=True, cast=bool)
 
 # ─── DOMAIN AYARLARI (.env'den okunur) ────────────────────────────────────────
@@ -21,6 +22,7 @@ ALLOWED_HOSTS = ['*'] if DEBUG else [
     PANEL_DOMAIN,
     'localhost',
     '127.0.0.1',
+    '.onrender.com', # Render domain uzantısı izinleri
 ]
 
 # ─── MULTI-TENANT APPS ────────────────────────────────────────────────────────
@@ -60,6 +62,7 @@ MIDDLEWARE = [
     'dental.middleware.PanelSubdomainMiddleware',
     'dental.middleware.SuperAdminIPMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Render'da statik dosyaları (CSS/JS) sunmak için
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,17 +92,32 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dental.wsgi.application'
 
-# ─── VERİTABANI ───────────────────────────────────────────────────────────────
-DATABASES = {
-    'default': {
-        'ENGINE':   'django_tenants.postgresql_backend',
-        'NAME':     config('DB_NAME',     default='e-randevu'),
-        'USER':     config('DB_USER',     default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default=''),
-        'HOST':     config('DB_HOST',     default='localhost'),
-        'PORT':     config('DB_PORT',     default='5432'),
+# ─── VERİTABANI (Render + Neon Postgres / Local Uyumlu) ─────────────────────────
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL:
+    # Render / Production Ortamı (DATABASE_URL Varsa)
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
-}
+    # Django-Tenants Motorunu Zorla
+    DATABASES['default']['ENGINE'] = 'django_tenants.postgresql_backend'
+else:
+    # Lokal Geliştirme Ortamı
+    DATABASES = {
+        'default': {
+            'ENGINE':   'django_tenants.postgresql_backend',
+            'NAME':     config('DB_NAME',     default='e-randevu'),
+            'USER':     config('DB_USER',     default='postgres'),
+            'PASSWORD': config('DB_PASSWORD', default=''),
+            'HOST':     config('DB_HOST',     default='localhost'),
+            'PORT':     config('DB_PORT',     default='5432'),
+        }
+    }
 
 DATABASE_ROUTERS = ('django_tenants.routers.TenantSyncRouter',)
 
@@ -130,11 +148,14 @@ USE_I18N      = True
 USE_TZ        = True
 
 # ─── STATİK & MEDIA ───────────────────────────────────────────────────────────
-STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_URL       = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT      = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL        = '/media/'
 MEDIA_ROOT       = os.path.join(BASE_DIR, 'media')
+
+# WhiteNoise Statik Dosya Sıkıştırma
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -157,6 +178,8 @@ CSRF_TRUSTED_ORIGINS = [
     f'http://{PANEL_DOMAIN}', f'https://{PANEL_DOMAIN}',
     f'http://{HASTA_DOMAIN}', f'https://{HASTA_DOMAIN}',
     f'https://*.{BASE_DOMAIN}',
+    f'https://{BASE_DOMAIN}',
+    'https://*.onrender.com',
     'http://panel.localhost:8000',
     'http://hasta.localhost:8000',
     'http://*.hasta.localhost:8000',
@@ -171,9 +194,8 @@ if not DEBUG:
     SECURE_SSL_REDIRECT             = True
     SESSION_COOKIE_SECURE           = True
     CSRF_COOKIE_SECURE              = True
-    SECURE_BROWSER_XSS_FILTER      = True
-    SECURE_CONTENT_TYPE_NOSNIFF    = True
+    SECURE_BROWSER_XSS_FILTER       = True
+    SECURE_CONTENT_TYPE_NOSNIFF     = True
     SECURE_HSTS_SECONDS             = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
     X_FRAME_OPTIONS                 = 'DENY'
-
