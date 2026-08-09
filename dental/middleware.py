@@ -8,13 +8,16 @@ class PanelSubdomainMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        host         = request.get_host().split(':')[0].lower().strip()
-        panel_domain = getattr(settings, 'PANEL_DOMAIN', 'panel.localhost')
-        hasta_domain = getattr(settings, 'HASTA_DOMAIN', 'hasta.localhost')
-        base_domain  = getattr(settings, 'BASE_DOMAIN',  'e-randevu.online')
+        # Port numarasını ve boşlukları temizle
+        host = request.get_host().split(':')[0].lower().strip()
 
-        if host == panel_domain:
-            # Klinik yönetim paneli
+        # Settings'deki alan adları
+        base_domain  = getattr(settings, 'BASE_DOMAIN',  'e-randevu.online')
+        panel_domain = getattr(settings, 'PANEL_DOMAIN', f'panel.{base_domain}')
+        hasta_domain = getattr(settings, 'HASTA_DOMAIN', f'hasta.{base_domain}')
+
+        # 1. Ortak Yönetim Paneli (panel.e-randevu.online VEYA panel.localhost)
+        if host in (panel_domain, 'panel.localhost'):
             if request.path.startswith('/doktor/'):
                 request.urlconf = 'dental.doktor_urls'
                 set_urlconf('dental.doktor_urls')
@@ -22,9 +25,8 @@ class PanelSubdomainMiddleware:
                 request.urlconf = 'dental.panel_urls'
                 set_urlconf('dental.panel_urls')
 
-        elif host in (hasta_domain, base_domain, 'localhost'):
-            # Ana hasta sitesi — localhost:8000 veya e-randevu.online
-            # Superadmin ve diğer özel path'ler hariç
+        # 2. Ana Hasta Sitesi (e-randevu.online, hasta.e-randevu.online, hasta.localhost, localhost)
+        elif host in (base_domain, hasta_domain, 'hasta.localhost', 'localhost', '127.0.0.1'):
             if not request.path.startswith('/superadmin/') and \
                not request.path.startswith('/admin/'):
                 request.urlconf = 'dental.hasta_ana_urls'
@@ -32,12 +34,12 @@ class PanelSubdomainMiddleware:
             else:
                 set_urlconf(None)
 
+        # 3. Özel Klinik Subdomain'leri (örn: ahmet-klinik.e-randevu.online)
         elif (
             host.endswith(f'.{base_domain}') or
             host.endswith(f'.{hasta_domain}') or
-            (host.endswith('.localhost') and host not in (panel_domain,))
-        ):
-            # Klinik subdomain — aliklinik.e-randevu.online veya aliklinik.localhost
+            host.endswith('.localhost')
+        ) and host not in (panel_domain, hasta_domain, 'panel.localhost', 'hasta.localhost'):
             request.urlconf = 'dental.hasta_klinik_urls'
             set_urlconf('dental.hasta_klinik_urls')
 
