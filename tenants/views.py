@@ -27,7 +27,6 @@ def generate_clinic_id():
             return new_id
 
 
-
 def _hosts_dosyasina_ekle(subdomain):
     """Windows hosts dosyasına subdomain ekle — sadece geliştirme ortamı"""
     import os
@@ -44,7 +43,6 @@ def _hosts_dosyasina_ekle(subdomain):
         with open(hosts_path, 'a', encoding='utf-8') as f:
             f.write(f"\n{entry}\n")
     except PermissionError:
-        # Yetki yoksa sessizce geç — production'da zaten gerekmez
         pass
     except Exception:
         pass
@@ -94,27 +92,9 @@ Klinik ID: {clinic.clinic_id}
 Panel Adresi: {settings.PANEL_URL}/{clinic.clinic_id}/
 
 Panele giriş için klinik ID, e-posta ve şifrenizi kullanın.
-Giriş yapınca e-postanıza 6 haneli doğrulama kodu gönderilecektir.
 
 Saygılarımızla,
 e-Randevu Ekibi""",
-            from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@e-randevu.online'),
-            recipient_list=[clinic.email],
-            fail_silently=True,
-        )
-    except Exception:
-        pass
-
-
-def send_otp_email(clinic, otp):
-    try:
-        send_mail(
-            subject='e-Randevu — Giriş Doğrulama Kodunuz',
-            message=f"""Klinik ID: {clinic.clinic_id}
-
-Giriş doğrulama kodunuz: {otp}
-
-Bu kod 10 dakika geçerlidir. Kodu kimseyle paylaşmayın.""",
             from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@e-randevu.online'),
             recipient_list=[clinic.email],
             fail_silently=True,
@@ -147,9 +127,9 @@ def klinik_kayit(request):
             password2 = request.POST.get('password2', '')
 
             errors = []
-            if not name:    errors.append('Klinik adı zorunlu.')
-            if not email:   errors.append('E-posta zorunlu.')
-            if not phone:   errors.append('Telefon zorunlu.')
+            if not name:      errors.append('Klinik adı zorunlu.')
+            if not email:     errors.append('E-posta zorunlu.')
+            if not phone:     errors.append('Telefon zorunlu.')
             if not password1: errors.append('Şifre zorunlu.')
             if password1 != password2:
                 errors.append('Şifreler eşleşmiyor.')
@@ -236,7 +216,6 @@ def _klinik_kaydet(request):
             tenant=clinic,
             is_primary=True,
         )
-        # Windows hosts dosyasına otomatik ekle (sadece localhost geliştirme)
         if base_domain == 'localhost':
             _hosts_dosyasina_ekle(subdomain)
 
@@ -276,7 +255,6 @@ def _iyzico_odeme(request):
     exp_month = exp_parts[0].strip() if len(exp_parts) > 0 else '12'
     exp_year  = ('20' + exp_parts[1].strip()) if len(exp_parts) > 1 else '2030'
 
-    # Klinik objesi henüz yok — geçici bir obje oluştur
     class TempClinic:
         clinic_id = 'KAYIT'
     temp_clinic = TempClinic()
@@ -318,84 +296,31 @@ def _iyzico_odeme(request):
         })
 
 
-# ─── PANEL GİRİŞ (2FA) ──────────────────────────────────────────
+# ─── PANEL GİRİŞ (SADELEŞTİRİLMİŞ — OTP SİZ) ──────────────────────
 
 def panel_giris(request):
-
-    # ── OTP doğrulama ──
-    if request.method == 'POST' and request.POST.get('step') == 'otp':
-        otp_girilen = request.POST.get('otp', '').strip()
-        clinic_id   = request.session.get('giris_clinic_id')
-        user_id     = request.session.get('giris_user_id')
-
-        if not clinic_id or not user_id:
-            messages.error(request, 'Oturum süresi doldu.')
-            return redirect(f"{settings.PANEL_URL}/giris/")
-
-        try:
-            clinic = Clinic.objects.get(clinic_id=clinic_id)
-        except Clinic.DoesNotExist:
-            messages.error(request, 'Klinik bulunamadı.')
-            return redirect(f"{settings.PANEL_URL}/giris/")
-
-        if (clinic.login_otp == otp_girilen
-                and clinic.login_otp_exp
-                and timezone.now() < clinic.login_otp_exp):
-            clinic.login_otp = ''
-            clinic.login_otp_exp = None
-            clinic.save(update_fields=['login_otp', 'login_otp_exp'])
-
-            try:
-                user = User.objects.get(id=user_id)
-                login(request, user)
-            except User.DoesNotExist:
-                pass
-
-            request.session.pop('giris_clinic_id', None)
-            request.session.pop('giris_user_id', None)
-            request.session.pop('giris_email', None)
-            return redirect(f"{settings.PANEL_URL}/{clinic_id}/")
-        else:
-            messages.error(request, '❌ Kod hatalı veya süresi dolmuş.')
-            return render(request, 'panel_giris.html', {
-                'step': 'otp',
-                'clinic_id': clinic_id,
-                'email': request.session.get('giris_email', ''),
-            })
-
-    # ── Kimlik doğrulama ──
     if request.method == 'POST':
         clinic_id = request.POST.get('clinic_id', '').upper().strip()
         email     = request.POST.get('email', '').strip()
         password  = request.POST.get('password', '')
 
+        # 1. Klinik varlığını kontrol et
         try:
             clinic = Clinic.objects.get(clinic_id=clinic_id)
         except Clinic.DoesNotExist:
             messages.error(request, '❌ Klinik ID bulunamadı.')
             return render(request, 'panel_giris.html', {'step': 'giris'})
 
+        # 2. Kullanıcıyı doğrula
         user = authenticate(request, username=email, password=password)
         if user is None:
             messages.error(request, '❌ E-posta veya şifre hatalı.')
             return render(request, 'panel_giris.html', {'step': 'giris'})
 
-        # OTP üret ve gönder
-        otp = ''.join(random.choices(string.digits, k=6))
-        clinic.login_otp     = otp
-        clinic.login_otp_exp = timezone.now() + timedelta(minutes=10)
-        clinic.save(update_fields=['login_otp', 'login_otp_exp'])
-        send_otp_email(clinic, otp)
-
-        request.session['giris_clinic_id'] = clinic_id
-        request.session['giris_user_id']   = user.id
-        request.session['giris_email']     = email
-
-        return render(request, 'panel_giris.html', {
-            'step':      'otp',
-            'clinic_id': clinic_id,
-            'email':     email,
-        })
+        # 3. Oturum aç ve doğrudan kliniğin paneline yönlendir
+        login(request, user)
+        messages.success(request, f"Hoş geldiniz, {clinic.name} paneline yönlendiriliyorsunuz.")
+        return redirect(f"{settings.PANEL_URL}/{clinic_id}/")
 
     return render(request, 'panel_giris.html', {'step': 'giris'})
 
