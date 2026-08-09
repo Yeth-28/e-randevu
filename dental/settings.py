@@ -7,11 +7,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ─── TEMEL ────────────────────────────────────────────────────────────────────
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-secret-key-change-in-prod')
-DEBUG       = config('DEBUG', default=True, cast=bool)
+
+# ÖNEMLİ: DEBUG artık varsayılan olarak False.
+# Eskiden default=True idi; Render'da DEBUG env-var'ı UNUTULURSA sistem sessizce
+# "geliştirme modu" domainlerine (panel.localhost / hasta.localhost) düşüyor ve
+# panel.e-randevu.online isteği hiçbir exact-match'e girmeyip klinik-subdomain
+# branch'ine kayıyordu (bkz. middleware.py başındaki not). Lokalde çalışmak için
+# Render Dashboard'da DEBUG=False bırakılmalı, lokal .env dosyanızda DEBUG=True yazmalısınız.
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+# Render bu env-var'ı otomatik enjekte eder (örn: e-randevu.onrender.com)
+RENDER_EXTERNAL_HOSTNAME = config('RENDER_EXTERNAL_HOSTNAME', default=None)
 
 # ─── DOMAIN AYARLARI ──────────────────────────────────────────────────────────
-# Canlı ortamda (Render) butonların localhost'a yönlenmesini engellemek için doğrudan tanımlandı:
-BASE_DOMAIN  = config('BASE_DOMAIN',  default='e-randevu.online')
+# Canlı ortamda (Render) butonların/redirect'lerin localhost'a yönlenmesini
+# engellemek için domain grubu DEBUG bayrağına göre tek yerden belirlenir.
+BASE_DOMAIN = config('BASE_DOMAIN', default='e-randevu.online').strip().lower()
 
 if DEBUG:
     PANEL_DOMAIN = config('PANEL_DOMAIN', default='panel.localhost')
@@ -19,20 +30,24 @@ if DEBUG:
     SITE_URL     = config('SITE_URL',     default='http://hasta.localhost:8000')
     PANEL_URL    = config('PANEL_URL',    default='http://panel.localhost:8000')
 else:
-    PANEL_DOMAIN = config('PANEL_DOMAIN', default=f'panel.{BASE_DOMAIN}')
-    HASTA_DOMAIN = config('HASTA_DOMAIN', default=f'hasta.{BASE_DOMAIN}')
+    PANEL_DOMAIN = config('PANEL_DOMAIN', default=f'panel.{BASE_DOMAIN}').strip().lower()
+    HASTA_DOMAIN = config('HASTA_DOMAIN', default=f'hasta.{BASE_DOMAIN}').strip().lower()
     SITE_URL     = config('SITE_URL',     default=f'https://{BASE_DOMAIN}')
-    PANEL_URL    = config('PANEL_URL',    default=f'https://panel.{BASE_DOMAIN}')
+    PANEL_URL    = config('PANEL_URL',    default=f'https://{PANEL_DOMAIN}')
 
-ALLOWED_HOSTS = ['*'] if DEBUG else [
+ALLOWED_HOSTS = [
     BASE_DOMAIN,
-    f'.{BASE_DOMAIN}',
+    f'.{BASE_DOMAIN}',        # tüm subdomainler (panel, hasta, <klinik-slug>)
     PANEL_DOMAIN,
     HASTA_DOMAIN,
     'localhost',
     '127.0.0.1',
     '.onrender.com',
 ]
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+if DEBUG:
+    ALLOWED_HOSTS += ['panel.localhost', 'hasta.localhost', '.localhost']
 
 # ─── MULTI-TENANT APPS ────────────────────────────────────────────────────────
 SHARED_APPS = [
@@ -66,12 +81,13 @@ TENANT_MODEL        = "tenants.Clinic"
 TENANT_DOMAIN_MODEL = "tenants.Domain"
 
 # ─── MIDDLEWARE ───────────────────────────────────────────────────────────────
+# Sıra kritik: PanelSubdomainMiddleware, SecurityMiddleware'den ÖNCE gelmeli ki
+# request.urlconf, host'a göre CommonMiddleware/CSRF'den önce belirlensin.
 MIDDLEWARE = [
-    #'django_tenants.middleware.main.TenantMainMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Statik dosyalar (CSS/JS)
     'dental.middleware.PanelSubdomainMiddleware',
     'dental.middleware.SuperAdminIPMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Statik dosyalar (CSS/JS) için
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -105,17 +121,21 @@ WSGI_APPLICATION = 'dental.wsgi.application'
 DATABASE_URL = config('DATABASE_URL', default=None)
 
 if DATABASE_URL:
-    # Render / Production Ortamı (DATABASE_URL Varsa)
+    # Render / Production ortamı — Neon Postgres bağlantı dizesi DATABASE_URL
+    # env-var'ından okunur. Neon SSL zorunlu tuttuğu için ssl_require=True.
+    # Neon "pooled connection" (pgbouncer) URL'i kullanıyorsanız conn_max_age=0
+    # bırakmanız önerilir; Render free plan tek worker olduğu için 600 sn de
+    # sorunsuz çalışır, ölçeklendirirseniz 0'a çekin.
     DATABASES = {
         'default': dj_database_url.config(
             default=DATABASE_URL,
             conn_max_age=600,
-            ssl_require=True
+            ssl_require=True,
         )
     }
     DATABASES['default']['ENGINE'] = 'django_tenants.postgresql_backend'
 else:
-    # Lokal Geliştirme Ortamı
+    # Lokal geliştirme ortamı
     DATABASES = {
         'default': {
             'ENGINE':   'django_tenants.postgresql_backend',
@@ -173,29 +193,43 @@ IYZICO_SECRET_KEY = config('IYZICO_SECRET_KEY', default='sandbox-secret-key')
 IYZICO_BASE_URL   = config('IYZICO_BASE_URL',   default='https://sandbox-api.iyzipay.com')
 
 # ─── E-POSTA ──────────────────────────────────────────────────────────────────
+# GÜVENLİK: Gerçek Gmail uygulama şifresi artık kod içinde DEĞİL — sadece
+# ortam değişkeninden okunuyor. Eski kodda burada gerçek bir şifre repoya
+# (ve muhtemelen git geçmişine) sızmıştı; bu şifreyi Google hesabınızdan
+# HEMEN iptal edip yeni bir "Uygulama Şifresi" üretmeniz gerekiyor.
 EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST          = config('EMAIL_HOST',          default='smtp.gmail.com')
 EMAIL_PORT          = config('EMAIL_PORT',          default=587, cast=int)
 EMAIL_USE_TLS       = config('EMAIL_USE_TLS',       default=True, cast=bool)
-EMAIL_HOST_USER     = config('EMAIL_HOST_USER',     default='talhameteacar01@gmail.com')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='ydao pzpg xbmo bqby')
-DEFAULT_FROM_EMAIL  = config('EMAIL_HOST_USER',     default='noreply@e-randevu.online')
+EMAIL_HOST_USER     = config('EMAIL_HOST_USER',     default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL  = config('DEFAULT_FROM_EMAIL',  default='noreply@e-randevu.online')
 
 # ─── CSRF & SESSION ───────────────────────────────────────────────────────────
 CSRF_TRUSTED_ORIGINS = [
-    f'http://{PANEL_DOMAIN}', f'https://{PANEL_DOMAIN}',
-    f'http://{HASTA_DOMAIN}', f'https://{HASTA_DOMAIN}',
+    f'https://{PANEL_DOMAIN}', f'http://{PANEL_DOMAIN}',
+    f'https://{HASTA_DOMAIN}', f'http://{HASTA_DOMAIN}',
+    f'https://{BASE_DOMAIN}',  f'http://{BASE_DOMAIN}',
     f'https://*.{BASE_DOMAIN}',
-    f'https://{BASE_DOMAIN}',
     'https://*.onrender.com',
-    'http://panel.localhost:8000',
-    'http://hasta.localhost:8000',
-    'http://*.hasta.localhost:8000',
 ]
+if RENDER_EXTERNAL_HOSTNAME:
+    CSRF_TRUSTED_ORIGINS.append(f'https://{RENDER_EXTERNAL_HOSTNAME}')
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS += [
+        'http://panel.localhost:8000',
+        'http://hasta.localhost:8000',
+        'http://*.localhost:8000',
+    ]
 
-SESSION_COOKIE_DOMAIN = None
+# /superadmin/ IP allowlist. Render arkasında proxy olduğundan REMOTE_ADDR
+# genelde 127.0.0.1 GELMEZ; tarayıcıdan erişmek istiyorsanız kendi sabit IP
+# adresinizi Render env-var'ına ekleyin: SUPERADMIN_ALLOWED_IPS=1.2.3.4,5.6.7.8
+SUPERADMIN_ALLOWED_IPS = config('SUPERADMIN_ALLOWED_IPS', default='', cast=Csv())
+
+SESSION_COOKIE_DOMAIN   = None
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_ENGINE        = 'django.contrib.sessions.backends.db'
+SESSION_ENGINE          = 'django.contrib.sessions.backends.db'
 
 # ─── PRODUCTION GÜVENLİK (DEBUG=False olunca otomatik aktif) ─────────────────
 if not DEBUG:

@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────
+# Lokal geliştirme için .env (proje kökünde, manage.py yanında)
+# Render'da bunları .env dosyası olarak DEĞİL, Dashboard > Environment
+# sekmesinden tek tek env-var olarak girin.
+# ─────────────────────────────────────────────────────────────
+
+# --- Temel ---
+SECRET_KEY=lokalde-herhangi-bir-deger-render-da-guclu-random-key
+DEBUG=True
+
+# --- Domain (lokalde boş bırakabilirsiniz, settings.py otomatik
+#     panel.localhost / hasta.localhost kullanır) ---
+BASE_DOMAIN=e-randevu.online
+
+# --- Veritabanı ---
+# Lokal Postgres kullanıyorsanız DATABASE_URL'i YAZMAYIN, aşağıdaki
+# DB_* değişkenleri kullanılır. Neon'a bağlanacaksanız DATABASE_URL'i
+# doldurun (Neon panelinden "Connection string" -> "Pooled connection").
+# DATABASE_URL=postgresql://kullanici:sifre@ep-xxxx.neon.tech/e_randevu?sslmode=require
+DB_NAME=e-randevu
+DB_USER=postgres
+DB_PASSWORD=
+DB_HOST=localhost
+DB_PORT=5432
+
+# --- E-posta (Gmail App Password ile) ---
+EMAIL_HOST_USER=your@gmail.com
+EMAIL_HOST_PASSWORD=xxxx-xxxx-xxxx-xxxx
+DEFAULT_FROM_EMAIL=noreply@e-randevu.online
+
+# --- iyzico ---
+IYZICO_API_KEY=sandbox-api-key
+IYZICO_SECRET_KEY=sandbox-secret-key
+IYZICO_BASE_URL=https://sandbox-api.iyzipay.com
+
+# --- Superadmin panel IP allowlist (virgülle ayrılmış, opsiyonel) ---
+SUPERADMIN_ALLOWED_IPS=
