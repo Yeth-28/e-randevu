@@ -7,3 +7,6 @@ django-tenants==3.6.1
 python-decouple==3.8
 Pillow==10.4.0
 django-allauth==64.2.1
+dj-database-url
+psycopg2-binary
+gunicorn
